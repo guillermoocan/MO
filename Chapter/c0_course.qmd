@@ -1,0 +1,198 @@
+
+## Información general
+
+- Curso: Sistemas de Control de Orientación
+- Optativa de elección para Ingeniería Espacial
+- Clave: 1268
+- Semestre: 9
+- Créditos: 6
+- Horas por semana: 3
+- Modalidad: Teórica
+- Seriación: Ninguna
+
+::: {.fragment}
+
+::: {.definition-block}
+**Objetivo del curso**
+
+El alumno aplicará los elementos de mecánica celeste a problemas prácticos del movimiento de naves
+espaciales.
+
+:::
+
+:::
+
+---
+
+## ¿Mecánica Orbital? {transition="fade"}
+
+<div class="vspace-2"></div>
+
+
+::: {.fragment}
+
+![](/Figures/c0/mo_c0_1.mp4){width=77% fig-align="center" data-autoplay=true}
+
+:::
+
+## Astrodinámica {transition="fade"}
+
+<div class="vspace-2"></div>
+
+![](/Figures/c0/mo_c0_2.mp4){width=80% fig-align="center" data-autoplay=true}
+
+
+## Presentación
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+- Intereses académicos
+- Intereses profesionales
+- Método de titulación
+- Aficiones personales
+
+:::
+
+::: {.column width="70%"}
+
+![](/Figures/c0/people.png){width=60% fig-align="right"}
+
+:::
+
+:::
+
+## Sobre mí
+
+::: {.columns}
+
+::: {.column width="70%"}
+
+- Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE)
+- Instituto de Ingeniería, UNAM
+- Grupo de Modos Deslizantes, Posgrado de Ingeniería 
+
+**Formación académica**
+
+- Ingeniero Eléctrico Electrónico
+- Maestría en Ingeniería Eléctrica – Control
+
+**Información de contacto**
+
+- Correo: guillermoocaan@gmail.com
+- LIESE, Edificio P, Facultad de Ingeniería, UNAM
+
+:::
+
+::: {.column width="30%"}
+
+![](/Figures/c0/Foto.jpeg)
+
+:::
+
+:::
+
+<!-- ## Contenido del curso
+
+:::{.columns .center-vertical}
+
+::: {.column width="50%"}
+- **Introducción**
+    - Conceptos generales
+    - Revisión histórica
+- **Preliminares**
+    - Marcos de referencia
+    - Mecánica clásica 
+- **Modelo rotacional**
+    - Modelo cinemático
+    - Modelo dinámico
+    - Perturbaciones
+:::
+
+::: {.column width="50%"}
+- **Determinación**
+    - Sensores
+    - Estimadores estáticos
+    - Estimadores dinámicos
+- **Control**
+    - Actuadores
+    - Error
+    - Algoritmos de control.
+    - Generación de par
+
+:::
+::: -->
+
+## Antecedentes
+
+::: {.columns}
+
+::: {.column}
+- Álgebra lineal
+- Cálculo vectorial
+- Ecuaciones diferenciales
+- Análisis numérico
+- Matemáticas avanzadas
+- Probabilidad y estadística
+- Análisis de sistemas y señales
+- Modelado de sistemas físicos
+- Medio ambiente espacial
+- Modelado basado en diseño
+
+:::
+
+::: {.column .fragment}
+
+::: {.callout-tip}
+
+## Recomendaciones
+
+- Conocimientos básicos de programación, especialmente en MATLAB/Simulink.
+- Creación de documentos en LaTeX
+
+:::
+
+:::
+
+:::
+
+
+## Bibliografía
+
+::: {.columns}
+
+::: {.column width="33%"}
+
+![](/Figures/c0/orbital_mechanics_for_engineering_students.jpg){width=100%}
+
+:::
+
+::: {.column .fragment width="33%"}
+
+![](/Figures/c0/fundamentals_of_astrodynamics_and_applications.jpg){width=91%}
+
+:::
+
+::: {.column .fragment width="33%" }
+
+![](/Figures/c0/spacecrat_modeling_attitude_determination_and_control.png){width=87%}
+
+:::
+
+:::
+
+
+## Classroom
+
+![](/Figures/c0/classroom_mo.png){fig-align="center"}
+
+## Formato de entrega
+
+- Los documentos deberán ser entregados en formato PDF mediante Classroom.
+- El nombre del archivo deberá seguir el siguiente formato: *MO\_TipoyNúmero\_ApellidoNombre.pdf*, *e.g.*,  *MO\_T1\_OcanaGuillermo.pdf*
+- Tipo: Tarea (**T**), Proyecto(**P**), Examen(**E**).
+- La entrega es individual, incluso si el trabajo es en equipo.
+- Es **obligatorio** utilizar la plantilla en LaTeX que será proporcionada en cada actividad.
+
+![](/Figures/c0/formato.png){fig-align="center"}
