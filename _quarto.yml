@@ -2,6 +2,8 @@ project:
   type: default
   output-dir: Build
 
+pagetitle: "MO | UNAM"
+
 lang: es
 
 language:

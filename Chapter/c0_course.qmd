@@ -93,36 +93,25 @@ espaciales.
 
 :::
 
-<!-- ## Contenido del curso
+## Contenido del curso
 
-:::{.columns .center-vertical}
 
-::: {.column width="50%"}
+:::{.incremental}
+
 - **Introducción**
-    - Conceptos generales
-    - Revisión histórica
-- **Preliminares**
-    - Marcos de referencia
-    - Mecánica clásica 
-- **Modelo rotacional**
-    - Modelo cinemático
-    - Modelo dinámico
-    - Perturbaciones
-:::
-
-::: {.column width="50%"}
-- **Determinación**
-    - Sensores
-    - Estimadores estáticos
-    - Estimadores dinámicos
-- **Control**
-    - Actuadores
-    - Error
-    - Algoritmos de control.
-    - Generación de par
+- **Geometría orbital y propagación**
+- **Movimiento relativo y observación**
+- **Maniobras orbitales**
+- **Perturbaciones**
+- **Movimiento rotacional** [^1]
+- **Determinación de órbita** [^1]
 
 :::
-::: -->
+
+::: {.fragment}
+
+[^1]: Dependerá de si el margen de tiempo es favorable
+:::
 
 ## Antecedentes
 
@@ -150,6 +139,7 @@ espaciales.
 
 - Conocimientos básicos de programación, especialmente en MATLAB/Simulink.
 - Creación de documentos en LaTeX
+- Conocimientos sobre electrónica básica y manejo de tarjetas de desarrollo distintas a Arduino y ESP32.
 
 :::
 
@@ -195,4 +185,4 @@ espaciales.
 - La entrega es individual, incluso si el trabajo es en equipo.
 - Es **obligatorio** utilizar la plantilla en LaTeX que será proporcionada en cada actividad.
 
-![](/Figures/c0/formato.png){fig-align="center"}
+![](/Figures/c0/formato_mo.png){fig-align="center"}

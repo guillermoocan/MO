@@ -30,6 +30,8 @@ Capítulo 1
 
 <div class="menu-title" style="display:none;"> ▸ Definiciones </div>
 
+<!-- 
+
 <div class="vspace-3"></div>
 
 ::: {.definition-block}
@@ -849,4 +851,4 @@ Revisión histórica
 :::
 
 
-
+ -->

@@ -44,3 +44,55 @@
 
 :::
 
+
+
+## {.title-slide-custom}
+
+<div class="cover">
+
+<div class="cover-logo">
+<img src="Assets/logo_big.png">
+</div>
+
+
+<div class="cover-title">
+Introducción
+</div>
+
+<div class="cover-line"></div>
+
+<div class="cover-subtitle">
+Capítulo 1
+</div>
+
+</div>
+
+<div class="menu-title" style="display:none;">Introducción </div>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+##
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Introducción
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Revisión histórica
+
+<div class="menu-title" style="display:none;"> ▸ Revisión histórica </div>
+
+:::
+
+:::
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
