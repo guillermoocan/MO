@@ -1,8 +1,7 @@
 
 ## Información general
 
-- Curso: Sistemas de Control de Orientación
-- Optativa de elección para Ingeniería Espacial
+- Curso: Mecánica orbital
 - Clave: 1268
 - Semestre: 9
 - Créditos: 6

@@ -27,7 +27,6 @@ Capítulo 1
 
 ## Definiciones
 
-
 <div class="menu-title" style="display:none;"> ▸ Definiciones </div>
 
 <!-- 
