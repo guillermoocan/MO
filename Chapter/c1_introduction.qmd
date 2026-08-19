@@ -1023,6 +1023,27 @@ $$
 
 :::
 
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Introducción
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Conceptos teóricos
+
+<div class="menu-title" style="display:none;"> ▸ Conceptos teóricos </div>
+
+:::
+
+:::
 
 ## Leyes de Newton
 
