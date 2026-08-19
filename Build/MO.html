@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-4aa2b36775fe4fdec13229a6f3c1912c.css">
   <link href="MO_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -387,6 +453,8 @@
   
 
   </div>
+  <script type="module" src="MO_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="MO_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
   <div class="reveal">
@@ -599,833 +667,877 @@ Inicio
 Introducción
 </div>
 </section>
-<section id="definiciones" class="slide level2">
-<h2>Definiciones</h2>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Introducción</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Definiciones</p>
 <div class="menu-title" style="display:none;">
 ▸ Definiciones
 </div>
-<!-- 
-
-<div class="vspace-3"></div>
-
-::: {.definition-block}
-**Sistema**
-
-Es un conjunto de elementos interrelacionados que interactúan entre sí y con su entorno, con el propósito de cumplir una función u objetivo determinado.
-:::
-
-<div class="vspace-3"></div>
-
-::: {.definition-block .fragment}
-**Control**
-
-Es el proceso mediante el cual se actúa deliberadamente sobre un sistema *dinámico* para influir en su comportamiento, de modo que éste siga una evolución deseada o alcance un objetivo específico.
-:::
-
-<div class="vspace-3"></div>
-
-::: {.definition-block .fragment}
-**Orientación**
-
-La *orientación* de un cuerpo es la relación angular entre una referencia fija al cuerpo y otra referencia.
-:::
-
-
-## Sistema de Control de Orientación {auto-animate=true}
-
-::: {.definition-block}
-**Definición**
-
-Un sistema de control de orientación es un conjunto de elementos cuyo objetivo es regular la orientación de un cuerpo físico con respecto a una referencia definida, de manera que adquiera una configuración deseada.
-
-:::
-
-::: {.fragment}
-
-::: {.large}
-
-¿Qué implica su diseño en sistemas espaciales?
-
-:::
-
-![](Figures/c1/motivation.jpg){width=55% fig-align="center"}
-
-:::
-
-## {auto-animate=true}
-
-::: {.definition-block}
-**Definición**
-
-Un sistema de control de orientación es un conjunto de elementos cuyo objetivo es regular la orientación de un cuerpo físico con respecto a un sistema de referencia definido, de manera que adquiera una orientación deseada o la mantenga de manera estable.
-
-:::
-
-El diseño de este sistema puede seccionarse tres etapas fundamentales, y cada una de ellas responde una pregunta clave.
-
-::: {.fragment}
-
-<div class="vspace-2"></div>
-
-<span style="color:#003399">**Modelado** (¿Qué?)</span>
-
-El **modelado** del satélite es la representación matemática y computacional de la dinámica, la cinemática y las características físicas del cuerpo, así como de los elementos de referencia involucrados, que permite definir una orientación relativa a una referencia conocida y predecir su evolución.
-
-:::
-
-::: {.fragment}
-
-<div class="vspace-2"></div>
-
-<span style="color:#003399">**Procesamiento** (¿Cómo?)</span>
-
-El **procesamiento** es el conjunto de operaciones matemáticas, lógicas y algorítmicas que transforman las mediciones del sistema y las referencias deseadas en señales de control, de manera que el cuerpo adquiera la orientación deseada.
-
-:::
-
-## {auto-animate=true}
-
-<span style="color:#003399">**Instrumentación** (¿Con qué?)</span>
-
-La **instrumentación** comprende los dispositivos físicos encargados de adquirir información relacionada con la orientación actual del cuerpo y de ejecutar las acciones de control calculadas por el sistema de procesamiento, sirviendo como la interfaz entre el modelo teórico y el sistema físico real. 
-
-<div class="vspace-2"></div>
-
-Esta instrumentación se clasifica en tres categorías principales:
-
-::: {.incremental}
-
-- **Sensor**: Es un dispositivo que mide una magnitud física (asociada a un fenómeno físico) y la convierte en una señal proporcional que puede ser interpretada, procesada o registrada.
-
-- **Actuador**: Es un elemento físico encargado de convertir una **señal de control** en una **acción de control** que influye en el comportamiento de un sistema dinámico.
-
-- **Unidad de procesamiento**: Es un dispositivo o conjunto de dispositivos encargados de ejecutar la etapa de procesamiento.
-
-:::
-
-::: {.fragment}
-
-![](Figures/c1/adcs_cubesatshop){width=28% fig-align="center"}
-
-:::
-
-## ADCS (*Attitude Determination and Control System*){auto-animate=true}
-
-::: {.fs-sm}
-
-Sistema encargado de determinar y controlar la orientación de un vehículo espacial.
-
-:::{.incremental}
-
-- *Attitude* es la orientación tridimensional de un vehículo espacial con respecto a un marco de referencia.
-- **Su propósito es brindarle al vehículo la capacidad de conocer y modificar su orientación.**
-- Internamente está conformado en dos tareas:
-  - **Determinación**: Proceso por el cual se estima la orientación del vehículo relativa a una referencia en tiempo real.
-  - **Control**: Conjunto de técnicas dedicadas a mantener y gestionar la orientación del vehículo en una dirección deseada.
-  
-::::
-
-![](Figures/c1/adcs_cubesatshop){width=40% fig-align="center"}
-
-:::
-
-##
-
-![](Figures/c1/subsystems.svg){width=100% fig-align="center"}
-
-##
-
-![](Figures/c1/closeloop.svg){width=100% fig-align="center"}
-
-##
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Introducción
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Revisión histórica
-
-<div class="menu-title" style="display:none;"> ▸ Revisión histórica </div>
-
-:::
-
-:::
-
-## Sputnik 1 (1957)
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-**Lanzamiento:** 4 oct 1957 (URSS, R-7)
-
-**Lanzado por:** Unión Soviética
-
-**Propósito/Misión:** <span style="color:red"> Primer satélite artificial para transmisión de radio. </span>
-
-**Carga útil:** Transmisores (20/40 MHz).
-
-**Órbita:** LEO, 215 × 939 km, inc. 65°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Sin control.
-- *Instrumentación para control:* Ninguna.
-- *Instrumentación para determinación:* Ninguna.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_sputnik1.png){width=100% fig-align="center"}
-
-:::
-
-:::
-
-## Explorer 1 (1958)
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-**Lanzamiento:** 31 ene 1958 (EE.UU., Juno I)
-
-**Lanzado por:** Estados Unidos
-
-**Propósito/Misión:** Ciencia espacial (Descubrimiento de los cinturones de Van Allen).
-
-**Carga útil:** Contador Geiger-Müller, sensor de temperatura.
-
-**Órbita:** LEO, 358 × 2,550 km, inc. 33.3°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:*<span style="color:red"> Estabilizado por giro </span>  (~750 rpm al lanzamiento).
-- *Instrumentación para control:* Ninguna.
-- *Instrumentación para determinación:* Ninguna.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_explorer1.jpg){width=80% fig-align="center"}
-
-:::
-
-:::
-
----
-
-## Discoverer-2 (1959)
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-**Lanzamiento:** 13 abr 1959 (EE.UU., Thor-Agena A)
-
-**Lanzado por:** USAF/CIA (CORONA)
-
-**Propósito/Misión:** Pruebas de plataforma de reconocimiento óptico y cápsula de reentrada.
-
-**Carga útil:** Cápsula SRV de ensayo; Óptica.
-
-**Órbita:** LEO polar, ~239 × 346 km, inc. ~89.9°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* <span style="color:red">  Control en 3 ejes </span>.
-- *Instrumentación para control:* <span style="color:red"> Propulsor de gas frío (N₂) </span>.
-- *Instrumentación para determinación:* <span style="color:red">  IMU y sensor de horizonte .</span>
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_discoverer2.jpg){width=60% fig-align="center"}
-
-:::
-
-:::
-
-## Transit 1A (1959)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 17 sep 1959 (EE.UU., Thor-Able)
-
-**Lanzado por:** EE.UU.
-
-**Propósito/Misión:** Demostración del sistema de navegación Doppler Transit.
-
-**Carga útil:** Transmisores de navegación.
-
-**Órbita:** Fallo en inserción.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red"> *Yo-yo* </span>.
-- *Instrumentación para determinación:* Ninguno.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_transit1a.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## TIROS-1 (1960)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 1 abr 1960 (EE.UU., Thor-Able)
-
-**Lanzado por:** Estados Unidos
-
-**Propósito/Misión:** Primer satélite meteorológico operativo.
-
-**Carga útil:** 2 cámaras TV (alta/baja res.), transmisor.
-
-**Órbita:** LEO, 644 × 654 km, inc. 48°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* *Yo-yo*.
-- *Instrumentación para determinación:* <span style="color:red"> Sensor solar y de horizonte </span> .
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_tiros1.png){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-##
-
-![](Figures/TIROS-1-Earth.png){width=50% fig-align="center"}
-
----
-
-## Transit 1B (1960)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 13 abr 1960 (EE.UU., Thor-Ablestar)
-
-**Lanzado por:** APL
-
-**Propósito/Misión:** Navegación Doppler.
-
-**Carga útil:** Transmisores de navegación, relojes.
-
-**Órbita:** LEO polar, ~600 km.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red">  Imanes permanentes </span>.
-- *Instrumentación para determinación:* Sensor solar,<span style="color:red">  magnetómetro </span>.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_transit1b.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## TIROS-2 (1960)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 23 nov 1960 (EE.UU., Thor-Delta, LC-17A)
-
-**Lanzado por:** RCA
-
-**Propósito/Misión:** Meteorología.
-
-**Carga útil:** 2 cámaras TV (alta/baja res.), transmisor.
-
-**Órbita:** LEO, 374 × 394 km, inc. 48.5°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red"> Propulsores </span>, magnetopares.
-- *Instrumentación para determinación:* Sensor solar y de horizonte.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_tiros_2.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Transit 4B (1961)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 15 nov 1961 (EE.UU., Thor-Ablestar)
-
-**Lanzado por:** APL.
-
-**Propósito/Misión:** Navegación Doppler (NNSS).
-
-**Carga útil:** Antenas.
-
-**Órbita:** LEO polar (~1000 km).
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro.
-- *Instrumentación para control:*<span style="color:red">  Mástil/boom, imanes permanentes.
-- *Instrumentación para determinación:* Sensor solar, magnetómetro.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_transit4b.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Mariner 4 (1964)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 28 nov 1964 (EE.UU., Atlas-Agena D)
-
-**Lanzado por:** JPL
-
-**Propósito/Misión:** Sobrevuelo de Marte, estudio de partículas y campos.
-
-**Carga útil:** Óptica; magnetómetro; detectores de partículas.
-
-**Órbita:** Heliocéntrica.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Propulsores de gas frío N₂; <span style="color:red"> aletas de presión solar </span> auxiliares.
-- *Instrumentación para determinación:* Sensores solares; <span style="color:red">  seguidor de estrellas </span> *Canopo*; giroscopio.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_mariner4.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## OAO-1 (1966)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 8 abr 1966 (EE.UU., Atlas-Agena B)
-
-**Lanzado por:** NASA
-
-**Propósito/Misión:** Astronomía ultravioleta/óptica.
-
-**Carga útil:** Telescopios UV/óptica.
-
-**Órbita:** LEO (~740 km).
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:*<span style="color:red"> ruedas de reacción </span>; propulsores de respaldo.
-- *Instrumentación para determinación:* Seguidor de estrellas, sensores solares, giroscopio.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_oao1.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Skylab (1973)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 14 may 1973 (EE.UU., Saturn V)
-
-**Lanzado por:** NASA
-
-**Propósito/Misión:** Estación orbital para ciencia solar/terrestre y medicina espacial.
-
-**Carga útil:** Instrumentación científica.
-
-**Órbita:** LEO, ~434 × 442 km, inc. 50°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* <span style="color:red">  Giroscopio de momento controlado (CMG) </span>; propulsores de respaldo.
-- *Instrumentación para determinación:* Sensores solares; giroscopio; sensores de horizonte.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_skylab.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## ATS-6 (1974)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 30 may 1974 (EE.UU., Titan III-C)
-
-**Lanzado por:** NASA
-
-**Propósito/Misión:** Telecomunicaciones y demostraciones tecnológicas.
-
-**Carga útil:** Antena parabólica 9.1 m, experimentos de comunicaciones.
-
-**Órbita:** GEO.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción; <span style="color:red">  propulsores para desaturación/mantenimiento </span>.
-- *Instrumentación para determinación:* Seguidor de estrellas, sensores solares, sensores de horizonte, giroscopio.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_ats6.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Hubble Space Telescope (1990)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 24 abr 1990 (EE.UU., STS-31)
-
-**Lanzado por:** NASA
-
-**Propósito/Misión:** Astronomía óptica/UV de alta precisión.
-
-**Carga útil:** Espejo 2.4 m.
-
-**Órbita:** LEO, ~547 km, inc. 28.5°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes de alta precisión.
-- *Instrumentación para control:* 4 ruedas de reacción; magnetopares; giroscopios.
-- *Instrumentación para determinación:* <span style="color:red">  *Fine Guidance Sensors* (FGS) </span>.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_hubble.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## QuakeSat (2003)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 30 jun 2003 (Rockot/Briz-KM, Rusia)
-
-**Lanzado por:** QuakeFinder/Stanford (EE.UU.)
-
-**Propósito/Misión:** Demostrar detección de señales ULF asociadas a sismos. <span style="color:red">  Primer CubeSat 3U en órbita </span>.
-
-**Carga útil:** Magnetómetro de inducción en *boom* telescópico.
-
-**Órbita:** LEO heliosíncrona, ~821 × 833 km, inc. 98.7°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilización por giro.
-- *Instrumentación para control:* Imanes permanentes, boom.
-- *Instrumentación para determinación:* Ninguno.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_quakesat.jpg){width=70% fig-align="center"}
-
-:::
-:::
-
----
-
-## UWE-3 (2013)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 21 nov 2013 (Dnepr, Rusia)
-
-**Lanzado por:** Universidad de Würzburg (Alemania)
-
-**Propósito/Misión:** <span style="color:red">  Demostración de ADCS miniaturizado </span> y bus modular.
-
-**Carga útil:** Plataforma tecnológica (ADCS en tiempo real; telecomunicaciones).
-
-**Órbita:** LEO heliosíncrona, ~559 × 630 km, inc. 97.8°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes (demostración en vuelo).
-- *Instrumentación para control:* 6 magnetopares (bobinas distribuidas en paneles), 1 rueda de reacción.
-- *Instrumentación para determinación:* Magnetómetros (9 ejes totales), giroscopios MEMS (3), sensores solares.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_uwe3.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## TerraSAR-X (2007)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 15 jun 2007 (Alemania, Dnepr)
-
-**Lanzado por:** Alemania (DLR/Astrium)
-
-**Propósito/Misión:** Observación por radar X de alta resolución.
-
-**Carga útil:** Radar SAR banda X.
-
-**Órbita:** LEO heliosíncrona, ~514 km, inc. 97.44°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción, propulsores.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_terrasarx.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## Sentinel-2 (2015)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 23 jun 2015 (ESA, Vega)
-
-**Lanzado por:** ESA
-
-**Propósito/Misión:** Observación multiespectral (vegetación/suelo/agua).
-
-**Carga útil:** MSI.
-
-**Órbita:** LEO heliosíncrona, 786 km, inc. 98.6°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_sentinel2.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## James Webb Space Telescope (JWST) (2021)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 25 dic 2021 (Ariane 5)
-
-**Lanzado por:** NASA/ESA/CSA
-
-**Propósito/Misión:** Astronomía infrarroja de máxima sensibilidad.
-
-**Carga útil:** Espejo 6.5 m; NIRCam, FGS.
-
-**Órbita:** Halo en L2 (~1.5 millones km).
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción, propulsores.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_jwst.png){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Precisión de apuntamiento {auto-animate=true}
-
-::: {.center-vertical}
-
-| **Nombre** | **Año** | **Precisión (°)** |
-|:---|:---:|---:|
-| TIROS-2 | 1960 | 1–2 |
-| Mariner 4 | 1964 | ≥ 1 |
-| OAO-1 | 1966 | 2.8×10⁻⁵ |
-| Skylab | 1973 | 0.021 |
-| ATS-6 | 1974 | 0.05 |
-| Hubble Space Telescope | 1990 | 1.9×10⁻⁶ |
-| TerraSAR-X | 2007 | 0.018 |
-| James Webb Space Telescope | 2021 | 2.8×10⁻⁷ |
-
-:::
-
-
- -->
+</div>
+</div>
+</section>
+<section id="mecánica" class="slide level2">
+<h2>Mecánica</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la física que estudia el movimiento y el equilibrio de los cuerpos, así como las fuerzas y las interacciones que determinan su estado de movimiento.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>La mecánica responde dos preguntas fundamentales sobre el movimiento de los cuerpos: <strong>¿Cómo y por qué se mueve un cuerpo?</strong></p></li>
+<li class="fragment"><p>La <strong>cinemática</strong> responde al <em>cómo</em>: describe la posición, velocidad y aceleración de los cuerpos sin considerar las causas que producen su movimiento.</p></li>
+<li class="fragment"><p>La <strong>dinámica</strong> responde al <em>por qué</em>: estudia las causas del movimiento y relaciona el movimiento de los cuerpos con las fuerzas que actúan sobre ellos.</p></li>
+<li class="fragment"><p>La <strong>estática</strong>, por su parte, estudia las condiciones de <strong>equilibrio</strong> de los cuerpos, es decir, las situaciones en las que la resultante de fuerzas es compatible con un movimiento nulo aparente.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_mecanica.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="astronomía" class="slide level2">
+<h2>Astronomía</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la ciencia que estudia los cuerpos celestes, los fenómenos y procesos que ocurren en el universo, así como su origen, evolución, estructura y movimiento.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment">La astronomía busca responder preguntas fundamentales sobre el universo: <strong>¿qué existe, cómo se comporta y cómo evoluciona?</strong></li>
+</ul>
+<!-- - La **astronomía observacional** estudia los objetos y fenómenos celestes mediante la adquisición y análisis de radiación y otras señales provenientes del espacio.
+
+- La **astronomía teórica** desarrolla modelos físicos y matemáticos para explicar y predecir los fenómenos observados. -->
+<ul>
+<li class="fragment">La <strong>astrofísica</strong> aplica las leyes de la física para estudiar las propiedades y procesos físicos de los cuerpos y sistemas astronómicos.</li>
+</ul>
+<!-- - La **cosmología** estudia el origen, evolución, estructura y destino del universo como un todo. -->
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_astronomia.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="mecánica-celeste" class="slide level2">
+<h2>Mecánica celeste</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la mecánica que estudia el movimiento de los cuerpos celestes y las interacciones gravitacionales que determinan su evolución dinámica.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Se fundamenta principalmente en las <strong>leyes del movimiento de Newton</strong> y la <strong>ley de gravitación universal</strong>.</p></li>
+<li class="fragment"><p>Estudia el movimiento de <strong>planetas, lunas, asteroides, cometas, estrellas</strong> y otros cuerpos celestes.</p></li>
+<li class="fragment"><p>Considera tanto sistemas simples como sistemas formados por <strong>múltiples cuerpos que interactúan gravitacionalmente</strong>.</p></li>
+<li class="fragment"><p>Permite describir y predecir fenómenos como <strong>órbitas, eclipses, encuentros entre cuerpos y perturbaciones gravitacionales</strong>.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_celeste.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="astrodinámica-1" class="slide level2">
+<h2>Astrodinámica</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Estudio del movimiento de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Contempla tanto el movimiento <strong>traslacional</strong> como el movimiento <strong>rotacional</strong> de los objetos.</p></li>
+<li class="fragment"><p>Las <strong>fuerzas naturales</strong> incluyen principalmente la gravedad, así como otras perturbaciones producidas por el entorno espacial.</p></li>
+<li class="fragment"><p>Las <strong>fuerzas artificialmente inducidas</strong> son aquellas generadas deliberadamente para modificar el movimiento del vehículo, como las producidas por <strong>sistemas de propulsión</strong>.</p></li>
+<li class="fragment"><p>La astrodinámica permite <strong>analizar, predecir y diseñar</strong> el movimiento de vehículos espaciales.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_astrodinamica.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="mecánica-orbital-1" class="slide level2">
+<h2>Mecánica orbital</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Estudio del movimiento <em>traslacional</em> de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Estudia las <strong>trayectorias traslacionales</strong> de cuerpos naturales con respecto de una referencia.</p></li>
+<li class="fragment"><p>A las trayectorias periódicas se les conoce como <strong>órbitas</strong>.</p></li>
+<li class="fragment"><p>Nos permite determinar y predecir la <strong>posición y velocidad</strong> de un cuerpo a lo largo de su trayectoria.</p></li>
+<li class="fragment"><p>Analiza cómo las <strong>fuerzas gravitacionales y perturbaciones</strong> modifican el movimiento orbital.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_orbital.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="satélites" class="slide level2">
+<h2>Satélites</h2>
+<div class="definition-block">
+<p><strong>Satélite</strong></p>
+<p>Cuerpo u objeto que se encuentra en órbita alrededor de otro cuerpo debido a la interacción gravitacional entre ellos.</p>
+</div>
+<div class="columns">
+<div class="column fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_sat_nat.png" class="fragment quarto-figure quarto-figure-center" style="width:52.0%"></p>
+</figure>
+</div>
+<div class="definition-block">
+<p><strong>Satélite natural</strong></p>
+<p>Cuerpo celeste de origen natural que orbita alrededor de otro cuerpo celeste como consecuencia de su interacción gravitacional.</p>
+</div>
+</div><div class="column fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_sat_art.png" class="fragment quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div class="definition-block">
+<p><strong>Satélite artificial</strong></p>
+<p>Objeto construido por el ser humano y colocado en órbita alrededor de un cuerpo celeste para cumplir una función determinada.</p>
+</div>
+</div></div>
+</section>
+<section id="importancia-en-la-ingeniería" class="slide level2">
+<h2>Importancia en la ingeniería</h2>
+<ul>
+<li>El diseño de un <strong>vehículo espacial</strong> no puede realizarse de manera independiente de la <strong>misión espacial</strong> que debe cumplir.</li>
+</ul>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Misión espacial</strong></p>
+<p>Conjunto de actividades, sistemas y operaciones planificadas para alcanzar uno o más objetivos en el espacio, desde su lanzamiento hasta la finalización de la misión.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Antes de diseñar completamente el vehículo es necesario establecer <strong>qué se quiere lograr, dónde debe operar y cómo llegará hasta allí</strong>.</p></li>
+<li class="fragment"><p>Todas las actividades de la misión deben ser pensadas alrededor de la <strong>carga útil</strong> del satélite.</p></li>
+<li class="fragment"><p>La misión determina requisitos fundamentales del vehículo, como <strong>propulsión, energía, comunicaciones, navegación y estructura</strong>.</p></li>
+<li class="fragment"><p>Dentro del diseño de la misión, la <strong>trayectoria</strong> determina cómo se desplazará el vehículo desde su estado inicial hasta alcanzar las condiciones requeridas para cumplir el objetivo.</p></li>
+<li class="fragment"><p>Por ello, el diseño y análisis de trayectorias constituye un elemento <strong>esencial para el diseño de una misión espacial</strong>.</p></li>
+</ul>
+</section>
+<section id="subsistemas-de-un-satélite" class="slide level2">
+<h2>Subsistemas de un satélite</h2>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/c1/subsystems.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>El diseño de la trayectoria <strong>se materializa en la práctica</strong> en diferentes sistemas y operaciones del vehículo espacial.</p>
+<div class="columns">
+<div class="column">
+<div class="definition-block fragment">
+<p><strong>Despliegue</strong></p>
+<p>La trayectoria determina las condiciones y el momento en que el vehículo debe ser liberado, separado o desplegado de su vehículo lanzador o de otro sistema espacial.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_ppod.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+<div class="definition-block fragment">
+<p><strong>Computadora de a bordo</strong></p>
+<p>Los modelos y algoritmos de propagación, control y determinación orbital permiten estimar la posición y velocidad del vehículo durante la misión.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_obc.png" class="quarto-figure quarto-figure-center" style="width:43.0%"></p>
+</figure>
+</div>
+</div><div class="column">
+<div class="definition-block fragment">
+<p><strong>Sistema de propulsión</strong></p>
+<p>Las maniobras diseñadas para modificar y controlar la trayectoria determinan los requisitos de impulso, dirección y momento de las actuaciones propulsivas.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_thrusters.png" class="quarto-figure quarto-figure-center" style="width:43.0%"></p>
+</figure>
+</div>
+<div class="definition-block fragment">
+<p><strong>Sistema de comunicaciones</strong></p>
+<p>La trayectoria determina la visibilidad del vehículo respecto a las estaciones terrestres, estableciendo condiciones para la planificación de enlaces, ventanas de comunicación y orientación de las antenas.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c1/definition_ant.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Introducción</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Repaso de álgebra</p>
+<div class="menu-title" style="display:none;">
+▸ Repaso de álgebra
+</div>
+</div>
+</div>
+</section>
+<section id="vectores" class="slide level2">
+<h2>Vectores</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Un <strong>vector</strong> (columna) es una <span class="math inline">\(n\)</span>-tupla ordenada de números reales:</p>
+<p><span class="math display">\[
+    \vec{v}=
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        \vdots\\
+        v_n
+    \end{bmatrix} \in\mathbb{R}^n ,
+    \qquad v_i\in\mathbb{R}
+\]</span></p>
+<p>o de forma equivalente,</p>
+<p><span class="math display">\[
+    \vec{v}\equiv
+    [v_1\quad v_2\quad \dots\quad v_n]^\top.
+\]</span></p>
+<p>donde <span class="math inline">\(n\in\mathbb{N}\)</span> y <span class="math inline">\(\top\)</span> denota transposición. El conjunto de todos los vectores de dimensión <span class="math inline">\(n\)</span> es el espacio <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<p>Físicamente nos permiten representar <strong>magnitudes vectoriales</strong>, <em>e.g.</em>, la posición y la velocidad.</p>
+<p>Pueden clasificarse como libres o fijos, dependiendo si origen es invariante.</p>
+</div><div class="column" style="width:30%;">
+<div class="small">
+<p><span class="math inline">\(v_x\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb1--1"><a href=""></a>viewof vx <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(v_y\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb2--1"><a href=""></a>viewof vy <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(o_x\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb3--1"><a href=""></a>viewof ox <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(o_y\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb4--1"><a href=""></a>viewof oy <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="-1" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -2;"><span id="cb5--1"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-0"><a href=""></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb5-1"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb5-2"><a href=""></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb5-4"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-5"><a href=""></a>    Plot<span class="op">.</span><span class="fu">arrow</span>(</span>
+<span id="cb5-6"><a href=""></a>      [{<span class="dt">x1</span><span class="op">:</span> ox<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> oy<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> vx<span class="op">+</span>ox<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> vy<span class="op">+</span>oy}]<span class="op">,</span></span>
+<span id="cb5-7"><a href=""></a>      {</span>
+<span id="cb5-8"><a href=""></a>        <span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span></span>
+<span id="cb5-9"><a href=""></a>        <span class="dt">y1</span><span class="op">:</span> <span class="st">"y1"</span><span class="op">,</span></span>
+<span id="cb5-10"><a href=""></a>        <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span></span>
+<span id="cb5-11"><a href=""></a>        <span class="dt">y2</span><span class="op">:</span> <span class="st">"y2"</span></span>
+<span id="cb5-12"><a href=""></a>      }</span>
+<span id="cb5-13"><a href=""></a>    )</span>
+<span id="cb5-14"><a href=""></a>  ]</span>
+<span id="cb5-15"><a href=""></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="operaciones-típicas-entre-vectores" class="slide level2">
+<h2>Operaciones típicas entre vectores</h2>
+<p>Sean <span class="math inline">\(\vec{u},\vec{v}\in\mathbb{R}^n\)</span> y <span class="math inline">\(\alpha\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><p><strong>Suma:</strong> <span class="math inline">\(\vec{u}+\vec{v}=[u_1+v_1,\dots,u_n+v_n]^\top\)</span></p></li>
+<li><p><strong>Producto por escalar:</strong> <span class="math inline">\(\alpha\vec{u}=[\alpha u_1,\dots,\alpha u_n]^\top\)</span></p></li>
+<li><p><strong>Producto punto:</strong></p></li>
+</ul>
+<p><span class="math display">\[
+    \begin{aligned}
+        \vec{u}\cdot\vec{v}&amp;=\sum_{i=1}^{n}u_iv_i\\
+        &amp;=\vec{u}^{\top}\vec{v}\\
+        &amp;=\|\vec{u}\|\,\|\vec{v}\|\cos\theta
+    \end{aligned}
+\]</span></p>
+<p>donde <span class="math inline">\(\theta\)</span> es el ángulo comprendido entre <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> al hacer coincidir sus orígenes.</p>
+<ul>
+<li><strong>Norma Euclidiana:</strong> <span class="math inline">\(\|\vec{u}\|=\sqrt{\vec{u}\cdot\vec{u}}\)</span></li>
+</ul>
+</section>
+<section id="producto-cruz-definición-por-componentes" class="slide level2">
+<h2>Producto cruz (definición por componentes)</h2>
+<p>En <span class="math inline">\(\mathbb{R}^3\)</span>, el <strong>producto cruz</strong> de dos vectores <span class="math inline">\(\vec{u},\vec{v}\in\mathbb{R}^3\)</span> se define como</p>
+<p><span class="math display">\[
+    \vec{u}\times\vec{v}=
+    \begin{bmatrix}
+        u_2v_3-u_3v_2\\
+        u_3v_1-u_1v_3\\
+        u_1v_2-u_2v_1
+    \end{bmatrix}=
+    \begin{vmatrix}
+        \vec{i} &amp; \vec{j} &amp; \vec{k}\\
+        u_1 &amp; u_2 &amp; u_3\\
+        v_1 &amp; v_2 &amp; v_3
+    \end{vmatrix},
+\]</span></p>
+<p>donde <span class="math inline">\(\{\vec{i},\vec{j},\vec{k}\}\)</span> es la base canónica de <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div class="fragment">
+<p><strong>Propiedades</strong>:</p>
+<ul>
+<li><span class="math inline">\(\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})\)</span></li>
+<li><span class="math inline">\(\vec{u}\times\vec{u}=\vec{0}\)</span></li>
+<li><span class="math inline">\(\vec{u}\cdot(\vec{u}\times\vec{v})=0\)</span></li>
+<li><span class="math inline">\(\vec{u}\times\vec{v}\)</span> es ortogonal (perpendicular) a <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span>.</li>
+<li>Si <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> son colineales, entonces <span class="math inline">\(\vec{u}\times\vec{v}=\vec{0}\)</span>.</li>
+<li><span class="math inline">\(\|\vec{u}\times\vec{v}\|=\|\vec{u}\|\,\|\vec{v}\|\sin\theta.\)</span></li>
+</ul>
+</div>
+</section>
+<section id="espacio-vectorial-real" class="slide level2">
+<h2>Espacio vectorial (real)</h2>
+<p>Un <strong>espacio vectorial real</strong> es una tupla</p>
+<p><span class="math display">\[
+(\mathcal{V},+,\cdot)
+\]</span></p>
+<p>donde <span class="math inline">\(\mathcal{V}\)</span> es un conjunto de vectores reales, <span class="math inline">\(+:\mathcal{V}\times\mathcal{V}\rightarrow\mathcal{V}\)</span> y <span class="math inline">\(\cdot:\mathbb{R}\times\mathcal{V}\rightarrow\mathcal{V}\)</span> satisfacen, para todo <span class="math inline">\(\vec{u},\vec{v},\vec{w}\in\mathcal{V}\)</span> y <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}\)</span>.</li>
+<li><span class="math inline">\((\alpha+\beta)\vec{u}=\alpha\vec{u}+\beta\vec{u}\)</span>.</li>
+<li><span class="math inline">\((\alpha\beta)\vec{u}=\alpha(\beta\vec{u})\)</span>.</li>
+<li><span class="math inline">\(1\cdot\vec{u}=\vec{u}\)</span>.</li>
+</ul>
+</section>
+<section id="base" class="slide level2">
+<h2>Base</h2>
+<p>Sea <span class="math inline">\(\mathcal{V}\)</span> un espacio vectorial real de dimensión <span class="math inline">\(n\)</span>. Un conjunto ordenado</p>
+<p><span class="math display">\[
+\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n\}\subset\mathcal{V}
+\]</span></p>
+<p>es una <strong>base</strong> de <span class="math inline">\(\mathcal{V}\)</span> si:</p>
+<ol type="1">
+<li><strong>Independencia lineal</strong></li>
+</ol>
+<p><span class="math display">\[
+    \alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n=\vec{0}
+    \;\Rightarrow\;
+    \alpha_1=\cdots=\alpha_n=0.
+\]</span></p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Generación</strong></li>
+</ol>
+<p>Todo <span class="math inline">\(\vec{u}\in\mathcal{V}\)</span> se escribe de forma <em>única</em> como</p>
+<p><span class="math display">\[
+    \vec{u}=\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n,
+    \qquad \alpha_i\in\mathbb{R}.
+\]</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Una <em>combinación lineal</em> es toda expresión</p>
+<p><span class="math display">\[
+\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n
+\]</span></p>
+<p>con <span class="math inline">\(\alpha_i\in\mathbb{R}\)</span>. La independencia lineal de la base implica que ningún vector se expresa como combinación lineal de los demás.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices" class="slide level2">
+<h2>Matrices</h2>
+<p>Una <strong>matriz</strong> <span class="math inline">\(A\in\mathbb{R}^{m\times n}\)</span> es un arreglo rectangular:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        a_{11} &amp; \cdots &amp; a_{1n}\\
+        \vdots &amp; \ddots &amp; \vdots\\
+        a_{m1} &amp; \cdots &amp; a_{mn}
+    \end{bmatrix}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Operaciones con matrices</strong></p>
+<p>Sean <span class="math inline">\(A,B\in\mathbb{R}^{m\times n}\)</span> y <span class="math inline">\(\alpha\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><strong>Suma:</strong> <span class="math inline">\((A+B)_{ij}=a_{ij}+b_{ij}\)</span>.</li>
+<li><strong>Producto por escalar:</strong> <span class="math inline">\((\alpha A)_{ij}=\alpha a_{ij}\)</span>.</li>
+<li><strong>Producto matricial:</strong> Si <span class="math inline">\(A\in\mathbb{R}^{m\times p}\)</span> y <span class="math inline">\(B\in\mathbb{R}^{p\times n}\)</span>,</li>
+</ul>
+<p><span class="math display">\[
+    (AB)_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},
+    \qquad
+    AB\in\mathbb{R}^{m\times n}.
+\]</span></p>
+<ul>
+<li><strong>Transpuesta:</strong> <span class="math inline">\((A^\top)_{ij}=a_{ji}\)</span>.</li>
+</ul>
+<p><strong>Nota:</strong> La notación <span class="math inline">\((A)_{ij}\)</span> denota el elemento de <span class="math inline">\(A\)</span> en la fila <span class="math inline">\(i\)</span> y columna <span class="math inline">\(j\)</span>.</p>
+</div>
+</section>
+<section id="inversa-de-una-matriz" class="slide level2">
+<h2>Inversa de una matriz</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span> (matriz cuadrada). Se dice que <span class="math inline">\(A\)</span> es <strong>invertible</strong> si existe <span class="math inline">\(B\in\mathbb{R}^{n\times n}\)</span> tal que</p>
+<p><span class="math display">\[
+AB=BA=I_n.
+\]</span></p>
+<p>Dicha <span class="math inline">\(B\)</span> es única y se denota <span class="math inline">\(A^{-1}\)</span>.</p>
+<p>Equivalencias:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> invertible <span class="math inline">\(\iff \det(A)\neq0 \iff\)</span> las columnas de <span class="math inline">\(A\)</span> son linealmente independientes.</li>
+<li><span class="math inline">\(A\)</span> invertible <span class="math inline">\(\iff \operatorname{rank}(A)=n\)</span>.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>El determinante de una matriz cuadrada es un escalar asociado que puede interpretarse como una combinación alternada de todos los posibles productos de sus elementos. Por otro lado, el rango de una matriz es el número de sus columnas linealmente independientes. En el caso de matrices cuadradas, el rango de <span class="math inline">\(A\)</span> es <span class="math inline">\(n\)</span> si y solo si <span class="math inline">\(\det(A)\neq0\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices-simétricas-y-antisimétricas" class="slide level2">
+<h2>Matrices simétricas y antisimétricas</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span>.</p>
+<ul>
+<li><span class="math inline">\(A\)</span> es <strong>simétrica</strong> si</li>
+</ul>
+<p><span class="math display">\[
+A^\top=A.
+\]</span></p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        a &amp; b\\
+        b &amp; c
+    \end{bmatrix}.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span> es <strong>antisimétrica</strong> si</li>
+</ul>
+<p><span class="math display">\[
+A^\top=-A.
+\]</span></p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        0 &amp; -a\\
+        a &amp; 0
+    \end{bmatrix}.
+\]</span></p>
+</section>
+<section id="producto-cruz-matriz-antisimétrica" class="slide level2">
+<h2>Producto cruz: matriz antisimétrica</h2>
+<p>Dado <span class="math inline">\(\vec{u}=[u_1,u_2,u_3]^\top\)</span>, se define</p>
+<p><span class="math display">\[
+S(\vec{u})=
+\begin{bmatrix}
+0 &amp; -u_3 &amp; u_2\\
+u_3 &amp; 0 &amp; -u_1\\
+-u_2 &amp; u_1 &amp; 0
+\end{bmatrix},
+\qquad
+\vec{u}\times\vec{v}=S(\vec{u})\vec{v}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Ejemplo</strong></p>
+<p><span class="math display">\[
+\vec{u}=
+\begin{bmatrix}
+2\\-1\\3
+\end{bmatrix},
+\qquad
+\vec{v}=
+\begin{bmatrix}
+1\\4\\2
+\end{bmatrix},
+\]</span></p>
+<p><span class="math display">\[
+S(\vec{u})=
+\begin{bmatrix}
+0&amp;-3&amp;-1\\
+3&amp;0&amp;-2\\
+1&amp;2&amp;0
+\end{bmatrix},
+\qquad
+S(\vec{u})\vec{v}=
+\begin{bmatrix}
+-14\\-1\\9
+\end{bmatrix}
+=
+\vec{u}\times\vec{v}.
+\]</span></p>
+</div>
+</section>
+<section id="matrices-ortonormales" class="slide level2">
+<h2>Matrices ortonormales</h2>
+<p>Sea <span class="math inline">\(Q\in\mathbb{R}^{n\times n}\)</span>.</p>
+<p>Decimos que <span class="math inline">\(Q\)</span> es <strong>ortonormal</strong> si</p>
+<p><span class="math display">\[
+Q^\top Q=QQ^\top=I_n.
+\]</span></p>
+<p>Esto implica:</p>
+<ul>
+<li>Las columnas <span class="math inline">\(\{\vec{q}_1,\dots,\vec{q}_n\}\)</span> de <span class="math inline">\(Q\)</span> forman una <strong>base ortonormal</strong> de <span class="math inline">\(\mathbb{R}^n\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    \vec{q}_i^\top\vec{q}_j=
+    \begin{cases}
+        1,&amp;\text{si }i=j,\\
+        0,&amp;\text{si }i\neq j.
+    \end{cases}
+\]</span></p>
+<ul>
+<li>Cada columna tiene norma <span class="math inline">\(1\)</span> y distintas columnas son perpendiculares entre sí; en consecuencia, <span class="math inline">\(|\det(Q)|=1\)</span>.</li>
+<li>Consecuencia algebraica: <span class="math inline">\(Q^{-1}=Q^\top\)</span>.</li>
+</ul>
+</section>
+<section id="valores-y-vectores-propios" class="slide level2">
+<h2>Valores y vectores propios</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span>.</p>
+<p>Un escalar <span class="math inline">\(\lambda\in\mathbb{R}\)</span> es un <strong>valor propio</strong> de <span class="math inline">\(A\)</span> si existe un vector no nulo <span class="math inline">\(\vec{v}\in\mathbb{R}^n\)</span> tal que</p>
+<p><span class="math display">\[
+A\vec{v}=\lambda\vec{v}.
+\]</span></p>
+<p><strong>Condición equivalente:</strong></p>
+<p><span class="math display">\[
+\det(\lambda I_n-A)=0.
+\]</span></p>
+<p>donde <span class="math inline">\(\det(\lambda I_n-A)\)</span> es el polinomio característico de <span class="math inline">\(A\)</span>.</p>
+<div class="fragment">
+<p>Si <span class="math inline">\(\lambda\)</span> es un valor propio de <span class="math inline">\(A\)</span>, entonces todo vector no nulo <span class="math inline">\(\vec{v}\in\mathbb{R}^n\)</span> que cumple</p>
+<p><span class="math display">\[
+A\vec{v}=\lambda\vec{v}
+\]</span></p>
+<p>se denomina <strong>vector propio</strong> asociado a <span class="math inline">\(\lambda\)</span>.</p>
+<p>El conjunto de todos los vectores propios asociados a un mismo <span class="math inline">\(\lambda\)</span>, junto con el vector cero, forma el <strong>espacio propio</strong>:</p>
+<p><span class="math display">\[
+E_\lambda=\ker(A-\lambda I_n).
+\]</span></p>
+</div>
+</section>
+<section id="ejemplo-valores-y-vectores-propios" class="slide level2">
+<h2>Ejemplo: valores y vectores propios</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+2&amp;0\\
+0&amp;3
+\end{bmatrix}.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\det(\lambda I-A)=
+\begin{vmatrix}
+\lambda-2&amp;0\\
+0&amp;\lambda-3
+\end{vmatrix}
+=(\lambda-2)(\lambda-3),
+\]</span></p>
+<p>los valores propios son</p>
+<p><span class="math display">\[
+\lambda_1=2,\qquad \lambda_2=3.
+\]</span></p>
+<div class="fragment">
+<p>Para <span class="math inline">\(\lambda_1=2\)</span>,</p>
+<p><span class="math display">\[
+(2I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\alpha
+\begin{bmatrix}
+1\\0
+\end{bmatrix},
+\qquad
+E_2=\mathrm{span}\left\{
+\begin{bmatrix}
+1\\0
+\end{bmatrix}
+\right\}.
+\]</span></p>
+<p>Para <span class="math inline">\(\lambda_2=3\)</span>,</p>
+<p><span class="math display">\[
+(3I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\beta
+\begin{bmatrix}
+0\\1
+\end{bmatrix},
+\qquad
+E_3=\mathrm{span}\left\{
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+\right\}.
+\]</span></p>
+</div>
+</section>
+<section id="marco-de-referencia" class="slide level2">
+<h2>Marco de referencia</h2>
+<p>El <strong>marco de referencia</strong> <span class="math inline">\(i\)</span> en <span class="math inline">\(\mathbb{R}^3\)</span> es la tupla</p>
+<p><span class="math display">\[
+\ls{i}{\mathcal{F}}=\left(\ls{i}{O},\;\ls{i}{\mathcal{B}}\right),
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\ls{i}{O}\in\mathbb{R}^3\)</span> es el <strong>origen</strong>.</li>
+<li><span class="math inline">\(\ls{i}{\mathcal{B}}=\{\ls{i}{\vec{x}},\ls{i}{\vec{y}},\ls{i}{\vec{z}}\}\)</span> es una <strong>base ortonormal derecha</strong> de <span class="math inline">\(\mathbb{R}^3\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    \ls{i}{\vec{x}}\cdot\ls{i}{\vec{y}}=0,
+    \qquad
+    \|\ls{i}{\vec{x}}\|=\|\ls{i}{\vec{y}}\|=\|\ls{i}{\vec{z}}\|=1,
+    \qquad
+    \ls{i}{\vec{x}}\times\ls{i}{\vec{y}}=\ls{i}{\vec{z}}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Equivalente matricial:</strong></p>
+<p>Si</p>
+<p><span class="math display">\[
+R=\left[\,\ls{i}{\vec{x}}\;\;\ls{i}{\vec{y}}\;\;\ls{i}{\vec{z}}\,\right],
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+    R^\top R=I_3,
+    \qquad
+    \det(R)=1.
+\]</span></p>
+</div>
+</section>
+<section id="marcos-de-referencia-para-satélites" class="slide level2">
+<h2>Marcos de referencia para satélites</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Un marco de referencia provee un sistema cartesiano para expresar coordenadas de vectores en el espacio. Mediante estos, es posible describir la posición de un cuerpo.</p></li>
+<li><p>En general, es necesario definir:</p>
+<ul>
+<li>Un <strong>marco inercial</strong>.</li>
+<li>Un <strong>marco sujeto al cuerpo</strong>.</li>
+<li>Marcos <strong>auxiliares</strong>.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/frame_empty.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="marco-de-referencia-inercial-lsimathcalf" class="slide level2">
+<h2>Marco de referencia inercial <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span></h2>
+<div class="columns">
+<div class="column">
+<p><strong>Origen:</strong> <span class="math inline">\(\ls{i}{O}\)</span>, punto de referencia elegido para describir el movimiento.</p>
+<p><strong>Ejes:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\ls{i}{\vec{x}}\)</span>: eje de referencia elegido.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{y}}\)</span>: eje perpendicular que completa la base.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{z}}\)</span>: eje que completa la regla de la mano derecha.</p></li>
+<li><p>Un <strong>marco de referencia inercial</strong> es aquel en el que un cuerpo sobre el que no actúa una fuerza neta permanece en reposo o se mueve con <strong>velocidad constante</strong>.</p></li>
+<li><p>En un marco inercial, las <strong>leyes de Newton</strong> pueden aplicarse directamente sin necesidad de introducir fuerzas ficticias asociadas al movimiento del propio marco.</p></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Algunos de los marcos inerciales más utilizados son:</strong></p>
+<ul>
+<li>Marco de referencia inercial geocéntrico (ECI, por sus siglas en inglés).</li>
+<li>Marco de referencia celeste internacional (ICRF, por sus siglas en inglés).</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/frame_i.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="leyes-de-newton" class="slide level2">
+<h2>Leyes de Newton</h2>
+<div class="definition-block">
+<p><strong>Primera ley</strong></p>
+<p>Un cuerpo permanece en reposo o en movimiento rectilíneo uniforme cuando la fuerza neta que actúa sobre él es cero.</p>
+<p><span class="math display">\[
+\sum \vec{f}=\vec{0}
+\quad\Longrightarrow\quad
+\vec{v}=\mathrm{cte},
+\]</span></p>
+<p>donde <span class="math inline">\(\vec{v}\)</span> es la velocidad traslacional del cuerpo.</p>
+</div>
+<div class="definition-block">
+<p><strong>Segunda ley</strong></p>
+<p>La fuerza neta que actúa sobre un cuerpo es igual a la razón de cambio temporal de su momento lineal.</p>
+<p><span class="math display">\[
+\sum\vec{f}=\frac{d\vec{\rho}}{dt},
+\]</span></p>
+<p>donde <span class="math inline">\(\rho=m\vec{v}\)</span> y <span class="math inline">\(m\)</span> es la masa del cuerpo.</p>
+</div>
+<div class="definition-block">
+<p><strong>Tercera ley</strong></p>
+<p>Cuando un cuerpo ejerce una fuerza sobre otro, este ejerce simultáneamente sobre el primero una fuerza de igual magnitud y dirección, pero en sentido opuesto.</p>
+<p><span class="math display">\[
+\vec{f}_{12}=-\vec{f}_{21}.
+\]</span></p>
+</div>
+</section>
+<section id="ley-de-gravitación-universal" class="slide level2">
+<h2>Ley de gravitación universal</h2>
+<div class="definition-block">
+<p><strong>Ley de gravitación universal</strong></p>
+<p>Dos cuerpos con masas <span class="math inline">\(m_1\)</span> y <span class="math inline">\(m_2\)</span> se atraen con una fuerza cuya magnitud es proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia entre sus centros:</p>
+<p><span class="math display">\[
+\vec{f}_{12}=-G\frac{m_1m_2}{\|\vec{r}_{12}\|^2}\hat{r}_{12}
+\]</span></p>
+<p>donde <span class="math inline">\(G=6.674\times10^{-11}\:\mathrm{N\,m^2/kg^2}\)</span> es la constante de gravitación universal y <span class="math inline">\(\vec{r}_{12}\)</span> es el vector de posición desde el centro del masa del cuerpo 1 hasta el centro de masa del cuerpo 2.</p>
+</div>
+<ul>
+<li class="fragment"><p>La ley de gravitación universal constituye la <strong>base de la mecánica orbital</strong> y permite determinar la fuerza que existe entre dos cuerpos debido a su interacción gravitacional.</p></li>
+<li class="fragment"><p>La fuerza gravitacional es una <strong>fuerza conservativa</strong> que depende únicamente de la posición relativa <span class="math inline">\(\vec{r}_{12}\)</span>, <em>i.e.</em>, el trabajo realizado por la fuerza entre dos puntos es independiente de la trayectoria seguida.</p></li>
+<li class="fragment"><p>En consecuencia, el trabajo realizado por la fuerza gravitacional a lo largo de una trayectoria cerrada es cero:</p></li>
+</ul>
+<p><span class="math display">\[
+\oint \vec{f}_{12}\cdot d\vec{r}_{12}=0
+\]</span></p>
+<ul>
+<li class="fragment">La fuerza gravitacional es además una <strong>fuerza central</strong>, ya que actúa siempre a lo largo de la línea que une los centros de los dos cuerpos.</li>
+</ul>
 
 </section>
 
@@ -1709,6 +1821,17 @@ Revisión histórica
 
     
 
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveScpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

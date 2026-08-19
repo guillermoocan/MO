@@ -25,144 +25,379 @@ Capítulo 1
 
 ---
 
-## Definiciones
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Introducción
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Definiciones
 
 <div class="menu-title" style="display:none;"> ▸ Definiciones </div>
 
-<!-- 
-
-<div class="vspace-3"></div>
-
-::: {.definition-block}
-**Sistema**
-
-Es un conjunto de elementos interrelacionados que interactúan entre sí y con su entorno, con el propósito de cumplir una función u objetivo determinado.
 :::
 
-<div class="vspace-3"></div>
-
-::: {.definition-block .fragment}
-**Control**
-
-Es el proceso mediante el cual se actúa deliberadamente sobre un sistema *dinámico* para influir en su comportamiento, de modo que éste siga una evolución deseada o alcance un objetivo específico.
-:::
-
-<div class="vspace-3"></div>
-
-::: {.definition-block .fragment}
-**Orientación**
-
-La *orientación* de un cuerpo es la relación angular entre una referencia fija al cuerpo y otra referencia.
 :::
 
 
-## Sistema de Control de Orientación {auto-animate=true}
 
-::: {.definition-block}
+## Mecánica
+
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+
+:::{.definition-block .fragment}
+
 **Definición**
 
-Un sistema de control de orientación es un conjunto de elementos cuyo objetivo es regular la orientación de un cuerpo físico con respecto a una referencia definida, de manera que adquiera una configuración deseada.
-
+Rama de la física que estudia el movimiento y el equilibrio de los cuerpos, así como las fuerzas y las interacciones que determinan su estado de movimiento.
 :::
 
-::: {.fragment}
-
-::: {.large}
-
-¿Qué implica su diseño en sistemas espaciales?
-
-:::
-
-![](Figures/c1/motivation.jpg){width=55% fig-align="center"}
-
-:::
-
-## {auto-animate=true}
-
-::: {.definition-block}
-**Definición**
-
-Un sistema de control de orientación es un conjunto de elementos cuyo objetivo es regular la orientación de un cuerpo físico con respecto a un sistema de referencia definido, de manera que adquiera una orientación deseada o la mantenga de manera estable.
-
-:::
-
-El diseño de este sistema puede seccionarse tres etapas fundamentales, y cada una de ellas responde una pregunta clave.
-
-::: {.fragment}
-
-<div class="vspace-2"></div>
-
-<span style="color:#003399">**Modelado** (¿Qué?)</span>
-
-El **modelado** del satélite es la representación matemática y computacional de la dinámica, la cinemática y las características físicas del cuerpo, así como de los elementos de referencia involucrados, que permite definir una orientación relativa a una referencia conocida y predecir su evolución.
-
-:::
-
-::: {.fragment}
-
-<div class="vspace-2"></div>
-
-<span style="color:#003399">**Procesamiento** (¿Cómo?)</span>
-
-El **procesamiento** es el conjunto de operaciones matemáticas, lógicas y algorítmicas que transforman las mediciones del sistema y las referencias deseadas en señales de control, de manera que el cuerpo adquiera la orientación deseada.
-
-:::
-
-## {auto-animate=true}
-
-<span style="color:#003399">**Instrumentación** (¿Con qué?)</span>
-
-La **instrumentación** comprende los dispositivos físicos encargados de adquirir información relacionada con la orientación actual del cuerpo y de ejecutar las acciones de control calculadas por el sistema de procesamiento, sirviendo como la interfaz entre el modelo teórico y el sistema físico real. 
-
-<div class="vspace-2"></div>
-
-Esta instrumentación se clasifica en tres categorías principales:
-
-::: {.incremental}
-
-- **Sensor**: Es un dispositivo que mide una magnitud física (asociada a un fenómeno físico) y la convierte en una señal proporcional que puede ser interpretada, procesada o registrada.
-
-- **Actuador**: Es un elemento físico encargado de convertir una **señal de control** en una **acción de control** que influye en el comportamiento de un sistema dinámico.
-
-- **Unidad de procesamiento**: Es un dispositivo o conjunto de dispositivos encargados de ejecutar la etapa de procesamiento.
-
-:::
-
-::: {.fragment}
-
-![](Figures/c1/adcs_cubesatshop){width=28% fig-align="center"}
-
-:::
-
-## ADCS (*Attitude Determination and Control System*){auto-animate=true}
-
-::: {.fs-sm}
-
-Sistema encargado de determinar y controlar la orientación de un vehículo espacial.
+<div class="vspace-3"></div>
 
 :::{.incremental}
 
-- *Attitude* es la orientación tridimensional de un vehículo espacial con respecto a un marco de referencia.
-- **Su propósito es brindarle al vehículo la capacidad de conocer y modificar su orientación.**
-- Internamente está conformado en dos tareas:
-  - **Determinación**: Proceso por el cual se estima la orientación del vehículo relativa a una referencia en tiempo real.
-  - **Control**: Conjunto de técnicas dedicadas a mantener y gestionar la orientación del vehículo en una dirección deseada.
-  
-::::
+- La mecánica responde dos preguntas fundamentales sobre el movimiento de los cuerpos: **¿Cómo y por qué se mueve un cuerpo?**
 
-![](Figures/c1/adcs_cubesatshop){width=40% fig-align="center"}
+- La **cinemática** responde al *cómo*: describe la posición, velocidad y aceleración de los cuerpos sin considerar las causas que producen su movimiento.
+
+- La **dinámica** responde al *por qué*: estudia las causas del movimiento y relaciona el movimiento de los cuerpos con las fuerzas que actúan sobre ellos.
+
+- La **estática**, por su parte, estudia las condiciones de **equilibrio** de los cuerpos, es decir, las situaciones en las que la resultante de fuerzas es compatible con un movimiento nulo aparente. 
+:::
 
 :::
 
+::: {.column}
+
+![](/Figures/c1/definition_mecanica.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+
+
+## Astronomía
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.definition-block .fragment}
+
+**Definición**
+
+Rama de la ciencia que estudia los cuerpos celestes, los fenómenos y procesos que ocurren en el universo, así como su origen, evolución, estructura y movimiento.
+:::
+
+<div class="vspace-3"></div>
+
+:::{.incremental}
+
+- La astronomía busca responder preguntas fundamentales sobre el universo: **¿qué existe, cómo se comporta y cómo evoluciona?**
+
+<!-- - La **astronomía observacional** estudia los objetos y fenómenos celestes mediante la adquisición y análisis de radiación y otras señales provenientes del espacio.
+
+- La **astronomía teórica** desarrolla modelos físicos y matemáticos para explicar y predecir los fenómenos observados. -->
+
+- La **astrofísica** aplica las leyes de la física para estudiar las propiedades y procesos físicos de los cuerpos y sistemas astronómicos.
+
+<!-- - La **cosmología** estudia el origen, evolución, estructura y destino del universo como un todo. -->
+:::
+
+:::
+
+::: {.column}
+
+![](/Figures/c1/definition_astronomia.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+
+
+## Mecánica celeste
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.definition-block .fragment}
+
+**Definición**
+
+Rama de la mecánica que estudia el movimiento de los cuerpos celestes y las interacciones gravitacionales que determinan su evolución dinámica.
+:::
+
+<div class="vspace-3"></div>
+
+:::{.incremental}
+
+- Se fundamenta principalmente en las **leyes del movimiento de Newton** y la **ley de gravitación universal**.
+
+- Estudia el movimiento de **planetas, lunas, asteroides, cometas, estrellas** y otros cuerpos celestes.
+
+- Considera tanto sistemas simples como sistemas formados por **múltiples cuerpos que interactúan gravitacionalmente**.
+
+- Permite describir y predecir fenómenos como **órbitas, eclipses, encuentros entre cuerpos y perturbaciones gravitacionales**.
+
+:::
+
+:::
+
+::: {.column}
+
+![](/Figures/c1/definition_celeste.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+
+## Astrodinámica
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.definition-block .fragment}
+
+**Definición**
+
+Estudio del movimiento de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.
+:::
+
+<div class="vspace-3"></div>
+
+:::{.incremental}
+
+- Contempla tanto el movimiento **traslacional** como el movimiento **rotacional** de los objetos. 
+
+- Las **fuerzas naturales** incluyen principalmente la gravedad, así como otras perturbaciones producidas por el entorno espacial.
+
+- Las **fuerzas artificialmente inducidas** son aquellas generadas deliberadamente para modificar el movimiento del vehículo, como las producidas por **sistemas de propulsión**.
+
+- La astrodinámica permite **analizar, predecir y diseñar** el movimiento de vehículos espaciales.
+
+
+:::
+
+:::
+
+::: {.column}
+
+![](/Figures/c1/definition_astrodinamica.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+## Mecánica orbital
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.definition-block .fragment}
+
+**Definición**
+
+Estudio del movimiento *traslacional* de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.
+:::
+
+<div class="vspace-3"></div>
+
+:::{.incremental}
+
+- Estudia las **trayectorias traslacionales** de cuerpos naturales con respecto de una referencia.
+
+- A las trayectorias periódicas se les conoce como **órbitas**.  
+
+- Nos permite determinar y predecir la **posición y velocidad** de un cuerpo a lo largo de su trayectoria.
+
+- Analiza cómo las **fuerzas gravitacionales y perturbaciones** modifican el movimiento orbital.
+
+
+:::
+
+:::
+
+::: {.column}
+
+![](/Figures/c1/definition_orbital.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+
+## Satélites
+
+:::{.definition-block}
+
+**Satélite**
+
+Cuerpo u objeto que se encuentra en órbita alrededor de otro cuerpo debido a la interacción gravitacional entre ellos.
+:::
+
+::: {.columns}
+
+::: {.column .fragment}
+
+![](/Figures/c1/definition_sat_nat.png){.fragment width=52% fig-align="center"}
+
+:::{.definition-block}
+
+**Satélite natural**
+
+Cuerpo celeste de origen natural que orbita alrededor de otro cuerpo celeste como consecuencia de su interacción gravitacional.
+:::
+
+:::
+
+::: {.column .fragment}
+
+![](/Figures/c1/definition_sat_art.png){.fragment width=100% fig-align="center"}
+
+:::{.definition-block}
+
+**Satélite artificial**
+
+Objeto construido por el ser humano y colocado en órbita alrededor de un cuerpo celeste para cumplir una función determinada.
+
+:::
+
+:::
+
+:::
+
+
+
+## Importancia en la ingeniería
+
+- El diseño de un **vehículo espacial** no puede realizarse de manera independiente de la **misión espacial** que debe cumplir.
+
+<div class="vspace-3"></div>
+
+
+::: {.definition-block .fragment}
+
+**Misión espacial**
+
+Conjunto de actividades, sistemas y operaciones planificadas para alcanzar uno o más objetivos en el espacio, desde su lanzamiento hasta la finalización de la misión.
+:::
+
+<div class="vspace-3"></div>
+
+::: {.incremental}
+
+- Antes de diseñar completamente el vehículo es necesario establecer **qué se quiere lograr, dónde debe operar y cómo llegará hasta allí**.
+
+- Todas las actividades de la misión deben ser pensadas alrededor de la **carga útil** del satélite. 
+  
+- La misión determina requisitos fundamentales del vehículo, como **propulsión, energía, comunicaciones, navegación y estructura**.
+
+- Dentro del diseño de la misión, la **trayectoria** determina cómo se desplazará el vehículo desde su estado inicial hasta alcanzar las condiciones requeridas para cumplir el objetivo.
+
+- Por ello, el diseño y análisis de trayectorias constituye un elemento **esencial para el diseño de una misión espacial**.
+
+:::
+
+
+## Subsistemas de un satélite
+
+
+::: {.fragment}
+
+![](Figures/c1/subsystems.svg){width=70% fig-align="center"}
+
+:::
+
+
+
 ##
 
-![](Figures/c1/subsystems.svg){width=100% fig-align="center"}
+El diseño de la trayectoria **se materializa en la práctica** en diferentes sistemas y operaciones del vehículo espacial.
 
-##
+::: {.columns}
 
-![](Figures/c1/closeloop.svg){width=100% fig-align="center"}
+::: {.column}
 
-##
+:::{.definition-block .fragment}
+
+**Despliegue**
+
+La trayectoria determina las condiciones y el momento en que el vehículo debe ser liberado, separado o desplegado de su vehículo lanzador o de otro sistema espacial.
+:::
+
+![](/Figures/c1/definition_ppod.png){ width=45% fig-align="center"}
+
+:::{.definition-block .fragment}
+
+**Computadora de a bordo**
+
+Los modelos y algoritmos de propagación, control y determinación orbital permiten estimar la posición y velocidad del vehículo durante la misión.
+:::
+
+![](/Figures/c1/definition_obc.png){width=43% fig-align="center"}
+
+:::
+
+::: {.column}
+
+:::{.definition-block .fragment}
+
+**Sistema de propulsión**
+
+Las maniobras diseñadas para modificar y controlar la trayectoria determinan los requisitos de impulso, dirección y momento de las actuaciones propulsivas.
+:::
+
+![](/Figures/c1/definition_thrusters.png){width=43% fig-align="center"}
+
+:::{.definition-block .fragment}
+
+**Sistema de comunicaciones**
+
+La trayectoria determina la visibilidad del vehículo respecto a las estaciones terrestres, estableciendo condiciones para la planificación de enlaces, ventanas de comunicación y orientación de las antenas.
+
+:::
+
+![](/Figures/c1/definition_ant.png){ width=45% fig-align="center"}
+
+:::
+
+:::
+
+
+
+
+---
 
 ::: {.center-vertical}
 
@@ -176,678 +411,693 @@ Introducción
 
 ::: {.chapter-subtitle}
 
-Revisión histórica
+Repaso de álgebra
 
-<div class="menu-title" style="display:none;"> ▸ Revisión histórica </div>
-
-:::
+<div class="menu-title" style="display:none;"> ▸ Repaso de álgebra </div>
 
 :::
 
-## Sputnik 1 (1957)
+:::
+
+
+## Vectores
+
 
 ::: {.columns}
+::: {.column width="70%"}
 
-::: {.column width="65%"}
+Un **vector** (columna) es una $n$-tupla ordenada de números reales:
 
-**Lanzamiento:** 4 oct 1957 (URSS, R-7)
+$$
+    \vec{v}=
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        \vdots\\
+        v_n
+    \end{bmatrix} \in\mathbb{R}^n ,
+    \qquad v_i\in\mathbb{R}
+$$
 
-**Lanzado por:** Unión Soviética
+o de forma equivalente,
 
-**Propósito/Misión:** <span style="color:red"> Primer satélite artificial para transmisión de radio. </span>
+$$
+    \vec{v}\equiv
+    [v_1\quad v_2\quad \dots\quad v_n]^\top.
+$$
 
-**Carga útil:** Transmisores (20/40 MHz).
+donde $n\in\mathbb{N}$ y $\top$ denota transposición. El conjunto de todos los vectores de dimensión $n$ es el espacio $\mathbb{R}^n$.
 
-**Órbita:** LEO, 215 × 939 km, inc. 65°.
+Físicamente nos permiten representar **magnitudes vectoriales**, *e.g.*, la posición y la velocidad.
 
-::: {.definition-block}
+Pueden clasificarse como libres o fijos, dependiendo si origen es invariante.
 
-**Instrumentación**
+:::
+::: {.column width="30%"}
 
-- *Tipo de apuntamiento:* Sin control.
-- *Instrumentación para control:* Ninguna.
-- *Instrumentación para determinación:* Ninguna.
+:::{.small}
+
+$v_x$
+```{ojs}
+viewof vx = Inputs.range([-5, 5], {value: 1, step: 0.1})
+```
+$v_y$
+```{ojs}
+viewof vy = Inputs.range([-5, 5], {value: 1, step: 0.1})
+```
+
+$o_x$
+```{ojs}
+viewof ox = Inputs.range([-5, 5], {value: 0, step: 0.1})
+```
+$o_y$
+```{ojs}
+viewof oy = Inputs.range([-5, 5], {value: 0, step: 0.1})
+```
 
 :::
 
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_sputnik1.png){width=100% fig-align="center"}
-
-:::
-
-:::
-
-## Explorer 1 (1958)
-
-::: {.columns}
-
-::: {.column width="65%"}
-
-**Lanzamiento:** 31 ene 1958 (EE.UU., Juno I)
-
-**Lanzado por:** Estados Unidos
-
-**Propósito/Misión:** Ciencia espacial (Descubrimiento de los cinturones de Van Allen).
-
-**Carga útil:** Contador Geiger-Müller, sensor de temperatura.
-
-**Órbita:** LEO, 358 × 2,550 km, inc. 33.3°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:*<span style="color:red"> Estabilizado por giro </span>  (~750 rpm al lanzamiento).
-- *Instrumentación para control:* Ninguna.
-- *Instrumentación para determinación:* Ninguna.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_explorer1.jpg){width=80% fig-align="center"}
-
+```{ojs}
+Plot.plot({
+  width: 500,
+  height: 500,
+  x: {domain: [-5, 5], grid: true},
+  y: {domain: [-5, 5], grid: true},
+  marks: [
+    Plot.arrow(
+      [{x1: ox, y1: oy, x2: vx+ox, y2: vy+oy}],
+      {
+        x1: "x1",
+        y1: "y1",
+        x2: "x2",
+        y2: "y2"
+      }
+    )
+  ]
+})
+```
 :::
 
 :::
 
 ---
 
-## Discoverer-2 (1959)
+## Operaciones típicas entre vectores
 
-::: {.columns}
+Sean $\vec{u},\vec{v}\in\mathbb{R}^n$ y $\alpha\in\mathbb{R}$:
 
-::: {.column width="65%"}
+- **Suma:** $\vec{u}+\vec{v}=[u_1+v_1,\dots,u_n+v_n]^\top$
 
-**Lanzamiento:** 13 abr 1959 (EE.UU., Thor-Agena A)
+- **Producto por escalar:** $\alpha\vec{u}=[\alpha u_1,\dots,\alpha u_n]^\top$
 
-**Lanzado por:** USAF/CIA (CORONA)
+- **Producto punto:**
 
-**Propósito/Misión:** Pruebas de plataforma de reconocimiento óptico y cápsula de reentrada.
+$$
+    \begin{aligned}
+        \vec{u}\cdot\vec{v}&=\sum_{i=1}^{n}u_iv_i\\
+        &=\vec{u}^{\top}\vec{v}\\
+        &=\|\vec{u}\|\,\|\vec{v}\|\cos\theta
+    \end{aligned}
+$$
 
-**Carga útil:** Cápsula SRV de ensayo; Óptica.
+donde $\theta$ es el ángulo comprendido entre $\vec{u}$ y $\vec{v}$ al hacer coincidir sus orígenes.
 
-**Órbita:** LEO polar, ~239 × 346 km, inc. ~89.9°.
+- **Norma Euclidiana:** $\|\vec{u}\|=\sqrt{\vec{u}\cdot\vec{u}}$
 
-::: {.definition-block}
+---
 
-**Instrumentación**
+## Producto cruz (definición por componentes)
 
-- *Tipo de apuntamiento:* <span style="color:red">  Control en 3 ejes </span>.
-- *Instrumentación para control:* <span style="color:red"> Propulsor de gas frío (N₂) </span>.
-- *Instrumentación para determinación:* <span style="color:red">  IMU y sensor de horizonte .</span>
+En $\mathbb{R}^3$, el **producto cruz** de dos vectores $\vec{u},\vec{v}\in\mathbb{R}^3$ se define como
 
-:::
+$$
+    \vec{u}\times\vec{v}=
+    \begin{bmatrix}
+        u_2v_3-u_3v_2\\
+        u_3v_1-u_1v_3\\
+        u_1v_2-u_2v_1
+    \end{bmatrix}=
+    \begin{vmatrix}
+        \vec{i} & \vec{j} & \vec{k}\\
+        u_1 & u_2 & u_3\\
+        v_1 & v_2 & v_3
+    \end{vmatrix},
+$$
 
-:::
+donde $\{\vec{i},\vec{j},\vec{k}\}$ es la base canónica de $\mathbb{R}^3$.
 
-::: {.column width="35%"}
+::: {.fragment}
 
-![](Figures/c1/intro_discoverer2.jpg){width=60% fig-align="center"}
+**Propiedades**:
 
-:::
+- $\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$
+- $\vec{u}\times\vec{u}=\vec{0}$
+- $\vec{u}\cdot(\vec{u}\times\vec{v})=0$
+- $\vec{u}\times\vec{v}$ es ortogonal (perpendicular) a $\vec{u}$ y $\vec{v}$.
+- Si $\vec{u}$ y $\vec{v}$ son colineales, entonces $\vec{u}\times\vec{v}=\vec{0}$.
+- $\|\vec{u}\times\vec{v}\|=\|\vec{u}\|\,\|\vec{v}\|\sin\theta.$
 
-:::
-
-## Transit 1A (1959)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 17 sep 1959 (EE.UU., Thor-Able)
-
-**Lanzado por:** EE.UU.
-
-**Propósito/Misión:** Demostración del sistema de navegación Doppler Transit.
-
-**Carga útil:** Transmisores de navegación.
-
-**Órbita:** Fallo en inserción.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red"> *Yo-yo* </span>.
-- *Instrumentación para determinación:* Ninguno.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_transit1a.jpg){width=100% fig-align="center"}
-
-:::
 :::
 
 ---
 
-## TIROS-1 (1960)
+## Espacio vectorial (real)
 
-::: {.columns}
-::: {.column width="65%"}
+Un **espacio vectorial real** es una tupla
 
-**Lanzamiento:** 1 abr 1960 (EE.UU., Thor-Able)
+$$
+(\mathcal{V},+,\cdot)
+$$
 
-**Lanzado por:** Estados Unidos
+donde $\mathcal{V}$ es un conjunto de vectores reales, $+:\mathcal{V}\times\mathcal{V}\rightarrow\mathcal{V}$ y $\cdot:\mathbb{R}\times\mathcal{V}\rightarrow\mathcal{V}$ satisfacen, para todo $\vec{u},\vec{v},\vec{w}\in\mathcal{V}$ y $\alpha,\beta\in\mathbb{R}$:
 
-**Propósito/Misión:** Primer satélite meteorológico operativo.
+- $\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}$.
+- $(\alpha+\beta)\vec{u}=\alpha\vec{u}+\beta\vec{u}$.
+- $(\alpha\beta)\vec{u}=\alpha(\beta\vec{u})$.
+- $1\cdot\vec{u}=\vec{u}$.
 
-**Carga útil:** 2 cámaras TV (alta/baja res.), transmisor.
+---
 
-**Órbita:** LEO, 644 × 654 km, inc. 48°.
+## Base
 
-::: {.definition-block}
+Sea $\mathcal{V}$ un espacio vectorial real de dimensión $n$. Un conjunto ordenado
 
-**Instrumentación**
+$$
+\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n\}\subset\mathcal{V}
+$$
 
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* *Yo-yo*.
-- *Instrumentación para determinación:* <span style="color:red"> Sensor solar y de horizonte </span> .
+es una **base** de $\mathcal{V}$ si:
+
+1. **Independencia lineal**
+
+$$
+    \alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n=\vec{0}
+    \;\Rightarrow\;
+    \alpha_1=\cdots=\alpha_n=0.
+$$
+
+
+::: {.fragment}
+
+1. **Generación**
+
+Todo $\vec{u}\in\mathcal{V}$ se escribe de forma *única* como
+
+$$
+    \vec{u}=\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n,
+    \qquad \alpha_i\in\mathbb{R}.
+$$
 
 :::
 
-:::
 
-::: {.column width="35%"}
 
-![](Figures/c1/intro_tiros1.png){width=100% fig-align="center"}
+::: {.callout-note .fragment}
+### Nota:
 
-:::
+ Una *combinación lineal* es toda expresión
+
+$$
+\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n
+$$
+
+con $\alpha_i\in\mathbb{R}$. La independencia lineal de la base implica que ningún vector se expresa como combinación lineal de los demás.
+
 :::
 
 ---
 
-##
+## Matrices
 
-![](Figures/TIROS-1-Earth.png){width=50% fig-align="center"}
+Una **matriz** $A\in\mathbb{R}^{m\times n}$ es un arreglo rectangular:
 
----
+$$
+    A=
+    \begin{bmatrix}
+        a_{11} & \cdots & a_{1n}\\
+        \vdots & \ddots & \vdots\\
+        a_{m1} & \cdots & a_{mn}
+    \end{bmatrix}.
+$$
 
-## Transit 1B (1960)
+::: {.fragment}
 
-::: {.columns}
-::: {.column width="65%"}
+**Operaciones con matrices**
 
-**Lanzamiento:** 13 abr 1960 (EE.UU., Thor-Ablestar)
+Sean $A,B\in\mathbb{R}^{m\times n}$ y $\alpha\in\mathbb{R}$:
 
-**Lanzado por:** APL
+- **Suma:** $(A+B)_{ij}=a_{ij}+b_{ij}$.
+- **Producto por escalar:** $(\alpha A)_{ij}=\alpha a_{ij}$.
+- **Producto matricial:** Si $A\in\mathbb{R}^{m\times p}$ y $B\in\mathbb{R}^{p\times n}$,
 
-**Propósito/Misión:** Navegación Doppler.
+$$
+    (AB)_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},
+    \qquad
+    AB\in\mathbb{R}^{m\times n}.
+$$
 
-**Carga útil:** Transmisores de navegación, relojes.
+- **Transpuesta:** $(A^\top)_{ij}=a_{ji}$.
 
-**Órbita:** LEO polar, ~600 km.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red">  Imanes permanentes </span>.
-- *Instrumentación para determinación:* Sensor solar,<span style="color:red">  magnetómetro </span>.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_transit1b.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## TIROS-2 (1960)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 23 nov 1960 (EE.UU., Thor-Delta, LC-17A)
-
-**Lanzado por:** RCA
-
-**Propósito/Misión:** Meteorología.
-
-**Carga útil:** 2 cámaras TV (alta/baja res.), transmisor.
-
-**Órbita:** LEO, 374 × 394 km, inc. 48.5°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilizado por giro (~12 rpm).
-- *Instrumentación para control:* <span style="color:red"> Propulsores </span>, magnetopares.
-- *Instrumentación para determinación:* Sensor solar y de horizonte.
+**Nota:** La notación $(A)_{ij}$ denota el elemento de $A$ en la fila $i$ y columna $j$.
 
 :::
 
-:::
 
-::: {.column width="35%"}
+## Inversa de una matriz
 
-![](Figures/c1/intro_tiros_2.jpg){width=100% fig-align="center"}
+Sea $A\in\mathbb{R}^{n\times n}$ (matriz cuadrada). Se dice que $A$ es **invertible** si existe $B\in\mathbb{R}^{n\times n}$ tal que
 
-:::
+$$
+AB=BA=I_n.
+$$
+
+Dicha $B$ es única y se denota $A^{-1}$.
+
+Equivalencias:
+
+- $A$ invertible $\iff \det(A)\neq0 \iff$ las columnas de $A$ son linealmente independientes.
+- $A$ invertible $\iff \operatorname{rank}(A)=n$.
+
+::: {.callout-note}
+### Nota:
+
+El determinante de una matriz cuadrada es un escalar asociado que puede interpretarse como una combinación alternada de todos los posibles productos de sus elementos. Por otro lado, el rango de una matriz es el número de sus columnas linealmente independientes. En el caso de matrices cuadradas, el rango de $A$ es $n$ si y solo si $\det(A)\neq0$.
+
 :::
 
 ---
 
-## Transit 4B (1961)
+## Matrices simétricas y antisimétricas
 
-::: {.columns}
-::: {.column width="65%"}
+Sea $A\in\mathbb{R}^{n\times n}$.
 
-**Lanzamiento:** 15 nov 1961 (EE.UU., Thor-Ablestar)
+- $A$ es **simétrica** si
 
-**Lanzado por:** APL.
+$$
+A^\top=A.
+$$
 
-**Propósito/Misión:** Navegación Doppler (NNSS).
+Ejemplo:
 
-**Carga útil:** Antenas.
+$$
+    A=
+    \begin{bmatrix}
+        a & b\\
+        b & c
+    \end{bmatrix}.
+$$
 
-**Órbita:** LEO polar (~1000 km).
+- $A$ es **antisimétrica** si
 
-::: {.definition-block}
+$$
+A^\top=-A.
+$$
 
-**Instrumentación**
+Ejemplo:
 
-- *Tipo de apuntamiento:* Estabilizado por giro.
-- *Instrumentación para control:*<span style="color:red">  Mástil/boom, imanes permanentes.
-- *Instrumentación para determinación:* Sensor solar, magnetómetro.
+$$
+    A=
+    \begin{bmatrix}
+        0 & -a\\
+        a & 0
+    \end{bmatrix}.
+$$
 
-:::
+---
 
-:::
+## Producto cruz: matriz antisimétrica
 
-::: {.column width="35%"}
+Dado $\vec{u}=[u_1,u_2,u_3]^\top$, se define
 
-![](Figures/c1/intro_transit4b.jpg){width=100% fig-align="center"}
+$$
+S(\vec{u})=
+\begin{bmatrix}
+0 & -u_3 & u_2\\
+u_3 & 0 & -u_1\\
+-u_2 & u_1 & 0
+\end{bmatrix},
+\qquad
+\vec{u}\times\vec{v}=S(\vec{u})\vec{v}.
+$$
 
-:::
+::: {.fragment}
+
+**Ejemplo**
+
+$$
+\vec{u}=
+\begin{bmatrix}
+2\\-1\\3
+\end{bmatrix},
+\qquad
+\vec{v}=
+\begin{bmatrix}
+1\\4\\2
+\end{bmatrix},
+$$
+
+$$
+S(\vec{u})=
+\begin{bmatrix}
+0&-3&-1\\
+3&0&-2\\
+1&2&0
+\end{bmatrix},
+\qquad
+S(\vec{u})\vec{v}=
+\begin{bmatrix}
+-14\\-1\\9
+\end{bmatrix}
+=
+\vec{u}\times\vec{v}.
+$$
+
 :::
 
 ---
 
-## Mariner 4 (1964)
+## Matrices ortonormales
 
-::: {.columns}
-::: {.column width="65%"}
+Sea $Q\in\mathbb{R}^{n\times n}$.
 
-**Lanzamiento:** 28 nov 1964 (EE.UU., Atlas-Agena D)
+Decimos que $Q$ es **ortonormal** si
 
-**Lanzado por:** JPL
+$$
+Q^\top Q=QQ^\top=I_n.
+$$
 
-**Propósito/Misión:** Sobrevuelo de Marte, estudio de partículas y campos.
+Esto implica:
 
-**Carga útil:** Óptica; magnetómetro; detectores de partículas.
+- Las columnas $\{\vec{q}_1,\dots,\vec{q}_n\}$ de $Q$ forman una **base ortonormal** de $\mathbb{R}^n$:
 
-**Órbita:** Heliocéntrica.
+$$
+    \vec{q}_i^\top\vec{q}_j=
+    \begin{cases}
+        1,&\text{si }i=j,\\
+        0,&\text{si }i\neq j.
+    \end{cases}
+$$
 
-::: {.definition-block}
+- Cada columna tiene norma $1$ y distintas columnas son perpendiculares entre sí; en consecuencia, $|\det(Q)|=1$.
+- Consecuencia algebraica: $Q^{-1}=Q^\top$.
 
-**Instrumentación**
+---
 
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Propulsores de gas frío N₂; <span style="color:red"> aletas de presión solar </span> auxiliares.
-- *Instrumentación para determinación:* Sensores solares; <span style="color:red">  seguidor de estrellas </span> *Canopo*; giroscopio.
+## Valores y vectores propios
 
-:::
+Sea $A\in\mathbb{R}^{n\times n}$.
 
-:::
+Un escalar $\lambda\in\mathbb{R}$ es un **valor propio** de $A$ si existe un vector no nulo $\vec{v}\in\mathbb{R}^n$ tal que
 
-::: {.column width="35%"}
+$$
+A\vec{v}=\lambda\vec{v}.
+$$
 
-![](Figures/c1/intro_mariner4.jpg){width=100% fig-align="center"}
+**Condición equivalente:**
 
-:::
-:::
+$$
+\det(\lambda I_n-A)=0.
+$$
 
-## OAO-1 (1966)
+donde $\det(\lambda I_n-A)$ es el polinomio característico de $A$.
 
-::: {.columns}
-::: {.column width="65%"}
 
-**Lanzamiento:** 8 abr 1966 (EE.UU., Atlas-Agena B)
+::: {.fragment}
 
-**Lanzado por:** NASA
+Si $\lambda$ es un valor propio de $A$, entonces todo vector no nulo $\vec{v}\in\mathbb{R}^n$ que cumple
 
-**Propósito/Misión:** Astronomía ultravioleta/óptica.
+$$
+A\vec{v}=\lambda\vec{v}
+$$
 
-**Carga útil:** Telescopios UV/óptica.
+se denomina **vector propio** asociado a $\lambda$.
 
-**Órbita:** LEO (~740 km).
+El conjunto de todos los vectores propios asociados a un mismo $\lambda$, junto con el vector cero, forma el **espacio propio**:
 
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:*<span style="color:red"> ruedas de reacción </span>; propulsores de respaldo.
-- *Instrumentación para determinación:* Seguidor de estrellas, sensores solares, giroscopio.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_oao1.jpg){width=100% fig-align="center"}
+$$
+E_\lambda=\ker(A-\lambda I_n).
+$$
 
 :::
+
+
+---
+
+## Ejemplo: valores y vectores propios
+
+Sea
+
+$$
+A=
+\begin{bmatrix}
+2&0\\
+0&3
+\end{bmatrix}.
+$$
+
+Como
+
+$$
+\det(\lambda I-A)=
+\begin{vmatrix}
+\lambda-2&0\\
+0&\lambda-3
+\end{vmatrix}
+=(\lambda-2)(\lambda-3),
+$$
+
+los valores propios son
+
+$$
+\lambda_1=2,\qquad \lambda_2=3.
+$$
+
+::: {.fragment}
+
+Para $\lambda_1=2$,
+
+$$
+(2I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\alpha
+\begin{bmatrix}
+1\\0
+\end{bmatrix},
+\qquad
+E_2=\mathrm{span}\left\{
+\begin{bmatrix}
+1\\0
+\end{bmatrix}
+\right\}.
+$$
+
+Para $\lambda_2=3$,
+
+$$
+(3I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\beta
+\begin{bmatrix}
+0\\1
+\end{bmatrix},
+\qquad
+E_3=\mathrm{span}\left\{
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+\right\}.
+$$
+
 :::
 
 ---
 
-## Skylab (1973)
+## Marco de referencia
+
+El **marco de referencia** $i$ en $\mathbb{R}^3$ es la tupla
+
+$$
+\ls{i}{\mathcal{F}}=\left(\ls{i}{O},\;\ls{i}{\mathcal{B}}\right),
+$$
+
+donde:
+
+- $\ls{i}{O}\in\mathbb{R}^3$ es el **origen**.
+- $\ls{i}{\mathcal{B}}=\{\ls{i}{\vec{x}},\ls{i}{\vec{y}},\ls{i}{\vec{z}}\}$ es una **base ortonormal derecha** de $\mathbb{R}^3$:
+
+$$
+    \ls{i}{\vec{x}}\cdot\ls{i}{\vec{y}}=0,
+    \qquad
+    \|\ls{i}{\vec{x}}\|=\|\ls{i}{\vec{y}}\|=\|\ls{i}{\vec{z}}\|=1,
+    \qquad
+    \ls{i}{\vec{x}}\times\ls{i}{\vec{y}}=\ls{i}{\vec{z}}.
+$$
+
+
+
+::: {.fragment}
+
+**Equivalente matricial:**
+
+Si
+
+$$
+R=\left[\,\ls{i}{\vec{x}}\;\;\ls{i}{\vec{y}}\;\;\ls{i}{\vec{z}}\,\right],
+$$
+
+entonces
+
+$$
+    R^\top R=I_3,
+    \qquad
+    \det(R)=1.
+$$
+
+
+:::
+
+
+## Marcos de referencia para satélites
+
 
 ::: {.columns}
-::: {.column width="65%"}
 
-**Lanzamiento:** 14 may 1973 (EE.UU., Saturn V)
+::: {.column width=50%}
 
-**Lanzado por:** NASA
+- Un marco de referencia provee un sistema cartesiano para expresar coordenadas de vectores en el espacio. Mediante estos, es posible describir la posición de un cuerpo.
 
-**Propósito/Misión:** Estación orbital para ciencia solar/terrestre y medicina espacial.
+- En general, es necesario definir:
 
-**Carga útil:** Instrumentación científica.
+  - Un **marco inercial**.
+  - Un **marco sujeto al cuerpo**.
+  - Marcos **auxiliares**.
 
-**Órbita:** LEO, ~434 × 442 km, inc. 50°.
 
-::: {.definition-block}
+:::
 
-**Instrumentación**
+::: {.column width=50%}
 
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* <span style="color:red">  Giroscopio de momento controlado (CMG) </span>; propulsores de respaldo.
-- *Instrumentación para determinación:* Sensores solares; giroscopio; sensores de horizonte.
+![](/Figures/c2/frame_empty.svg){width=100% fig-align="center"}
 
 :::
 
 :::
 
-::: {.column width="35%"}
-
-![](Figures/c1/intro_skylab.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## ATS-6 (1974)
+## Marco de referencia inercial $\ls{i}{\mathcal{F}}$
 
 ::: {.columns}
-::: {.column width="65%"}
 
-**Lanzamiento:** 30 may 1974 (EE.UU., Titan III-C)
+::: {.column}
 
-**Lanzado por:** NASA
+**Origen:** $\ls{i}{O}$, punto de referencia elegido para describir el movimiento.
 
-**Propósito/Misión:** Telecomunicaciones y demostraciones tecnológicas.
+**Ejes:**
 
-**Carga útil:** Antena parabólica 9.1 m, experimentos de comunicaciones.
+- $\ls{i}{\vec{x}}$: eje de referencia elegido.
+- $\ls{i}{\vec{y}}$: eje perpendicular que completa la base.
+- $\ls{i}{\vec{z}}$: eje que completa la regla de la mano derecha.
 
-**Órbita:** GEO.
+- Un **marco de referencia inercial** es aquel en el que un cuerpo sobre el que no actúa una fuerza neta permanece en reposo o se mueve con **velocidad constante**.
 
-::: {.definition-block}
+- En un marco inercial, las **leyes de Newton** pueden aplicarse directamente sin necesidad de introducir fuerzas ficticias asociadas al movimiento del propio marco.
 
-**Instrumentación**
 
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción; <span style="color:red">  propulsores para desaturación/mantenimiento </span>.
-- *Instrumentación para determinación:* Seguidor de estrellas, sensores solares, sensores de horizonte, giroscopio.
+::: {.callout-note}
+
+**Algunos de los marcos inerciales más utilizados son:**
+
+- Marco de referencia inercial geocéntrico (ECI, por sus siglas en inglés).
+- Marco de referencia celeste internacional (ICRF, por sus siglas en inglés).
+
+:::
+
+::: 
+
+::: {.column}
+
+![](/Figures/c2/frame_i.svg){width=100% fig-align="center"}
 
 :::
 
 :::
 
-::: {.column width="35%"}
 
-![](Figures/c1/intro_ats6.jpg){width=100% fig-align="center"}
+## Leyes de Newton
 
+
+
+:::{.definition-block}
+
+**Primera ley**
+
+Un cuerpo permanece en reposo o en movimiento rectilíneo uniforme cuando la fuerza neta que actúa sobre él es cero.
+
+$$
+\sum \vec{f}=\vec{0}
+\quad\Longrightarrow\quad
+\vec{v}=\mathrm{cte},
+$$
+
+donde $\vec{v}$ es la velocidad traslacional del cuerpo.
 :::
-:::
 
----
+:::{.definition-block}
 
-## Hubble Space Telescope (1990)
+**Segunda ley**
 
-::: {.columns}
-::: {.column width="65%"}
+La fuerza neta que actúa sobre un cuerpo es igual a la razón de cambio temporal de su momento lineal.
 
-**Lanzamiento:** 24 abr 1990 (EE.UU., STS-31)
+$$
+\sum\vec{f}=\frac{d\vec{\rho}}{dt},
+$$
 
-**Lanzado por:** NASA
-
-**Propósito/Misión:** Astronomía óptica/UV de alta precisión.
-
-**Carga útil:** Espejo 2.4 m.
-
-**Órbita:** LEO, ~547 km, inc. 28.5°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes de alta precisión.
-- *Instrumentación para control:* 4 ruedas de reacción; magnetopares; giroscopios.
-- *Instrumentación para determinación:* <span style="color:red">  *Fine Guidance Sensors* (FGS) </span>.
-
-:::
+donde $\rho=m\vec{v}$ y $m$ es la masa del cuerpo. 
 
 :::
 
-::: {.column width="35%"}
+:::{.definition-block}
 
-![](Figures/c1/intro_hubble.jpg){width=100% fig-align="center"}
+**Tercera ley**
 
-:::
-:::
+Cuando un cuerpo ejerce una fuerza sobre otro, este ejerce simultáneamente sobre el primero una fuerza de igual magnitud y dirección, pero en sentido opuesto.
 
-## QuakeSat (2003)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 30 jun 2003 (Rockot/Briz-KM, Rusia)
-
-**Lanzado por:** QuakeFinder/Stanford (EE.UU.)
-
-**Propósito/Misión:** Demostrar detección de señales ULF asociadas a sismos. <span style="color:red">  Primer CubeSat 3U en órbita </span>.
-
-**Carga útil:** Magnetómetro de inducción en *boom* telescópico.
-
-**Órbita:** LEO heliosíncrona, ~821 × 833 km, inc. 98.7°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Estabilización por giro.
-- *Instrumentación para control:* Imanes permanentes, boom.
-- *Instrumentación para determinación:* Ninguno.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_quakesat.jpg){width=70% fig-align="center"}
-
-:::
-:::
-
----
-
-## UWE-3 (2013)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 21 nov 2013 (Dnepr, Rusia)
-
-**Lanzado por:** Universidad de Würzburg (Alemania)
-
-**Propósito/Misión:** <span style="color:red">  Demostración de ADCS miniaturizado </span> y bus modular.
-
-**Carga útil:** Plataforma tecnológica (ADCS en tiempo real; telecomunicaciones).
-
-**Órbita:** LEO heliosíncrona, ~559 × 630 km, inc. 97.8°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes (demostración en vuelo).
-- *Instrumentación para control:* 6 magnetopares (bobinas distribuidas en paneles), 1 rueda de reacción.
-- *Instrumentación para determinación:* Magnetómetros (9 ejes totales), giroscopios MEMS (3), sensores solares.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_uwe3.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## TerraSAR-X (2007)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 15 jun 2007 (Alemania, Dnepr)
-
-**Lanzado por:** Alemania (DLR/Astrium)
-
-**Propósito/Misión:** Observación por radar X de alta resolución.
-
-**Carga útil:** Radar SAR banda X.
-
-**Órbita:** LEO heliosíncrona, ~514 km, inc. 97.44°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción, propulsores.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_terrasarx.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
-## Sentinel-2 (2015)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 23 jun 2015 (ESA, Vega)
-
-**Lanzado por:** ESA
-
-**Propósito/Misión:** Observación multiespectral (vegetación/suelo/agua).
-
-**Carga útil:** MSI.
-
-**Órbita:** LEO heliosíncrona, 786 km, inc. 98.6°.
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_sentinel2.jpg){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## James Webb Space Telescope (JWST) (2021)
-
-::: {.columns}
-::: {.column width="65%"}
-
-**Lanzamiento:** 25 dic 2021 (Ariane 5)
-
-**Lanzado por:** NASA/ESA/CSA
-
-**Propósito/Misión:** Astronomía infrarroja de máxima sensibilidad.
-
-**Carga útil:** Espejo 6.5 m; NIRCam, FGS.
-
-**Órbita:** Halo en L2 (~1.5 millones km).
-
-::: {.definition-block}
-
-**Instrumentación**
-
-- *Tipo de apuntamiento:* Control en 3 ejes.
-- *Instrumentación para control:* Ruedas de reacción, propulsores.
-- *Instrumentación para determinación:* FGS.
-
-:::
-
-:::
-
-::: {.column width="35%"}
-
-![](Figures/c1/intro_jwst.png){width=100% fig-align="center"}
-
-:::
-:::
-
----
-
-## Precisión de apuntamiento {auto-animate=true}
-
-::: {.center-vertical}
-
-| **Nombre** | **Año** | **Precisión (°)** |
-|:---|:---:|---:|
-| TIROS-2 | 1960 | 1–2 |
-| Mariner 4 | 1964 | ≥ 1 |
-| OAO-1 | 1966 | 2.8×10⁻⁵ |
-| Skylab | 1973 | 0.021 |
-| ATS-6 | 1974 | 0.05 |
-| Hubble Space Telescope | 1990 | 1.9×10⁻⁶ |
-| TerraSAR-X | 2007 | 0.018 |
-| James Webb Space Telescope | 2021 | 2.8×10⁻⁷ |
+$$
+\vec{f}_{12}=-\vec{f}_{21}.
+$$
 
 :::
 
 
- -->
+
+## Ley de gravitación universal
+
+
+:::{.definition-block}
+
+**Ley de gravitación universal**
+
+Dos cuerpos con masas $m_1$ y $m_2$ se atraen con una fuerza cuya magnitud es proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia entre sus centros:
+
+$$
+\vec{f}_{12}=-G\frac{m_1m_2}{\|\vec{r}_{12}\|^2}\hat{r}_{12}
+$$
+
+donde $G=6.674\times10^{-11}\:\mathrm{N\,m^2/kg^2}$ es la constante de gravitación universal y $\vec{r}_{12}$ es el vector de posición desde el centro del masa del cuerpo 1 hasta el centro de masa del cuerpo 2.
+
+:::
+
+::: {.incremental}
+
+- La ley de gravitación universal constituye la **base de la mecánica orbital** y permite determinar la fuerza que existe entre dos cuerpos debido a su interacción gravitacional.
+
+- La fuerza gravitacional es una **fuerza conservativa** que depende únicamente de la posición relativa $\vec{r}_{12}$, *i.e.*, el trabajo realizado por la fuerza entre dos puntos es independiente de la trayectoria seguida.
+
+- En consecuencia, el trabajo realizado por la fuerza gravitacional a lo largo de una trayectoria cerrada es cero:
+
+$$
+\oint \vec{f}_{12}\cdot d\vec{r}_{12}=0
+$$
+
+- La fuerza gravitacional es además una **fuerza central**, ya que actúa siempre a lo largo de la línea que une los centros de los dos cuerpos.

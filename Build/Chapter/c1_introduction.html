@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="c1_introduction_files/libs/clipboard/clipboard.min.js"></script>
+<script src="c1_introduction_files/libs/quarto-html/tabby.min.js"></script>
+<script src="c1_introduction_files/libs/quarto-html/popper.min.js"></script>
+<script src="c1_introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="c1_introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="c1_introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="c1_introduction_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <title>MO | UNAM</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="c1_introduction_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="c1_introduction_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="c1_introduction_files/libs/revealjs/dist/theme/quarto-4aa2b36775fe4fdec13229a6f3c1912c.css">
+  <link href="c1_introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="c1_introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="c1_introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="c1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="c1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="c1_introduction_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script>
+
+  window.addEventListener("load", () => {
+
+  
+
+      const logo = document.querySelector(".footer-logo");
+
+  
+
+      if (logo) {
+
+          logo.style.cursor = "pointer";
+
+          logo.addEventListener("click", () =>
+
+              document.querySelector(".slide-menu-button").click()
+
+          );
+
+      }
+
+  
+
+      function updateSlideNumber() {
+
+          const current = document.getElementById("slide-number-custom");
+
+          if (!current) return;
+
+          current.textContent = Reveal.getSlidePastCount() + 1;
+
+      }
+
+  
+
+      function updateBackground() {
+
+          const img = document.querySelector("#background-image img");
+
+          if (!img) return;
+
+  
+
+          const slide = Reveal.getCurrentSlide();
+
+  
+
+          img.src = slide.classList.contains("title-slide-custom")
+
+              ? "Assets/background_mo_red_1080.png"
+
+              : "Assets/background_mo_1080.png";
+
+      }
+
+  
+
+      Reveal.on("ready", () => {
+
+          updateSlideNumber();
+
+          updateBackground();
+
+  
+
+          setTimeout(updateBackground, 0);
+
+  
+
+      });
+
+  
+
+      Reveal.on("slidechanged", () => {
+
+          updateSlideNumber();
+
+          updateBackground();
+
+      });
+
+  
+
+      updateBackground();
+
+  
+
+  });
+
+  </script>
+  </head><body class="quarto-light"><div style="display:none">
+
+  
+
+  $$
+
+  \newcommand{\ls}[1]{\,{}^{#1}}
+
+  \newcommand{\s}[3]{\,{}^{#1}{#2}_{#3}}
+
+  
+
+  \newcommand{\td}{(t)}
+
+  \newcommand{\T}{\top}
+
+  \newcommand{\w}{\omega}
+
+  \newcommand{\q}{\mathbf{q}}
+
+  \newcommand{\J}{I_b}
+
+  \newcommand{\inv}{{-1}}
+
+  
+
+  \newcommand{\vw}{\vec{\w}}
+
+  \newcommand{\vwh}{\vw_h}
+
+  \newcommand{\dvwh}{\dot{\vw}_h}
+
+  \newcommand{\h}{\vec{h}}
+
+  \newcommand{\vtau}{\vec{\uptau}}
+
+  
+
+  \newcommand{\dvw}{\dot{\vec{\w}}}
+
+  
+
+  \newcommand{\bRi}{\s{b}{R}{i}}
+
+  \newcommand{\bRh}{\s{b}{R}{h}}
+
+  
+
+  \newcommand{\bqi}{\s{b}{\q}{i}}
+
+  \newcommand{\bqh}{\s{b}{\q}{h}}
+
+  
+
+  \newcommand{\dq}{\dot{\q}}
+
+  \newcommand{\bdqi}{\s{b}{\dq}{i}}
+
+  \newcommand{\bdqh}{\s{b}{\dq}{h}}
+
+  
+
+  \newcommand{\bwib}{\s{b}{\vw}{i,b}}
+
+  \newcommand{\bwhb}{\s{b}{\vw}{h,b}}
+
+  \newcommand{\bwih}{\s{b}{\vw}{i,h}}
+
+  
+
+  \newcommand{\bdwib}{\s{b}{\dvw}{i,b}}
+
+  \newcommand{\bdwhb}{\s{b}{\dvw}{h,b}}
+
+  \newcommand{\bdwih}{\s{b}{\dvw}{i,h}}
+
+  
+
+  \newcommand{\bqwib}{\s{b}{\mathbf{\omega}}{i,b}}
+
+  \newcommand{\bqwhb}{\s{b}{\mathbf{\w}}{h,b}}
+
+  \newcommand{\bqwih}{\s{b}{\mathbf{\w}}{i,h}}
+
+  
+
+  \newcommand{\hx}{\hat{x}}
+
+  \newcommand{\hR}{\hat{R}}
+
+  \newcommand{\hw}{\hat{\w}}
+
+  \newcommand{\hq}{\hat{\mathbf{q}}}
+
+  \newcommand{\hqv}{\hat{q}}
+
+  \newcommand{\hphi}{\hat{\phi}}
+
+  \newcommand{\htheta}{\hat{\theta}}
+
+  \newcommand{\hpsi}{\hat{\psi}}
+
+  
+
+  \newcommand{\tx}{\tilde{x}}
+
+  \newcommand{\tR}{\tilde{R}}
+
+  \newcommand{\tw}{\tilde{\w}}
+
+  \newcommand{\tq}{\tilde{\mathbf{q}}}
+
+  \newcommand{\tqv}{\tilde{q}_v}
+
+  \newcommand{\tqc}{\tilde{q}_0}
+
+  \newcommand{\tphi}{\tilde{\phi}}
+
+  \newcommand{\ttheta}{\tilde{\theta}}
+
+  \newcommand{\tpsi}{\tilde{\psi}}
+
+  
+
+  \newcommand{\dtx}{\dot{\tx}}
+
+  \newcommand{\dtw}{\dot{\tw}}
+
+  \newcommand{\dtq}{\dot{\tq}}
+
+  \newcommand{\dtqv}{\dot{\tilde{q}}_v}
+
+  \newcommand{\dtqc}{\dot{\tilde{q}}_0}
+
+  
+
+  \newcommand{\inte}{\text{int}}
+
+  \newcommand{\ext}{\text{ext}}
+
+  \newcommand{\act}{\text{act}}
+
+  \newcommand{\per}{\text{per}}
+
+  \newcommand{\feed}{\text{feed}}
+
+  
+
+  \newcommand{\tref}{\text{ref}}
+
+  \newcommand{\xref}{x^{\tref}}
+
+  \newcommand{\uref}{u^{\tref}}
+
+  \newcommand{\qref}{\q^{\tref}}
+
+  \newcommand{\vwref}{\vw^{\tref}}
+
+  
+
+  \newcommand{\dvwref}{\dot{\vw}^{\tref}}
+
+  \newcommand{\dqref}{\dot{q}^{\tref}}
+
+  
+
+  $$
+
+  
+
+  </div>
+  <script type="module" src="c1_introduction_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="c1_introduction_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="slide level2 title-slide-custom">
+<h2></h2>
+<div class="cover">
+<div class="cover-logo">
+<p><img src="Assets/logo_big.png"></p>
+</div>
+<div class="cover-title">
+<p>Introducción</p>
+</div>
+<div class="cover-line">
+
+</div>
+<div class="cover-subtitle">
+<p>Capítulo 1</p>
+</div>
+</div>
+<div class="menu-title" style="display:none;">
+Introducción
+</div>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Introducción</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Definiciones</p>
+<div class="menu-title" style="display:none;">
+▸ Definiciones
+</div>
+</div>
+</div>
+</section>
+<section id="mecánica" class="slide level2">
+<h2>Mecánica</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la física que estudia el movimiento y el equilibrio de los cuerpos, así como las fuerzas y las interacciones que determinan su estado de movimiento.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>La mecánica responde dos preguntas fundamentales sobre el movimiento de los cuerpos: <strong>¿Cómo y por qué se mueve un cuerpo?</strong></p></li>
+<li class="fragment"><p>La <strong>cinemática</strong> responde al <em>cómo</em>: describe la posición, velocidad y aceleración de los cuerpos sin considerar las causas que producen su movimiento.</p></li>
+<li class="fragment"><p>La <strong>dinámica</strong> responde al <em>por qué</em>: estudia las causas del movimiento y relaciona el movimiento de los cuerpos con las fuerzas que actúan sobre ellos.</p></li>
+<li class="fragment"><p>La <strong>estática</strong>, por su parte, estudia las condiciones de <strong>equilibrio</strong> de los cuerpos, es decir, las situaciones en las que la resultante de fuerzas es compatible con un movimiento nulo aparente.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_mecanica.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="astronomía" class="slide level2">
+<h2>Astronomía</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la ciencia que estudia los cuerpos celestes, los fenómenos y procesos que ocurren en el universo, así como su origen, evolución, estructura y movimiento.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment">La astronomía busca responder preguntas fundamentales sobre el universo: <strong>¿qué existe, cómo se comporta y cómo evoluciona?</strong></li>
+</ul>
+<!-- - La **astronomía observacional** estudia los objetos y fenómenos celestes mediante la adquisición y análisis de radiación y otras señales provenientes del espacio.
+
+- La **astronomía teórica** desarrolla modelos físicos y matemáticos para explicar y predecir los fenómenos observados. -->
+<ul>
+<li class="fragment">La <strong>astrofísica</strong> aplica las leyes de la física para estudiar las propiedades y procesos físicos de los cuerpos y sistemas astronómicos.</li>
+</ul>
+<!-- - La **cosmología** estudia el origen, evolución, estructura y destino del universo como un todo. -->
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_astronomia.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="mecánica-celeste" class="slide level2">
+<h2>Mecánica celeste</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Rama de la mecánica que estudia el movimiento de los cuerpos celestes y las interacciones gravitacionales que determinan su evolución dinámica.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Se fundamenta principalmente en las <strong>leyes del movimiento de Newton</strong> y la <strong>ley de gravitación universal</strong>.</p></li>
+<li class="fragment"><p>Estudia el movimiento de <strong>planetas, lunas, asteroides, cometas, estrellas</strong> y otros cuerpos celestes.</p></li>
+<li class="fragment"><p>Considera tanto sistemas simples como sistemas formados por <strong>múltiples cuerpos que interactúan gravitacionalmente</strong>.</p></li>
+<li class="fragment"><p>Permite describir y predecir fenómenos como <strong>órbitas, eclipses, encuentros entre cuerpos y perturbaciones gravitacionales</strong>.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_celeste.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="astrodinámica" class="slide level2">
+<h2>Astrodinámica</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Estudio del movimiento de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Contempla tanto el movimiento <strong>traslacional</strong> como el movimiento <strong>rotacional</strong> de los objetos.</p></li>
+<li class="fragment"><p>Las <strong>fuerzas naturales</strong> incluyen principalmente la gravedad, así como otras perturbaciones producidas por el entorno espacial.</p></li>
+<li class="fragment"><p>Las <strong>fuerzas artificialmente inducidas</strong> son aquellas generadas deliberadamente para modificar el movimiento del vehículo, como las producidas por <strong>sistemas de propulsión</strong>.</p></li>
+<li class="fragment"><p>La astrodinámica permite <strong>analizar, predecir y diseñar</strong> el movimiento de vehículos espaciales.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_astrodinamica.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="mecánica-orbital" class="slide level2">
+<h2>Mecánica orbital</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Definición</strong></p>
+<p>Estudio del movimiento <em>traslacional</em> de objetos hechos por el ser humano en el espacio, sujetos tanto a fuerzas naturales como a fuerzas inducidas artificialmente.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Estudia las <strong>trayectorias traslacionales</strong> de cuerpos naturales con respecto de una referencia.</p></li>
+<li class="fragment"><p>A las trayectorias periódicas se les conoce como <strong>órbitas</strong>.</p></li>
+<li class="fragment"><p>Nos permite determinar y predecir la <strong>posición y velocidad</strong> de un cuerpo a lo largo de su trayectoria.</p></li>
+<li class="fragment"><p>Analiza cómo las <strong>fuerzas gravitacionales y perturbaciones</strong> modifican el movimiento orbital.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_orbital.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="satélites" class="slide level2">
+<h2>Satélites</h2>
+<div class="definition-block">
+<p><strong>Satélite</strong></p>
+<p>Cuerpo u objeto que se encuentra en órbita alrededor de otro cuerpo debido a la interacción gravitacional entre ellos.</p>
+</div>
+<div class="columns">
+<div class="column fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_sat_nat.png" class="fragment quarto-figure quarto-figure-center" style="width:52.0%"></p>
+</figure>
+</div>
+<div class="definition-block">
+<p><strong>Satélite natural</strong></p>
+<p>Cuerpo celeste de origen natural que orbita alrededor de otro cuerpo celeste como consecuencia de su interacción gravitacional.</p>
+</div>
+</div><div class="column fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_sat_art.png" class="fragment quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div class="definition-block">
+<p><strong>Satélite artificial</strong></p>
+<p>Objeto construido por el ser humano y colocado en órbita alrededor de un cuerpo celeste para cumplir una función determinada.</p>
+</div>
+</div></div>
+</section>
+<section id="importancia-en-la-ingeniería" class="slide level2">
+<h2>Importancia en la ingeniería</h2>
+<ul>
+<li>El diseño de un <strong>vehículo espacial</strong> no puede realizarse de manera independiente de la <strong>misión espacial</strong> que debe cumplir.</li>
+</ul>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block fragment">
+<p><strong>Misión espacial</strong></p>
+<p>Conjunto de actividades, sistemas y operaciones planificadas para alcanzar uno o más objetivos en el espacio, desde su lanzamiento hasta la finalización de la misión.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li class="fragment"><p>Antes de diseñar completamente el vehículo es necesario establecer <strong>qué se quiere lograr, dónde debe operar y cómo llegará hasta allí</strong>.</p></li>
+<li class="fragment"><p>Todas las actividades de la misión deben ser pensadas alrededor de la <strong>carga útil</strong> del satélite.</p></li>
+<li class="fragment"><p>La misión determina requisitos fundamentales del vehículo, como <strong>propulsión, energía, comunicaciones, navegación y estructura</strong>.</p></li>
+<li class="fragment"><p>Dentro del diseño de la misión, la <strong>trayectoria</strong> determina cómo se desplazará el vehículo desde su estado inicial hasta alcanzar las condiciones requeridas para cumplir el objetivo.</p></li>
+<li class="fragment"><p>Por ello, el diseño y análisis de trayectorias constituye un elemento <strong>esencial para el diseño de una misión espacial</strong>.</p></li>
+</ul>
+</section>
+<section id="subsistemas-de-un-satélite" class="slide level2">
+<h2>Subsistemas de un satélite</h2>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/c1/subsystems.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>El diseño de la trayectoria <strong>se materializa en la práctica</strong> en diferentes sistemas y operaciones del vehículo espacial.</p>
+<div class="columns">
+<div class="column">
+<div class="definition-block fragment">
+<p><strong>Despliegue</strong></p>
+<p>La trayectoria determina las condiciones y el momento en que el vehículo debe ser liberado, separado o desplegado de su vehículo lanzador o de otro sistema espacial.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_ppod.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+<div class="definition-block fragment">
+<p><strong>Computadora de a bordo</strong></p>
+<p>Los modelos y algoritmos de propagación, control y determinación orbital permiten estimar la posición y velocidad del vehículo durante la misión.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_obc.png" class="quarto-figure quarto-figure-center" style="width:43.0%"></p>
+</figure>
+</div>
+</div><div class="column">
+<div class="definition-block fragment">
+<p><strong>Sistema de propulsión</strong></p>
+<p>Las maniobras diseñadas para modificar y controlar la trayectoria determinan los requisitos de impulso, dirección y momento de las actuaciones propulsivas.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_thrusters.png" class="quarto-figure quarto-figure-center" style="width:43.0%"></p>
+</figure>
+</div>
+<div class="definition-block fragment">
+<p><strong>Sistema de comunicaciones</strong></p>
+<p>La trayectoria determina la visibilidad del vehículo respecto a las estaciones terrestres, estableciendo condiciones para la planificación de enlaces, ventanas de comunicación y orientación de las antenas.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c1/definition_ant.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Introducción</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Repaso de álgebra</p>
+<div class="menu-title" style="display:none;">
+▸ Repaso de álgebra
+</div>
+</div>
+</div>
+</section>
+<section id="vectores" class="slide level2">
+<h2>Vectores</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Un <strong>vector</strong> (columna) es una <span class="math inline">\(n\)</span>-tupla ordenada de números reales:</p>
+<p><span class="math display">\[
+    \vec{v}=
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        \vdots\\
+        v_n
+    \end{bmatrix} \in\mathbb{R}^n ,
+    \qquad v_i\in\mathbb{R}
+\]</span></p>
+<p>o de forma equivalente,</p>
+<p><span class="math display">\[
+    \vec{v}\equiv
+    [v_1\quad v_2\quad \dots\quad v_n]^\top.
+\]</span></p>
+<p>donde <span class="math inline">\(n\in\mathbb{N}\)</span> y <span class="math inline">\(\top\)</span> denota transposición. El conjunto de todos los vectores de dimensión <span class="math inline">\(n\)</span> es el espacio <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<p>Físicamente nos permiten representar <strong>magnitudes vectoriales</strong>, <em>e.g.</em>, la posición y la velocidad.</p>
+<p>Pueden clasificarse como libres o fijos, dependiendo si origen es invariante.</p>
+</div><div class="column" style="width:30%;">
+<div class="small">
+<p><span class="math inline">\(v_x\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="461" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 460;"><span id="cb1-461"><a href=""></a>viewof vx <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(v_y\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="465" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 464;"><span id="cb2-465"><a href=""></a>viewof vy <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(o_x\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="470" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 469;"><span id="cb3-470"><a href=""></a>viewof ox <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<p><span class="math inline">\(o_y\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="474" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 473;"><span id="cb4-474"><a href=""></a>viewof oy <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="480" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 479;"><span id="cb5-480"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-481"><a href=""></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb5-482"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb5-483"><a href=""></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb5-484"><a href=""></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb5-485"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-486"><a href=""></a>    Plot<span class="op">.</span><span class="fu">arrow</span>(</span>
+<span id="cb5-487"><a href=""></a>      [{<span class="dt">x1</span><span class="op">:</span> ox<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> oy<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> vx<span class="op">+</span>ox<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> vy<span class="op">+</span>oy}]<span class="op">,</span></span>
+<span id="cb5-488"><a href=""></a>      {</span>
+<span id="cb5-489"><a href=""></a>        <span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span></span>
+<span id="cb5-490"><a href=""></a>        <span class="dt">y1</span><span class="op">:</span> <span class="st">"y1"</span><span class="op">,</span></span>
+<span id="cb5-491"><a href=""></a>        <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span></span>
+<span id="cb5-492"><a href=""></a>        <span class="dt">y2</span><span class="op">:</span> <span class="st">"y2"</span></span>
+<span id="cb5-493"><a href=""></a>      }</span>
+<span id="cb5-494"><a href=""></a>    )</span>
+<span id="cb5-495"><a href=""></a>  ]</span>
+<span id="cb5-496"><a href=""></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="operaciones-típicas-entre-vectores" class="slide level2">
+<h2>Operaciones típicas entre vectores</h2>
+<p>Sean <span class="math inline">\(\vec{u},\vec{v}\in\mathbb{R}^n\)</span> y <span class="math inline">\(\alpha\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><p><strong>Suma:</strong> <span class="math inline">\(\vec{u}+\vec{v}=[u_1+v_1,\dots,u_n+v_n]^\top\)</span></p></li>
+<li><p><strong>Producto por escalar:</strong> <span class="math inline">\(\alpha\vec{u}=[\alpha u_1,\dots,\alpha u_n]^\top\)</span></p></li>
+<li><p><strong>Producto punto:</strong></p></li>
+</ul>
+<p><span class="math display">\[
+    \begin{aligned}
+        \vec{u}\cdot\vec{v}&amp;=\sum_{i=1}^{n}u_iv_i\\
+        &amp;=\vec{u}^{\top}\vec{v}\\
+        &amp;=\|\vec{u}\|\,\|\vec{v}\|\cos\theta
+    \end{aligned}
+\]</span></p>
+<p>donde <span class="math inline">\(\theta\)</span> es el ángulo comprendido entre <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> al hacer coincidir sus orígenes.</p>
+<ul>
+<li><strong>Norma Euclidiana:</strong> <span class="math inline">\(\|\vec{u}\|=\sqrt{\vec{u}\cdot\vec{u}}\)</span></li>
+</ul>
+</section>
+<section id="producto-cruz-definición-por-componentes" class="slide level2">
+<h2>Producto cruz (definición por componentes)</h2>
+<p>En <span class="math inline">\(\mathbb{R}^3\)</span>, el <strong>producto cruz</strong> de dos vectores <span class="math inline">\(\vec{u},\vec{v}\in\mathbb{R}^3\)</span> se define como</p>
+<p><span class="math display">\[
+    \vec{u}\times\vec{v}=
+    \begin{bmatrix}
+        u_2v_3-u_3v_2\\
+        u_3v_1-u_1v_3\\
+        u_1v_2-u_2v_1
+    \end{bmatrix}=
+    \begin{vmatrix}
+        \vec{i} &amp; \vec{j} &amp; \vec{k}\\
+        u_1 &amp; u_2 &amp; u_3\\
+        v_1 &amp; v_2 &amp; v_3
+    \end{vmatrix},
+\]</span></p>
+<p>donde <span class="math inline">\(\{\vec{i},\vec{j},\vec{k}\}\)</span> es la base canónica de <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+<div class="fragment">
+<p><strong>Propiedades</strong>:</p>
+<ul>
+<li><span class="math inline">\(\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})\)</span></li>
+<li><span class="math inline">\(\vec{u}\times\vec{u}=\vec{0}\)</span></li>
+<li><span class="math inline">\(\vec{u}\cdot(\vec{u}\times\vec{v})=0\)</span></li>
+<li><span class="math inline">\(\vec{u}\times\vec{v}\)</span> es ortogonal (perpendicular) a <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span>.</li>
+<li>Si <span class="math inline">\(\vec{u}\)</span> y <span class="math inline">\(\vec{v}\)</span> son colineales, entonces <span class="math inline">\(\vec{u}\times\vec{v}=\vec{0}\)</span>.</li>
+<li><span class="math inline">\(\|\vec{u}\times\vec{v}\|=\|\vec{u}\|\,\|\vec{v}\|\sin\theta.\)</span></li>
+</ul>
+</div>
+</section>
+<section id="espacio-vectorial-real" class="slide level2">
+<h2>Espacio vectorial (real)</h2>
+<p>Un <strong>espacio vectorial real</strong> es una tupla</p>
+<p><span class="math display">\[
+(\mathcal{V},+,\cdot)
+\]</span></p>
+<p>donde <span class="math inline">\(\mathcal{V}\)</span> es un conjunto de vectores reales, <span class="math inline">\(+:\mathcal{V}\times\mathcal{V}\rightarrow\mathcal{V}\)</span> y <span class="math inline">\(\cdot:\mathbb{R}\times\mathcal{V}\rightarrow\mathcal{V}\)</span> satisfacen, para todo <span class="math inline">\(\vec{u},\vec{v},\vec{w}\in\mathcal{V}\)</span> y <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}\)</span>.</li>
+<li><span class="math inline">\((\alpha+\beta)\vec{u}=\alpha\vec{u}+\beta\vec{u}\)</span>.</li>
+<li><span class="math inline">\((\alpha\beta)\vec{u}=\alpha(\beta\vec{u})\)</span>.</li>
+<li><span class="math inline">\(1\cdot\vec{u}=\vec{u}\)</span>.</li>
+</ul>
+</section>
+<section id="base" class="slide level2">
+<h2>Base</h2>
+<p>Sea <span class="math inline">\(\mathcal{V}\)</span> un espacio vectorial real de dimensión <span class="math inline">\(n\)</span>. Un conjunto ordenado</p>
+<p><span class="math display">\[
+\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n\}\subset\mathcal{V}
+\]</span></p>
+<p>es una <strong>base</strong> de <span class="math inline">\(\mathcal{V}\)</span> si:</p>
+<ol type="1">
+<li><strong>Independencia lineal</strong></li>
+</ol>
+<p><span class="math display">\[
+    \alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n=\vec{0}
+    \;\Rightarrow\;
+    \alpha_1=\cdots=\alpha_n=0.
+\]</span></p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Generación</strong></li>
+</ol>
+<p>Todo <span class="math inline">\(\vec{u}\in\mathcal{V}\)</span> se escribe de forma <em>única</em> como</p>
+<p><span class="math display">\[
+    \vec{u}=\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n,
+    \qquad \alpha_i\in\mathbb{R}.
+\]</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Una <em>combinación lineal</em> es toda expresión</p>
+<p><span class="math display">\[
+\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n
+\]</span></p>
+<p>con <span class="math inline">\(\alpha_i\in\mathbb{R}\)</span>. La independencia lineal de la base implica que ningún vector se expresa como combinación lineal de los demás.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices" class="slide level2">
+<h2>Matrices</h2>
+<p>Una <strong>matriz</strong> <span class="math inline">\(A\in\mathbb{R}^{m\times n}\)</span> es un arreglo rectangular:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        a_{11} &amp; \cdots &amp; a_{1n}\\
+        \vdots &amp; \ddots &amp; \vdots\\
+        a_{m1} &amp; \cdots &amp; a_{mn}
+    \end{bmatrix}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Operaciones con matrices</strong></p>
+<p>Sean <span class="math inline">\(A,B\in\mathbb{R}^{m\times n}\)</span> y <span class="math inline">\(\alpha\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><strong>Suma:</strong> <span class="math inline">\((A+B)_{ij}=a_{ij}+b_{ij}\)</span>.</li>
+<li><strong>Producto por escalar:</strong> <span class="math inline">\((\alpha A)_{ij}=\alpha a_{ij}\)</span>.</li>
+<li><strong>Producto matricial:</strong> Si <span class="math inline">\(A\in\mathbb{R}^{m\times p}\)</span> y <span class="math inline">\(B\in\mathbb{R}^{p\times n}\)</span>,</li>
+</ul>
+<p><span class="math display">\[
+    (AB)_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},
+    \qquad
+    AB\in\mathbb{R}^{m\times n}.
+\]</span></p>
+<ul>
+<li><strong>Transpuesta:</strong> <span class="math inline">\((A^\top)_{ij}=a_{ji}\)</span>.</li>
+</ul>
+<p><strong>Nota:</strong> La notación <span class="math inline">\((A)_{ij}\)</span> denota el elemento de <span class="math inline">\(A\)</span> en la fila <span class="math inline">\(i\)</span> y columna <span class="math inline">\(j\)</span>.</p>
+</div>
+</section>
+<section id="inversa-de-una-matriz" class="slide level2">
+<h2>Inversa de una matriz</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span> (matriz cuadrada). Se dice que <span class="math inline">\(A\)</span> es <strong>invertible</strong> si existe <span class="math inline">\(B\in\mathbb{R}^{n\times n}\)</span> tal que</p>
+<p><span class="math display">\[
+AB=BA=I_n.
+\]</span></p>
+<p>Dicha <span class="math inline">\(B\)</span> es única y se denota <span class="math inline">\(A^{-1}\)</span>.</p>
+<p>Equivalencias:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> invertible <span class="math inline">\(\iff \det(A)\neq0 \iff\)</span> las columnas de <span class="math inline">\(A\)</span> son linealmente independientes.</li>
+<li><span class="math inline">\(A\)</span> invertible <span class="math inline">\(\iff \operatorname{rank}(A)=n\)</span>.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>El determinante de una matriz cuadrada es un escalar asociado que puede interpretarse como una combinación alternada de todos los posibles productos de sus elementos. Por otro lado, el rango de una matriz es el número de sus columnas linealmente independientes. En el caso de matrices cuadradas, el rango de <span class="math inline">\(A\)</span> es <span class="math inline">\(n\)</span> si y solo si <span class="math inline">\(\det(A)\neq0\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices-simétricas-y-antisimétricas" class="slide level2">
+<h2>Matrices simétricas y antisimétricas</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span>.</p>
+<ul>
+<li><span class="math inline">\(A\)</span> es <strong>simétrica</strong> si</li>
+</ul>
+<p><span class="math display">\[
+A^\top=A.
+\]</span></p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        a &amp; b\\
+        b &amp; c
+    \end{bmatrix}.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span> es <strong>antisimétrica</strong> si</li>
+</ul>
+<p><span class="math display">\[
+A^\top=-A.
+\]</span></p>
+<p>Ejemplo:</p>
+<p><span class="math display">\[
+    A=
+    \begin{bmatrix}
+        0 &amp; -a\\
+        a &amp; 0
+    \end{bmatrix}.
+\]</span></p>
+</section>
+<section id="producto-cruz-matriz-antisimétrica" class="slide level2">
+<h2>Producto cruz: matriz antisimétrica</h2>
+<p>Dado <span class="math inline">\(\vec{u}=[u_1,u_2,u_3]^\top\)</span>, se define</p>
+<p><span class="math display">\[
+S(\vec{u})=
+\begin{bmatrix}
+0 &amp; -u_3 &amp; u_2\\
+u_3 &amp; 0 &amp; -u_1\\
+-u_2 &amp; u_1 &amp; 0
+\end{bmatrix},
+\qquad
+\vec{u}\times\vec{v}=S(\vec{u})\vec{v}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Ejemplo</strong></p>
+<p><span class="math display">\[
+\vec{u}=
+\begin{bmatrix}
+2\\-1\\3
+\end{bmatrix},
+\qquad
+\vec{v}=
+\begin{bmatrix}
+1\\4\\2
+\end{bmatrix},
+\]</span></p>
+<p><span class="math display">\[
+S(\vec{u})=
+\begin{bmatrix}
+0&amp;-3&amp;-1\\
+3&amp;0&amp;-2\\
+1&amp;2&amp;0
+\end{bmatrix},
+\qquad
+S(\vec{u})\vec{v}=
+\begin{bmatrix}
+-14\\-1\\9
+\end{bmatrix}
+=
+\vec{u}\times\vec{v}.
+\]</span></p>
+</div>
+</section>
+<section id="matrices-ortonormales" class="slide level2">
+<h2>Matrices ortonormales</h2>
+<p>Sea <span class="math inline">\(Q\in\mathbb{R}^{n\times n}\)</span>.</p>
+<p>Decimos que <span class="math inline">\(Q\)</span> es <strong>ortonormal</strong> si</p>
+<p><span class="math display">\[
+Q^\top Q=QQ^\top=I_n.
+\]</span></p>
+<p>Esto implica:</p>
+<ul>
+<li>Las columnas <span class="math inline">\(\{\vec{q}_1,\dots,\vec{q}_n\}\)</span> de <span class="math inline">\(Q\)</span> forman una <strong>base ortonormal</strong> de <span class="math inline">\(\mathbb{R}^n\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    \vec{q}_i^\top\vec{q}_j=
+    \begin{cases}
+        1,&amp;\text{si }i=j,\\
+        0,&amp;\text{si }i\neq j.
+    \end{cases}
+\]</span></p>
+<ul>
+<li>Cada columna tiene norma <span class="math inline">\(1\)</span> y distintas columnas son perpendiculares entre sí; en consecuencia, <span class="math inline">\(|\det(Q)|=1\)</span>.</li>
+<li>Consecuencia algebraica: <span class="math inline">\(Q^{-1}=Q^\top\)</span>.</li>
+</ul>
+</section>
+<section id="valores-y-vectores-propios" class="slide level2">
+<h2>Valores y vectores propios</h2>
+<p>Sea <span class="math inline">\(A\in\mathbb{R}^{n\times n}\)</span>.</p>
+<p>Un escalar <span class="math inline">\(\lambda\in\mathbb{R}\)</span> es un <strong>valor propio</strong> de <span class="math inline">\(A\)</span> si existe un vector no nulo <span class="math inline">\(\vec{v}\in\mathbb{R}^n\)</span> tal que</p>
+<p><span class="math display">\[
+A\vec{v}=\lambda\vec{v}.
+\]</span></p>
+<p><strong>Condición equivalente:</strong></p>
+<p><span class="math display">\[
+\det(\lambda I_n-A)=0.
+\]</span></p>
+<p>donde <span class="math inline">\(\det(\lambda I_n-A)\)</span> es el polinomio característico de <span class="math inline">\(A\)</span>.</p>
+<div class="fragment">
+<p>Si <span class="math inline">\(\lambda\)</span> es un valor propio de <span class="math inline">\(A\)</span>, entonces todo vector no nulo <span class="math inline">\(\vec{v}\in\mathbb{R}^n\)</span> que cumple</p>
+<p><span class="math display">\[
+A\vec{v}=\lambda\vec{v}
+\]</span></p>
+<p>se denomina <strong>vector propio</strong> asociado a <span class="math inline">\(\lambda\)</span>.</p>
+<p>El conjunto de todos los vectores propios asociados a un mismo <span class="math inline">\(\lambda\)</span>, junto con el vector cero, forma el <strong>espacio propio</strong>:</p>
+<p><span class="math display">\[
+E_\lambda=\ker(A-\lambda I_n).
+\]</span></p>
+</div>
+</section>
+<section id="ejemplo-valores-y-vectores-propios" class="slide level2">
+<h2>Ejemplo: valores y vectores propios</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+2&amp;0\\
+0&amp;3
+\end{bmatrix}.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\det(\lambda I-A)=
+\begin{vmatrix}
+\lambda-2&amp;0\\
+0&amp;\lambda-3
+\end{vmatrix}
+=(\lambda-2)(\lambda-3),
+\]</span></p>
+<p>los valores propios son</p>
+<p><span class="math display">\[
+\lambda_1=2,\qquad \lambda_2=3.
+\]</span></p>
+<div class="fragment">
+<p>Para <span class="math inline">\(\lambda_1=2\)</span>,</p>
+<p><span class="math display">\[
+(2I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\alpha
+\begin{bmatrix}
+1\\0
+\end{bmatrix},
+\qquad
+E_2=\mathrm{span}\left\{
+\begin{bmatrix}
+1\\0
+\end{bmatrix}
+\right\}.
+\]</span></p>
+<p>Para <span class="math inline">\(\lambda_2=3\)</span>,</p>
+<p><span class="math display">\[
+(3I-A)\vec{v}=0
+\quad\Longrightarrow\quad
+\vec{v}=
+\beta
+\begin{bmatrix}
+0\\1
+\end{bmatrix},
+\qquad
+E_3=\mathrm{span}\left\{
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+\right\}.
+\]</span></p>
+</div>
+</section>
+<section id="marco-de-referencia" class="slide level2">
+<h2>Marco de referencia</h2>
+<p>El <strong>marco de referencia</strong> <span class="math inline">\(i\)</span> en <span class="math inline">\(\mathbb{R}^3\)</span> es la tupla</p>
+<p><span class="math display">\[
+\ls{i}{\mathcal{F}}=\left(\ls{i}{O},\;\ls{i}{\mathcal{B}}\right),
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\ls{i}{O}\in\mathbb{R}^3\)</span> es el <strong>origen</strong>.</li>
+<li><span class="math inline">\(\ls{i}{\mathcal{B}}=\{\ls{i}{\vec{x}},\ls{i}{\vec{y}},\ls{i}{\vec{z}}\}\)</span> es una <strong>base ortonormal derecha</strong> de <span class="math inline">\(\mathbb{R}^3\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    \ls{i}{\vec{x}}\cdot\ls{i}{\vec{y}}=0,
+    \qquad
+    \|\ls{i}{\vec{x}}\|=\|\ls{i}{\vec{y}}\|=\|\ls{i}{\vec{z}}\|=1,
+    \qquad
+    \ls{i}{\vec{x}}\times\ls{i}{\vec{y}}=\ls{i}{\vec{z}}.
+\]</span></p>
+<div class="fragment">
+<p><strong>Equivalente matricial:</strong></p>
+<p>Si</p>
+<p><span class="math display">\[
+R=\left[\,\ls{i}{\vec{x}}\;\;\ls{i}{\vec{y}}\;\;\ls{i}{\vec{z}}\,\right],
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+    R^\top R=I_3,
+    \qquad
+    \det(R)=1.
+\]</span></p>
+</div>
+</section>
+<section id="marcos-de-referencia-para-satélites" class="slide level2">
+<h2>Marcos de referencia para satélites</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Un marco de referencia provee un sistema cartesiano para expresar coordenadas de vectores en el espacio. Mediante estos, es posible describir la posición de un cuerpo.</p></li>
+<li><p>En general, es necesario definir:</p>
+<ul>
+<li>Un <strong>marco inercial</strong>.</li>
+<li>Un <strong>marco sujeto al cuerpo</strong>.</li>
+<li>Marcos <strong>auxiliares</strong>.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c2/frame_empty.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="marco-de-referencia-inercial-lsimathcalf" class="slide level2">
+<h2>Marco de referencia inercial <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span></h2>
+<div class="columns">
+<div class="column">
+<p><strong>Origen:</strong> <span class="math inline">\(\ls{i}{O}\)</span>, punto de referencia elegido para describir el movimiento.</p>
+<p><strong>Ejes:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\ls{i}{\vec{x}}\)</span>: eje de referencia elegido.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{y}}\)</span>: eje perpendicular que completa la base.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{z}}\)</span>: eje que completa la regla de la mano derecha.</p></li>
+<li><p>Un <strong>marco de referencia inercial</strong> es aquel en el que un cuerpo sobre el que no actúa una fuerza neta permanece en reposo o se mueve con <strong>velocidad constante</strong>.</p></li>
+<li><p>En un marco inercial, las <strong>leyes de Newton</strong> pueden aplicarse directamente sin necesidad de introducir fuerzas ficticias asociadas al movimiento del propio marco.</p></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Algunos de los marcos inerciales más utilizados son:</strong></p>
+<ul>
+<li>Marco de referencia inercial geocéntrico (ECI, por sus siglas en inglés).</li>
+<li>Marco de referencia celeste internacional (ICRF, por sus siglas en inglés).</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="..\Figures/c2/frame_i.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="leyes-de-newton" class="slide level2">
+<h2>Leyes de Newton</h2>
+<div class="definition-block">
+<p><strong>Primera ley — Ley de la inercia</strong></p>
+<p>Un cuerpo permanece en reposo o en movimiento rectilíneo uniforme cuando la fuerza neta que actúa sobre él es cero.</p>
+<p><span class="math display">\[
+\sum \vec{f}=\vec{0}
+\quad\Longrightarrow\quad
+\vec{v}=\mathrm{cte},
+\]</span></p>
+<p>donde <span class="math inline">\(\vec{v}\)</span> es la velocidad traslacional del cuerpo.</p>
+</div>
+<div class="definition-block">
+<p><strong>Segunda ley — Ley fundamental de la dinámica</strong></p>
+<p>La fuerza neta que actúa sobre un cuerpo es igual a la razón de cambio temporal de su momento lineal.</p>
+<p><span class="math display">\[
+\sum\vec{f}=\frac{d\vec{\rho}}{dt},
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\rho=mv,
+\]</span></p>
+<p>y <span class="math inline">\(m\)</span> es la masa del cuerpo.</p>
+</div>
+<div class="definition-block">
+<p><strong>Tercera ley — Ley de acción y reacción</strong></p>
+<p>Cuando un cuerpo ejerce una fuerza sobre otro, este ejerce simultáneamente sobre el primero una fuerza de igual magnitud y dirección opuesta.</p>
+<p><span class="math display">\[
+\vec{f}_{12}=-\vec{f}_{21}.
+\]</span></p>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="c1_introduction_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="c1_introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="c1_introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="c1_introduction_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"right","useTextContentForMissingTitles":false,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"titleSelector":".menu-title, .menu-subtitle","hideMissingTitles":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <div id="footer">
+
+    
+
+        <div class="footer-left">
+
+    
+
+            <div class="footer-logo">
+
+                <img src="Assets/logo.png" alt="logo">
+
+            </div>
+
+    
+
+            <div class="footer-course">
+
+                Mecánica Orbital
+
+            </div>
+
+    
+
+        </div>
+
+    
+
+        <div class="footer-right">
+
+    
+
+            <div class="footer-author">
+
+                M.I. Guillermo Ocaña Anaya
+
+            </div>
+
+    
+
+            <div class="footer-page">
+
+                <span id="slide-number-custom">1</span>
+
+            </div>
+
+    
+
+        </div>
+
+    
+
+    </div>
+    <div id="background-image">
+
+        <img src="Assets/background_mo_1080.png" alt="">
+
+    </div>
+
+    
+
+    
+
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveScpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../../..";
+    window._ojs.paths.docToRoot = "..";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
