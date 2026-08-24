@@ -38,3 +38,5 @@ Unidad de Alta Tecnología
 {{< include Chapter/c0_course.qmd >}}
 
 {{< include Chapter/c1_introduction.qmd >}}
+
+{{< include Chapter/c2_propagation.qmd >}}

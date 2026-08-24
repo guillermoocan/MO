@@ -1115,10 +1115,92 @@ donde $G=6.674\times10^{-11}\:\mathrm{N\,m^2/kg^2}$ es la constante de gravitaci
 
 - La fuerza gravitacional es una **fuerza conservativa** que depende únicamente de la posición relativa $\vec{r}_{12}$, *i.e.*, el trabajo realizado por la fuerza entre dos puntos es independiente de la trayectoria seguida.
 
+:::
+
+
+::: {.fragment}
+
 - En consecuencia, el trabajo realizado por la fuerza gravitacional a lo largo de una trayectoria cerrada es cero:
 
 $$
-\oint \vec{f}_{12}\cdot d\vec{r}_{12}=0
+\oint \vec{f}_{12}\cdot \text{d}\vec{r}_{12}=0
 $$
 
+:::
+
+::: {.fragment}
+
 - La fuerza gravitacional es además una **fuerza central**, ya que actúa siempre a lo largo de la línea que une los centros de los dos cuerpos.
+
+:::
+
+
+## Momento lineal
+
+:::{.definition-block}
+
+**Momento lineal**
+
+El momento lineal de un cuerpo es una magnitud vectorial definida como el producto de su masa por su velocidad:
+
+$$
+\vec{p}=m\vec{v}
+$$
+
+:::
+
+::: {.incremental}
+
+- El momento lineal caracteriza el **estado de movimiento** de un cuerpo (????).
+
+- Para un cuerpo, la segunda ley de Newton enuncia que la variación del momento lineal total está determinada por la **fuerza externa neta**:
+
+    $$
+    \frac{d\vec{\rho}}{dt}=\vec{f}_{\mathrm{ext}}
+    $$
+
+- Por lo tanto, cuando la fuerza externa neta es cero, el momento lineal total se **conserva**:
+    $$
+    \vec{f}_{\mathrm{ext}}=\vec{0}
+    \quad\Longrightarrow\quad
+    \vec{\rho}=\mathrm{cte.}
+    $$
+
+:::
+
+
+## Momento angular
+
+:::{.definition-block}
+
+**Momento angular**
+
+El momento angular de un cuerpo respecto a un punto de referencia es una magnitud vectorial definida como el producto vectorial entre su posición y su momento lineal:
+
+$$
+\vec{h}=\vec{r}\times\vec{p}
+$$
+
+donde $\vec{r}$ es el vector de posición desde el punto de referencia hasta el centro de masa del cuerpo. 
+:::
+
+::: {.incremental}
+
+- El momento angular caracteriza el **estado de movimiento rotacional** de un cuerpo respecto a un punto de referencia.
+
+- Para un cuerpo, la variación del momento angular está determinada por los **par externo neto**:
+
+    $$
+    \frac{d\vec{h}}{dt}=\vec{\tau}_{\mathrm{ext}}
+    $$
+
+
+- Por lo tanto, cuando el par externo neto es cero, el momento angular se **conserva**:
+
+    $$
+    \vec{\tau}_{\mathrm{ext}}=\vec{0}
+    \quad\Longrightarrow\quad
+    \vec{h}=\mathrm{cte.}
+    $$
+
+:::
