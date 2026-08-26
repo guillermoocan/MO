@@ -208,7 +208,7 @@ $$ {#eq-ac_tbp}
 
 ::: {.column width="50%"}
 
-- La partícula $m_2$ ejerce una fuerza gravitacional sobre la partícula $m_1$ dada por la ley de gravitación universal de Newton
+- La partícula $m_1$ ejerce una fuerza gravitacional sobre la partícula $m_2$ dada por la ley de gravitación universal de Newton
 
     $$
         \ls{i}\vec{f}_{12}
@@ -226,7 +226,7 @@ $$ {#eq-ac_tbp}
 ::: {.fragment}
 
 
-- Dada la tercera ley de Newton, la partícula $m_1$ ejerce una fuerza sobre la partícula $m_2$ dada por
+- Dada la tercera ley de Newton, la partícula $m_2$ ejerce una fuerza sobre la partícula $m_1$ dada por
 
     $$
         \ls{i}\vec{f}_{21}
@@ -292,9 +292,9 @@ $$ {#eq-ac_tbp}
 - En nuestro caso, las fuerzas totales que actúan sobre las partículas $m_1$ y $m_2$ son
 
     $$
-        \ls{i}\vec{f}_{21}=m_1\ls{i}\ddot{\vec{r}}_1,
+        \ls{i}\vec{f}_{12}=m_1\ls{i}\ddot{\vec{r}}_1,
         \qquad
-        \ls{i}\vec{f}_{12}=m_2\ls{i}\ddot{\vec{r}}_2
+        \ls{i}\vec{f}_{21}=m_2\ls{i}\ddot{\vec{r}}_2
     $$
 
 
@@ -492,7 +492,7 @@ $$
 
 ::: {.column width="50%"}
 
-- Sin embargo, esto no nos da información explicita sobre las la posición de las dos masas a lo largo del tiempo (${i}^\vec{r}_1$ y ${i}^\vec{r}_2$). 
+- Sin embargo, esto no nos da información explicita sobre las la posición de las dos masas a lo largo del tiempo ($^{i}\vec{r}_1$ y $^{i}\vec{r}_2$). 
 
 :::{.incremental}
 
@@ -501,8 +501,8 @@ $$
 
     $$
     \begin{split}
-    ^{i}\ddot{\vec{r}}_1=\frac{1}{m_1}\:{}^{i}\vec{f}_{12}=-G\frac{m_2}{\|\vec{r}_{2}-\vec{r}_{1}\|^3}(\ls{i}\vec{r}_{2}-\ls{i}\vec{r}_{1})\\
-    ^{i}\ddot{\vec{r}}_2=-\frac{1}{m_2}\:{}^{i}\vec{f}_{12}=-G\frac{m_1}{\|\vec{r}_{2}-\vec{r}_{1}\|^3}(\ls{i}\vec{r}_{2}-\ls{i}\vec{r}_{1})\\
+    ^{i}\ddot{\vec{r}}_1=-\frac{1}{m_1}\:{}^{i}\vec{f}_{12}=G\frac{m_2}{\|\vec{r}_{2}-\vec{r}_{1}\|^3}(\ls{i}\vec{r}_{2}-\ls{i}\vec{r}_{1})\\
+    ^{i}\ddot{\vec{r}}_2=\frac{1}{m_2}\:{}^{i}\vec{f}_{12}=-G\frac{m_1}{\|\vec{r}_{2}-\vec{r}_{1}\|^3}(\ls{i}\vec{r}_{2}-\ls{i}\vec{r}_{1})\\
     \end{split}
     $$
 
@@ -606,7 +606,7 @@ $$
     $$
     \begin{aligned}
         \ls{i}\ddot{\vec{r}}_{12}&=\ls{i}\ddot{\vec{r}}_2-\ls{i}\ddot{\vec{r}}_1\\
-        &=-G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
+        &=G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
     \end{aligned}
     $$
 
@@ -656,7 +656,7 @@ $$
             &=
             \ls{i}\vec{r}_{12}\times\ls{i}\vec{f}_{12}\\
             &=
-            -G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
+            G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
             \ls{i}\vec{r}_{12}\times\ls{i}\vec{r}_{12}\\
             &=
             0.

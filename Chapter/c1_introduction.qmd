@@ -1151,7 +1151,7 @@ $$
 
 ::: {.incremental}
 
-- El momento lineal caracteriza el **estado de movimiento** de un cuerpo (????).
+- El momento lineal caracteriza el **estado de movimiento traslacional** de un cuerpo (????).
 
 - Para un cuerpo, la segunda ley de Newton enuncia que la variación del momento lineal total está determinada por la **fuerza externa neta**:
 
