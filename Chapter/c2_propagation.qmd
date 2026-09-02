@@ -768,6 +768,7 @@ El problema de una fuerza central
 
 - Considere el movimiento de la partícula $m$ bajo la influencia de la gravedad ejercida por la partícula $m_0$, la cual permanece en reposo en el origen del marco de referencia $\ls{p}\mathcal{F}$.
 
+- El marco de referencia $\ls{p}\mathcal{F}$ es inercial con velocidad cero.
 <div class="vspace-3"></div>
 
 :::{.incremental}
@@ -923,6 +924,8 @@ El problema de una fuerza central
 
 ::: {.fragment}
 
+- Como consecuencia, sabemos que el movimiento de la partícula $m$ se desarrolla en un plano normal al momento angular, es decir, el plano formado por los vectores $\ls{p}\hat{x}$ y $\ls{p}\hat{y}$.
+
 - Sin embargo, esto <span style="color:red">**cumple únicamente si no existen fuerzas externas no colineales**</span> (como la resistencia atmosférica o la influencia gravitacional de otros cuerpos) que actúen sobre $m$, debido a que estas fuerzas pueden generar un par neto diferente de cero ($\ls{p}\vec{\tau}\neq0$).
 
 :::
@@ -947,6 +950,18 @@ El problema de una fuerza central
 
 ::: {.column width="50%"}
 
+- Ya que sabemos que el movimiento de la partícula $m$ se desarrolla en un plano, podemos describir su movimiento mediante las componentes radiales y transversales de su posición y velocidad.
+
+-  Para ello, vamos a agregar el marco de referencia $\ls{r}\mathcal{F}$, el cual tiene su origen en el centro de masa de la partícula $m$ y
+
+    - su eje $\ls{r}\hat{x}$ apunta el la misma dirección y sentido que el vector de posición $\ls{p}\vec{r}$
+    - su eje $\ls{r}\hat{y}$ es perpendicular a los otros dos y
+    - su eje $\ls{r}\hat{z}$ es perpendicular al plano de movimiento.
+
+<div class="vspace-3"></div>
+
+:::{.incremental}
+
 - El vector unitario $\ls{r}\hat{x}$ puede representarse en coordenadas polares como
 
     $$
@@ -958,10 +973,6 @@ El problema de una fuerza central
     $$
 
     donde $\nu$ es el ángulo entre $\ls{p}\hat{x}$ y $\ls{r}\hat{x}$. 
-
-<div class="vspace-3"></div>
-
-:::{.incremental}
 
 - De manera similar,
 
@@ -975,18 +986,7 @@ El problema de una fuerza central
 
 <div class="vspace-3"></div>
 
-- La derivada de estos vectores unitarios es
 
-    $$
-        \begin{aligned}
-            \ls{r}\dot{\hat{x}}
-            &=
-            \frac{\mathrm{d}\nu}{\mathrm{d}t}\ls{r}\hat{y}\\
-            \ls{r}\dot{\hat{y}}
-            &=
-            -\frac{\mathrm{d}\nu}{\mathrm{d}t}\ls{r}\hat{x}.
-        \end{aligned}
-    $$
 
 :::
 
@@ -1006,6 +1006,22 @@ El problema de una fuerza central
 :::
 
 ::: {.column width="50%"}
+
+- La derivada de estos vectores unitarios es
+
+    $$
+        \begin{aligned}
+            \ls{r}\dot{\hat{x}}
+            &=
+            \frac{\mathrm{d}\nu}{\mathrm{d}t}\ls{r}\hat{y}\\
+            \ls{r}\dot{\hat{y}}
+            &=
+            -\frac{\mathrm{d}\nu}{\mathrm{d}t}\ls{r}\hat{x}.
+        \end{aligned}
+    $$
+
+
+::: {.incremental}
 
 - El vector de posición en el marco de referencia $\ls{p}\mathcal{F}$ está dado por
 
@@ -1027,8 +1043,6 @@ El problema de una fuerza central
         r\frac{\mathrm{d}\nu}{\mathrm{d}t}\ls{r}\hat{y}.
     $$
 
-
-::: {.fragment}
 
 - El vector de aceleración es
 
@@ -1072,7 +1086,7 @@ El problema de una fuerza central
 
 ::: {.column width="50%"}
 
-<span style="color:red">**A partir de aquí, vamos a considerar que la partícula $m$ tiene masa unitaria ($m=1$), y definiremos a las variables bajo esta consideración como *específicas*.**</span>
+<span style="color:red">**A partir de aquí, vamos a considerar que la partícula $m$ tiene masa unitaria ($m=1$ kg), y definiremos a las variables bajo esta consideración como *específicas*.**</span>
 
 :::{.incremental}
 
