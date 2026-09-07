@@ -1796,8 +1796,6 @@ Secciones cónicas
 
 <div class="vspace-3"></div>
 
-- Para este curso, nos enfocaremos únicamente en las órbitas elípticas.
-
 :::
 
 :::
