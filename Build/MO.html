@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-4aa2b36775fe4fdec13229a6f3c1912c.css">
+  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-ebe111e89015f2ecee3e610c344906b2.css">
   <link href="MO_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -2970,83 +2970,566 @@ Secciones cónicas
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li>La ecuación de la órbita <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> describe una sección cónica con excentricidad <span class="math inline">\(e\)</span> en coordenadas polares <span class="math inline">\((r,\nu)\)</span>.</li>
+<li>La ecuación de la órbita <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> describe una sección cónica en coordenadas polares <span class="math inline">\((r,\nu)\)</span>.</li>
 </ul>
 <div class="vspace-3">
 
 </div>
 <ul>
-<li class="fragment"><p>Dependiendo del valor de <span class="math inline">\(e\)</span>, la órbita puede ser:</p>
-<ul>
-<li class="fragment">Una circunferencia (<span class="math inline">\(e=0\)</span>).</li>
-<li class="fragment">Una elipse (<span class="math inline">\(0\le e&lt;1\)</span>).</li>
-<li class="fragment">Una parábola (<span class="math inline">\(e=1\)</span>).</li>
-<li class="fragment">Una hipérbola (<span class="math inline">\(e&gt;1\)</span>).</li>
-</ul></li>
+<li class="fragment">Una sección cónica es la curva que se obtiene al cortar un cono circular recto con un plano. Dependiendo de la inclinación del plano con respecto al eje del cono, se obtienen diferentes tipos de secciones cónicas.</li>
 </ul>
 <div class="vspace-3">
 
 </div>
 </div></div>
 </section>
-<section id="órbitas-elípticas" class="slide level2">
-<h2>Órbitas elípticas</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
+<section class="slide level2">
+
 <ul>
-<li>La órbita elíptica es la más común en mecánica orbital.</li>
-</ul>
-<ul>
-<li class="fragment"><p>El punto de la elipse con <span class="math inline">\(\nu=0\)</span> se conoce como <strong>periapsis</strong> (perigeo en el caso de la Tierra) y el punto con <span class="math inline">\(\nu=\pi\)</span> como <strong>apoapsis</strong> (apogeo).</p></li>
-<li class="fragment"><p>La distancia desde el foco hasta el periapsis (punto <span style="color:red">A</span>) puede obtenerse de <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> como</p>
+<li><p>Para encontrar la ecuación general de una sección cónica, vamos a partir de la ecuación general de un cono circular recto con vértice en el origen y eje de simetría a lo largo del eje <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
-  r_p=\frac{p}{1+e}.
-  \]</span></p></li>
-<li class="fragment"><p>Mientras que la distancia desde el foco hasta el apogeo (punto <span style="color:red">B</span>) es</p>
-<p><span class="math display">\[
-  r_a=\frac{p}{1-e}.
+      z^2=x^2+y^2.
   \]</span></p>
-<p>Con ello, el semieje mayor <span class="math inline">\(a\)</span> está dado por</p>
+<p>y la ecuación general de un plano:</p>
+<p><span id="eq-plane_equation"><span class="math display">\[
+      \alpha x+\beta y+z+\delta=0.
+   \tag{11}\]</span></span></p>
+<p>con <span class="math inline">\(\alpha,\beta,\delta\in\mathbb{R}\)</span> y <span class="math inline">\(C\neq0\)</span>.</p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Despejamos <span class="math inline">\(z\)</span> de <a href="#/eq-plane_equation" class="quarto-xref">Ecuación&nbsp;11</a> y sustituimos en la ecuación del cono para obtener <span class="math display">\[
+  \left(-\alpha x-\beta y-\delta\right)^2=x^2+y^2.
+  \]</span></p></li>
+<li class="fragment"><p>Desarrollando y reordenando los términos obtenemos la ecuación general de una sección cónica en coordenadas cartesianas:</p>
 <p><span class="math display">\[
-      a=\frac{r_p+r_a}{2}
-      =\frac{p}{1-e^2}.
+      (1-\alpha^2)x^2-2\alpha\beta xy+(1-\beta^2)y^2+2\alpha\delta x+2\beta\delta y-\delta^2=0.
+  \]</span></p>
+<p>A esta ecuación se le conoce como la <strong>ecuación general de una sección cónica</strong>.</p></li>
+<li class="fragment"><p>Entonces, para demostrar que la ecuación de la órbita <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> describe una sección cónica, debemos encontar su equivalente en coordenadas cartesianas y verificar que cumple con la ecuación general de una sección cónica.</p></li>
+<li class="fragment"><p>Partamos de la ecuación de la órbita <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> y reescribámosla como</p>
+<p><span class="math display">\[
+      r(1+e\cos(\nu-\nu_0))=p.
   \]</span></p></li>
 </ul>
-</div><div class="column" style="width:55%;">
-<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>El cambio de coordenadas polares a cartesianas está dado por</p>
+<p><span class="math display">\[
+      x=r\cos(\nu),\qquad y=r\sin(\nu), \qquad r=\sqrt{x^2+y^2}.
+  \]</span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Entonces</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          p &amp;= r(1+e\cos(\nu-\nu_0))=r+re\cos(\nu)\cos(\nu_0)+re\sin(\nu)\sin(\nu_0)=\sqrt{x^2+y^2}+xe\cos(\nu_0)+ye\sin(\nu_0).
+      \end{aligned}
+  \]</span></p></li>
+<li class="fragment"><p>Reordenando los términos y elevando al cuadrado ambos lados obtenemos</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          x^2+y^2&amp;=p^2-2p(xe\cos(\nu_0)+ye\sin(\nu_0))+(xe\cos(\nu_0)+ye\sin(\nu_0))^2\\
+          &amp;=p^2-2p(xe\cos(\nu_0)+ye\sin(\nu_0))+e^2(x^2\cos^2(\nu_0)+y^2\sin^2(\nu_0)+2xy\cos(\nu_0)\sin(\nu_0))\\
+      \end{aligned}
+  \]</span></p></li>
+<li class="fragment"><p>Con ello</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          (1-e^2\cos^2(\nu_0))x^2-2e^2\cos(\nu_0)\sin(\nu_0)xy+(1-e^2\sin^2(\nu_0))y^2+2pe\cos(\nu_0)x+2pe\sin(\nu_0)y-p^2=0.
+      \end{aligned}
+  \]</span></p>
+<p>Esta ecuación cumple con la ecuación general de una sección cónica, por lo que podemos concluir que la ecuación de la órbita <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> describe una sección cónica.</p></li>
+<li class="fragment"><p>Para simplificar la ecuación de la órbita, podemos elegir el marco de referencia <span class="math inline">\(^{p}\mathcal{F}\)</span> de tal forma <span class="math inline">\(\nu_0=0\)</span>. Con ello, la ecuación de la órbita se simplifica a</p>
+<p><span class="math display">\[
+      (1-e^2)x^2+ y^2+2pe x-p^2=0.
+  \]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Primero consideremos el caso donde <span class="math inline">\(0\leq e&lt;1\)</span>.</p></li>
+<li><p>Aquí, podemos asegurar que</p>
+<p><span class="math display">\[
+      \exists a &gt; 0 : p=a(1-e^2).
+  \]</span></p></li>
+<li><p>Sustituyendo en la ecuación de la órbita obtenemos</p>
+<p><span class="math display">\[
+      (1-e^2)x^2+y^2+2a(1-e^2)ex-a^2(1-e^2)^2=0.
+  \]</span></p></li>
+<li><p>Reordenando los términos y considerando <span class="math inline">\(c=ae\)</span>, obtenemos</p>
+<p><span class="math display">\[
+      \frac{(x+c)^2}{a^2}+\frac{y^2}{b^2}=1,
+  \]</span></p>
+<p>La ecuación anterior describe una <strong>elipse</strong> con semieje mayor <span class="math inline">\(a\)</span>, semieje menor <span class="math inline">\(b=a\sqrt{1-e^2}\)</span> y distancia focal <span class="math inline">\(c=ae\)</span>.</p></li>
+<li><p>El centro de la elipse se encuentra en el punto <span class="math inline">\((-c,0)\)</span> y uno de sus focos se encuentra en el origen <span class="math inline">\((0,0)\)</span>. A este foco se le conoce como el <strong>foco primario</strong>.</p></li>
+<li><p>Un caso particular de la elipse es cuando <span class="math inline">\(e=0\)</span>, en cuyo caso la ecuación de la órbita se simplifica a</p>
+<p><span class="math display">\[
+      x^2+y^2=p^2,
+  \]</span></p>
+<p>lo cual describe una <strong>circunferencia</strong> de radio <span class="math inline">\(p\)</span> y centro en el origen.</p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="2" data-source-offset="-2"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb8-2"><a href=""></a>viewof params_elipse <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>({</span>
+<span id="cb8-3"><a href=""></a>  <span class="dt">p_elipse</span><span class="op">:</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="fl">3.0</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">1.0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"p"</span>})<span class="op">,</span></span>
+<span id="cb8-4"><a href=""></a>  <span class="dt">e_elipse</span><span class="op">:</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.0</span><span class="op">,</span> <span class="fl">0.95</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"e"</span>})</span>
+<span id="cb8-5"><a href=""></a>})</span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a>p_elipse <span class="op">=</span> params_elipse<span class="op">.</span><span class="at">p_elipse</span></span>
+<span id="cb8-8"><a href=""></a></span>
+<span id="cb8-9"><a href=""></a>e_elipse <span class="op">=</span> params_elipse<span class="op">.</span><span class="at">e_elipse</span></span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a>a_elipse <span class="op">=</span> p_elipse <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> e_elipse <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb8-12"><a href=""></a></span>
+<span id="cb8-13"><a href=""></a>b_elipse <span class="op">=</span> a_elipse <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">1</span> <span class="op">-</span> e_elipse <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb8-14"><a href=""></a></span>
+<span id="cb8-15"><a href=""></a>c_elipse <span class="op">=</span> a_elipse <span class="op">*</span> e_elipse</span>
+<span id="cb8-16"><a href=""></a></span>
+<span id="cb8-17"><a href=""></a>puntos_elipse <span class="op">=</span> {</span>
+<span id="cb8-18"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb8-19"><a href=""></a></span>
+<span id="cb8-20"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> t <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> t <span class="op">&lt;=</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">;</span> t <span class="op">+=</span> <span class="fl">0.01</span>)</span>
+<span id="cb8-21"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb8-22"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="op">-</span>c_elipse <span class="op">+</span> a_elipse <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cos</span>(t)<span class="op">,</span></span>
+<span id="cb8-23"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> b_elipse <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(t)</span>
+<span id="cb8-24"><a href=""></a>    })<span class="op">;</span></span>
+<span id="cb8-25"><a href=""></a></span>
+<span id="cb8-26"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb8-27"><a href=""></a>}</span>
+<span id="cb8-28"><a href=""></a></span>
+<span id="cb8-29"><a href=""></a>malla_elipse <span class="op">=</span> {</span>
+<span id="cb8-30"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb8-31"><a href=""></a></span>
+<span id="cb8-32"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x<span class="op">++</span>)</span>
+<span id="cb8-33"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">;</span></span>
+<span id="cb8-34"><a href=""></a></span>
+<span id="cb8-35"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> y <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> y<span class="op">++</span>)</span>
+<span id="cb8-36"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span><span class="op">,</span> y}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb8-37"><a href=""></a></span>
+<span id="cb8-38"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb8-39"><a href=""></a>}</span>
+<span id="cb8-40"><a href=""></a></span>
+<span id="cb8-41"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-42"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb8-43"><a href=""></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb8-44"><a href=""></a>  <span class="dt">aspectRatio</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb8-45"><a href=""></a>  <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb8-46"><a href=""></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb8-47"><a href=""></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb8-48"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb8-49"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(malla_elipse<span class="op">,</span> {</span>
+<span id="cb8-50"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb8-51"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb8-52"><a href=""></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"id"</span><span class="op">,</span></span>
+<span id="cb8-53"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"rgba(128,128,128,0.15)"</span></span>
+<span id="cb8-54"><a href=""></a>    })<span class="op">,</span></span>
+<span id="cb8-55"><a href=""></a></span>
+<span id="cb8-56"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb8-57"><a href=""></a></span>
+<span id="cb8-58"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb8-59"><a href=""></a></span>
+<span id="cb8-60"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(puntos_elipse<span class="op">,</span> {</span>
+<span id="cb8-61"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb8-62"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb8-63"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#1f77b4"</span><span class="op">,</span></span>
+<span id="cb8-64"><a href=""></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb8-65"><a href=""></a>    })</span>
+<span id="cb8-66"><a href=""></a>  ]</span>
+<span id="cb8-67"><a href=""></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-9" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
 </div></div>
 </section>
-<section id="section-29" class="slide level2">
-<h2></h2>
+<section class="slide level2">
+
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column">
 <ul>
-<li><p>En este sentido, el <strong>semi-latus rectum</strong> <span class="math inline">\(p\)</span> puede expresarse en función del semieje mayor <span class="math inline">\(a\)</span> y la excentricidad <span class="math inline">\(e\)</span> como</p>
+<li><p>Ahora consideremos el caso donde <span class="math inline">\(e=1\)</span>.</p></li>
+<li><p>Sustituyendo directamente en la ecuación de la órbita obtenemos</p>
 <p><span class="math display">\[
-  p=a(1-e^2).
+  \begin{aligned}
+      y^2&amp;=p^2-2px\\
+      &amp;-2p(x-\frac{p}{2})
+  \end{aligned}
   \]</span></p></li>
-</ul>
-<ul>
-<li class="fragment"><p>Adicionalmente, puede interpretarse geométricamente como la distancia desde el foco hasta la elipse cuando <span class="math inline">\(\nu=\pm\frac{\pi}{2}\)</span>.</p></li>
-<li class="fragment"><p>La distancia focal <span class="math inline">\(c\)</span> en términos de <span class="math inline">\(e\)</span> y <span class="math inline">\(p\)</span> está dada por</p>
+<li><p>Si <span class="math inline">\(f=p/2\)</span>, entonces la ecuación anterior se puede reescribir como</p>
 <p><span class="math display">\[
-  c=\frac{ep}{1-e^2},
+      y^2=-4f(x-f),
   \]</span></p>
-<p>mientras que el semieje menor <span class="math inline">\(b\)</span> está dado por</p>
+<p>La ecuación anterior describe una <strong>parábola</strong> con distancia focal <span class="math inline">\(f\)</span>.</p></li>
+<li><p>El vértice de la parábola se encuentra en el punto</p>
 <p><span class="math display">\[
-  b=\frac{p}{\sqrt{1-e^2}}.
-  \]</span></p></li>
+      \left(f,0\right),
+  \]</span></p>
+<p>mientras su focos se encuentra en el origen <span class="math inline">\((0,0)\)</span>.</p></li>
+<li><p>La parábola se abre en la dirección negativa del eje <span class="math inline">\(x\)</span>.</p></li>
 </ul>
-</div><div class="column" style="width:55%;">
-<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="2" data-source-offset="-2"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb9-2"><a href=""></a>viewof p_parabola <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="fl">3.0</span>]<span class="op">,</span> {</span>
+<span id="cb9-3"><a href=""></a>  <span class="dt">value</span><span class="op">:</span> <span class="fl">1.0</span><span class="op">,</span></span>
+<span id="cb9-4"><a href=""></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span></span>
+<span id="cb9-5"><a href=""></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"p"</span></span>
+<span id="cb9-6"><a href=""></a>})</span>
+<span id="cb9-7"><a href=""></a></span>
+<span id="cb9-8"><a href=""></a>puntos_parabola <span class="op">=</span> {</span>
+<span id="cb9-9"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb9-10"><a href=""></a></span>
+<span id="cb9-11"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> x <span class="op">&lt;=</span> p_parabola <span class="op">/</span> <span class="dv">2</span><span class="op">;</span> x <span class="op">+=</span> <span class="fl">0.01</span>) {</span>
+<span id="cb9-12"><a href=""></a>    <span class="kw">const</span> y <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="op">-</span><span class="dv">2</span> <span class="op">*</span> p_parabola <span class="op">*</span> (x <span class="op">-</span> p_parabola <span class="op">/</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb9-13"><a href=""></a></span>
+<span id="cb9-14"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> x<span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb9-15"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span>y})<span class="op">;</span></span>
+<span id="cb9-16"><a href=""></a>  }</span>
+<span id="cb9-17"><a href=""></a></span>
+<span id="cb9-18"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb9-19"><a href=""></a>}</span>
+<span id="cb9-20"><a href=""></a></span>
+<span id="cb9-21"><a href=""></a>malla_parabola <span class="op">=</span> {</span>
+<span id="cb9-22"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb9-23"><a href=""></a></span>
+<span id="cb9-24"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x<span class="op">++</span>)</span>
+<span id="cb9-25"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">;</span></span>
+<span id="cb9-26"><a href=""></a></span>
+<span id="cb9-27"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> y <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> y<span class="op">++</span>)</span>
+<span id="cb9-28"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span><span class="op">,</span> y}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb9-29"><a href=""></a></span>
+<span id="cb9-30"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb9-31"><a href=""></a>}</span>
+<span id="cb9-32"><a href=""></a></span>
+<span id="cb9-33"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb9-34"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb9-35"><a href=""></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb9-36"><a href=""></a>  <span class="dt">aspectRatio</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb9-37"><a href=""></a>  <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb9-38"><a href=""></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb9-39"><a href=""></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb9-40"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb9-41"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(malla_parabola<span class="op">,</span> {</span>
+<span id="cb9-42"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb9-43"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb9-44"><a href=""></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"id"</span><span class="op">,</span></span>
+<span id="cb9-45"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"rgba(128,128,128,0.15)"</span></span>
+<span id="cb9-46"><a href=""></a>    })<span class="op">,</span></span>
+<span id="cb9-47"><a href=""></a></span>
+<span id="cb9-48"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb9-49"><a href=""></a></span>
+<span id="cb9-50"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb9-51"><a href=""></a></span>
+<span id="cb9-52"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(puntos_parabola<span class="op">,</span> {</span>
+<span id="cb9-53"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb9-54"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb9-55"><a href=""></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"id"</span><span class="op">,</span></span>
+<span id="cb9-56"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#1f77b4"</span><span class="op">,</span></span>
+<span id="cb9-57"><a href=""></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb9-58"><a href=""></a>    })</span>
+<span id="cb9-59"><a href=""></a>  ]</span>
+<span id="cb9-60"><a href=""></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-9-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
 </div></div>
 </section>
-<section id="section-30" class="slide level2">
-<h2></h2>
+<section class="slide level2">
+
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column">
 <ul>
-<li><p>La energía mecánica específica en una órbita elíptica está dada por</p>
+<li><p>Finalmente, consideremos el caso donde <span class="math inline">\(e&gt;1\)</span>.</p></li>
+<li><p>En este caso, podemos asegurar que</p>
+<p><span class="math display">\[
+  \exists a&gt;0 : p=-a(1-e^2).
+  \]</span></p></li>
+<li><p>Sustituyendo en la ecuación de la órbita obtenemos</p>
+<p><span class="math display">\[
+  (1-e^2)x^2+y^2-2a(1-e^2)ex-a^2(1-e^2)^2=0.
+  \]</span></p></li>
+<li><p>Reordenando los términos y considerando <span class="math inline">\(c=ae\)</span>, obtenemos</p>
+<p><span class="math display">\[
+  \frac{(x-c)^2}{a^2}-\frac{y^2}{b^2}=1,
+  \]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+  b=a\sqrt{e^2-1}.
+  \]</span></p>
+<p>La ecuación anterior describe una <strong>hipérbola</strong> con semieje transverso <span class="math inline">\(|a|\)</span>, semieje conjugado <span class="math inline">\(b\)</span> y distancia focal <span class="math inline">\(c=ae\)</span>.</p></li>
+<li><p>El centro de la hipérbola se encuentra en el punto <span class="math inline">\((c,0)\)</span> y uno de sus focos se encuentra en el origen <span class="math inline">\((0,0)\)</span>.</p></li>
+<li><p>La hipérbola tiene dos ramas y se abre en la dirección del eje <span class="math inline">\(x\)</span>. Sus asíntotas están dadas por</p>
+<p><span class="math display">\[
+  y=\pm\frac{b}{|a|}(x+c).
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="2" data-source-offset="-2"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb10-2"><a href=""></a>viewof params_hiperbola <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>({</span>
+<span id="cb10-3"><a href=""></a>  <span class="dt">p_hiperbola</span><span class="op">:</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="fl">25.0</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">1.0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"p"</span>})<span class="op">,</span></span>
+<span id="cb10-4"><a href=""></a>  <span class="dt">e_hiperbola</span><span class="op">:</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">1.05</span><span class="op">,</span> <span class="fl">25.0</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.05</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"e"</span>})</span>
+<span id="cb10-5"><a href=""></a>})</span>
+<span id="cb10-6"><a href=""></a></span>
+<span id="cb10-7"><a href=""></a>p_hiperbola <span class="op">=</span> params_hiperbola<span class="op">.</span><span class="at">p_hiperbola</span></span>
+<span id="cb10-8"><a href=""></a></span>
+<span id="cb10-9"><a href=""></a>e_hiperbola <span class="op">=</span> params_hiperbola<span class="op">.</span><span class="at">e_hiperbola</span></span>
+<span id="cb10-10"><a href=""></a></span>
+<span id="cb10-11"><a href=""></a>a_hiperbola <span class="op">=</span> <span class="op">-</span>p_hiperbola <span class="op">/</span> (e_hiperbola <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb10-12"><a href=""></a></span>
+<span id="cb10-13"><a href=""></a>b_hiperbola <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(a_hiperbola) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(e_hiperbola <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb10-14"><a href=""></a></span>
+<span id="cb10-15"><a href=""></a>c_hiperbola <span class="op">=</span> a_hiperbola <span class="op">*</span> e_hiperbola</span>
+<span id="cb10-16"><a href=""></a></span>
+<span id="cb10-17"><a href=""></a>puntos_hiperbola <span class="op">=</span> {</span>
+<span id="cb10-18"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb10-19"><a href=""></a>  <span class="kw">const</span> Hmax <span class="op">=</span> <span class="fl">2.5</span><span class="op">;</span></span>
+<span id="cb10-20"><a href=""></a></span>
+<span id="cb10-21"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> H <span class="op">=</span> <span class="op">-</span>Hmax<span class="op">;</span> H <span class="op">&lt;=</span> Hmax<span class="op">;</span> H <span class="op">+=</span> <span class="fl">0.01</span>)</span>
+<span id="cb10-22"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb10-23"><a href=""></a>      <span class="dt">id</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb10-24"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="op">-</span>c_hiperbola <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(a_hiperbola) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cosh</span>(H)<span class="op">,</span></span>
+<span id="cb10-25"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> b_hiperbola <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sinh</span>(H)</span>
+<span id="cb10-26"><a href=""></a>    })<span class="op">;</span></span>
+<span id="cb10-27"><a href=""></a></span>
+<span id="cb10-28"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> H <span class="op">=</span> <span class="op">-</span>Hmax<span class="op">;</span> H <span class="op">&lt;=</span> Hmax<span class="op">;</span> H <span class="op">+=</span> <span class="fl">0.01</span>)</span>
+<span id="cb10-29"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({</span>
+<span id="cb10-30"><a href=""></a>      <span class="dt">id</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb10-31"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="op">-</span>c_hiperbola <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(a_hiperbola) <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">cosh</span>(H)<span class="op">,</span></span>
+<span id="cb10-32"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> b_hiperbola <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sinh</span>(H)</span>
+<span id="cb10-33"><a href=""></a>    })<span class="op">;</span></span>
+<span id="cb10-34"><a href=""></a></span>
+<span id="cb10-35"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb10-36"><a href=""></a>}</span>
+<span id="cb10-37"><a href=""></a></span>
+<span id="cb10-38"><a href=""></a>malla_hiperbola <span class="op">=</span> {</span>
+<span id="cb10-39"><a href=""></a>  <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb10-40"><a href=""></a></span>
+<span id="cb10-41"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> x <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> x<span class="op">++</span>)</span>
+<span id="cb10-42"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`v</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> x<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span>})<span class="op">;</span></span>
+<span id="cb10-43"><a href=""></a></span>
+<span id="cb10-44"><a href=""></a>  <span class="cf">for</span> (<span class="kw">let</span> y <span class="op">=</span> <span class="op">-</span><span class="dv">10</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">10</span><span class="op">;</span> y<span class="op">++</span>)</span>
+<span id="cb10-45"><a href=""></a>    data<span class="op">.</span><span class="fu">push</span>({<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span><span class="op">,</span> y}<span class="op">,</span> {<span class="dt">id</span><span class="op">:</span> <span class="vs">`h</span><span class="sc">${</span>y<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb10-46"><a href=""></a></span>
+<span id="cb10-47"><a href=""></a>  <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb10-48"><a href=""></a>}</span>
+<span id="cb10-49"><a href=""></a></span>
+<span id="cb10-50"><a href=""></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-51"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb10-52"><a href=""></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">650</span><span class="op">,</span></span>
+<span id="cb10-53"><a href=""></a>  <span class="dt">aspectRatio</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb10-54"><a href=""></a>  <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb10-55"><a href=""></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb10-56"><a href=""></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]}<span class="op">,</span></span>
+<span id="cb10-57"><a href=""></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-58"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(malla_hiperbola<span class="op">,</span> {</span>
+<span id="cb10-59"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb10-60"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb10-61"><a href=""></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"id"</span><span class="op">,</span></span>
+<span id="cb10-62"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"rgba(128,128,128,0.15)"</span></span>
+<span id="cb10-63"><a href=""></a>    })<span class="op">,</span></span>
+<span id="cb10-64"><a href=""></a></span>
+<span id="cb10-65"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb10-66"><a href=""></a></span>
+<span id="cb10-67"><a href=""></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb10-68"><a href=""></a></span>
+<span id="cb10-69"><a href=""></a>    Plot<span class="op">.</span><span class="fu">line</span>(puntos_hiperbola<span class="op">,</span> {</span>
+<span id="cb10-70"><a href=""></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span></span>
+<span id="cb10-71"><a href=""></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb10-72"><a href=""></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"id"</span><span class="op">,</span></span>
+<span id="cb10-73"><a href=""></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#1f77b4"</span><span class="op">,</span></span>
+<span id="cb10-74"><a href=""></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb10-75"><a href=""></a>    })</span>
+<span id="cb10-76"><a href=""></a>  ]</span>
+<span id="cb10-77"><a href=""></a>})</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-9" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="energía-mecánica-específica" class="slide level2">
+<h2>Energía mecánica específica</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>La energía mecánica específica en una órbita está dada por</p>
 <p><span class="math display">\[
       \begin{aligned}
           E
@@ -3063,22 +3546,44 @@ Secciones cónicas
           \frac{\mu^2}{2\|\vec{h}\|^2}\\
           &amp;=
           -\frac{\mu^2}{2\|\vec{h}\|^2}(1-e^2)\\
-          &amp;=
-          -\frac{\mu}{2a}&lt;0.
       \end{aligned}
   \]</span></p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Esto implica que <span style="color:teal"><strong>la energía mecánica específica es negativa en una órbita elíptica.</strong></span> Por consecuencia,</p>
-<p><span class="math display">\[
-  |E_c|&lt;|E_p|.
+<li><p><span class="math inline">\(e=0 \Rightarrow\)</span> <span class="math display">\[
+      E=-\frac{\mu^2}{2\|\vec{h}\|^2}&lt;0
   \]</span></p></li>
 </ul>
-</div>
-</div><div class="column" style="width:55%;">
-<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div><div class="column">
+<ul>
+<li><span class="math inline">\(0&lt;e&lt;1 \Rightarrow\)</span> <span class="math display">\[
+      E=-\frac{\mu^2}{2\|\vec{h}\|^2}(1-e^2)&lt;0
+  \]</span></li>
+<li><span class="math inline">\(e=1 \Rightarrow\)</span> <span class="math display">\[
+      E=0
+  \]</span></li>
+<li><span class="math inline">\(e&gt;1 \Rightarrow\)</span> <span class="math display">\[
+      E=-\frac{\mu^2}{2\|\vec{h}\|^2}(1-e^2)&gt;0
+  \]</span></li>
+</ul>
 </div></div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Recuerde que la energía mecánica específica es la suma de la energía cinética específica y la energía potencial específica, y dado a que la energía cinética específica es siempre positiva y la energía potencial específica es siempre negativa, entonces el signo de la energía mecánica específica depende de cuál de las dos energías es dominante.</p>
+<ul>
+<li><p>Cuando la energía cinética específica es dominante, la energía mecánica específica es positiva. Eso indica que la velocidad es suficiente para escapar del campo gravitatorio y que la órbita diverja (comunmente se les conoce como órbitas abiertas, aunque el término correcto sería trayectoria abierta).</p></li>
+<li><p>Cuando la energía potencial específica es dominante, la energía mecánica específica es negativa. Eso indica que la velocidad no es suficiente para escapar del campo gravitatorio y que la órbita sea periódica (órbitas cerradas).</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="relación-entre-energía-y-secciones-cónicas" class="slide level2">
 <h2>Relación entre energía y secciones cónicas</h2>
@@ -3150,14 +3655,14 @@ Secciones cónicas
 <tr class="odd">
 <td style="text-align: left;">Parábola</td>
 <td style="text-align: center;"><span class="math inline">\(e=1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(p=2r_p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p=2f\)</span></td>
 <td style="text-align: left;">Órbita límite</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Hipérbola</td>
 <td style="text-align: center;"><span class="math inline">\(e&gt;1\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(p=a(e^2-1)\)</span></td>
-<td style="text-align: left;">Órbita abierta</td>
+<td style="text-align: left;">Trayectoria abierta</td>
 </tr>
 </tbody>
 </table>
@@ -3169,7 +3674,7 @@ Secciones cónicas
 </ul>
 </div>
 </section>
-<section id="section-31" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 <div class="center-vertical">
 <div class="chapter-title">
@@ -3179,12 +3684,66 @@ Secciones cónicas
 
 </div>
 <div class="chapter-subtitle">
-<p>Anomalías</p>
+<p>Órbitas cerradas</p>
 <div class="menu-title" style="display:none;">
-▸ Anomalías
+▸ Órbitas cerradas
 </div>
 </div>
 </div>
+</section>
+<section id="órbitas-cerradas" class="slide level2">
+<h2>Órbitas cerradas</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li><p>Las órbitas cerradas son aquellas que se repiten periódicamente, es decir, el cuerpo en órbita regresa a su posición inicial después de un tiempo finito.</p></li>
+<li><p>Podemos englobar este caso a orbitas elípticas, y tratar el caso particular de la circunferencia como un caso especial de la elipse.</p></li>
+<li><p>La órbita elíptica es la más común en mecánica orbital.</p></li>
+</ul>
+<ul>
+<li class="fragment"><p>El punto de la elipse con <span class="math inline">\(\nu=0\)</span> se conoce como <strong>periapsis</strong> (perigeo en el caso de la Tierra) y el punto con <span class="math inline">\(\nu=\pi\)</span> como <strong>apoapsis</strong> (apogeo).</p></li>
+<li class="fragment"><p>La distancia desde el foco hasta el periapsis (punto <span style="color:red">A</span>) puede obtenerse de <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a> como</p>
+<p><span class="math display">\[
+  r_p=\frac{p}{1+e}.
+  \]</span></p></li>
+<li class="fragment"><p>Mientras que la distancia desde el foco hasta el apogeo (punto <span style="color:red">B</span>) es</p>
+<p><span class="math display">\[
+  r_a=\frac{p}{1-e}.
+  \]</span></p></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li><p>Con ello, el semieje mayor <span class="math inline">\(a\)</span> está dado por</p>
+<p><span class="math display">\[
+      a=\frac{r_p+r_a}{2}
+      =\frac{p}{1-e^2}.
+  \]</span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>En este sentido, el <strong>semi-latus rectum</strong> <span class="math inline">\(p\)</span> puede expresarse en función del semieje mayor <span class="math inline">\(a\)</span> y la excentricidad <span class="math inline">\(e\)</span> como</p>
+<p><span class="math display">\[
+  p=a(1-e^2).
+  \]</span></p></li>
+<li class="fragment"><p>Adicionalmente, puede interpretarse geométricamente como la distancia desde el foco hasta la elipse cuando <span class="math inline">\(\nu=\pm\frac{\pi}{2}\)</span>.</p></li>
+<li class="fragment"><p>La distancia focal <span class="math inline">\(c\)</span> en términos de <span class="math inline">\(e\)</span> y <span class="math inline">\(p\)</span> está dada por</p>
+<p><span class="math display">\[
+  c=\frac{ep}{1-e^2},
+  \]</span></p>
+<p>mientras que el semieje menor <span class="math inline">\(b\)</span> está dado por</p>
+<p><span class="math display">\[
+  b=\frac{p}{\sqrt{1-e^2}}.
+  \]</span></p></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div></div>
 </section>
 <section class="slide level2">
 
@@ -3306,7 +3865,7 @@ Secciones cónicas
           \sin(\nu)&amp;=\frac{\sin(\psi)\sqrt{1-e^2}}{1-e\cos(\psi)},\\
           \tan(\nu)&amp;=\frac{\sin(\psi)\sqrt{1-e^2}}{\cos(\psi)-e}.
       \end{aligned}
-   \tag{11}\]</span></span></p></li>
+   \tag{12}\]</span></span></p></li>
 </ul>
 <div class="fragment">
 <ul>
@@ -3317,7 +3876,7 @@ Secciones cónicas
           &amp;=\frac{a(1-e^2)}{1+e\left(\frac{\cos(\psi)-e}{1-e\cos(\psi)}\right)}\\
           &amp;=a(1-e\cos(\psi)).
       \end{aligned}
-   \tag{12}\]</span></span></p>
+   \tag{13}\]</span></span></p>
 <p>Sin embargo, aún seguimos sin conocer cómo varía la anomalía excéntrica con el tiempo.</p></li>
 </ul>
 </div>
@@ -3352,9 +3911,9 @@ Secciones cónicas
   \]</span></p></li>
 <li class="fragment"><p>Dado que <span class="math inline">\(\|{}^{p}\vec{h}\|\)</span> es constante, al integrar se obtiene</p>
 <p><span class="math display">\[
-  A=A_0+\frac{1}{2}\|{}^{p}\vec{h}\|t,
+  A=A_0+\frac{1}{2}\|{}^{p}\vec{h}\|(t-t_p),
   \]</span></p>
-<p>donde <span class="math inline">\(A_0\)</span> es el área barrida en <span class="math inline">\(t=0\)</span>.</p></li>
+<p>donde <span class="math inline">\(A_p\)</span> es el área barrida en <span class="math inline">\(t=0\)</span> y <span class="math inline">\(t_p\)</span> es el instante de tiempo donde el vector de posición se alinea con la periapsis.</p></li>
 </ul>
 </div><div class="column" style="width:55%;">
 <div class="quarto-figure quarto-figure-center">
@@ -3364,15 +3923,15 @@ Secciones cónicas
 </div>
 </div></div>
 </section>
-<section id="section-32" class="slide level2">
+<section id="section-31" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <ul>
-<li><p>Considerando <span class="math inline">\(A_0=0\)</span>, se tiene que</p>
+<li><p>Considerando <span class="math inline">\(A_p=0\)</span>, se tiene que</p>
 <p><span id="eq-areatime"><span class="math display">\[
   \frac{A}{t}= \frac{1}{2}\|\vec{h}\|,
-   \tag{13}\]</span></span></p>
+   \tag{14}\]</span></span></p>
 <p>y, dado que <span class="math inline">\(\|\vec{h}\|\)</span> es constante, la relación entre el área barrida y el tiempo en órbita es constante.</p></li>
 </ul>
 <div class="fragment">
@@ -3385,58 +3944,28 @@ Secciones cónicas
 <p><span class="math display">\[
       \begin{split}
           T &amp; =\frac{2\pi ab}{\|\vec{h}\|}=\frac{2\pi ab}{\sqrt{p\mu}},\\
-          &amp; =\frac{2\pi a^2\sqrt{1-e^2}}{\sqrt{a(1-e^2)\mu}}=2\pi\sqrt{\frac{a^3}{\mu}}=\frac{2\pi}{\omega_0},
+          &amp; =\frac{2\pi a^2\sqrt{1-e^2}}{\sqrt{a(1-e^2)\mu}}=2\pi\sqrt{\frac{a^3}{\mu}}=\frac{2\pi}{\eta_e},
       \end{split}
   \]</span></p>
-<p>donde <span class="math inline">\(\omega_0=\sqrt{\mu/a^3}\)</span> se conoce como <em>movimiento angular medio</em>.</p></li>
+<p>donde <span class="math inline">\(\eta_e=\sqrt{\mu/a^3}\)</span> se conoce como <em>movimiento angular medio</em>.</p></li>
 </ul>
 </div>
 </div><div class="column" style="width:55%;">
 <p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
 </div></div>
 </section>
-<section id="section-33" class="slide level2">
+<section id="section-32" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <ul>
-<li><p>Con ello, podemos definir la como</p>
-<p><span id="eq-mean_anomaly"><span class="math display">\[
-  M = \omega_0 (t-t_0)+M_0,
-   \tag{14}\]</span></span></p>
-<p>donde <span class="math inline">\(t_0\)</span> es la <em>época</em> y <span class="math inline">\(M_0\)</span> es la <em>anomalía media acumulada en la época <span class="math inline">\(t_0\)</span></em>. Si se asume que <span class="math inline">\(t_0=t_p\)</span>, donde <span class="math inline">\(t_p=nT\)</span>,<span class="math inline">\(n \in \mathbb{N}\)</span>, entonces <span class="math inline">\(M_0=0\)</span> (el satélite se encuentra en el periapsis).</p></li>
-</ul>
-<div class="vspace-3">
-
-</div>
-<ul>
-<li class="fragment"><p>En este caso, la anomalía media es</p>
-<p><span class="math display">\[
-  M = \omega_0 (t-t_p),
-  \]</span></p></li>
-</ul>
-<div class="vspace-3">
-
-</div>
-<ul>
-<li class="fragment">Una interpretación geométrica de la anomalía media es que es el ángulo que barrería un cuerpo si se moviera con velocidad angular constante <span class="math inline">\(\omega_0\)</span> en una órbita circular de radio <span class="math inline">\(a\)</span>.</li>
-</ul>
-</div><div class="column" style="width:55%;">
-<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
-</div></div>
-</section>
-<section id="section-34" class="slide level2">
-<h2></h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ul>
-<li>Para encontrar una relación entre la anomalía media <span class="math inline">\(M\)</span> y la anomalía excéntrica <span class="math inline">\(\psi\)</span>, considere lo siguiente: Sea <span class="math inline">\(S(AFC')\)</span> el área del sector <span class="math inline">\(AFC'\)</span>, y sea <span class="math inline">\(S(AFC)\)</span> el área del sector <span class="math inline">\(AFC\)</span>.
+<li>Sea <span class="math inline">\(S(AFC')\)</span> el área del sector <span class="math inline">\(AFC'\)</span>, y sea <span class="math inline">\(S(AFC)\)</span> el área del sector <span class="math inline">\(AFC\)</span>.
 <div class="vspace-3">
 
 </div></li>
 </ul>
 <ul>
-<li class="fragment"><p>Entonces, siguiendo la ecuación <a href="#/eq-areatime" class="quarto-xref">Ecuación&nbsp;13</a>, se tiene que</p>
+<li class="fragment"><p>Entonces, siguiendo la ecuación <a href="#/eq-areatime" class="quarto-xref">Ecuación&nbsp;14</a>, se tiene que</p>
 <p><span id="eq-areatime2"><span class="math display">\[
       \begin{split}
           \frac{t-t_p}{S(AFC')} &amp; =\frac{T}{\pi ab}.
@@ -3460,7 +3989,7 @@ Secciones cónicas
 <p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
 </div></div>
 </section>
-<section id="section-35" class="slide level2">
+<section id="section-33" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:45%;">
@@ -3478,12 +4007,39 @@ Secciones cónicas
 <li class="fragment"><p>Sustituyendo en <a href="#/eq-areatime2" class="quarto-xref">Ecuación&nbsp;15</a> se obtiene</p>
 <p><span class="math display">\[
       \begin{split}
-          \frac{t-t_0}{\frac{ab}{2}(\psi - e\sin(\psi))} &amp; =\frac{T}{\pi ab},\\
-          \Rightarrow \quad t-t_0                        &amp; = \frac{T}{2\pi}(\psi - e\sin(\psi)),\\
-          \Rightarrow \quad M                            &amp; = \psi - e\sin(\psi).
+          \frac{t-t_p}{\frac{ab}{2}(\psi - e\sin(\psi))} &amp; =\frac{T}{\pi ab},\\
+          \Rightarrow \quad \eta_e (t-t_p)                        &amp; =\psi - e\sin(\psi),\\
       \end{split}
   \]</span></p></li>
 <li class="fragment"><p>La última ecuación se conoce como <strong>Ecuación de Kepler</strong>.</p></li>
+<li class="fragment"><p>La importancia de la ecuación de Kepler radica en que <strong>relaciona el tiempo con la posición del cuerpo en su órbita</strong>, a través de la anomalía excéntrica <span class="math inline">\(\psi\)</span>.</p></li>
+<li class="fragment"><p>Esta ecuación es trascendental, por lo que no puede resolverse de forma analítica. Sin embargo, puede resolverse de forma numérica mediante métodos iterativos.</p></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li><p>Con ello, podemos definir la como</p>
+<p><span id="eq-mean_anomaly"><span class="math display">\[
+  M = \eta_e (t-t_p),
+   \tag{16}\]</span></span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Considere el instante de tiempo <span class="math inline">\(t_0\)</span>, durante el cual se conocen las condiones iniciales de posición y velocidad del cuerpo en órbita. En este caso, la anomalía media acumulada en ese instante de tiempo es</p>
+<p><span id="eq-mean_anomaly2"><span class="math display">\[
+  M_0 = \eta_e (t_0-t_p),
+   \tag{17}\]</span></span></p></li>
+<li class="fragment"><p>Restando las ecuaciones <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;16</a> y <a href="#/eq-mean_anomaly2" class="quarto-xref">Ecuación&nbsp;17</a>, se obtiene</p>
+<p><span class="math display">\[
+  M(t)=\eta_e (t-t_0)+M_0,
+  \]</span></p>
+<p>donde a <span class="math inline">\(t_0\)</span> se le conoce como <em>época</em> y <span class="math inline">\(M_0\)</span> es la <em>anomalía media acumulada en la época <span class="math inline">\(t_0\)</span></em>. Si se asume que <span class="math inline">\(t_0=t_p\)</span>, donde <span class="math inline">\(t_p=nT\)</span>,<span class="math inline">\(n \in \mathbb{N}\)</span>, entonces <span class="math inline">\(M_0=0\)</span> (el satélite se encuentra en el periapsis).</p></li>
+<li class="fragment"><p>Una interpretación geométrica de la anomalía media es que es el ángulo que barrería un cuerpo si se moviera con velocidad angular constante <span class="math inline">\(\eta_e\)</span> en una órbita circular de radio <span class="math inline">\(a\)</span>.</p></li>
 </ul>
 </div><div class="column" style="width:55%;">
 <p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
@@ -3516,7 +4072,7 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 \]</span></p>
 </div>
 </section>
-<section id="section-36" class="slide level2">
+<section id="section-35" class="slide level2">
 <h2></h2>
 <div class="center-vertical">
 <div class="chapter-title">
@@ -3536,124 +4092,359 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 <section id="planteamiento-del-problema-1" class="slide level2">
 <h2>Planteamiento del problema</h2>
 <p>La <strong>propagación de órbita</strong> es el proceso de determinar la posición y la velocidad futura (o pasada) de un cuerpo en órbita. El problema puede plantearse de forma general de la siguiente manera:</p>
-<div class="vspace-3">
-
-</div>
 <div id="prob-orbit_propagation" class="definition-block fragment">
 <p><strong>Problema 2.1</strong></p>
-<p>Dadas los elementos orbitales <span class="math inline">\({a(t),e(t),\omega(t),i(t),\Omega(t),M(t)}\)</span> en el tiempo <span class="math inline">\(t_0\)</span>, determinar los vectores de posición <span class="math inline">\(\ls{i}\vec{r}(t)\)</span> y velocidad <span class="math inline">\(\ls{i}\vec{v}(t)\)</span> en el tiempo <span class="math inline">\(t\)</span>.</p>
+<p>Dadas las condiciones iniciales <span class="math inline">\(\ls{p}\vec{r}(t_0)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t_0)\)</span>en la época <span class="math inline">\(t_0\)</span>, determinar los vectores de posición <span class="math inline">\(\ls{i}\vec{r}(t)\)</span> y velocidad <span class="math inline">\(\ls{i}\vec{v}(t)\)</span> en cualquier instante de tiempo <span class="math inline">\(t&gt;t_0\)</span>.</p>
 </div>
 <div class="fragment">
 <p>Para resolver el Problema 2.1 para nuestro curso, haremos la siguiente suposición:</p>
 </div>
 <div id="ass-central_force" class="definition-block fragment">
 <p><strong>Suposición 2.1</strong></p>
-<p>La órbita es elíptica y está gobernada únicamente por la fuerza de atracción central.</p>
+<ul>
+<li>El sistema está compuesto por dos partículas con masa constante.</li>
+<li>La trayectoria está gobernada únicamente por la fuerza de atracción central.</li>
+</ul>
 </div>
 <div class="fragment">
+<p>Esto nos remite a lo hemos estudiado hasta el momento.</p>
+<ul>
+<li>La metodología para resolver el Problema 2.1 depende del tipo de trayectoria que esté determinada por las condiciones inciales.</li>
+<li>Por lo tanto, podemos dividir la solución del problema en dos etapas:
+<ul>
+<li><strong>Determinar <span class="math inline">\(M_0\)</span> y <span class="math inline">\(\eta\)</span></strong>: esto implica determinar <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(E\)</span> y <span class="math inline">\(\|\vec{h}\|\)</span> mediante las condiciones iniciales <span class="math inline">\(\ls{p}\vec{r}(t_0)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t_0)\)</span>.</li>
+<li><strong>Propagar la órbita</strong>: lo cual es determinar <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> en cualquier instante de tiempo <span class="math inline">\(t\)</span> a partir de la época <span class="math inline">\(t_0\)</span> y la anomalía media acumulada <span class="math inline">\(M_0\)</span>.</li>
+</ul></li>
+<li>Al conjunto de vectores <span class="math inline">\(\{\ls{p}\vec{r}(t),\ls{p}\vec{v}(t)\}\)</span> para un conjunto finito de instantes de tiempo <span class="math inline">\(\{t_0,t_1,\ldots,t_n\}\)</span> se le denomina <strong>efemérides</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="determinación-de-m_0-y-eta" class="slide level2">
+<h2>Determinación de <span class="math inline">\(M_0\)</span> y <span class="math inline">\(\eta\)</span></h2>
+<ul>
+<li><p>Para determinar <span class="math inline">\(M_0\)</span> y <span class="math inline">\(\eta\)</span>, es necesario conocer la excentricidad <span class="math inline">\(e\)</span> y el semi-latus rectum <span class="math inline">\(p\)</span>. Esto puede lograrse mediante las condiciones iniciales de posición y velocidad <span class="math inline">\(\ls{p}\vec{r}(t_0)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t_0)\)</span>.</p></li>
+<li><p>El primer paso es determinar el momento angular específico <span class="math inline">\(\vec{h}\)</span> mediante la ecuación <a href="#/eq-angular_momentum" class="quarto-xref">Ecuación&nbsp;5</a>. <span id="eq-angular_momentum_alg"><span class="math display">\[
+  \vec{h}=\ls{p}\vec{r}(t_0)\times\ls{p}\vec{v}(t_0).
+   \tag{18}\]</span></span></p></li>
+<li><p>A partir de <span class="math inline">\(\vec{h}\)</span>, podemos determinar el semi-latus rectum <span class="math inline">\(p\)</span> mediante la ecuación :</p>
+<p><span id="eq-p_h"><span class="math display">\[
+  p=\frac{\|\vec{h}\|^2}{\mu}.
+   \tag{19}\]</span></span> donde <span class="math inline">\(\mu\)</span> es el parámetro gravitacional estándar.</p></li>
+<li><p>Lo siguiente es determinar la energía mecánica específica <span class="math inline">\(E\)</span> mediante la ecuación:</p>
+<p><span id="eq-energy"><span class="math display">\[
+  E=\frac{1}{2}\|\ls{p}\vec{v}(t_0)\|^2-\frac{\mu}{\|\ls{p}\vec{r}(t_0)\|}.
+   \tag{20}\]</span></span></p></li>
+<li><p>A partir de <span class="math inline">\(E\)</span> y <span class="math inline">\(p\)</span>, podemos determinar la excentricidad <span class="math inline">\(e\)</span> mediante la ecuación .</p>
+<p><span id="eq-e_p_E"><span class="math display">\[
+  e=\sqrt{1+2E\frac{\|\vec{h}\|^2}{\mu}}.
+   \tag{21}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>Por otro lado, si consideramos que el vector de posición inicial <span class="math inline">\(\ls{p}\vec{r}(t_0)= \begin{bmatrix} r_{0,x} &amp; r_{0,y} &amp; 0 \end{bmatrix}^\top\)</span>, entonces: <span class="math display">\[
+      \tan(\nu_0)=\frac{r_{0,y}}{r_{0,x}}, \Rightarrow \nu_0=\tan^{-1}\left(r_{0,y},r_{0,x}\right).
+  \]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Debido a que la función <span class="math inline">\(\tan^{-1}(\cdot)\)</span> tiene un rango de <span class="math inline">\((-\pi/2,\pi/2)\)</span>, es necesario considerar el cuadrante en el que se encuentra <span class="math inline">\(\nu(t)\)</span> para obtener el valor correcto. Por ello , es recomendable utilizar la función <span class="math inline">\(\text{atan2}(y,x)\)</span>, que considera el cuadrante correcto, de modo que</p>
+<p><span id="eq-nu0"><span class="math display">\[
+  \nu_0 = \text{atan2}\left(r_{0,y},r_{0,y}\right).
+   \tag{22}\]</span></span></p>
+<p>donde <span class="math inline">\(\text{atan2}(y,x)\)</span> se define como</p>
+<p><span class="math display">\[
+      \text{atan2}(y,x) =
+      \begin{cases}
+          \tan^{-1}(y/x),     &amp; x&gt;0,\\
+          \tan^{-1}(y/x)+\pi, &amp; x&lt;0,y\geq 0,\\
+          \tan^{-1}(y/x)-\pi, &amp; x&lt;0,y&lt;0,\\
+          +\pi/2,             &amp; x=0,y&gt;0,\\
+          -\pi/2,             &amp; x=0,y&lt;0,\\
+          \text{indefinido},  &amp; x=0,y=0.
+      \end{cases}
+  \]</span></p></li>
+<li><p>A partir de aquí, debemos considerar procedimientos diferentes dependiendo del tipo de trayectoria.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:35%;">
+<p><img data-src=".\Figures/c2/output.png" class="fragment" style="width:96.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
 <div class="vspace-3">
 
 </div>
-<p>Bajo la Suposición 2.1, se entiende que</p>
-<ul>
-<li>Los elementos orbitales no varían con el tiempo, excepto la anomalía media <span class="math inline">\(M(t)\)</span>.</li>
-</ul>
+<div class="vspace-3">
+
 </div>
+<div class="vspace-3">
+
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.0: Determinación de parámetros generales
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\ls{p}\vec{r}(t_0)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t_0)\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular el momento angular específico <span class="math inline">\(\vec{h}\)</span> mediante la ecuación <a href="#/eq-angular_momentum_alg" class="quarto-xref">Ecuación&nbsp;18</a>.
+</li>
+<li>
+Calcular el semi-latus rectum <span class="math inline">\(p\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;19</a>.
+</li>
+<li>
+Calcular la energía mecánica específica <span class="math inline">\(E\)</span> mediante la ecuación <a href="#/eq-energy" class="quarto-xref">Ecuación&nbsp;20</a>.
+</li>
+<li>
+Calcular la excentricidad <span class="math inline">\(e\)</span> mediante la ecuación <a href="#/eq-e_p_E" class="quarto-xref">Ecuación&nbsp;21</a>.
+</li>
+<li>
+Calcular la anomalía verdadera inicial <span class="math inline">\(\nu_0\)</span> mediante la ecuación <a href="#/eq-nu0" class="quarto-xref">Ecuación&nbsp;22</a>.
+</li>
+</ol>
+</div>
+</section>
+<section id="caso-elíptico" class="slide level2">
+<h2>Caso elíptico</h2>
+<ul>
+<li><p>Comenzamos determinando la anomalía excéntrica <span class="math inline">\(\psi_0\)</span> en la época <span class="math inline">\(t_0\)</span>. Para ello, hacemos uso de la ecuación <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;12</a>, obteniendo</p>
+<p><span id="eq-psi0_e"><span class="math display">\[
+      \begin{aligned}
+          \tan(\psi_0) &amp; =\frac{\sin(\nu_0)\sqrt{1-e^2}}{e+\cos(\nu_0)},\\
+          \Rightarrow \psi_0 &amp; =\mathrm{atan2}\left(\sin(\nu_0)\sqrt{1-e^2},e+\cos(\nu_0)\right).
+      \end{aligned}
+   \tag{23}\]</span></span></p></li>
+<li><p>Posteriormente, podemos determinar la anomalía media acumulada <span class="math inline">\(M_0\)</span> en la época <span class="math inline">\(t_0\)</span> mediante la ecuación <a href="#/eq-mean_anomaly2" class="quarto-xref">Ecuación&nbsp;17</a>, obteniendo</p>
+<p><span id="eq-M0_e"><span class="math display">\[
+      M_0 = \psi_0 - e\sin(\psi_0).
+   \tag{24}\]</span></span></p></li>
+<li><p>Por otro lado, obtenemos el semieje mayor <span class="math inline">\(a\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;19</a>, obteniendo</p>
+<p><span id="eq-a_e"><span class="math display">\[
+      a=\frac{p}{1-e^2}.
+   \tag{25}\]</span></span></p></li>
+<li><p>Finalmente, podemos determinar el movimiento angular medio <span class="math inline">\(\eta_e\)</span> mediante la ecuación <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;16</a>, obteniendo</p>
+<p><span id="eq-eta_e"><span class="math display">\[
+      \eta_e=\sqrt{\frac{\mu}{a^3}}.
+   \tag{26}\]</span></span></p></li>
+</ul>
 <div class="fragment">
-<p>Esto nos remite a lo visto en anteriores diapositivas.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Cuando <span class="math inline">\(e=0\)</span>, entonces <span class="math inline">\(\nu_0=\psi_0=M_0=0\)</span> y <span class="math inline">\(a=p=r\)</span>. El concepto de periapsis deja de tener sentido en órbitas circulares, ya que todos los puntos de la trayectoria están a la misma distancia.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
 
-<ul>
-<li><p>El primer paso para resolver el Problema 2.1 es determinar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span>. Para ello, hacemos uso de la ecuación de Kepler:</p>
-<p><span id="eq-kepler"><span class="math display">\[
-  M(t) = \psi(t) - e\sin(\psi(t)),
-   \tag{16}\]</span></span></p></li>
-</ul>
-<ul>
-<li class="fragment"><p>Sustituyendo <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;14</a> en <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;16</a> se obtiene</p>
-<p><span class="math display">\[
-  \psi(t) - e\sin(\psi(t))-M(t) = 0,
-  \]</span></p>
-<p>donde <span class="math inline">\(\omega_0=\sqrt{\mu/a^3}\)</span>.</p></li>
-<li class="fragment"><p>Definiendo la función real</p>
-<p><span id="eq-g_root"><span class="math display">\[
-  g(\uppsi,t) = \uppsi - e\sin(\uppsi) - M(t)
-   \tag{17}\]</span></span></p></li>
-<li class="fragment"><p>El objetivo es encontrar la raíz de la función <span class="math inline">\(g(\uppsi^\star,t)\)</span>=0, que corresponde a la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span> (<span class="math inline">\(\uppsi^\star=\psi(t)\)</span>). Esto puede lograrse mediante métodos numéricos clásicos.</p></li>
-</ul>
-</section>
-<section class="slide level2">
+<div class="vspace-3">
 
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.1.1: Determinación de la anomalia excentrica en el caso elíptico
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\eta_e\)</span> y <span class="math inline">\(M_0\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular la anomalía excentrica mediante la ecuación <a href="#/eq-psi0_e" class="quarto-xref">Ecuación&nbsp;23</a>.
+</li>
+<li>
+Calcular la anomalía media acumulada mediante la ecuación <a href="#/eq-M0_e" class="quarto-xref">Ecuación&nbsp;24</a>.
+</li>
+<li>
+Calcular el semieje mayor mediante la ecuación <a href="#/eq-a_e" class="quarto-xref">Ecuación&nbsp;25</a>.
+</li>
+<li>
+Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" class="quarto-xref">Ecuación&nbsp;26</a>.
+</li>
+</ol>
+</div>
+<!-- 
+## Caso parabólico
+
+
+- Comenzamos determinando la anomalía parabólica $\psi_0$ en la época $t_0$. Para ello, calculamos
+
+    $$
+        \begin{aligned}
+            \psi_0 & =\tan(\frac{\nu_0}{2}).
+        \end{aligned}
+    $$
+
+- Posteriormente, podemos determinar la anomalía media acumulada $M_0$ en la época $t_0$
+
+    $$
+        M_0 = \frac{1}{3}\psi_0^3+\psi_0.
+    $$
+
+- Por otro lado, obtenemos la distancia focal $f$ como 
+
+    $$
+        f=\frac{p}{2}.
+    $$
+- Finalmente, podemos determinar el movimiento angular medio $\eta_p$
+
+    $$
+        \eta_p=\sqrt{\frac{\mu}{2f^3}}.
+    $$
+
+
+## Caso hiperbólico
+
+
+- Comenzamos determinando la anomalía parabólica $\psi_0$ en la época $t_0$:
+
+    $$
+        \begin{aligned}
+            \psi_0 & =\mathrm{sinh}^{-1}\left(\frac{\sqrt{e^2-1}\sin{\nu_0}}{1+e\cos{\nu_0}}\right).
+        \end{aligned}
+    $$
+
+- Posteriormente, podemos determinar la anomalía media acumulada $M_0$ en la época $t_0$ 
+
+    $$
+        M_0 = e\sinh(\psi_0)-\psi_0.
+    $$
+
+- Por otro lado, obtenemos el semieje transverso $a$ mediante la ecuación @eq-p_h,
+
+    $$
+        a=\frac{p}{e^2-1}.
+    $$
+- Finalmente, podemos determinar el movimiento angular medio $\eta_h$
+
+    $$
+        \eta_h=\sqrt{\frac{\mu}{a^3}}.
+    $$ -->
+</section>
+<section id="propagación-de-órbita" class="slide level2">
+<h2>Propagación de órbita</h2>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<p>Para propagar la órbita, es necesario determinar los vectores de posición y velocidad <span class="math inline">\(\ls{i}\vec{r}(t)\)</span> y <span class="math inline">\(\ls{i}\vec{v}(t)\)</span> en el instante <span class="math inline">\(t\)</span>. Para ello, se necesita comenzar resolviendo la ecuación de Kepler asociada a cada sección cónica:</p>
 <ul>
-<li><p>Para conocer las componentes del vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span>, partimos de su descomposición en coordenadas polares</p>
-<p><span id="eq-p_r"><span class="math display">\[
+<li><p>Para órbitas elípticas</p>
+<p><span class="math display">\[
+  M(t) = \eta_{e}(t-t_0) + M_0 =\psi(t) - e\sin(\psi(t)).
+  \]</span></p></li>
+</ul>
+<!-- - Para órbitas parabólicas
+    $$
+    M(t) = \eta_{p}(t-t_0) + M_0= \frac{1}{3}\psi(t)^3+\psi(t).
+    $$
+
+- Para órbitas hiperbólicas
+    $$
+    M(t) = \eta_{h}(t-t_0) + M_0=  e\sinh(\psi(t))-\psi(t).
+    $$ -->
+<p>El procedimiento para resolver la ecuación de Kepler es similar para los tres casos. Sin embargo, el procedimiento para propagar la órbita es diferente dependiendo del tipo de trayectoria. Por ello, se abordarán por separado.</p>
+</section>
+<section id="propagación-elíptica" class="slide level2">
+<h2>Propagación elíptica</h2>
+<ul>
+<li><p>El primer paso es determinar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span>. Para ello, partimos calculando la anomalía media <span class="math inline">\(M(t)\)</span> mediante</p>
+<p><span id="eq-kepler"><span class="math display">\[
+  M(t) = \eta_{e}(t-t_0) + M_0.
+   \tag{27}\]</span></span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Definiendo la función transcendental a partir de la ecuación <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a></p>
+<p><span id="eq-g_root"><span class="math display">\[
+  g(\uppsi,t) = \uppsi - e\sin(\uppsi)- M(t)
+   \tag{28}\]</span></span></p></li>
+<li class="fragment"><p>El objetivo es encontrar la raíz de la función <span class="math inline">\(g(\uppsi^\star,t)\)</span>=0, que corresponde a la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span> (<span class="math inline">\(\uppsi^\star=\psi(t)\)</span>). Esto puede lograrse mediante métodos numéricos clásicos.</p></li>
+<li class="fragment"><p>Para conocer las componentes del vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span>, partimos de su descomposición en coordenadas polares</p>
+<p><span class="math display">\[
       \ls{p}\vec{r}(t) = \begin{bmatrix}
       r(t)\cos(\nu(t)) \\
       r(t)\sin(\nu(t)) \\
       0
       \end{bmatrix}.
-   \tag{18}\]</span></span></p></li>
-</ul>
-<ul>
-<li class="fragment"><p>Sustituyendo <a href="#/eq-r_psi" class="quarto-xref">Ecuación&nbsp;12</a> y <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;11</a> se obtiene</p>
-<p><span id="eq-p_vec"><span class="math display">\[
+  \]</span></p></li>
+<li class="fragment"><p>Sustituyendo <a href="#/eq-r_psi" class="quarto-xref">Ecuación&nbsp;13</a> y <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;12</a> se obtiene</p>
+<p><span id="eq-p_r"><span class="math display">\[
       \ls{p}\vec{r}(t) = a\begin{bmatrix}
       \cos(\psi(t))-e \\
       \sqrt{1-e^2}\sin(\psi(t)) \\
       0
       \end{bmatrix}.
-   \tag{19}\]</span></span></p></li>
-<li class="fragment"><p>Para calcular el vector de velocidad <span class="math inline">\(\ls{p}\vec{v}(t)\)</span>, podemos derivar el vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> con respecto al tiempo</p>
-<p><span class="math display">\[
-  \ls{p}\vec{v}(t) = \frac{\text{d}\ls{p}\vec{r}(t)}{\text{d}t} = \frac{\partial\ls{p}\vec{r}(t)}{\partial \psi(t)}\cdot\frac{\text{d}\psi(t)}{\text{d}t}.
-  \]</span></p></li>
-<li class="fragment"><p>Derivando <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;16</a> se obtiene</p>
-<p><span class="math display">\[
-  \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\omega_0}{1-e\cos(\psi(t))}.
-  \]</span></p></li>
+   \tag{29}\]</span></span></p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>Derivando <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> se obtiene</li>
-</ul>
+<li><p>Para calcular el vector de velocidad <span class="math inline">\(\ls{p}\vec{v}(t)\)</span>, podemos derivar el vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> con respecto al tiempo</p>
 <p><span class="math display">\[
-    \frac{\partial\ls{p}\vec{r}(t)}{\partial\psi(t)} = a\begin{bmatrix}
-    -\sin(\psi(t)) \\
-    \sqrt{1-e^2}\cos(\psi(t)) \\
-    0
-    \end{bmatrix}.
-\]</span></p>
+  \ls{p}\vec{v}(t) = \frac{\text{d}\ls{p}\vec{r}(t)}{\text{d}t} = \frac{\partial\ls{p}\vec{r}(t)}{\partial \psi(t)}\cdot\frac{\text{d}\psi(t)}{\text{d}t}.
+  \]</span></p></li>
+</ul>
 <ul>
-<li class="fragment"><p>Por lo tanto, el vector de velocidad es</p>
-<p><span id="eq-p_v"><span class="math display">\[
-      \ls{p}\vec{v}(t) = \frac{a\omega_0}{1-e\cos(\psi(t))}\begin{bmatrix}
+<li class="fragment"><p>Derivando <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a> se obtiene</p>
+<p><span class="math display">\[
+  \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_e}{1-e\cos(\psi(t))}.
+  \]</span></p></li>
+<li class="fragment"><p>Derivando <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> se obtiene</p>
+<p><span class="math display">\[
+      \frac{\partial\ls{p}\vec{r}(t)}{\partial\psi(t)} = a\begin{bmatrix}
       -\sin(\psi(t)) \\
       \sqrt{1-e^2}\cos(\psi(t)) \\
       0
       \end{bmatrix}.
-   \tag{20}\]</span></span></p></li>
-<li class="fragment"><p>Finalmente, para obtener los vectores de posición y velocidad en el marco de referencia inercial geocéntrico <span class="math inline">\(\ls{i}\vec{r}(t)\)</span> y <span class="math inline">\(\ls{i}\vec{v}(t)\)</span>, es necesario realizar una transformación de coordenadas desde el marco <span class="math inline">\(\ls{p}\mathcal{F}\)</span> al <span class="math inline">\(\ls{i}\mathcal{F}\)</span>. Esto se logra mediante la matriz de rotación <span class="math inline">\(\ls{i}R_p=\ls{p}R_i^\top\)</span> definida en <strong>?@eq-Ri2Rp</strong>.</p>
-<p><span class="math display">\[
-      \begin{split}
-          \ls{i}\vec{r}(t) &amp; = \ls{i}R_p\ls{p}\vec{r}(t), \\
-          \ls{i}\vec{v}(t) &amp; = \ls{i}R_p\ls{p}\vec{v}(t).
-      \end{split}
   \]</span></p></li>
-<li class="fragment"><p>Al conjunto de vectores <span class="math inline">\(\{\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)\}\)</span> para un conjunto finito de instantes de tiempo <span class="math inline">\(\{t_0,t_1,\ldots,t_n\}\)</span> se le denomina <strong>efemérides</strong>.</p></li>
+<li class="fragment"><p>Por lo tanto, el vector de velocidad es</p>
+<p><span id="eq-p_v"><span class="math display">\[
+      \ls{p}\vec{v}(t) = \frac{a\eta_e}{1-e\cos(\psi(t))}\begin{bmatrix}
+      -\sin(\psi(t)) \\
+      \sqrt{1-e^2}\cos(\psi(t)) \\
+      0
+      \end{bmatrix}.
+   \tag{30}\]</span></span></p></li>
+<li class="fragment"><p>Finalemente, podemos obtener la anomalía verdadera <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;12</a>, de tal modo que</p>
+<p><span id="eq-p_nu"><span class="math display">\[
+  \nu(t) = \mathrm{atan2}(\sqrt{1-e^2}\sin(\psi(t)), \cos(\psi(t))-e).
+   \tag{31}\]</span></span></p></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<ul>
-<li>Los pasos para resolver el Problema 2.1 bajo la Suposición 2.1 pueden resumirse en el siguiente algoritmo:</li>
-</ul>
 <div class="algorithm">
 <div class="algorithm-title">
-Algoritmo 1: Propagador Kepleriano
+Algoritmo 2.1.2: Propagador Kepleriano para el caso elíptico
 </div>
 <div class="algorithm-io">
 <p><strong>Entrada:</strong> <span class="math inline">\(a,e,\omega,i,\Omega,t_0,M_0,t\)</span></p>
@@ -3663,34 +4454,54 @@ Algoritmo 1: Propagador Kepleriano
 </div>
 <ol>
 <li>
-Calcular <span class="math inline">\(\omega_0=2\pi/T\)</span>.
+Calcular <span class="math inline">\(M(t)\)</span> mediante <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a>.
 </li>
 <li>
-Calcular <span class="math inline">\(M(t)\)</span> mediante <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;14</a>.
+Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de <a href="#/eq-g_root" class="quarto-xref">Ecuación&nbsp;28</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
 </li>
 <li>
-Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de <a href="#/eq-g_root" class="quarto-xref">Ecuación&nbsp;17</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
+Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;29</a>.
 </li>
 <li>
-Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;18</a>.
+Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;30</a>.
 </li>
 <li>
-Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;20</a>.
-</li>
-<li>
-Calcular <span class="math inline">\(\ls{i}R_p\)</span> mediante <strong>?@eq-Ri2Rp</strong>.
-</li>
-<li>
-Calcular <span class="math inline">\(\ls{i}\vec{r}(t)=\ls{i}R_p\ls{p}\vec{r}(t)\)</span>.
-</li>
-<li>
-Calcular <span class="math inline">\(\ls{i}\vec{v}(t)=\ls{i}R_p\ls{p}\vec{v}(t)\)</span>.
+Calcular <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-p_nu" class="quarto-xref">Ecuación&nbsp;31</a>.
 </li>
 </ol>
 </div>
 <ul>
 <li class="fragment">A este tipo de algoritmos se les conoce como <strong>propagadores</strong>. En específico, al propagador descrito por el Algoritmo 1 se le denomina <strong>propagador kepleriano</strong>.</li>
 </ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Para el caso circular, el propagador kepleriano se simplifica, ya que <span class="math inline">\(\psi(t)=\nu(t)=M(t)\)</span> y <span class="math inline">\(e=0\)</span>. Por lo tanto, las ecuaciones <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;29</a> y <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;30</a> se simplifican a</p>
+<p><span class="math display">\[
+    \ls{p}\vec{r}(t) = a\begin{bmatrix}
+    \cos(M(t)) \\
+    \sin(M(t)) \\
+    0
+    \end{bmatrix},
+\]</span></p>
+<p><span class="math display">\[
+    \ls{p}\vec{v}(t) = a\eta_e\begin{bmatrix}
+    -\sin(M(t)) \\
+    \cos(M(t)) \\
+    0
+    \end{bmatrix}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <!-- ##
 
 ::: {.center-vertical}
@@ -3883,7 +4694,7 @@ viewof vx = Inputs.range([-5, 5], {value: 1, step: 0.1})
 
 ::::{.cell-output .cell-output-display}
 
-:::{#ojs-cell-8 nodetype="declaration"}
+:::{#ojs-cell-11 nodetype="declaration"}
 :::
 ::::
 :::::
@@ -3897,7 +4708,7 @@ viewof vy = Inputs.range([-5, 5], {value: 1, step: 0.1})
 
 ::::{.cell-output .cell-output-display}
 
-:::{#ojs-cell-9 nodetype="declaration"}
+:::{#ojs-cell-12 nodetype="declaration"}
 :::
 ::::
 :::::
@@ -3912,7 +4723,7 @@ viewof ox = Inputs.range([-5, 5], {value: 0, step: 0.1})
 
 ::::{.cell-output .cell-output-display}
 
-:::{#ojs-cell-10 nodetype="declaration"}
+:::{#ojs-cell-13 nodetype="declaration"}
 :::
 ::::
 :::::
@@ -3926,7 +4737,7 @@ viewof oy = Inputs.range([-5, 5], {value: 0, step: 0.1})
 
 ::::{.cell-output .cell-output-display}
 
-:::{#ojs-cell-11 nodetype="declaration"}
+:::{#ojs-cell-14 nodetype="declaration"}
 :::
 ::::
 :::::
@@ -3958,7 +4769,7 @@ Plot.plot({
 
 ::::{.cell-output .cell-output-display}
 
-:::{#ojs-cell-12 nodetype="expression"}
+:::{#ojs-cell-15 nodetype="expression"}
 :::
 ::::
 :::::
@@ -5697,7 +6508,7 @@ donde $R_x(\cdot)$ y $R_z(\cdot)$ son las matrices de rotación elementales alre
     
 
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXMgPSBJbnB1dHMuZm9ybShcclxuICB7XHJcbiAgICBwOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5wPC9zcGFuPmB9KSxcclxuICAgIGU6IElucHV0cy5yYW5nZShbMC4wLCAxLjRdLCB7dmFsdWU6IDAuNSwgc3RlcDogMC4wNSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5lPC9zcGFuPmB9KSxcclxuICAgIG51MDogSW5wdXRzLnJhbmdlKFswLCAzNjBdLCB7dmFsdWU6IDAsIHN0ZXA6IDUsIGxhYmVsOiBodG1sYDxzcGFuIHN0eWxlPVwiZm9udC1mYW1pbHk6c2VyaWY7Zm9udC1zdHlsZTppdGFsaWM7XCI+zr3igoAgKMKwKTwvc3Bhbj5gfSlcclxuICB9LFxyXG4gIHtcclxuICAgIHRlbXBsYXRlOiBpbnB1dHMgPT4gaHRtbGBcclxuICAgICAgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2dhcDoyLjVyZW07YWxpZ24taXRlbXM6ZmxleC1zdGFydDtcIj5cclxuICAgICAgICA8ZGl2PiR7aW5wdXRzLnB9PC9kaXY+XHJcbiAgICAgICAgPGRpdj4ke2lucHV0cy5lfTwvZGl2PlxyXG4gICAgICAgIDxkaXY+JHtpbnB1dHMubnUwfTwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIGBcclxuICB9XHJcbilcclxuXHJcbnAgPSBwYXJhbXMucFxyXG5lID0gcGFyYW1zLmVcclxubnUwID0gcGFyYW1zLm51MFxyXG5cclxucHVudG9zX29yYml0YSA9IHtcclxuICBjb25zdCBzdGVwID0gMC4wMTtcclxuICBjb25zdCBkYXRhID0gW107XHJcbiAgY29uc3QgbnUwX3JhZCA9IG51MCAqIE1hdGguUEkgLyAxODA7XHJcbiAgY29uc3Qgcl9tYXhfbGltaXRlID0gMTAuMDtcclxuXHJcbiAgZm9yIChsZXQgbnUgPSAwOyBudSA8PSAyICogTWF0aC5QSSArIHN0ZXA7IG51ICs9IHN0ZXApIHtcclxuICAgIGNvbnN0IGRlbiA9IDEgKyBlICogTWF0aC5jb3MobnUgLSBudTBfcmFkKTtcclxuXHJcbiAgICBpZiAoZGVuID4gMC4wMDEpIHtcclxuICAgICAgY29uc3QgciA9IHAgLyBkZW47XHJcbiAgICAgIGlmIChyIDw9IHJfbWF4X2xpbWl0ZSlcclxuICAgICAgICBkYXRhLnB1c2goe3g6IHIgKiBNYXRoLmNvcyhudSksIHk6IHIgKiBNYXRoLnNpbihudSksIHZhbGlkbzogdHJ1ZX0pO1xyXG4gICAgICBlbHNlXHJcbiAgICAgICAgZGF0YS5wdXNoKHt4OiBOYU4sIHk6IE5hTiwgdmFsaWRvOiBmYWxzZX0pO1xyXG4gICAgfSBlbHNlXHJcbiAgICAgIGRhdGEucHVzaCh7eDogTmFOLCB5OiBOYU4sIHZhbGlkbzogZmFsc2V9KTtcclxuICB9XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5wdW50b3NfbWFsbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGZvciAobGV0IHIgPSAyOyByIDw9IDEwOyByICs9IDIpXHJcbiAgICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSSArIDAuMTsgdCArPSAwLjEpXHJcbiAgICAgIGRhdGEucHVzaCh7aWQ6IHIsIHg6IHIgKiBNYXRoLmNvcyh0KSwgeTogciAqIE1hdGguc2luKHQpfSk7XHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcbmxpbmVhc19ncmFkb3MgPVxyXG4gIFswLDMwLDYwLDkwLDEyMCwxNTAsMTgwLDIxMCwyNDAsMjcwLDMwMCwzMzBdLm1hcChkZWcgPT4gKHtcclxuICAgIGRlZyxcclxuICAgIHgxOiAxMCAqIE1hdGguY29zKGRlZyAqIE1hdGguUEkgLyAxODApLFxyXG4gICAgeTE6IDEwICogTWF0aC5zaW4oZGVnICogTWF0aC5QSSAvIDE4MClcclxuICB9KSk7XHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xyXG4gIGhlaWdodDogNjUwLFxyXG4gIHdpZHRoOiA2NTAsXHJcbiAgYXNwZWN0UmF0aW86IDEsXHJcbiAgc3R5bGU6IHtcclxuICAgIGJhY2tncm91bmQ6IFwidHJhbnNwYXJlbnRcIixcclxuICAgIGZvbnRGYW1pbHk6IFwic2VyaWZcIixcclxuICAgIGZvbnRTaXplOiBcIjEycHhcIlxyXG4gIH0sXHJcbiAgYXhpczogbnVsbCxcclxuICB4OiB7ZG9tYWluOiBbLTEwLCAxMF19LFxyXG4gIHk6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgbWFya3M6IFtcclxuICAgIFBsb3QubGluZShwdW50b3NfbWFsbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTUpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmxpbmsobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4MTogMCxcclxuICAgICAgeTE6IDAsXHJcbiAgICAgIHgyOiBcIngxXCIsXHJcbiAgICAgIHkyOiBcInkxXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTIpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnRleHQobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4OiBcIngxXCIsXHJcbiAgICAgIHk6IFwieTFcIixcclxuICAgICAgdGV4dDogZCA9PiBgJHtkLmRlZ33CsGAsXHJcbiAgICAgIGZpbGw6IFwiZ3JheVwiLFxyXG4gICAgICBkeDogOCxcclxuICAgICAgZHk6IC0yXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmRvdChbe3g6MCx5OjB9XSwge1xyXG4gICAgICB4OlwieFwiLFxyXG4gICAgICB5OlwieVwiLFxyXG4gICAgICByOjUsXHJcbiAgICAgIGZpbGw6XCIjMzMzXCJcclxuICAgIH0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3Nfb3JiaXRhLHtcclxuICAgICAgeDpcInhcIixcclxuICAgICAgeTpcInlcIixcclxuICAgICAgZGVmaW5lZDpkPT5kLnZhbGlkbyxcclxuICAgICAgc3Ryb2tlOlwiIzFmNzdiNFwiLFxyXG4gICAgICBzdHJva2VXaWR0aDozXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHZ4ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMSwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHZ5ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMSwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTEiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygb3kgPSBJbnB1dHMucmFuZ2UoWy01LCA1XSwge3ZhbHVlOiAwLCBzdGVwOiAwLjF9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEyIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcclxuICB3aWR0aDogNTAwLFxyXG4gIGhlaWdodDogNTAwLFxyXG4gIHg6IHtkb21haW46IFstNSwgNV0sIGdyaWQ6IHRydWV9LFxyXG4gIHk6IHtkb21haW46IFstNSwgNV0sIGdyaWQ6IHRydWV9LFxyXG4gIG1hcmtzOiBbXHJcbiAgICBQbG90LmFycm93KFxyXG4gICAgICBbe3gxOiBveCwgeTE6IG95LCB4Mjogdngrb3gsIHkyOiB2eStveX1dLFxyXG4gICAgICB7XHJcbiAgICAgICAgeDE6IFwieDFcIixcclxuICAgICAgICB5MTogXCJ5MVwiLFxyXG4gICAgICAgIHgyOiBcIngyXCIsXHJcbiAgICAgICAgeTI6IFwieTJcIlxyXG4gICAgICB9XHJcbiAgICApXHJcbiAgXVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3Z4JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3Z5JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ294JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ295JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BhcmFtcycpIn1dfQ==
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXMgPSBJbnB1dHMuZm9ybShcclxuICB7XHJcbiAgICBwOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5wPC9zcGFuPmB9KSxcclxuICAgIGU6IElucHV0cy5yYW5nZShbMC4wLCAxLjRdLCB7dmFsdWU6IDAuNSwgc3RlcDogMC4wNSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5lPC9zcGFuPmB9KSxcclxuICAgIG51MDogSW5wdXRzLnJhbmdlKFswLCAzNjBdLCB7dmFsdWU6IDAsIHN0ZXA6IDUsIGxhYmVsOiBodG1sYDxzcGFuIHN0eWxlPVwiZm9udC1mYW1pbHk6c2VyaWY7Zm9udC1zdHlsZTppdGFsaWM7XCI+zr3igoAgKMKwKTwvc3Bhbj5gfSlcclxuICB9LFxyXG4gIHtcclxuICAgIHRlbXBsYXRlOiBpbnB1dHMgPT4gaHRtbGBcclxuICAgICAgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2dhcDoyLjVyZW07YWxpZ24taXRlbXM6ZmxleC1zdGFydDtcIj5cclxuICAgICAgICA8ZGl2PiR7aW5wdXRzLnB9PC9kaXY+XHJcbiAgICAgICAgPGRpdj4ke2lucHV0cy5lfTwvZGl2PlxyXG4gICAgICAgIDxkaXY+JHtpbnB1dHMubnUwfTwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIGBcclxuICB9XHJcbilcclxuXHJcbnAgPSBwYXJhbXMucFxyXG5lID0gcGFyYW1zLmVcclxubnUwID0gcGFyYW1zLm51MFxyXG5cclxucHVudG9zX29yYml0YSA9IHtcclxuICBjb25zdCBzdGVwID0gMC4wMTtcclxuICBjb25zdCBkYXRhID0gW107XHJcbiAgY29uc3QgbnUwX3JhZCA9IG51MCAqIE1hdGguUEkgLyAxODA7XHJcbiAgY29uc3Qgcl9tYXhfbGltaXRlID0gMTAuMDtcclxuXHJcbiAgZm9yIChsZXQgbnUgPSAwOyBudSA8PSAyICogTWF0aC5QSSArIHN0ZXA7IG51ICs9IHN0ZXApIHtcclxuICAgIGNvbnN0IGRlbiA9IDEgKyBlICogTWF0aC5jb3MobnUgLSBudTBfcmFkKTtcclxuXHJcbiAgICBpZiAoZGVuID4gMC4wMDEpIHtcclxuICAgICAgY29uc3QgciA9IHAgLyBkZW47XHJcbiAgICAgIGlmIChyIDw9IHJfbWF4X2xpbWl0ZSlcclxuICAgICAgICBkYXRhLnB1c2goe3g6IHIgKiBNYXRoLmNvcyhudSksIHk6IHIgKiBNYXRoLnNpbihudSksIHZhbGlkbzogdHJ1ZX0pO1xyXG4gICAgICBlbHNlXHJcbiAgICAgICAgZGF0YS5wdXNoKHt4OiBOYU4sIHk6IE5hTiwgdmFsaWRvOiBmYWxzZX0pO1xyXG4gICAgfSBlbHNlXHJcbiAgICAgIGRhdGEucHVzaCh7eDogTmFOLCB5OiBOYU4sIHZhbGlkbzogZmFsc2V9KTtcclxuICB9XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5wdW50b3NfbWFsbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGZvciAobGV0IHIgPSAyOyByIDw9IDEwOyByICs9IDIpXHJcbiAgICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSSArIDAuMTsgdCArPSAwLjEpXHJcbiAgICAgIGRhdGEucHVzaCh7aWQ6IHIsIHg6IHIgKiBNYXRoLmNvcyh0KSwgeTogciAqIE1hdGguc2luKHQpfSk7XHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcbmxpbmVhc19ncmFkb3MgPVxyXG4gIFswLDMwLDYwLDkwLDEyMCwxNTAsMTgwLDIxMCwyNDAsMjcwLDMwMCwzMzBdLm1hcChkZWcgPT4gKHtcclxuICAgIGRlZyxcclxuICAgIHgxOiAxMCAqIE1hdGguY29zKGRlZyAqIE1hdGguUEkgLyAxODApLFxyXG4gICAgeTE6IDEwICogTWF0aC5zaW4oZGVnICogTWF0aC5QSSAvIDE4MClcclxuICB9KSk7XHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xyXG4gIGhlaWdodDogNjUwLFxyXG4gIHdpZHRoOiA2NTAsXHJcbiAgYXNwZWN0UmF0aW86IDEsXHJcbiAgc3R5bGU6IHtcclxuICAgIGJhY2tncm91bmQ6IFwidHJhbnNwYXJlbnRcIixcclxuICAgIGZvbnRGYW1pbHk6IFwic2VyaWZcIixcclxuICAgIGZvbnRTaXplOiBcIjEycHhcIlxyXG4gIH0sXHJcbiAgYXhpczogbnVsbCxcclxuICB4OiB7ZG9tYWluOiBbLTEwLCAxMF19LFxyXG4gIHk6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgbWFya3M6IFtcclxuICAgIFBsb3QubGluZShwdW50b3NfbWFsbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTUpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmxpbmsobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4MTogMCxcclxuICAgICAgeTE6IDAsXHJcbiAgICAgIHgyOiBcIngxXCIsXHJcbiAgICAgIHkyOiBcInkxXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTIpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnRleHQobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4OiBcIngxXCIsXHJcbiAgICAgIHk6IFwieTFcIixcclxuICAgICAgdGV4dDogZCA9PiBgJHtkLmRlZ33CsGAsXHJcbiAgICAgIGZpbGw6IFwiZ3JheVwiLFxyXG4gICAgICBkeDogOCxcclxuICAgICAgZHk6IC0yXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmRvdChbe3g6MCx5OjB9XSwge1xyXG4gICAgICB4OlwieFwiLFxyXG4gICAgICB5OlwieVwiLFxyXG4gICAgICByOjUsXHJcbiAgICAgIGZpbGw6XCIjMzMzXCJcclxuICAgIH0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3Nfb3JiaXRhLHtcclxuICAgICAgeDpcInhcIixcclxuICAgICAgeTpcInlcIixcclxuICAgICAgZGVmaW5lZDpkPT5kLnZhbGlkbyxcclxuICAgICAgc3Ryb2tlOlwiIzFmNzdiNFwiLFxyXG4gICAgICBzdHJva2VXaWR0aDozXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXNfZWxpcHNlID0gSW5wdXRzLmZvcm0oe1xyXG4gIHBfZWxpcHNlOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9lbGlwc2U6IElucHV0cy5yYW5nZShbMC4wLCAwLjk1XSwge3ZhbHVlOiAwLjUsIHN0ZXA6IDAuMDUsIGxhYmVsOiBcImVcIn0pXHJcbn0pXHJcblxyXG5wX2VsaXBzZSA9IHBhcmFtc19lbGlwc2UucF9lbGlwc2VcclxuXHJcbmVfZWxpcHNlID0gcGFyYW1zX2VsaXBzZS5lX2VsaXBzZVxyXG5cclxuYV9lbGlwc2UgPSBwX2VsaXBzZSAvICgxIC0gZV9lbGlwc2UgKiogMilcclxuXHJcbmJfZWxpcHNlID0gYV9lbGlwc2UgKiBNYXRoLnNxcnQoMSAtIGVfZWxpcHNlICoqIDIpXHJcblxyXG5jX2VsaXBzZSA9IGFfZWxpcHNlICogZV9lbGlwc2VcclxuXHJcbnB1bnRvc19lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSTsgdCArPSAwLjAxKVxyXG4gICAgZGF0YS5wdXNoKHtcclxuICAgICAgeDogLWNfZWxpcHNlICsgYV9lbGlwc2UgKiBNYXRoLmNvcyh0KSxcclxuICAgICAgeTogYl9lbGlwc2UgKiBNYXRoLnNpbih0KVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG52aWV3b2YgcF9wYXJhYm9sYSA9IElucHV0cy5yYW5nZShbMC41LCAzLjBdLCB7XHJcbiAgdmFsdWU6IDEuMCxcclxuICBzdGVwOiAwLjEsXHJcbiAgbGFiZWw6IFwicFwiXHJcbn0pXHJcblxyXG5wdW50b3NfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IHBfcGFyYWJvbGEgLyAyOyB4ICs9IDAuMDEpIHtcclxuICAgIGNvbnN0IHkgPSBNYXRoLnNxcnQoLTIgKiBwX3BhcmFib2xhICogKHggLSBwX3BhcmFib2xhIC8gMikpO1xyXG5cclxuICAgIGRhdGEucHVzaCh7aWQ6IDEsIHgsIHl9KTtcclxuICAgIGRhdGEucHVzaCh7aWQ6IDIsIHgsIHk6IC15fSk7XHJcbiAgfVxyXG5cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxubWFsbGFfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX3BhcmFib2xhLCB7XHJcbiAgICAgIHg6IFwieFwiLFxyXG4gICAgICB5OiBcInlcIixcclxuICAgICAgejogXCJpZFwiLFxyXG4gICAgICBzdHJva2U6IFwicmdiYSgxMjgsMTI4LDEyOCwwLjE1KVwiXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnJ1bGVYKFswXSksXHJcblxyXG4gICAgUGxvdC5ydWxlWShbMF0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3NfcGFyYWJvbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxudmlld29mIHBhcmFtc19oaXBlcmJvbGEgPSBJbnB1dHMuZm9ybSh7XHJcbiAgcF9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMC41LCAyNS4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMS4wNSwgMjUuMF0sIHt2YWx1ZTogMS41LCBzdGVwOiAwLjA1LCBsYWJlbDogXCJlXCJ9KVxyXG59KVxyXG5cclxucF9oaXBlcmJvbGEgPSBwYXJhbXNfaGlwZXJib2xhLnBfaGlwZXJib2xhXHJcblxyXG5lX2hpcGVyYm9sYSA9IHBhcmFtc19oaXBlcmJvbGEuZV9oaXBlcmJvbGFcclxuXHJcbmFfaGlwZXJib2xhID0gLXBfaGlwZXJib2xhIC8gKGVfaGlwZXJib2xhICoqIDIgLSAxKVxyXG5cclxuYl9oaXBlcmJvbGEgPSBNYXRoLmFicyhhX2hpcGVyYm9sYSkgKiBNYXRoLnNxcnQoZV9oaXBlcmJvbGEgKiogMiAtIDEpXHJcblxyXG5jX2hpcGVyYm9sYSA9IGFfaGlwZXJib2xhICogZV9oaXBlcmJvbGFcclxuXHJcbnB1bnRvc19oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGNvbnN0IEhtYXggPSAyLjU7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMSxcclxuICAgICAgeDogLWNfaGlwZXJib2xhICsgTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMixcclxuICAgICAgeDogLWNfaGlwZXJib2xhIC0gTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcIiMxZjc3YjRcIixcclxuICAgICAgc3Ryb2tlV2lkdGg6IDNcclxuICAgIH0pXHJcbiAgXVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTExIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHZ4ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMSwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygb3ggPSBJbnB1dHMucmFuZ2UoWy01LCA1XSwge3ZhbHVlOiAwLCBzdGVwOiAwLjF9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE0IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIG95ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMCwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwYXJhbXMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncGFyYW1zX2VsaXBzZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwX3BhcmFib2xhJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BhcmFtc19oaXBlcmJvbGEnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
