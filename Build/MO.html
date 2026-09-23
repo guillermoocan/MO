@@ -2946,7 +2946,7 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 <h2></h2>
 <div class="center-vertical">
 <div class="chapter-title">
-<p>Preliminares</p>
+<p>Propagación</p>
 </div>
 <div class="chapter-line">
 
@@ -3678,7 +3678,7 @@ Secciones cónicas
 <h2></h2>
 <div class="center-vertical">
 <div class="chapter-title">
-<p>Preliminares</p>
+<p>Propagación</p>
 </div>
 <div class="chapter-line">
 
@@ -4036,7 +4036,7 @@ Secciones cónicas
    \tag{17}\]</span></span></p></li>
 <li class="fragment"><p>Restando las ecuaciones <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;16</a> y <a href="#/eq-mean_anomaly2" class="quarto-xref">Ecuación&nbsp;17</a>, se obtiene</p>
 <p><span class="math display">\[
-  M(t)=\eta_e (t-t_0)+M_0,
+  M(t)=\eta_e (t-t_0)+M_0=\psi(t) - e\sin(\psi(t)),
   \]</span></p>
 <p>donde a <span class="math inline">\(t_0\)</span> se le conoce como <em>época</em> y <span class="math inline">\(M_0\)</span> es la <em>anomalía media acumulada en la época <span class="math inline">\(t_0\)</span></em>. Si se asume que <span class="math inline">\(t_0=t_p\)</span>, donde <span class="math inline">\(t_p=nT\)</span>,<span class="math inline">\(n \in \mathbb{N}\)</span>, entonces <span class="math inline">\(M_0=0\)</span> (el satélite se encuentra en el periapsis).</p></li>
 <li class="fragment"><p>Una interpretación geométrica de la anomalía media es que es el ángulo que barrería un cuerpo si se moviera con velocidad angular constante <span class="math inline">\(\eta_e\)</span> en una órbita circular de radio <span class="math inline">\(a\)</span>.</p></li>
@@ -4076,7 +4076,190 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 <h2></h2>
 <div class="center-vertical">
 <div class="chapter-title">
-<p>Preliminares</p>
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Trayectorias abiertas</p>
+<div class="menu-title" style="display:none;">
+▸ Trayectorias abiertas
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<p>Las trayectorias abiertas son aquellas que divergen de su foco primario. También se pueden entender como aquellas trayectorias que no son periódicas.</p>
+<p>En particular, las seccionas cónicas que describen este comportamiento son</p>
+<ul>
+<li>Parábola</li>
+<li>Hipérbola</li>
+</ul>
+<p>A continuación se deduciran las ecuaciones de movimiento para cada una de las trayectorias abiertas.</p>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/parabolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="trayectoria-parabólicas" class="slide level2">
+<h2>Trayectoria parabólicas</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Partiendo de la <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a>,</p>
+<p><span id="eq-orbit_equation_parabolic"><span class="math display">\[
+      \begin{aligned}
+          r&amp;=\frac{p}{1+e\cos(\nu)},\\
+          &amp;=\frac{p}{1+cos(\nu)},\\
+          &amp;=\frac{p}{2\cos^2\left(\frac{\nu}{2}\right)},\\
+          &amp;=\frac{p}{2}\frac{\cos^2\left(\frac{\nu}{2}\right)+\sin^2\left(\frac{\nu}{2}\right)}{\cos^2\left(\frac{\nu}{2}\right)},\\
+          &amp;=\frac{p}{2}\left(1+\tan^2\left(\frac{\nu}{2}\right)\right).
+      \end{aligned}
+   \tag{18}\]</span></span></p></li>
+<li><p>Ahora, sustituyendo en la <a href="#/eq-angular_momentum" class="quarto-xref">Ecuación&nbsp;5</a> y <span class="math inline">\(\|\vec{h}\|=\sqrt{\mu p}\)</span>,</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          \|\vec{h}\|&amp;=r^2 \frac{\mathrm{d} \nu}{\mathrm{d} t},\\
+      \Rightarrow \sqrt{\mu p} &amp;= \frac{p^2}{4}\left(1+\tan^2\left(\frac{\nu}{2}\right)\right)^2 \frac{\mathrm{d} \nu}{\mathrm{d} t}\\
+      \Rightarrow 4\sqrt{\frac{\mu}{p^3}} &amp;= \left(1+2\tan^2\left(\frac{\nu}{2}\right)+\tan^4\left(\frac{\nu}{2}\right)\right) \frac{\mathrm{d} \nu}{\mathrm{d} t}
+      \end{aligned}
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/parabolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Integrando obtenemos:</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          4\sqrt{\frac{\mu}{p^3}}\int_{t_{p}}^t \mathrm{d} t &amp;= \int _{0}^{\nu} \left(1+2\tan^2\left(\frac{\nu}{2}\right)+\tan^4\left(\frac{\nu}{2}\right)\right) \mathrm{d} \nu,\\
+          \Rightarrow 4\sqrt{\frac{\mu}{p^3}}\left(t-t_{p}\right) &amp;= \nu+2\int _{0}^{\nu}\tan^2\left(\frac{\nu}{2}\right) \mathrm{d} \nu +\int _{0}^{\nu}\tan^4\left(\frac{\nu}{2}\right) \mathrm{d} \nu,\\
+      \end{aligned}
+  \]</span></p></li>
+<li><p>De aquí, tenemos</p>
+<p><span class="math display">\[
+      \int _{0}^{\nu}\tan^2\left(\frac{\nu}{2}\right) \mathrm{d} \nu = 2 \tan \left(\frac{\nu}{2}\right) - \nu
+  \]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+      \int _{0}^{\nu}\tan^4\left(\frac{\nu}{2}\right) \mathrm{d} \nu = \frac{2}{3}\tan^3\left(\frac{\nu}{2}\right)-2 \tan \left(\frac{\nu}{2}\right)+\nu
+  \]</span></p></li>
+<li><p>Entonces,</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          2\sqrt{\frac{\mu}{p^3}}\left(t-t_{p}\right)=\frac{1}{3}\tan^3\left(\frac{\nu}{2}\right)+2 \tan \left(\frac{\nu}{2}\right)\\
+      \end{aligned}
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/parabolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Considere a</p>
+<p><span class="math display">\[
+      \psi=\tan \left(\frac{\nu}{2}\right),
+  \]</span></p>
+<p>como la anomalía parabólica (también conocida como anomalía de Barker), con <span class="math inline">\(\psi \in [-\infty,\infty]\)</span> (<strong>No es un ángulo</strong>).</p></li>
+<li><p>Además, considere a</p>
+<p><span class="math display">\[
+      \eta_p=2\sqrt{\frac{\mu}{p^3}}=\sqrt{\frac{\mu}{2f^3}},
+  \]</span></p>
+<p>como el movimiento parabólico medio.</p></li>
+<li><p>Con ello, tenemos</p>
+<p><span id="eq-kepler_parabolic"><span class="math display">\[
+      \begin{aligned}
+          \eta_p\left(t-t_{p}\right)=\frac{1}{3}\psi^3+\psi.
+      \end{aligned}
+   \tag{19}\]</span></span></p>
+<p>La <a href="#/eq-kepler_parabolic" class="quarto-xref">Ecuación&nbsp;19</a> es la ecuación de Kepler para trayectorias parabólicas (también se le conoce como ecuación de Barker, en honor a quien la propuso).</p></li>
+</ul>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/parabolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>De forma analoga al caso elípticos podemos definir la anomalia media <span class="math inline">\(M\)</span> como</p>
+<p><span class="math display">\[
+      M(t) = \eta_p (t-t_p) = \frac{1}{3}\psi(t)^3+\psi(t)
+  \]</span></p></li>
+<li><p>Considere la época <span class="math inline">\(t_0\)</span> en la cual la anomalía media acumulada <span class="math inline">\(M_0\)</span> es</p>
+<p><span class="math display">\[
+      M_0 = \eta_p (t-t_p) =\frac{1}{3}\psi_0^3+\psi_0.
+  \]</span></p></li>
+<li><p>Entonces,</p>
+<p><span class="math display">\[
+      M(t)=\eta_p(t-t_0)+M_0= \frac{1}{3}\psi^3(t)+\psi(t)
+  \]</span></p></li>
+<li><p>El problema de la propagación de una trayectoria parabólica es determinar la anomalía parabólica <span class="math inline">\(\psi\)</span> que satisfaga la ecuación anterior.</p></li>
+</ul>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/parabolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="trayectorias-hiperbólicas" class="slide level2">
+<h2>Trayectorias hiperbólicas</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Para encontrar las ecuaciones de Kepler para trayectorias hiperbólicas, vamos a recordar la metodología que usamos para el caso elíptico.</p></li>
+<li><p>En el caso elíptico, parametrizamos la anomalía verdadera utilizando la anomalía excentrica <span class="math inline">\(\psi\)</span>. Esta anomalía tenía relación con la circunferencia</p>
+<p><span class="math display">\[
+      x^2+y^2=a^2.
+  \]</span></p>
+<p>donde todo punto de la trayectoria se podía parametrizar como</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          x=a\cos \psi\\
+          y=a\sin \psi.
+      \end{aligned}
+  \]</span></p></li>
+<li><p>Posteriormente, relacionamos el sector de la circunferencia <span class="math inline">\(S(FAC)\)</span> con el sector de la trayectoria <span class="math inline">\(S(FAC')\)</span> al escalara la dimensión en el eje <span class="math inline">\(y\)</span>.</p>
+<p><span class="math display">\[
+      S(FAC')=\frac{b}{a}S(FAC)
+  \]</span></p>
+<p>y mediante la segunda ley de Kepler, obtuvimos la ecuación de Kepler para la trayectoria elíptica.</p></li>
+</ul>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/ellipse_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+
+</div><div class="column">
+<p><img data-src=".\Figures/c2/hyperbolic_orbit.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
 </div>
 <div class="chapter-line">
 
@@ -4125,19 +4308,19 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 <li><p>Para determinar <span class="math inline">\(M_0\)</span> y <span class="math inline">\(\eta\)</span>, es necesario conocer la excentricidad <span class="math inline">\(e\)</span> y el semi-latus rectum <span class="math inline">\(p\)</span>. Esto puede lograrse mediante las condiciones iniciales de posición y velocidad <span class="math inline">\(\ls{p}\vec{r}(t_0)\)</span> y <span class="math inline">\(\ls{p}\vec{v}(t_0)\)</span>.</p></li>
 <li><p>El primer paso es determinar el momento angular específico <span class="math inline">\(\vec{h}\)</span> mediante la ecuación <a href="#/eq-angular_momentum" class="quarto-xref">Ecuación&nbsp;5</a>. <span id="eq-angular_momentum_alg"><span class="math display">\[
   \vec{h}=\ls{p}\vec{r}(t_0)\times\ls{p}\vec{v}(t_0).
-   \tag{18}\]</span></span></p></li>
+   \tag{20}\]</span></span></p></li>
 <li><p>A partir de <span class="math inline">\(\vec{h}\)</span>, podemos determinar el semi-latus rectum <span class="math inline">\(p\)</span> mediante la ecuación :</p>
 <p><span id="eq-p_h"><span class="math display">\[
   p=\frac{\|\vec{h}\|^2}{\mu}.
-   \tag{19}\]</span></span> donde <span class="math inline">\(\mu\)</span> es el parámetro gravitacional estándar.</p></li>
+   \tag{21}\]</span></span> donde <span class="math inline">\(\mu\)</span> es el parámetro gravitacional estándar.</p></li>
 <li><p>Lo siguiente es determinar la energía mecánica específica <span class="math inline">\(E\)</span> mediante la ecuación:</p>
 <p><span id="eq-energy"><span class="math display">\[
   E=\frac{1}{2}\|\ls{p}\vec{v}(t_0)\|^2-\frac{\mu}{\|\ls{p}\vec{r}(t_0)\|}.
-   \tag{20}\]</span></span></p></li>
+   \tag{22}\]</span></span></p></li>
 <li><p>A partir de <span class="math inline">\(E\)</span> y <span class="math inline">\(p\)</span>, podemos determinar la excentricidad <span class="math inline">\(e\)</span> mediante la ecuación .</p>
 <p><span id="eq-e_p_E"><span class="math display">\[
   e=\sqrt{1+2E\frac{\|\vec{h}\|^2}{\mu}}.
-   \tag{21}\]</span></span></p></li>
+   \tag{23}\]</span></span></p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -4154,7 +4337,7 @@ r=\frac{p}{1+e\cos(\nu-\nu_0)}
 <li><p>Debido a que la función <span class="math inline">\(\tan^{-1}(\cdot)\)</span> tiene un rango de <span class="math inline">\((-\pi/2,\pi/2)\)</span>, es necesario considerar el cuadrante en el que se encuentra <span class="math inline">\(\nu(t)\)</span> para obtener el valor correcto. Por ello , es recomendable utilizar la función <span class="math inline">\(\text{atan2}(y,x)\)</span>, que considera el cuadrante correcto, de modo que</p>
 <p><span id="eq-nu0"><span class="math display">\[
   \nu_0 = \text{atan2}\left(r_{0,y},r_{0,y}\right).
-   \tag{22}\]</span></span></p>
+   \tag{24}\]</span></span></p>
 <p>donde <span class="math inline">\(\text{atan2}(y,x)\)</span> se define como</p>
 <p><span class="math display">\[
       \text{atan2}(y,x) =
@@ -4197,19 +4380,19 @@ Algoritmo 2.0: Determinación de parámetros generales
 </div>
 <ol>
 <li>
-Calcular el momento angular específico <span class="math inline">\(\vec{h}\)</span> mediante la ecuación <a href="#/eq-angular_momentum_alg" class="quarto-xref">Ecuación&nbsp;18</a>.
+Calcular el momento angular específico <span class="math inline">\(\vec{h}\)</span> mediante la ecuación <a href="#/eq-angular_momentum_alg" class="quarto-xref">Ecuación&nbsp;20</a>.
 </li>
 <li>
-Calcular el semi-latus rectum <span class="math inline">\(p\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;19</a>.
+Calcular el semi-latus rectum <span class="math inline">\(p\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;21</a>.
 </li>
 <li>
-Calcular la energía mecánica específica <span class="math inline">\(E\)</span> mediante la ecuación <a href="#/eq-energy" class="quarto-xref">Ecuación&nbsp;20</a>.
+Calcular la energía mecánica específica <span class="math inline">\(E\)</span> mediante la ecuación <a href="#/eq-energy" class="quarto-xref">Ecuación&nbsp;22</a>.
 </li>
 <li>
-Calcular la excentricidad <span class="math inline">\(e\)</span> mediante la ecuación <a href="#/eq-e_p_E" class="quarto-xref">Ecuación&nbsp;21</a>.
+Calcular la excentricidad <span class="math inline">\(e\)</span> mediante la ecuación <a href="#/eq-e_p_E" class="quarto-xref">Ecuación&nbsp;23</a>.
 </li>
 <li>
-Calcular la anomalía verdadera inicial <span class="math inline">\(\nu_0\)</span> mediante la ecuación <a href="#/eq-nu0" class="quarto-xref">Ecuación&nbsp;22</a>.
+Calcular la anomalía verdadera inicial <span class="math inline">\(\nu_0\)</span> mediante la ecuación <a href="#/eq-nu0" class="quarto-xref">Ecuación&nbsp;24</a>.
 </li>
 </ol>
 </div>
@@ -4223,19 +4406,19 @@ Calcular la anomalía verdadera inicial <span class="math inline">\(\nu_0\)</spa
           \tan(\psi_0) &amp; =\frac{\sin(\nu_0)\sqrt{1-e^2}}{e+\cos(\nu_0)},\\
           \Rightarrow \psi_0 &amp; =\mathrm{atan2}\left(\sin(\nu_0)\sqrt{1-e^2},e+\cos(\nu_0)\right).
       \end{aligned}
-   \tag{23}\]</span></span></p></li>
+   \tag{25}\]</span></span></p></li>
 <li><p>Posteriormente, podemos determinar la anomalía media acumulada <span class="math inline">\(M_0\)</span> en la época <span class="math inline">\(t_0\)</span> mediante la ecuación <a href="#/eq-mean_anomaly2" class="quarto-xref">Ecuación&nbsp;17</a>, obteniendo</p>
 <p><span id="eq-M0_e"><span class="math display">\[
       M_0 = \psi_0 - e\sin(\psi_0).
-   \tag{24}\]</span></span></p></li>
-<li><p>Por otro lado, obtenemos el semieje mayor <span class="math inline">\(a\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;19</a>, obteniendo</p>
+   \tag{26}\]</span></span></p></li>
+<li><p>Por otro lado, obtenemos el semieje mayor <span class="math inline">\(a\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;21</a>, obteniendo</p>
 <p><span id="eq-a_e"><span class="math display">\[
       a=\frac{p}{1-e^2}.
-   \tag{25}\]</span></span></p></li>
+   \tag{27}\]</span></span></p></li>
 <li><p>Finalmente, podemos determinar el movimiento angular medio <span class="math inline">\(\eta_e\)</span> mediante la ecuación <a href="#/eq-mean_anomaly" class="quarto-xref">Ecuación&nbsp;16</a>, obteniendo</p>
 <p><span id="eq-eta_e"><span class="math display">\[
       \eta_e=\sqrt{\frac{\mu}{a^3}}.
-   \tag{26}\]</span></span></p></li>
+   \tag{28}\]</span></span></p></li>
 </ul>
 <div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -4276,76 +4459,139 @@ Algoritmo 2.1.1: Determinación de la anomalia excentrica en el caso elíptico
 </div>
 <ol>
 <li>
-Calcular la anomalía excentrica mediante la ecuación <a href="#/eq-psi0_e" class="quarto-xref">Ecuación&nbsp;23</a>.
+Calcular la anomalía excentrica mediante la ecuación <a href="#/eq-psi0_e" class="quarto-xref">Ecuación&nbsp;25</a>.
 </li>
 <li>
-Calcular la anomalía media acumulada mediante la ecuación <a href="#/eq-M0_e" class="quarto-xref">Ecuación&nbsp;24</a>.
+Calcular la anomalía media acumulada mediante la ecuación <a href="#/eq-M0_e" class="quarto-xref">Ecuación&nbsp;26</a>.
 </li>
 <li>
-Calcular el semieje mayor mediante la ecuación <a href="#/eq-a_e" class="quarto-xref">Ecuación&nbsp;25</a>.
+Calcular el semieje mayor mediante la ecuación <a href="#/eq-a_e" class="quarto-xref">Ecuación&nbsp;27</a>.
 </li>
 <li>
-Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" class="quarto-xref">Ecuación&nbsp;26</a>.
+Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" class="quarto-xref">Ecuación&nbsp;28</a>.
 </li>
 </ol>
 </div>
-<!-- 
-## Caso parabólico
+</section>
+<section id="caso-parabólico" class="slide level2">
+<h2>Caso parabólico</h2>
+<ul>
+<li><p>Comenzamos determinando la anomalía parabólica <span class="math inline">\(\psi_0\)</span> en la época <span class="math inline">\(t_0\)</span>. Para ello, calculamos</p>
+<p><span id="eq-psi0_p"><span class="math display">\[
+      \begin{aligned}
+          \psi_0 &amp; =\tan(\frac{\nu_0}{2}).
+      \end{aligned}
+   \tag{29}\]</span></span></p></li>
+<li><p>Posteriormente, podemos determinar la anomalía media acumulada <span class="math inline">\(M_0\)</span> en la época <span class="math inline">\(t_0\)</span></p>
+<p><span id="eq-M0_p"><span class="math display">\[
+      M_0 = \frac{1}{3}\psi_0^3+\psi_0.
+   \tag{30}\]</span></span></p></li>
+<li><p>Por otro lado, obtenemos la distancia focal <span class="math inline">\(f\)</span> como</p>
+<p><span id="eq-f_p"><span class="math display">\[
+      f=\frac{p}{2}.
+   \tag{31}\]</span></span></p></li>
+<li><p>Finalmente, podemos determinar el movimiento angular medio <span class="math inline">\(\eta_p\)</span></p>
+<p><span id="eq-eta_p"><span class="math display">\[
+      \eta_p=\sqrt{\frac{\mu}{2f^3}}.
+   \tag{32}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
 
+<div class="vspace-3">
 
-- Comenzamos determinando la anomalía parabólica $\psi_0$ en la época $t_0$. Para ello, calculamos
+</div>
+<div class="vspace-3">
 
-    $$
-        \begin{aligned}
-            \psi_0 & =\tan(\frac{\nu_0}{2}).
-        \end{aligned}
-    $$
+</div>
+<div class="vspace-3">
 
-- Posteriormente, podemos determinar la anomalía media acumulada $M_0$ en la época $t_0$
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.2.1: Determinación de la anomalia excentrica en el caso parabólico
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\eta_p\)</span> y <span class="math inline">\(M_0\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular la anomalía excentrica mediante la ecuación <a href="#/eq-psi0_p" class="quarto-xref">Ecuación&nbsp;29</a>.
+</li>
+<li>
+Calcular la anomalía media acumulada mediante la ecuación <a href="#/eq-M0_p" class="quarto-xref">Ecuación&nbsp;30</a>.
+</li>
+<li>
+Calcular el semieje mayor mediante la ecuación <a href="#/eq-f_p" class="quarto-xref">Ecuación&nbsp;31</a>.
+</li>
+<li>
+Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_p" class="quarto-xref">Ecuación&nbsp;32</a>.
+</li>
+</ol>
+</div>
+</section>
+<section id="caso-hiperbólico" class="slide level2">
+<h2>Caso hiperbólico</h2>
+<ul>
+<li><p>Comenzamos determinando la anomalía parabólica <span class="math inline">\(\psi_0\)</span> en la época <span class="math inline">\(t_0\)</span>:</p>
+<p><span id="eq-psi0_h"><span class="math display">\[
+      \begin{aligned}
+          \psi_0 &amp; =\mathrm{sinh}^{-1}\left(\frac{\sqrt{e^2-1}\sin{\nu_0}}{1+e\cos{\nu_0}}\right).
+      \end{aligned}
+   \tag{33}\]</span></span></p></li>
+<li><p>Posteriormente, podemos determinar la anomalía media acumulada <span class="math inline">\(M_0\)</span> en la época <span class="math inline">\(t_0\)</span></p>
+<p><span id="eq-M0_h"><span class="math display">\[
+      M_0 = e\sinh(\psi_0)-\psi_0.
+   \tag{34}\]</span></span></p></li>
+<li><p>Por otro lado, obtenemos el semieje transverso <span class="math inline">\(a\)</span> mediante la ecuación <a href="#/eq-p_h" class="quarto-xref">Ecuación&nbsp;21</a>,</p>
+<p><span id="eq-a_h"><span class="math display">\[
+      a=\frac{p}{e^2-1}.
+   \tag{35}\]</span></span></p></li>
+<li><p>Finalmente, podemos determinar el movimiento angular medio <span class="math inline">\(\eta_h\)</span></p>
+<p><span id="eq-eta_h"><span class="math display">\[
+      \eta_h=\sqrt{\frac{\mu}{a^3}}.
+   \tag{36}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
 
-    $$
-        M_0 = \frac{1}{3}\psi_0^3+\psi_0.
-    $$
+<div class="vspace-3">
 
-- Por otro lado, obtenemos la distancia focal $f$ como 
+</div>
+<div class="vspace-3">
 
-    $$
-        f=\frac{p}{2}.
-    $$
-- Finalmente, podemos determinar el movimiento angular medio $\eta_p$
+</div>
+<div class="vspace-3">
 
-    $$
-        \eta_p=\sqrt{\frac{\mu}{2f^3}}.
-    $$
-
-
-## Caso hiperbólico
-
-
-- Comenzamos determinando la anomalía parabólica $\psi_0$ en la época $t_0$:
-
-    $$
-        \begin{aligned}
-            \psi_0 & =\mathrm{sinh}^{-1}\left(\frac{\sqrt{e^2-1}\sin{\nu_0}}{1+e\cos{\nu_0}}\right).
-        \end{aligned}
-    $$
-
-- Posteriormente, podemos determinar la anomalía media acumulada $M_0$ en la época $t_0$ 
-
-    $$
-        M_0 = e\sinh(\psi_0)-\psi_0.
-    $$
-
-- Por otro lado, obtenemos el semieje transverso $a$ mediante la ecuación @eq-p_h,
-
-    $$
-        a=\frac{p}{e^2-1}.
-    $$
-- Finalmente, podemos determinar el movimiento angular medio $\eta_h$
-
-    $$
-        \eta_h=\sqrt{\frac{\mu}{a^3}}.
-    $$ -->
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.3.1: Determinación de la anomalia excentrica en el caso hiperbólico
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\eta_e\)</span> y <span class="math inline">\(M_0\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular la anomalía excentrica mediante la ecuación <a href="#/eq-psi0_h" class="quarto-xref">Ecuación&nbsp;33</a>.
+</li>
+<li>
+Calcular la anomalía media acumulada mediante la ecuación <a href="#/eq-M0_h" class="quarto-xref">Ecuación&nbsp;34</a>.
+</li>
+<li>
+Calcular el semieje mayor mediante la ecuación <a href="#/eq-a_h" class="quarto-xref">Ecuación&nbsp;35</a>.
+</li>
+<li>
+Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_h" class="quarto-xref">Ecuación&nbsp;36</a>.
+</li>
+</ol>
+</div>
 </section>
 <section id="propagación-de-órbita" class="slide level2">
 <h2>Propagación de órbita</h2>
@@ -4361,16 +4607,13 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
 <p><span class="math display">\[
   M(t) = \eta_{e}(t-t_0) + M_0 =\psi(t) - e\sin(\psi(t)).
   \]</span></p></li>
+<li><p>Para trayectorias parabólicas <span class="math display">\[
+  M(t) = \eta_{p}(t-t_0) + M_0= \frac{1}{3}\psi(t)^3+\psi(t).
+  \]</span></p></li>
+<li><p>Para trayectorias hiperbólicas <span class="math display">\[
+  M(t) = \eta_{h}(t-t_0) + M_0=  e\sinh(\psi(t))-\psi(t).
+  \]</span></p></li>
 </ul>
-<!-- - Para órbitas parabólicas
-    $$
-    M(t) = \eta_{p}(t-t_0) + M_0= \frac{1}{3}\psi(t)^3+\psi(t).
-    $$
-
-- Para órbitas hiperbólicas
-    $$
-    M(t) = \eta_{h}(t-t_0) + M_0=  e\sinh(\psi(t))-\psi(t).
-    $$ -->
 <p>El procedimiento para resolver la ecuación de Kepler es similar para los tres casos. Sin embargo, el procedimiento para propagar la órbita es diferente dependiendo del tipo de trayectoria. Por ello, se abordarán por separado.</p>
 </section>
 <section id="propagación-elíptica" class="slide level2">
@@ -4379,13 +4622,13 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
 <li><p>El primer paso es determinar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span>. Para ello, partimos calculando la anomalía media <span class="math inline">\(M(t)\)</span> mediante</p>
 <p><span id="eq-kepler"><span class="math display">\[
   M(t) = \eta_{e}(t-t_0) + M_0.
-   \tag{27}\]</span></span></p></li>
+   \tag{37}\]</span></span></p></li>
 </ul>
 <ul>
-<li class="fragment"><p>Definiendo la función transcendental a partir de la ecuación <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a></p>
+<li class="fragment"><p>Definiendo la función transcendental a partir de la ecuación <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;37</a></p>
 <p><span id="eq-g_root"><span class="math display">\[
   g(\uppsi,t) = \uppsi - e\sin(\uppsi)- M(t)
-   \tag{28}\]</span></span></p></li>
+   \tag{38}\]</span></span></p></li>
 <li class="fragment"><p>El objetivo es encontrar la raíz de la función <span class="math inline">\(g(\uppsi^\star,t)\)</span>=0, que corresponde a la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span> (<span class="math inline">\(\uppsi^\star=\psi(t)\)</span>). Esto puede lograrse mediante métodos numéricos clásicos.</p></li>
 <li class="fragment"><p>Para conocer las componentes del vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span>, partimos de su descomposición en coordenadas polares</p>
 <p><span class="math display">\[
@@ -4402,7 +4645,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
       \sqrt{1-e^2}\sin(\psi(t)) \\
       0
       \end{bmatrix}.
-   \tag{29}\]</span></span></p></li>
+   \tag{39}\]</span></span></p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -4414,7 +4657,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
   \]</span></p></li>
 </ul>
 <ul>
-<li class="fragment"><p>Derivando <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a> se obtiene</p>
+<li class="fragment"><p>Derivando <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;37</a> se obtiene</p>
 <p><span class="math display">\[
   \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_e}{1-e\cos(\psi(t))}.
   \]</span></p></li>
@@ -4433,11 +4676,11 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
       \sqrt{1-e^2}\cos(\psi(t)) \\
       0
       \end{bmatrix}.
-   \tag{30}\]</span></span></p></li>
-<li class="fragment"><p>Finalemente, podemos obtener la anomalía verdadera <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;12</a>, de tal modo que</p>
+   \tag{40}\]</span></span></p></li>
+<li class="fragment"><p>Finalmente, podemos obtener la anomalía verdadera <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-cos_sin_nu" class="quarto-xref">Ecuación&nbsp;12</a>, de tal modo que</p>
 <p><span id="eq-p_nu"><span class="math display">\[
   \nu(t) = \mathrm{atan2}(\sqrt{1-e^2}\sin(\psi(t)), \cos(\psi(t))-e).
-   \tag{31}\]</span></span></p></li>
+   \tag{41}\]</span></span></p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -4447,26 +4690,27 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
 Algoritmo 2.1.2: Propagador Kepleriano para el caso elíptico
 </div>
 <div class="algorithm-io">
-<p><strong>Entrada:</strong> <span class="math inline">\(a,e,\omega,i,\Omega,t_0,M_0,t\)</span></p>
+<p><strong>Entrada:</strong> <span class="math inline">\(t_0,M_0,t\)</span></p>
 </div>
 <div class="algorithm-io">
-<p><strong>Salida:</strong> <span class="math inline">\(\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)\)</span></p>
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{p}\vec{r}(t),\ls{p}\vec{v}(t)\)</span> y <span class="math inline">\(\nu(t)\)</span></p>
 </div>
+<p>Para todo instante de tiempo <span class="math inline">\(t&gt;t0\)</span>:</p>
 <ol>
 <li>
-Calcular <span class="math inline">\(M(t)\)</span> mediante <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;27</a>.
+Calcular <span class="math inline">\(M(t)\)</span> mediante la <a href="#/eq-kepler" class="quarto-xref">Ecuación&nbsp;37</a>.
 </li>
 <li>
-Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de <a href="#/eq-g_root" class="quarto-xref">Ecuación&nbsp;28</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
+Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de <a href="#/eq-g_root" class="quarto-xref">Ecuación&nbsp;38</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
 </li>
 <li>
-Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;29</a>.
+Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante la <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;39</a>.
 </li>
 <li>
-Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;30</a>.
+Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante la <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;40</a>.
 </li>
 <li>
-Calcular <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-p_nu" class="quarto-xref">Ecuación&nbsp;31</a>.
+Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p_nu" class="quarto-xref">Ecuación&nbsp;41</a>.
 </li>
 </ol>
 </div>
@@ -4483,7 +4727,7 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-p_nu
 <p><strong>Nota:</strong></p>
 </div>
 <div class="callout-content">
-<p>Para el caso circular, el propagador kepleriano se simplifica, ya que <span class="math inline">\(\psi(t)=\nu(t)=M(t)\)</span> y <span class="math inline">\(e=0\)</span>. Por lo tanto, las ecuaciones <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;29</a> y <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;30</a> se simplifican a</p>
+<p>Para el caso circular, el propagador kepleriano se simplifica, ya que <span class="math inline">\(\psi(t)=\nu(t)=M(t)\)</span> y <span class="math inline">\(e=0\)</span>. Por lo tanto, las ecuaciones <a href="#/eq-p_r" class="quarto-xref">Ecuación&nbsp;39</a> y <a href="#/eq-p_v" class="quarto-xref">Ecuación&nbsp;40</a> se simplifican a</p>
 <p><span class="math display">\[
     \ls{p}\vec{r}(t) = a\begin{bmatrix}
     \cos(M(t)) \\
@@ -4502,13 +4746,249 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante <a href="#/eq-p_nu
 </div>
 </div>
 </div>
+</section>
+<section id="propagación-parabólica" class="slide level2">
+<h2>Propagación parabólica</h2>
+<ul>
+<li>De forma analoga al caso elíptico, lo primero es calcular la anomalía media:</li>
+</ul>
+<p><span id="eq-prog_p_kepler"><span class="math display">\[
+    M(t) = \eta_{p}(t-t_{0}) + M_{0}.
+\tag{42}\]</span></span></p>
+<ul>
+<li><p>Posteriormente, se resuelve la ecuación de Kepler para encontrar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span>. Para ello, definimos la función:</p>
+<p><span id="eq-prog_p_g_root"><span class="math display">\[
+      g(\uppsi,t) = \uppsi - e\sin(\uppsi)- M(t)
+   \tag{43}\]</span></span></p></li>
+<li><p>La raíz de <span class="math inline">\(g(\uppsi^\star,t)\)</span>=0 corresponde a la aproximación de la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span> (<span class="math inline">\(\uppsi^\star=\psi(t)\)</span>).</p></li>
+<li><p>Ahora, retomando la <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a></p>
+<p><span class="math display">\[
+  \begin{aligned}
+      r(t) &amp;= \frac{p}{1+cos(\nu(t))},\\
+      \Rightarrow \cos(\nu(t)) &amp;= \frac{p-r(t)}{r(t)}.
+  \end{aligned}
+  \]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Pra calcular el seno de la anomalía verdadera <span class="math inline">\(\nu(t)\)</span>, utilizamos la propiedad trigonométrica:</p>
+<p><span class="math display">\[
+      \psi(t)=\tan\left(\frac{\nu(t)}{2}\right) = \frac{\sin(\nu(t))}{1+\cos(\nu(t))} \Rightarrow \sin(\nu(t)) = \frac{p\psi(t)}{r(t)}.
+  \]</span></p></li>
+<li><p>Ahora, retomando la <a href="#/eq-orbit_equation_parabolic" class="quarto-xref">Ecuación&nbsp;18</a></p>
+<p><span class="math display">\[
+  \begin{aligned}
+      r(t) &amp;= \frac{p}{1+cos(\nu(t))},\\
+      &amp;= \frac{p}{2}\left(1+\tan^2\left(\frac{\nu(t)}{2}\right)\right)\\
+      &amp;=f(1+\psi^2(t)).
+  \end{aligned}
+  \]</span></p></li>
+<li><p>Entonces:</p>
+<p><span id="eq-prog_p_r"><span class="math display">\[
+      \ls{p}\vec{r}(t) = \begin{bmatrix}
+      r(t)\cos(\nu(t))\\
+      r(t)\sin(\nu(t))\\
+      0
+      \end{bmatrix} = f\begin{bmatrix}
+      1-\psi^2(t)\\
+      2\psi(t)\\
+      0
+      \end{bmatrix}.
+   \tag{44}\]</span></span></p></li>
+<li><p>Para obtener el vector de velocidad, consideramos que</p>
+<p><span class="math display">\[
+      \ls{p}\vec{v}(t) = \frac{\text{d}\ls{p}\vec{r}(t)}{\text{d}t} = \frac{\partial \ls{p}\vec{r}}{\partial \psi(t)} \frac{\text{d}\psi(t)}{\text{d}t}.
+  \]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Del vector de posición</p>
+<p><span class="math display">\[
+      \frac{\partial \ls{p}\vec{r}}{\partial \psi(t)} = 2f \begin{bmatrix}  
+      -\psi(t)\\
+      1\\
+      0
+      \end{bmatrix}.
+  \]</span></p></li>
+<li><p>Y derivando la <a href="#/eq-kepler_parabolic" class="quarto-xref">Ecuación&nbsp;19</a> respecto al tiempo</p>
+<p><span class="math display">\[
+      \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_e}{1+\psi^2(t)}.
+  \]</span></p></li>
+<li><p>Entonces, el vector de velocidad es</p>
+<p><span id="eq-prog_p_v"><span class="math display">\[
+      \ls{p}\vec{v}(t) = \frac{2\eta_e}{1+\psi^2(t)}\begin{bmatrix}
+      -\psi(t)\\
+      1\\
+      0
+      \end{bmatrix}.
+   \tag{45}\]</span></span></p></li>
+<li><p>Finalmente, para obtener la anomalía verdadera utilizamos:</p>
+<p><span id="eq-prog_p_nu"><span class="math display">\[
+      \nu(t) = \mathrm{atan2}(\psi(t),1).
+   \tag{46}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.2.2: Propagador Kepleriano para el caso parabólico
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(t_0,M_0,t\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{p}\vec{r}(t),\ls{p}\vec{v}(t)\)</span> y <span class="math inline">\(\nu(t)\)</span></p>
+</div>
+<p>Para todo instante de tiempo <span class="math inline">\(t&gt;t0\)</span>:</p>
+<ol>
+<li>
+Calcular <span class="math inline">\(M(t)\)</span> mediante la <a href="#/eq-prog_p_kepler" class="quarto-xref">Ecuación&nbsp;42</a>.
+</li>
+<li>
+Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de la <a href="#/eq-prog_p_g_root" class="quarto-xref">Ecuación&nbsp;43</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
+</li>
+<li>
+Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante la <a href="#/eq-prog_p_r" class="quarto-xref">Ecuación&nbsp;44</a>.
+</li>
+<li>
+Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante la <a href="#/eq-prog_p_v" class="quarto-xref">Ecuación&nbsp;45</a>.
+</li>
+<li>
+Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-prog_p_nu" class="quarto-xref">Ecuación&nbsp;46</a>.
+</li>
+</ol>
+</div>
+</section>
+<section id="propagación-hiperbólica" class="slide level2">
+<h2>Propagación hiperbólica</h2>
+<ul>
+<li><p>El primer paso es determinar la anomalía hiperbólica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span>. Para ello, partimos calculando la anomalía media <span class="math inline">\(M(t)\)</span>:</p>
+<p><span id="eq-prog_h_kepler"><span class="math display">\[
+  M(t) = \eta_{h}(t-t_0) + M_0.
+   \tag{47}\]</span></span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Definiendo la función transcendental:</p>
+<p><span id="eq-prog_h_g_root"><span class="math display">\[
+  g(\uppsi,t) = e\sinh(\uppsi)-\psi(t)- M(t)
+   \tag{48}\]</span></span></p>
+<p>y asignamos <span class="math inline">\(\uppsi^\star=\psi(t)\)</span>.</p></li>
+<li class="fragment"><p>Para conocer las componentes del vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span>, partimos de su descomposición en coordenadas polares</p>
+<p><span class="math display">\[
+      \ls{p}\vec{r}(t) = \begin{bmatrix}
+      r(t)\cos(\nu(t)) \\
+      r(t)\sin(\nu(t)) \\
+      0
+      \end{bmatrix}.
+  \]</span></p></li>
+<li class="fragment"><p>Sustituyendo <strong>?@eq-r_psi_hyperbolic</strong> y <strong>?@eq-cos_sin_nu_hyperbolic</strong> se obtiene</p>
+<p><span id="eq-prog_h_r"><span class="math display">\[
+      \ls{p}\vec{r}(t) = a\begin{bmatrix}
+      e-\cosh(\psi(t)) \\
+      \sqrt{e^2-1}\sinh(\psi(t)) \\
+      0
+      \end{bmatrix}.
+   \tag{49}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Para calcular el vector de velocidad <span class="math inline">\(\ls{p}\vec{v}(t)\)</span>, podemos derivar el vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> con respecto al tiempo</p>
+<p><span class="math display">\[
+  \ls{p}\vec{v}(t) = \frac{\text{d}\ls{p}\vec{r}(t)}{\text{d}t} = \frac{\partial\ls{p}\vec{r}(t)}{\partial \psi(t)}\cdot\frac{\text{d}\psi(t)}{\text{d}t}.
+  \]</span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Derivando <strong>?@eq-kepler_hyperbolic</strong> se obtiene</p>
+<p><span class="math display">\[
+  \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_h}{e\cosh(\psi(t))-1}.
+  \]</span></p></li>
+<li class="fragment"><p>Derivando <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> respecto a <span class="math inline">\(\psi(t)\)</span> se obtiene</p>
+<p><span class="math display">\[
+      \frac{\partial\ls{p}\vec{r}(t)}{\partial\psi(t)} = a\begin{bmatrix}
+      -\sinh(\psi(t)) \\
+      \sqrt{e^2-1}\cosh(\psi(t)) \\
+      0
+      \end{bmatrix}.
+  \]</span></p></li>
+<li class="fragment"><p>Por lo tanto, el vector de velocidad es</p>
+<p><span id="eq-prog_h_v"><span class="math display">\[
+      \ls{p}\vec{v}(t) = \frac{a\eta_h}{e\cosh(\psi(t))-1}\begin{bmatrix}
+      -\sin(\psi(t)) \\
+      \sqrt{e^2-1}\cos(\psi(t)) \\
+      0
+      \end{bmatrix}.
+   \tag{50}\]</span></span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Finalmente, podemos obtener la anomalía verdadera <span class="math inline">\(\nu(t)\)</span> utilizamos las componentes del vector de posición:</p>
+<p><span id="eq-prog_h_nu"><span class="math display">\[
+  \nu(t) = \mathrm{atan2}(\sqrt{e^2-1}\sinh(\psi(t)), e-\cosh(\psi(t))).
+   \tag{51}\]</span></span></p></li>
+</ul>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.3.2: Propagador Kepleriano para el caso hiperbólico
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(t_0,M_0,t\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{p}\vec{r}(t),\ls{p}\vec{v}(t)\)</span> y <span class="math inline">\(\nu(t)\)</span></p>
+</div>
+<p>Para todo instante de tiempo <span class="math inline">\(t&gt;t0\)</span>:</p>
+<ol>
+<li>
+Calcular <span class="math inline">\(M(t)\)</span> mediante la <a href="#/eq-prog_h_kepler" class="quarto-xref">Ecuación&nbsp;47</a>.
+</li>
+<li>
+Encontrar la raíz <span class="math inline">\(\uppsi^\star\)</span> de la <a href="#/eq-prog_h_g_root" class="quarto-xref">Ecuación&nbsp;48</a> y asignar <span class="math inline">\(\psi(t)=\uppsi^\star\)</span>.
+</li>
+<li>
+Calcular <span class="math inline">\(\ls{p}\vec{r}(t)\)</span> mediante la <a href="#/eq-prog_h_r" class="quarto-xref">Ecuación&nbsp;49</a>.
+</li>
+<li>
+Calcular <span class="math inline">\(\ls{p}\vec{v}(t)\)</span> mediante la <a href="#/eq-prog_h_v" class="quarto-xref">Ecuación&nbsp;50</a>.
+</li>
+<li>
+Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-prog_h_nu" class="quarto-xref">Ecuación&nbsp;51</a>.
+</li>
+</ol>
+</div>
 <!-- ##
 
 ::: {.center-vertical}
 
 ::: {.chapter-title}
 
-Preliminares
+Propagación 
 
 :::
 
@@ -4630,7 +5110,7 @@ Y ahora ...
 
 ::: {.chapter-title}
 
-Preliminares
+Propagación 
 
 :::
 
@@ -5195,7 +5675,7 @@ $$
 
 ::: {.chapter-title}
 
-Preliminares
+Propagación 
 
 :::
 
@@ -5472,7 +5952,7 @@ Es el marco en el que se montan sensores y actuadores. Todos los algoritmos de c
 
 ::: {.chapter-title}
 
-Preliminares
+Propagación 
 
 :::
 
@@ -6019,7 +6499,7 @@ $$
 
 ::: {.chapter-title}
 
-Preliminares
+Propagación 
 
 :::
 
