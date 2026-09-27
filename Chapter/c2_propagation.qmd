@@ -3306,7 +3306,7 @@ Esto nos remite a lo hemos estudiado hasta el momento.
 - A partir de $E$ y $p$, podemos determinar la excentricidad $e$ mediante la ecuación .
 
     $$
-    e=\sqrt{1+2E\frac{\|\vec{h}\|^2}{\mu}}.
+    e=\sqrt{1+2E\frac{\|\vec{h}\|^2}{\mu^2}}.
     $${#eq-e_p_E}
 
 
