@@ -3199,6 +3199,209 @@ A continuación se deduciran las ecuaciones de movimiento para cada una de las t
 
 ::: {.column}
 
+- Para el caso hiperbólico, la metodología es muy similar.
+
+- Considere la curva
+
+$$
+x^2-y^2=a^2
+$$
+
+A esta curva se le conoce como **hipérbola equilátera**. Esta hipérbola se caracteriza por:
+
+- Sus asíntotas son ortogonales. 
+
+- Dado a que su semieje tranverso es igual a su semieje conjugado, su excentricidad es $e=\sqrt{2}$.
+
+- Cada uno de los puntos que conforma esta hipérbola puede ser caracterizado de la siguiente manera:
+$$
+    \begin{align*}
+        x&=a\cosh(\psi), &y&=a\sinh(\psi),
+    \end{align*}
+$$
+donde 
+
+$$
+    \begin{align*}
+        \cosh(\psi)&=\frac{e^\psi+e^{-\psi}}{2}, &\sinh(\psi)&=\frac{e^\psi-e^{-\psi}}{2},
+    \end{align*}
+$$
+
+son las funciones hiperbólicas y $\psi \in (-\infty,\infty)$ es la **anomalía hiperbólica**. 
+
+:::
+
+::: {.column}
+
+![](/Figures/c2/hyperbolic_orbit.svg){width=100%}
+
+:::
+
+:::
+
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+
+- Ahora, para el caso de la circunferencia $x^2+y^2=a^2$, la anomalía excéntrica $\psi$ tiene una interpretación geométrica clara y, además, está asociada con el área de un sector circular.
+
+$$
+    S(OAC)=\frac{1}{2}\psi a^2.
+$$
+
+- En el caso de una hipérbola equilátera, la anomalía hiperbólica no tiene una interpretación geométrica. Sin embargo, esta anomalía sí tiene una relación con el área de un sector hiperbólico:
+
+$$
+    S(OAC)=\frac{1}{2}\psi a^2.
+$$
+
+- La relación entre la componente vertical de los puntos $C$ y $C'$ es
+
+$$
+    r_y'=\frac{b}{a}r_y=\sqrt{e^2-1}.
+$$
+
+:::
+
+::: {.column}
+
+![](/Figures/c2/hyperbolic_orbit.svg){width=100%}
+
+:::
+
+:::
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+- Entonces 
+
+$$
+    \begin{split}
+        r\sin(\nu)&=a\sqrt{e^2-1}\sinh(\psi),\\
+        \Rightarrow \sinh(\psi)&=\frac{r}{a\sqrt{e^2-1}}\sin (\nu),  
+    \end{split}
+$$ {#eq-sinh_psi}
+
+- De la Figura es fácil ver que 
+
+$$
+    \begin{split}
+        a\cosh(\psi)&=-r\cos(\nu)+c\\
+        \Rightarrow \cosh(\psi)&=-\frac{r}{a}\cos(\nu)+e
+    \end{split}
+$${#eq-cosh_psi}
+
+- La ecuación de órbita para el caso hiperbólico es 
+
+$$
+    r(\nu)=\frac{a\sqrt{e^2-1}}{1+e\cos(\nu)}
+$${#eq-orbit_equation_hyp}
+
+Sustituyendo la @eq-orbit_equation_hyp en la @eq-sinh_psi y @eq-cosh_psi, tenemos:
+
+$$
+    \begin{split}
+        \sinh(\psi)&=\frac{\sqrt{e^2-1}\sin(\nu)}{1+e\cos(\nu)}\\
+        \cosh(\psi)&=\frac{\cos(\nu)+e}{1+e\cos(\nu)}
+    \end{split}
+$$
+
+:::
+
+::: {.column}
+
+![](/Figures/c2/hyperbolic_orbit.svg){width=100%}
+
+:::
+
+:::
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+
+- De aquí, podemos obtener las funciones trigonométricas de $\nu$:
+
+$$
+    \begin{split}
+        \cos(\nu)&= \frac{e-\cosh(\psi)}{e\cosh(\psi)-1},\\
+        \sin(\nu)&=\frac{\sqrt{e^2-1}\sinh(\psi)}{e\cosh(\psi)-1},\\
+    \end{split}
+$${#eq-sin_cos_nu_hyp}
+
+y la @eq-orbit_equation_hyp queda 
+
+$$
+    r(\psi)=a(e\cosh(\psi)-1).
+$${#eq-orbit_equation_hyp_psi}
+
+- Ahora, para conocer la trayectoria temporal de $\psi$, vamos a comenzar derivando $\cos(\nu)$ de la @eq-sin_cos_nu_hyp} respecto a $\psi$:
+
+$$
+    \begin{split}
+        -\sin(\nu)\frac{\partial \nu}{\partial \psi}&=\frac{(-\sinh(\psi))(e\cosh(\psi)-1)-(e-\cosh(\psi))(e\sinh(\psi))}{(e\cosh(\psi)-1)^2}\\
+        \Rightarrow \frac{\partial \nu}{\partial \psi}&=\frac{(e^2-1)\sinh(\psi)}{(1-e\cosh(\psi))^2\sin(\nu)}
+    \end{split}
+$$
+
+:::
+
+::: {.column}
+
+![](/Figures/c2/hyperbolic_orbit.svg){width=100%}
+
+:::
+
+:::
+
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+- Sustituyendo la @eq-sin_cos_nu_hyp} y $\cosh(\psi)$ desde la @eq-orbit_equation_hyp_psi tenemos 
+
+$$
+    \frac{\partial \nu}{\partial \psi}=\frac{a}{r}\sqrt{e^2-1}.
+$$
+
+- Recordando que 
+
+$$
+    \|\vec{h}\|=r^2\frac{\mathrm{d}\nu}{\mathrm{d}t} \Rightarrow \mathrm{d}\nu = \frac{1}{r^2}\|\vec{h}\|\mathrm{d}t
+$$
+
+Entonces:
+
+$$
+\frac{1}{r^2}\|\vec{h}\|\mathrm{d}t=\frac{a}{r}\sqrt{e^2-1} \mathrm{d}\psi. 
+$$
+
+- Integrando por partes
+$$
+\begin{split}
+    \|\vec{h}\|\int_{t_p}^{t}\mathrm{d}t&=a\sqrt{e^2-1}\int_{0}^{\psi(t)}r(\psi)\mathrm{d}\psi,\\
+    \|\vec{h}\|(t-tp)&=a^2\sqrt{e^2-1}\int_{0}^{\psi(t)}(e\cos(\psi)-1)\mathrm{d}\psi,\\
+    &=a^2\sqrt{e^2-1}(e\sinh(\psi(t))-\psi(t)),
+\end{split}
+$$
 
 
 :::
@@ -3211,6 +3414,48 @@ A continuación se deduciran las ecuaciones de movimiento para cada una de las t
 
 :::
 
+---
+
+::: {.columns}
+
+::: {.column}
+
+
+-Recordando que $\|\vec{h}\|=\sqrt{\mu p}$ y $p=a\sqrt{e^2-1}$
+
+
+$$
+    \begin{split}
+    \frac{\sqrt{\mu a(e^2-1)}}{a^2\sqrt{e^2-1}}(t-t_p)=e\sinh(\psi(t))-\psi(t),\\
+    \Rightarrow \eta_h(t-t_p)=\sinh(\psi(t))-\psi(t)=M(t),
+    \end{split}
+$$
+
+donde $\eta_h$ es el movimiento hiperbólico medio y $M(t)$ es la anomalía media.
+
+- Ahora, considere la época $t_0$. La anomalía media acumulada en la época es 
+
+$$
+    M_0=\eta_h(t_0-t_p).
+$$
+
+Entonces 
+
+$$
+    M(t)=\eta_h(t-t_0)+M_0=\sinh(\psi(t))-\psi(t).
+$${#eq-kepler_hyperbolic}
+
+Similar a los otro casos, el problema de propagación se reduce a resolver la ecuación de Kepler para el caso hiperbólico.
+
+:::
+
+::: {.column}
+
+![](/Figures/c2/hyperbolic_orbit.svg){width=100%}
+
+:::
+
+:::
 
 
 
@@ -3906,7 +4151,7 @@ Para todo instante de tiempo $t>t0$:
         \end{bmatrix}.
     $$
 
-- Sustituyendo @eq-r_psi_hyperbolic y @eq-cos_sin_nu_hyperbolic se obtiene
+- Sustituyendo @eq-orbit_equation_hyp_psi y @eq-sin_cos_nu_hyp se obtiene
 
     $$
         \ls{p}\vec{r}(t) = a\begin{bmatrix}
