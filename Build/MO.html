@@ -4360,7 +4360,7 @@ x^2-y^2=a^2
     r(\psi)=a(e\cosh(\psi)-1).
 \tag{24}\]</span></span></p>
 <ul>
-<li>Ahora, para conocer la trayectoria temporal de <span class="math inline">\(\psi\)</span>, vamos a comenzar derivando <span class="math inline">\(\cos(\nu)\)</span> de la <a href="#/eq-sin_cos_nu_hyp" class="quarto-xref">Ecuación&nbsp;23</a>} respecto a <span class="math inline">\(\psi\)</span>:</li>
+<li>Ahora, para conocer la trayectoria temporal de <span class="math inline">\(\psi\)</span>, vamos a comenzar derivando <span class="math inline">\(\cos(\nu)\)</span> de la <a href="#/eq-sin_cos_nu_hyp" class="quarto-xref">Ecuación&nbsp;23</a> respecto a <span class="math inline">\(\psi\)</span>:</li>
 </ul>
 <p><span class="math display">\[
     \begin{split}
@@ -4377,7 +4377,7 @@ x^2-y^2=a^2
 <div class="columns">
 <div class="column">
 <ul>
-<li>Sustituyendo la <a href="#/eq-sin_cos_nu_hyp" class="quarto-xref">Ecuación&nbsp;23</a>} y <span class="math inline">\(\cosh(\psi)\)</span> desde la <a href="#/eq-orbit_equation_hyp_psi" class="quarto-xref">Ecuación&nbsp;24</a> tenemos</li>
+<li>Sustituyendo la <a href="#/eq-sin_cos_nu_hyp" class="quarto-xref">Ecuación&nbsp;23</a> y <span class="math inline">\(\cosh(\psi)\)</span> desde la <a href="#/eq-orbit_equation_hyp_psi" class="quarto-xref">Ecuación&nbsp;24</a> tenemos</li>
 </ul>
 <p><span class="math display">\[
     \frac{\partial \nu}{\partial \psi}=\frac{a}{r}\sqrt{e^2-1}.
@@ -4413,7 +4413,7 @@ x^2-y^2=a^2
 <p><span class="math display">\[
     \begin{split}
     \frac{\sqrt{\mu a(e^2-1)}}{a^2\sqrt{e^2-1}}(t-t_p)=e\sinh(\psi(t))-\psi(t),\\
-    \Rightarrow \eta_h(t-t_p)=\sinh(\psi(t))-\psi(t)=M(t),
+    \Rightarrow \eta_h(t-t_p)=e\sinh(\psi(t))-\psi(t)=M(t),
     \end{split}
 \]</span></p>
 <p>donde <span class="math inline">\(\eta_h\)</span> es el movimiento hiperbólico medio y <span class="math inline">\(M(t)\)</span> es la anomalía media.</p>
@@ -4425,7 +4425,7 @@ x^2-y^2=a^2
 \]</span></p>
 <p>Entonces</p>
 <p><span id="eq-kepler_hyperbolic"><span class="math display">\[
-    M(t)=\eta_h(t-t_0)+M_0=\sinh(\psi(t))-\psi(t).
+    M(t)=\eta_h(t-t_0)+M_0=e\sinh(\psi(t))-\psi(t).
 \tag{25}\]</span></span></p>
 <p>Similar a los otro casos, el problema de propagación se reduce a resolver la ecuación de Kepler para el caso hiperbólico.</p>
 </div><div class="column">
@@ -4626,7 +4626,7 @@ Calcular la anomalía verdadera inicial <span class="math inline">\(\nu_0\)</spa
 </div>
 <div class="algorithm">
 <div class="algorithm-title">
-Algoritmo 2.1.1: Determinación de la anomalia excentrica en el caso elíptico
+Algoritmo 2.1.1: Determinación de la anomalia media en el caso elíptico
 </div>
 <div class="algorithm-io">
 <p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
@@ -4686,7 +4686,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_e" 
 </div>
 <div class="algorithm">
 <div class="algorithm-title">
-Algoritmo 2.2.1: Determinación de la anomalia excentrica en el caso parabólico
+Algoritmo 2.2.1: Determinación de la anomalia media en el caso parabólico
 </div>
 <div class="algorithm-io">
 <p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
@@ -4713,7 +4713,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_p" 
 <section id="caso-hiperbólico" class="slide level2">
 <h2>Caso hiperbólico</h2>
 <ul>
-<li><p>Comenzamos determinando la anomalía parabólica <span class="math inline">\(\psi_0\)</span> en la época <span class="math inline">\(t_0\)</span>:</p>
+<li><p>Comenzamos determinando la anomalía hiperbólica <span class="math inline">\(\psi_0\)</span> en la época <span class="math inline">\(t_0\)</span>:</p>
 <p><span id="eq-psi0_h"><span class="math display">\[
       \begin{aligned}
           \psi_0 &amp; =\mathrm{sinh}^{-1}\left(\frac{\sqrt{e^2-1}\sin{\nu_0}}{1+e\cos{\nu_0}}\right).
@@ -4727,7 +4727,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_p" 
 <p><span id="eq-a_h"><span class="math display">\[
       a=\frac{p}{e^2-1}.
    \tag{41}\]</span></span></p></li>
-<li><p>Finalmente, podemos determinar el movimiento angular medio <span class="math inline">\(\eta_h\)</span></p>
+<li><p>Finalmente, podemos determinar el movimiento hiperbólico medio <span class="math inline">\(\eta_h\)</span></p>
 <p><span id="eq-eta_h"><span class="math display">\[
       \eta_h=\sqrt{\frac{\mu}{a^3}}.
    \tag{42}\]</span></span></p></li>
@@ -4746,7 +4746,7 @@ Calcular el movimiento angular medio mediante la ecuación <a href="#/eq-eta_p" 
 </div>
 <div class="algorithm">
 <div class="algorithm-title">
-Algoritmo 2.3.1: Determinación de la anomalia excentrica en el caso hiperbólico
+Algoritmo 2.3.1: Determinación de la anomalia media en el caso hiperbólico
 </div>
 <div class="algorithm-io">
 <p><strong>Entrada:</strong> <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, y <span class="math inline">\(\nu_0\)</span>.</p>
@@ -4935,7 +4935,7 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p
 <ul>
 <li><p>Posteriormente, se resuelve la ecuación de Kepler para encontrar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span>. Para ello, definimos la función:</p>
 <p><span id="eq-prog_p_g_root"><span class="math display">\[
-      g(\uppsi,t) = \uppsi - e\sin(\uppsi)- M(t)
+      g(\uppsi,t) = \uppsi + \frac{1}{3}\uppsi^3- M(t)
    \tag{49}\]</span></span></p></li>
 <li><p>La raíz de <span class="math inline">\(g(\uppsi^\star,t)\)</span>=0 corresponde a la aproximación de la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span> (<span class="math inline">\(\uppsi^\star=\psi(t)\)</span>).</p></li>
 <li><p>Ahora, retomando la <a href="#/eq-orbit_equation" class="quarto-xref">Ecuación&nbsp;10</a></p>
@@ -5061,7 +5061,7 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p
 <ul>
 <li class="fragment"><p>Definiendo la función transcendental:</p>
 <p><span id="eq-prog_h_g_root"><span class="math display">\[
-  g(\uppsi,t) = e\sinh(\uppsi)-\psi(t)- M(t)
+  g(\uppsi,t) = e\sinh(\uppsi)-\uppsi(t)- M(t)
    \tag{54}\]</span></span></p>
 <p>y asignamos <span class="math inline">\(\uppsi^\star=\psi(t)\)</span>.</p></li>
 <li class="fragment"><p>Para conocer las componentes del vector de posición <span class="math inline">\(\ls{p}\vec{r}(t)\)</span>, partimos de su descomposición en coordenadas polares</p>
@@ -5159,1006 +5159,177 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p
 </li>
 </ol>
 </div>
-<!-- ##
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Marcos de referencia auxiliares
-
-
-<div class="menu-title" style="display:none;"> ▸ Marcos de referencia auxiliares </div>
-
-:::
-
-:::
-
----
-
-- Como se mencionó anteriormente, para relacionar el marco $\ls{p}\mathcal{F}$ y el marco $\ls{r}\mathcal{F}$ es necesario conocer la anomalía verdadera $\nu(t)$, dado que
-
-    $$
-    \ls{r}R_p(t)=R_z(\nu(t)).
-    $$
-
-:::{.incremental}
-
-- Para conocer $\nu(t)$, es necesario calcular la anomalía excéntrica $\psi(t)$, que puede obtenerse de la misma forma que en el problema de propagación de órbita. Una vez conocida $\psi(t)$, la anomalía verdadera $\nu(t)$ puede obtenerse mediante @eq-cos_sin_nu, de tal modo que
-
-    $$
-    \nu(t) = \tan^{-1}\left(\frac{\sin(\psi(t))\sqrt{1-e^2}}{\cos(\psi(t))-e}\right).
-    $$
-
-- Debido a que la función $\tan^{-1}(\cdot)$ tiene un rango de $(-\pi/2,\pi/2)$, es necesario considerar el cuadrante en el que se encuentra $\nu(t)$ para obtener el valor correcto. Por ello , es recomendable utilizar la función $\text{atan2}(y,x)$, que considera el cuadrante correcto, de modo que
-
-    $$
-    \nu(t) = \text{atan2}\left(\sin(\psi(t))\sqrt{1-e^2},\cos(\psi(t))-e\right).
-    $$
-
-
-    donde $\text{atan2}(y,x)$ se define como
-
-    $$
-        \text{atan2}(y,x) =
-        \begin{cases}
-            \tan^{-1}(y/x),     & x>0,\\
-            \tan^{-1}(y/x)+\pi, & x<0,y\geq 0,\\
-            \tan^{-1}(y/x)-\pi, & x<0,y<0,\\
-            +\pi/2,             & x=0,y>0,\\
-            -\pi/2,             & x=0,y<0,\\
-            \text{indefinido},  & x=0,y=0.
-        \end{cases}
-    $$
-
-
-:::
-
----
-
-Finalmente, para relacionar el marco $\ls{r}\mathcal{F}$ con el marco de referencia orbital $\ls{h}\mathcal{F}$, podemos construir la matriz de rotación
-
-$$
-\ls{h}R_r = R_z\left(\frac{\pi}{2}\right)R_y\left(-\frac{\pi}{2}\right).
-$$
-
-:::{.fragment}
-
-- Con ello, la matriz de rotación desde el marco $\ls{i}\mathcal{F}$ al marco $\ls{h}\mathcal{F}$ está dada por
-
-$$
-    \begin{split}
-        \ls{h}R_i(t) & = \ls{h}R_r\ls{r}R_p(t)\ls{p}R_i,\\
-        & = R_z\left(\frac{\pi}{2}\right)R_y\left(-\frac{\pi}{2}\right)R_z(\nu(t))R_z(\omega)R_x(i)R_z(\Omega).
-    \end{split}
-$$
-
-:::
-
-
-::: {.fragment style="display:flex;justify-content:center;"}
-Y ahora ...
-
-::: {.xlarge}
-
-<div class="vspace-3"></div>
-
-<span style="color:blue">**¿Cómo se calcula $\ls{b}R_h\td$?**</span>
-
-:::
-
-:::
-
-
-
-
----
-
-## Algunos datos antes de pasar de tema
-
-- El marco de referencia RSW debe su nombre dada la dirección de sus ejes en inglés:
-  - **R**adial: Apunta desde el centro del cuerpo central hacia el satélite.
-  - **S** (Along-track): Apunta en la dirección de la velocidad del satélite, es tangente a la órbita.
-  - **W** (Cross-track): Apunta perpendicularmente al plano orbital, siguiendo la regla de la mano derecha.
-
-  La elección de las siglas *S* y *W* puede deberse a convenciones históricas o a la necesidad de evitar confusiones con otras letras.
-
-:::{.incremental}
-
-- El análisis que hicimos la sección de mecánica orbital se realizó bajo la suposición de los cuerpos son puntuales. En la práctica, los cuerpos tienen una distribución de masa que puede afectar la órbita. Sin embargo, para las escalas de órbita que vimos hasta este punto del curso, la suposición de cuerpos puntuales es suficientemente precisa.
-
-- También consideramos que los elementos orbitales son constantes con el tiempo. Eso nace de la suposición que hicimos sobre la ausencia de fuerza externas. Para mejorar el resultado, el comportamiento temporal de los elementos orbitales debe ser considerado. 
-
-- Existe otra forma más de describir la órbita, y es mediante los **coeficientes de Lagrange**. Estos coeficientes permiten calcular la posición y velocidad en función de las condiciones iniciales.
-
-:::
- -->
-<!-- ---
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Repaso de álgebra
-
-<div class="menu-title" style="display:none;"> ▸ Repaso de álgebra </div>
-
-:::
-
-:::
-
-
-## Vectores
-
-
-::: {.columns}
-::: {.column width="70%"}
-
-Un **vector** (columna) es una $n$-tupla ordenada de números reales:
-
-$$
-    \vec{v}=
-    \begin{bmatrix}
-        v_1\\
-        v_2\\
-        \vdots\\
-        v_n
-    \end{bmatrix} \in\mathbb{R}^n ,
-    \qquad v_i\in\mathbb{R}
-$$
-
-o de forma equivalente,
-
-$$
-    \vec{v}\equiv
-    [v_1\quad v_2\quad \dots\quad v_n]^\top.
-$$
-
-donde $n\in\mathbb{N}$ y $\top$ denota transposición. El conjunto de todos los vectores de dimensión $n$ es el espacio $\mathbb{R}^n$.
-
-Físicamente nos permiten representar **magnitudes vectoriales**, *e.g.*, la posición y la velocidad.
-
-Pueden clasificarse como libres o fijos, dependiendo si origen es invariante.
-
-:::
-::: {.column width="30%"}
-
-:::{.small}
-
-$v_x$
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="-1" source-offset="0"}
-viewof vx = Inputs.range([-5, 5], {value: 1, step: 0.1})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-11 nodetype="declaration"}
-:::
-::::
-:::::
-$v_y$
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="-1" source-offset="0"}
-viewof vy = Inputs.range([-5, 5], {value: 1, step: 0.1})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-12 nodetype="declaration"}
-:::
-::::
-:::::
-
-$o_x$
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="-1" source-offset="0"}
-viewof ox = Inputs.range([-5, 5], {value: 0, step: 0.1})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-13 nodetype="declaration"}
-:::
-::::
-:::::
-$o_y$
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="-1" source-offset="0"}
-viewof oy = Inputs.range([-5, 5], {value: 0, step: 0.1})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-14 nodetype="declaration"}
-:::
-::::
-:::::
-
-:::
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="-1" source-offset="0"}
-Plot.plot({
-  width: 500,
-  height: 500,
-  x: {domain: [-5, 5], grid: true},
-  y: {domain: [-5, 5], grid: true},
-  marks: [
-    Plot.arrow(
-      [{x1: ox, y1: oy, x2: vx+ox, y2: vy+oy}],
-      {
-        x1: "x1",
-        y1: "y1",
-        x2: "x2",
-        y2: "y2"
-      }
-    )
-  ]
-})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-15 nodetype="expression"}
-:::
-::::
-:::::
-:::
-
-:::
-
----
-
-## Operaciones típicas entre vectores
-
-Sean $\vec{u},\vec{v}\in\mathbb{R}^n$ y $\alpha\in\mathbb{R}$:
-
-- **Suma:** $\vec{u}+\vec{v}=[u_1+v_1,\dots,u_n+v_n]^\top$
-
-- **Producto por escalar:** $\alpha\vec{u}=[\alpha u_1,\dots,\alpha u_n]^\top$
-
-- **Producto punto:**
-
-$$
-    \begin{aligned}
-        \vec{u}\cdot\vec{v}&=\sum_{i=1}^{n}u_iv_i\\
-        &=\vec{u}^{\top}\vec{v}\\
-        &=\|\vec{u}\|\,\|\vec{v}\|\cos\theta
-    \end{aligned}
-$$
-
-donde $\theta$ es el ángulo comprendido entre $\vec{u}$ y $\vec{v}$ al hacer coincidir sus orígenes.
-
-- **Norma Euclidiana:** $\|\vec{u}\|=\sqrt{\vec{u}\cdot\vec{u}}$
-
----
-
-## Producto cruz (definición por componentes)
-
-En $\mathbb{R}^3$, el **producto cruz** de dos vectores $\vec{u},\vec{v}\in\mathbb{R}^3$ se define como
-
-$$
-    \vec{u}\times\vec{v}=
-    \begin{bmatrix}
-        u_2v_3-u_3v_2\\
-        u_3v_1-u_1v_3\\
-        u_1v_2-u_2v_1
-    \end{bmatrix}=
-    \begin{vmatrix}
-        \vec{i} & \vec{j} & \vec{k}\\
-        u_1 & u_2 & u_3\\
-        v_1 & v_2 & v_3
-    \end{vmatrix},
-$$
-
-donde $\{\vec{i},\vec{j},\vec{k}\}$ es la base canónica de $\mathbb{R}^3$.
-
-::: {.fragment}
-
-**Propiedades**:
-
-- $\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$
-- $\vec{u}\times\vec{u}=\vec{0}$
-- $\vec{u}\cdot(\vec{u}\times\vec{v})=0$
-- $\vec{u}\times\vec{v}$ es ortogonal (perpendicular) a $\vec{u}$ y $\vec{v}$.
-- Si $\vec{u}$ y $\vec{v}$ son colineales, entonces $\vec{u}\times\vec{v}=\vec{0}$.
-- $\|\vec{u}\times\vec{v}\|=\|\vec{u}\|\,\|\vec{v}\|\sin\theta.$
-
-:::
-
----
-
-## Espacio vectorial (real)
-
-Un **espacio vectorial real** es una tupla
-
-$$
-(\mathcal{V},+,\cdot)
-$$
-
-donde $\mathcal{V}$ es un conjunto de vectores reales, $+:\mathcal{V}\times\mathcal{V}\rightarrow\mathcal{V}$ y $\cdot:\mathbb{R}\times\mathcal{V}\rightarrow\mathcal{V}$ satisfacen, para todo $\vec{u},\vec{v},\vec{w}\in\mathcal{V}$ y $\alpha,\beta\in\mathbb{R}$:
-
-- $\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}$.
-- $(\alpha+\beta)\vec{u}=\alpha\vec{u}+\beta\vec{u}$.
-- $(\alpha\beta)\vec{u}=\alpha(\beta\vec{u})$.
-- $1\cdot\vec{u}=\vec{u}$.
-
----
-
-## Base
-
-Sea $\mathcal{V}$ un espacio vectorial real de dimensión $n$. Un conjunto ordenado
-
-$$
-\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n\}\subset\mathcal{V}
-$$
-
-es una **base** de $\mathcal{V}$ si:
-
-1. **Independencia lineal**
-
-$$
-    \alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n=\vec{0}
-    \;\Rightarrow\;
-    \alpha_1=\cdots=\alpha_n=0.
-$$
-
-
-::: {.fragment}
-
-1. **Generación**
-
-Todo $\vec{u}\in\mathcal{V}$ se escribe de forma *única* como
-
-$$
-    \vec{u}=\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n,
-    \qquad \alpha_i\in\mathbb{R}.
-$$
-
-:::
-
-
-
-::: {.callout-note .fragment}
-### Nota:
-
- Una *combinación lineal* es toda expresión
-
-$$
-\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n
-$$
-
-con $\alpha_i\in\mathbb{R}$. La independencia lineal de la base implica que ningún vector se expresa como combinación lineal de los demás.
-
-:::
-
----
-
-## Matrices
-
-Una **matriz** $A\in\mathbb{R}^{m\times n}$ es un arreglo rectangular:
-
-$$
-    A=
-    \begin{bmatrix}
-        a_{11} & \cdots & a_{1n}\\
-        \vdots & \ddots & \vdots\\
-        a_{m1} & \cdots & a_{mn}
-    \end{bmatrix}.
-$$
-
-::: {.fragment}
-
-**Operaciones con matrices**
-
-Sean $A,B\in\mathbb{R}^{m\times n}$ y $\alpha\in\mathbb{R}$:
-
-- **Suma:** $(A+B)_{ij}=a_{ij}+b_{ij}$.
-- **Producto por escalar:** $(\alpha A)_{ij}=\alpha a_{ij}$.
-- **Producto matricial:** Si $A\in\mathbb{R}^{m\times p}$ y $B\in\mathbb{R}^{p\times n}$,
-
-$$
-    (AB)_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},
-    \qquad
-    AB\in\mathbb{R}^{m\times n}.
-$$
-
-- **Transpuesta:** $(A^\top)_{ij}=a_{ji}$.
-
-**Nota:** La notación $(A)_{ij}$ denota el elemento de $A$ en la fila $i$ y columna $j$.
-
-:::
-
-
-## Inversa de una matriz
-
-Sea $A\in\mathbb{R}^{n\times n}$ (matriz cuadrada). Se dice que $A$ es **invertible** si existe $B\in\mathbb{R}^{n\times n}$ tal que
-
-$$
-AB=BA=I_n.
-$$
-
-Dicha $B$ es única y se denota $A^{-1}$.
-
-Equivalencias:
-
-- $A$ invertible $\iff \det(A)\neq0 \iff$ las columnas de $A$ son linealmente independientes.
-- $A$ invertible $\iff \operatorname{rank}(A)=n$.
-
-::: {.callout-note}
-### Nota:
-
-El determinante de una matriz cuadrada es un escalar asociado que puede interpretarse como una combinación alternada de todos los posibles productos de sus elementos. Por otro lado, el rango de una matriz es el número de sus columnas linealmente independientes. En el caso de matrices cuadradas, el rango de $A$ es $n$ si y solo si $\det(A)\neq0$.
-
-:::
-
----
-
-## Matrices simétricas y antisimétricas
-
-Sea $A\in\mathbb{R}^{n\times n}$.
-
-- $A$ es **simétrica** si
-
-$$
-A^\top=A.
-$$
-
-Ejemplo:
-
-$$
-    A=
-    \begin{bmatrix}
-        a & b\\
-        b & c
-    \end{bmatrix}.
-$$
-
-- $A$ es **antisimétrica** si
-
-$$
-A^\top=-A.
-$$
-
-Ejemplo:
-
-$$
-    A=
-    \begin{bmatrix}
-        0 & -a\\
-        a & 0
-    \end{bmatrix}.
-$$
-
----
-
-## Producto cruz: matriz antisimétrica
-
-Dado $\vec{u}=[u_1,u_2,u_3]^\top$, se define
-
-$$
-S(\vec{u})=
-\begin{bmatrix}
-0 & -u_3 & u_2\\
-u_3 & 0 & -u_1\\
--u_2 & u_1 & 0
-\end{bmatrix},
-\qquad
-\vec{u}\times\vec{v}=S(\vec{u})\vec{v}.
-$$
-
-::: {.fragment}
-
-**Ejemplo**
-
-$$
-\vec{u}=
-\begin{bmatrix}
-2\\-1\\3
-\end{bmatrix},
-\qquad
-\vec{v}=
-\begin{bmatrix}
-1\\4\\2
-\end{bmatrix},
-$$
-
-$$
-S(\vec{u})=
-\begin{bmatrix}
-0&-3&-1\\
-3&0&-2\\
-1&2&0
-\end{bmatrix},
-\qquad
-S(\vec{u})\vec{v}=
-\begin{bmatrix}
--14\\-1\\9
-\end{bmatrix}
-=
-\vec{u}\times\vec{v}.
-$$
-
-:::
-
----
-
-## Matrices ortonormales
-
-Sea $Q\in\mathbb{R}^{n\times n}$.
-
-Decimos que $Q$ es **ortonormal** si
-
-$$
-Q^\top Q=QQ^\top=I_n.
-$$
-
-Esto implica:
-
-- Las columnas $\{\vec{q}_1,\dots,\vec{q}_n\}$ de $Q$ forman una **base ortonormal** de $\mathbb{R}^n$:
-
-$$
-    \vec{q}_i^\top\vec{q}_j=
-    \begin{cases}
-        1,&\text{si }i=j,\\
-        0,&\text{si }i\neq j.
-    \end{cases}
-$$
-
-- Cada columna tiene norma $1$ y distintas columnas son perpendiculares entre sí; en consecuencia, $|\det(Q)|=1$.
-- Consecuencia algebraica: $Q^{-1}=Q^\top$.
-
----
-
-## Valores y vectores propios
-
-Sea $A\in\mathbb{R}^{n\times n}$.
-
-Un escalar $\lambda\in\mathbb{R}$ es un **valor propio** de $A$ si existe un vector no nulo $\vec{v}\in\mathbb{R}^n$ tal que
-
-$$
-A\vec{v}=\lambda\vec{v}.
-$$
-
-**Condición equivalente:**
-
-$$
-\det(\lambda I_n-A)=0.
-$$
-
-donde $\det(\lambda I_n-A)$ es el polinomio característico de $A$.
-
-
-::: {.fragment}
-
-Si $\lambda$ es un valor propio de $A$, entonces todo vector no nulo $\vec{v}\in\mathbb{R}^n$ que cumple
-
-$$
-A\vec{v}=\lambda\vec{v}
-$$
-
-se denomina **vector propio** asociado a $\lambda$.
-
-El conjunto de todos los vectores propios asociados a un mismo $\lambda$, junto con el vector cero, forma el **espacio propio**:
-
-$$
-E_\lambda=\ker(A-\lambda I_n).
-$$
-
-:::
-
-
----
-
-## Ejemplo: valores y vectores propios
-
-Sea
-
-$$
-A=
-\begin{bmatrix}
-2&0\\
-0&3
-\end{bmatrix}.
-$$
-
-Como
-
-$$
-\det(\lambda I-A)=
-\begin{vmatrix}
-\lambda-2&0\\
-0&\lambda-3
-\end{vmatrix}
-=(\lambda-2)(\lambda-3),
-$$
-
-los valores propios son
-
-$$
-\lambda_1=2,\qquad \lambda_2=3.
-$$
-
-::: {.fragment}
-
-Para $\lambda_1=2$,
-
-$$
-(2I-A)\vec{v}=0
-\quad\Longrightarrow\quad
-\vec{v}=
-\alpha
-\begin{bmatrix}
-1\\0
-\end{bmatrix},
-\qquad
-E_2=\mathrm{span}\left\{
-\begin{bmatrix}
-1\\0
-\end{bmatrix}
-\right\}.
-$$
-
-Para $\lambda_2=3$,
-
-$$
-(3I-A)\vec{v}=0
-\quad\Longrightarrow\quad
-\vec{v}=
-\beta
-\begin{bmatrix}
-0\\1
-\end{bmatrix},
-\qquad
-E_3=\mathrm{span}\left\{
-\begin{bmatrix}
-0\\1
-\end{bmatrix}
-\right\}.
-$$
-
-:::
-
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Marcos de referencia
-
-
-<div class="menu-title" style="display:none;"> ▸ Marcos de referencia </div>
-
-:::
-
-:::
-
-##
-
-
-## Marco de referencia
-
-El **marco de referencia** $i$ en $\mathbb{R}^3$ es la tupla
-
-$$
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Orientación</p>
+<div class="menu-title" style="display:none;">
+▸ Orientación
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li>Hasta el momento, hemos desarrollado algoritmos que nos permiten conocer las efemérides de un satélite en un plano, específicamente el plano formados por los ejes <span class="math inline">\(\ls{p}{\vec{x}}\)</span> y <span class="math inline">\(\ls{p}{\vec{y}}\)</span> del marco de referenica <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span>.</li>
+</ul>
+<ul>
+<li class="fragment"><p>La pregunta natural regresando al problema de los dos cuerpos es: ¿qué componentes tienen las efemérides del marco de referencia <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span>?, es decir, como calculamos</p>
+<p><span class="math display">\[
+  \ls{i}{\vec{r}(t)}, \ls{i}{\vec{v}(t)}.
+  \]</span></p></li>
+<li class="fragment"><p>Al ser marcos de referencia, estos están conformados por un origen y una base ortonormal derecha. Esto nos permite describir la relación que existe entre los marcos de referencia <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span> como si se tratase de una transformación de coordenadas, o en otros terminos, como si se tratase de un cambio de base.</p></li>
+<li class="fragment"><p>Dado a que las bases son ortonormales, podemos entender que el marco de referencia <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span> <strong>está rotado</strong> respecto al marco de referencia <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span>, o viceversa.</p></li>
+<li class="fragment"><p>Esto nos exige estudiar herramientas que nos permitan describir la orientación que existe entre los marcos de referencia.</p></li>
+</ul>
+</section>
+<section id="marco-de-referencia-1" class="slide level2">
+<h2>Marco de referencia</h2>
+<p>El <strong>marco de referencia</strong> <span class="math inline">\(i\)</span> en <span class="math inline">\(\mathbb{R}^3\)</span> es la tupla</p>
+<p><span class="math display">\[
 \ls{i}{\mathcal{F}}=\left(\ls{i}{O},\;\ls{i}{\mathcal{B}}\right),
-$$
-
-donde:
-
-- $\ls{i}{O}\in\mathbb{R}^3$ es el **origen**.
-- $\ls{i}{\mathcal{B}}=\{\ls{i}{\vec{x}},\ls{i}{\vec{y}},\ls{i}{\vec{z}}\}$ es una **base ortonormal derecha** de $\mathbb{R}^3$:
-
-$$
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\ls{i}{O}\in\mathbb{R}^3\)</span> es el <strong>origen</strong>.</li>
+<li><span class="math inline">\(\ls{i}{\mathcal{B}}=\{\ls{i}{\vec{x}},\ls{i}{\vec{y}},\ls{i}{\vec{z}}\}\)</span> es una <strong>base ortonormal derecha</strong> de <span class="math inline">\(\mathbb{R}^3\)</span>:</li>
+</ul>
+<p><span class="math display">\[
     \ls{i}{\vec{x}}\cdot\ls{i}{\vec{y}}=0,
     \qquad
     \|\ls{i}{\vec{x}}\|=\|\ls{i}{\vec{y}}\|=\|\ls{i}{\vec{z}}\|=1,
     \qquad
     \ls{i}{\vec{x}}\times\ls{i}{\vec{y}}=\ls{i}{\vec{z}}.
-$$
-
-
-
-::: {.fragment}
-
-**Equivalente matricial:**
-
-Si
-
-$$
+\]</span></p>
+<div class="fragment">
+<p><strong>Equivalente matricial:</strong></p>
+<p>Si</p>
+<p><span class="math display">\[
 R=\left[\,\ls{i}{\vec{x}}\;\;\ls{i}{\vec{y}}\;\;\ls{i}{\vec{z}}\,\right],
-$$
-
-entonces
-
-$$
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
     R^\top R=I_3,
     \qquad
     \det(R)=1.
-$$
-
-
-
-:::
-
-
-
-## Marcos de referencia para satélites
-
-
-::: {.columns}
-
-::: {.column width=50%}
-
-Un marco de referencia provee un sistema cartesiano para expresar coordenadas de vectores en el espacio. Mediante estos, es posible describir la orientación de un cuerpo.
-
-En general, es necesario definir:
-
-- Un **marco inercial**.
-- Un **marco sujeto al cuerpo**.
-- Marcos **auxiliares**.
-
-Con ello, podemos cuantificar la orientación mediante un parámetro que describa qué tan inclinado está el marco sujeto al cuerpo con respecto a otro marco.
-
-
-::: {.fragment}
-
-:::{.definition-block}
- **Caso de estudio del curso**
-
-Vamos a estudiar los marcos de referencia necesarios para describir el movimiento rotacional de un satélite orbitando a la Tierra. 
-
-:::
-
-:::
-
-:::
-
-::: {.column width=50%}
-
-![](/Figures/c2/frame_empty.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-## Marco inercial geocéntrico $\ls{i}{\mathcal{F}}$
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{i}{O}$ (centro de la Tierra).
-
-**Ejes:**
-
-- $\ls{i}{\vec{x}}$: apunta al equinoccio vernal.
-- $\ls{i}{\vec{y}}$: completa la regla de la mano derecha.
-- $\ls{i}{\vec{z}}$: apunta al eje de rotación terrestre.
-
-El adjetivo **inercial** indica que es un marco de referencia **no acelerado** (velocidad constante). 
-
-Este marco inercial es una referencia constante que nos permite medir de forma absoluta la posición y velocidad angular del satélite. Es necesario para aplicar las leyes de la mecánica clásica y describir el movimiento orbital.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_i.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
-## Marco perifocal (PQW) $\ls{p}{\mathcal{F}}$
-
-
-::: {.columns}
-
-::: {.column}
-
-
-**Centro:** $\ls{p}{O}$ (centro de la Tierra).
-
-**Ejes:**
-
-- $\ls{p}{\vec{x}}$: apunta al perigeo.
-- $\ls{p}{\vec{y}}$: apunta perpendicular a $\ls{p}{\vec{x}}$ en el plano orbital.
-- $\ls{p}{\vec{z}}$: apunta normal al plano orbital (dirección del momento angular orbital).
-
-Es el marco fundamental de la órbita, directamente relacionado con los elementos orbitales. Se usa para describir trayectorias elípticas y la geometría de la órbita en su plano. También es un marco de referencia inercial.
-
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_p.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
----
-
-## Marco RSW $\ls{r}{\mathcal{F}}$
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{r}{O}$ (centro de masa del satélite).
-
-**Ejes:**
-
-- $\ls{r}{\vec{x}}$: apunta al cenit (radial, de la Tierra al satélite).
-- $\ls{r}{\vec{y}}$: apunta ortogonal a $\ls{r}{\vec{x}}$, en dirección de la velocidad $\vec{v}$ (no necesariamente colineal salvo en órbitas circulares).
-- $\ls{r}{\vec{z}}$: apunta normal al plano orbital.
-
-Su origen está ligado a la posición orbital del satélite; *i.e.*, **cambia con el tiempo**.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_r.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
----
-
-## Marco orbital (Local Vertical Local Horizontal) $\ls{h}{\mathcal{F}}$
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{h}{O}$ (centro de masa del satélite).
-
-**Ejes:**
-
-- $\ls{h}{\vec{x}}$: apunta en dirección de la velocidad $\vec{v}$.
-- $\ls{h}{\vec{y}}$: apunta normal al plano orbital (opuesto al momento angular orbital).
-- $\ls{h}{\vec{z}}$: apunta a nadir (hacia el centro de la Tierra).
-
-También llamado **LVLH**, es el marco natural para misiones que requieren apuntar instrumentos hacia la Tierra. Sirve como marco de referencia local desde la perspectiva del satélite en órbita.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_h.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
-
----
-
-## Marco sujeto al cuerpo $\ls{b}{\mathcal{F}}$ {auto-animate=true}
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{b}{O}$ (centro de masa del satélite).
-
-**Ejes:**
-
-- $\ls{b}{\vec{x}}$: definido por la geometría o estructura del satélite.
-- $\ls{b}{\vec{y}}$: definido por la geometría o estructura del satélite.
-- $\ls{b}{\vec{z}}$: definido por la geometría o estructura del satélite.
-
-Es el marco en el que se montan sensores y actuadores. Todos los algoritmos de control de orientación se implementan en este marco porque representa la orientación física real del vehículo espacial.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_b.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
----
-
-## {auto-animate=true}
-
-![](/Figures/c2/frames.svg){width=70% fig-align="center"}
-
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Matrices de rotación
-<div class="menu-title" style="display:none;"> ▸ Matrices de rotación </div>
-
-:::
-
-:::
-
-## Matrices de rotación en dos dimensiones
-
-::: {.columns}
-
-::: {.column width="45%"}
-
-Sea el marco de referencia $\ls{1}{\mathcal{F}}$ y el marco de referencia $\ls{2}{\mathcal{F}}$, el cual puede obtenerse al girar el sistema $\ls{1}{\mathcal{F}}$ sobre el eje $\ls{1}{\vec{z}}$ en un ángulo $\theta_1$.
-
-
-
-::: {.fragment}
-
-Las coordenadas del punto $p$ en el marco $\ls{1}{\mathcal{F}}$ son
-
-$$
+\]</span></p>
+</div>
+</section>
+<section id="marco-de-referencia-inercial-lsimathcalf-1" class="slide level2">
+<h2>Marco de referencia inercial <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span></h2>
+<div class="columns">
+<div class="column">
+<p><strong>Origen:</strong> <span class="math inline">\(\ls{i}{O}\)</span>, punto de referencia elegido para describir el movimiento.</p>
+<p><strong>Ejes:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\ls{i}{\vec{x}}\)</span>: eje de referencia elegido.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{y}}\)</span>: eje perpendicular que completa la base.</p></li>
+<li><p><span class="math inline">\(\ls{i}{\vec{z}}\)</span>: eje que completa la regla de la mano derecha.</p></li>
+<li><p>Un <strong>marco de referencia inercial</strong> es aquel en el que un cuerpo sobre el que no actúa una fuerza neta permanece en reposo o se mueve con <strong>velocidad constante</strong>.</p></li>
+<li><p>En un marco inercial, las <strong>leyes de Newton</strong> pueden aplicarse directamente sin necesidad de introducir fuerzas ficticias asociadas al movimiento del propio marco.</p></li>
+<li><p>Tiene asociado un <strong>plano de referencia</strong>, el cual es el plano que pasa por el origen y comúnmente es normal al eje <span class="math inline">\(\ls{i}{\vec{z}}\)</span>, es decir, contiene los ejes <span class="math inline">\(\ls{i}{\vec{x}}\)</span> y <span class="math inline">\(\ls{i}{\vec{y}}\)</span>.</p></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Algunos de los marcos inerciales más utilizados son:</strong></p>
+<ul>
+<li>Marco de referencia inercial geocéntrico (ECI, por sus siglas en inglés).</li>
+<li>Marco de referencia celeste internacional (ICRF, por sus siglas en inglés).</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/frames_ip_mo.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="marco-perifocal-pqw-lspmathcalf" class="slide level2">
+<h2>Marco perifocal (PQW) <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span></h2>
+<div class="columns">
+<div class="column">
+<p><strong>Centro:</strong> <span class="math inline">\(\ls{p}{O}\)</span> ( punto de referencia elegido para describir el movimiento).</p>
+<p><strong>Ejes:</strong></p>
+<ul>
+<li><p><span class="math inline">\(\ls{p}{\vec{x}}\)</span>: apunta a la periapsis.</p></li>
+<li><p><span class="math inline">\(\ls{p}{\vec{y}}\)</span>: apunta perpendicular a <span class="math inline">\(\ls{p}{\vec{x}}\)</span> en el plano orbital.</p></li>
+<li><p><span class="math inline">\(\ls{p}{\vec{z}}\)</span>: apunta normal al plano orbital (dirección del momento angular orbital).</p></li>
+<li><p>Es el marco fundamental de la órbita. Los propagadores que hemos visto hasta ahora se basan en el marco perifocal.</p></li>
+<li><p>También es un marco de referencia inercial bajo las suposiciones que hemos hecho hasta el momento.</p></li>
+<li><p>De igual forma que el marco de referencia inercial, tiene asociado un plano de referencia, el cual es el plano que pasa por el origen y es normal al eje <span class="math inline">\(\ls{p}{\vec{z}}\)</span>, es decir, contiene los ejes <span class="math inline">\(\ls{p}{\vec{x}}\)</span> y <span class="math inline">\(\ls{p}{\vec{y}}\)</span>. A dicho plano se le llama <strong>plano orbital</strong>.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/frames_ip_mo.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<ul>
+<li>La intersección entre el plano de referencia y el plano orbital se llama <strong>línea de nodos</strong>.</li>
+<li>La intersección entre el plano de referencia y la trayectoria del satélite define dos puntos conocidos como <strong>nodos</strong>.</li>
+<li>El <strong>nodo ascendente</strong> es el punto donde el cuerpo cruza el plano de referencia pasando del lado negativo al lado positivo respecto a la normal del plano de referencia.</li>
+<li>El <strong>nodo descendente</strong> es el punto donde cruza en sentido contrario, del lado positivo al lado negativo.</li>
+</ul>
+<div class="vspace-3">
+
+</div>
+<div class="large">
+<p>Ahora …</p>
+<p><span style="color:red"> ¿Cómo describimos cuantitativamente la orientación que el marco <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span> tiene respecto al marco <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span>? </span></p>
+<p>y</p>
+<p><span style="color:red"> ¿Cómo convertimos las componentes de las efemérides del marco <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span> a las componentes del marco <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span>? </span></p>
+</div>
+<p>Para ello, considere el siguiente problema …</p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/frames_ip_mo.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Sea el marco de referencia <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> y el marco de referencia <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span>, el cual puede obtenerse al girar el sistema <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> sobre el eje <span class="math inline">\(\ls{1}{\vec{z}}\)</span> en un ángulo <span class="math inline">\(\theta_1\)</span>.</p>
+<div class="fragment">
+<p>Las coordenadas del punto <span class="math inline">\(p\)</span> en el marco <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> son</p>
+<p><span id="eq-1p"><span class="math display">\[
     \ls{1}\vec{\rho}=
     \begin{bmatrix}
         \ls{1}p_x\\
@@ -6171,16 +5342,11 @@ $$
         r\sin(\theta_2)\\
         0
     \end{bmatrix}
-$$ {#eq-1p}
-
-:::
-
-
-::: {.fragment}
-
-y en el marco $\ls{2}{\mathcal{F}}$ son
-
-$$
+\tag{58}\]</span></span></p>
+</div>
+<div class="fragment">
+<p>y en el marco <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span> son</p>
+<p><span class="math display">\[
     \ls{2}\vec{\rho}=
     \begin{bmatrix}
         \ls{2}p_x\\
@@ -6193,694 +5359,519 @@ $$
         r\sin(\theta_2-\theta_1)\\
         0
     \end{bmatrix}
-$$
+\]</span></p>
+</div>
+</div><div class="column" style="width:55%;">
+<p><img data-src=".\Figures/c2/2drm.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section class="slide level2">
 
-:::
-
-
-:::
-
-::: {.column width="55%"}
-
-![](/Figures/c2/2drm.svg){width=100%}
-
-:::
-
-:::
-
----
-
-## Matrices de rotación en dos dimensiones
-
-::: {.columns}
-
-::: {.column width="45%"}
-
-$$
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span id="eq-2p"><span class="math display">\[
     \ls{2}\vec{\rho}=
     \begin{bmatrix}
         r(\cos\theta_2\cos\theta_1+\sin\theta_2\sin\theta_1)\\
         r(\sin\theta_2\cos\theta_1-\cos\theta_2\sin\theta_1)\\
         0
     \end{bmatrix}
-$$ {#eq-2p}
-
-Sustituyendo las componentes de $\ls{1}\vec{\rho}$ en la expresión anterior se obtiene
-
-$$
+\tag{59}\]</span></span></p>
+<p>Sustituyendo las componentes de <span class="math inline">\(\ls{1}\vec{\rho}\)</span> en la expresión anterior se obtiene</p>
+<p><span class="math display">\[
     \ls{2}\vec{\rho}=
     \begin{bmatrix}
         \ls{1}p_x\cos\theta_1+\ls{1}p_y\sin\theta_1\\
         \ls{1}p_y\cos\theta_1-\ls{1}p_x\sin\theta_1\\
         0
     \end{bmatrix}
-$$
-
-La relación entre las coordenadas del punto $p$ en los marcos $\ls{1}{\mathcal{F}}$ y $\ls{2}{\mathcal{F}}$ puede escribirse matricialmente como
-
-$$
+\]</span></p>
+<p>La relación entre las coordenadas del punto <span class="math inline">\(p\)</span> en los marcos <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span> puede escribirse matricialmente como</p>
+<p><span class="math display">\[
     \ls{2}\vec{\rho}=
     \begin{bmatrix}
-        \cos\theta_1 & \sin\theta_1 & 0\\
-        -\sin\theta_1 & \cos\theta_1 & 0\\
-        0 & 0 & 1
+        \cos\theta_1 &amp; \sin\theta_1 &amp; 0\\
+        -\sin\theta_1 &amp; \cos\theta_1 &amp; 0\\
+        0 &amp; 0 &amp; 1
     \end{bmatrix}
     \ls{1}\vec{\rho}
-$$
-
-:::
-
-::: {.column width="55%"}
-
-![](/Figures/c2/2drm.svg){width=100%}
-
-:::
-
-:::
-
----
-
-##
-
-$$
+\]</span></p>
+</div><div class="column" style="width:55%;">
+<p><img data-src=".\Figures/c2/2drm.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+<p><span class="math display">\[
     \ls{2}\vec{\rho}
     =
     \ls{2}R_{1}
     \ls{1}\vec{\rho}
-$$
-
-donde
-
-$$
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
     \ls{2}R_{1}=
     \begin{bmatrix}
-        \cos\theta_1 & \sin\theta_1 & 0\\
-        -\sin\theta_1 & \cos\theta_1 & 0\\
-        0 & 0 & 1
+        \cos\theta_1 &amp; \sin\theta_1 &amp; 0\\
+        -\sin\theta_1 &amp; \cos\theta_1 &amp; 0\\
+        0 &amp; 0 &amp; 1
     \end{bmatrix}
-$$
-
-es la **matriz de rotación** del marco de referencia $\ls{1}{\mathcal{F}}$ al marco de referencia $\ls{2}{\mathcal{F}}$.
-
-- La herramienta subyacente para encontrar las componentes de esta matriz es la proyección de vectores en el espacio $\mathbb{R}^3$.
-
-$$
+\]</span></p>
+<p>es la <strong>matriz de rotación</strong> del marco de referencia <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> al marco de referencia <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span>.</p>
+<ul>
+<li>La herramienta subyacente para encontrar las componentes de esta matriz es la proyección de vectores en el espacio <span class="math inline">\(\mathbb{R}^3\)</span>.</li>
+</ul>
+<p><span class="math display">\[
     \ls{2}R_{1}=
     \begin{bmatrix}
-        \ls{1}\vec{x}\cdot\ls{2}\vec{x} & \ls{1}\vec{y}\cdot\ls{2}\vec{x} & \ls{1}\vec{z}\cdot\ls{2}\vec{x}\\
-        \ls{1}\vec{x}\cdot\ls{2}\vec{y} & \ls{1}\vec{y}\cdot\ls{2}\vec{y} & \ls{1}\vec{z}\cdot\ls{2}\vec{y}\\
-        \ls{1}\vec{x}\cdot\ls{2}\vec{z} & \ls{1}\vec{y}\cdot\ls{2}\vec{z} & \ls{1}\vec{z}\cdot\ls{2}\vec{z}
+        \ls{1}\vec{x}\cdot\ls{2}\vec{x} &amp; \ls{1}\vec{y}\cdot\ls{2}\vec{x} &amp; \ls{1}\vec{z}\cdot\ls{2}\vec{x}\\
+        \ls{1}\vec{x}\cdot\ls{2}\vec{y} &amp; \ls{1}\vec{y}\cdot\ls{2}\vec{y} &amp; \ls{1}\vec{z}\cdot\ls{2}\vec{y}\\
+        \ls{1}\vec{x}\cdot\ls{2}\vec{z} &amp; \ls{1}\vec{y}\cdot\ls{2}\vec{z} &amp; \ls{1}\vec{z}\cdot\ls{2}\vec{z}
     \end{bmatrix}
-$$
+\]</span></p>
+</section>
+<section class="slide level2">
 
----
-
-- Dado que estamos considerando marcos de referencia con bases ortonormales, la norma de los vectores de las bases es igual a $1$, *i.e.*,
-
-$$
+<ul>
+<li>Dado que estamos considerando marcos de referencia con bases ortonormales, la norma de los vectores de las bases es igual a <span class="math inline">\(1\)</span>, <em>i.e.</em>,</li>
+</ul>
+<p><span class="math display">\[
     \|\ls{1}\vec{x}\|=\|\ls{1}\vec{y}\|=\|\ls{1}\vec{z}\|=
     \|\ls{2}\vec{x}\|=\|\ls{2}\vec{y}\|=\|\ls{2}\vec{z}\|=1.
-$$
-
-- Entonces, para el ejemplo anterior,
-
-$$
+\]</span></p>
+<ul>
+<li>Entonces, para el ejemplo anterior,</li>
+</ul>
+<p><span class="math display">\[
     \begin{aligned}
-        \ls{1}\vec{x}\cdot\ls{2}\vec{x} &= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{x}\|\cos(\theta)=\cos(\theta)\\
-        \ls{1}\vec{x}\cdot\ls{2}\vec{y} &= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{y}\|\cos\left(\theta+\frac{\pi}{2}\right)=-\sin(\theta)\\
-        \ls{1}\vec{x}\cdot\ls{2}\vec{z} &= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{z}\|\cos\left(\frac{\pi}{2}\right)=0\\
-        \ls{1}\vec{y}\cdot\ls{2}\vec{x} &= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{x}\|\cos\left(\theta-\frac{\pi}{2}\right)=\sin(\theta)\\
-        \ls{1}\vec{y}\cdot\ls{2}\vec{y} &= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{y}\|\cos(\theta)=\cos(\theta)\\
-        \ls{1}\vec{y}\cdot\ls{2}\vec{z} &= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{z}\|\cos\left(\frac{\pi}{2}\right)=0\\
-        \ls{1}\vec{z}\cdot\ls{2}\vec{x} &= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{x}\|\cos\left(\frac{\pi}{2}\right)=0\\
-        \ls{1}\vec{z}\cdot\ls{2}\vec{y} &= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{y}\|\cos\left(\frac{\pi}{2}\right)=0\\
-        \ls{1}\vec{z}\cdot\ls{2}\vec{z} &= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{z}\|\cos(0)=1.
+        \ls{1}\vec{x}\cdot\ls{2}\vec{x} &amp;= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{x}\|\cos(\theta)=\cos(\theta)\\
+        \ls{1}\vec{x}\cdot\ls{2}\vec{y} &amp;= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{y}\|\cos\left(\theta+\frac{\pi}{2}\right)=-\sin(\theta)\\
+        \ls{1}\vec{x}\cdot\ls{2}\vec{z} &amp;= \|\ls{1}\vec{x}\|\,\|\ls{2}\vec{z}\|\cos\left(\frac{\pi}{2}\right)=0\\
+        \ls{1}\vec{y}\cdot\ls{2}\vec{x} &amp;= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{x}\|\cos\left(\theta-\frac{\pi}{2}\right)=\sin(\theta)\\
+        \ls{1}\vec{y}\cdot\ls{2}\vec{y} &amp;= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{y}\|\cos(\theta)=\cos(\theta)\\
+        \ls{1}\vec{y}\cdot\ls{2}\vec{z} &amp;= \|\ls{1}\vec{y}\|\,\|\ls{2}\vec{z}\|\cos\left(\frac{\pi}{2}\right)=0\\
+        \ls{1}\vec{z}\cdot\ls{2}\vec{x} &amp;= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{x}\|\cos\left(\frac{\pi}{2}\right)=0\\
+        \ls{1}\vec{z}\cdot\ls{2}\vec{y} &amp;= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{y}\|\cos\left(\frac{\pi}{2}\right)=0\\
+        \ls{1}\vec{z}\cdot\ls{2}\vec{z} &amp;= \|\ls{1}\vec{z}\|\,\|\ls{2}\vec{z}\|\cos(0)=1.
     \end{aligned}
-$$
-
-##
-
-
-::: {.columns}
-
-::: {.column}
-
-
-- Las matrices de rotación forman un grupo con respecto a la multiplicación matricial. Dicho grupo es conocido como **grupo especial ortonormal de orden 3** y se denota como $SO(3)$, el cual cumple con las siguientes propiedades.
-
-  Sea $R_i\in SO(3)$:
-
-  - $\det(R)=1$.
-  - $R^{-1}=R^\top \Rightarrow RR^\top=I$.
-  - $R_1R_2\in SO(3)$.
-  - Las columnas y los renglones de $R$ tienen norma unitaria y son mutuamente ortogonales entre sí.
-
-  *i.e.*, las columnas de $R$ forman una base ortonormal derecha en $\mathbb{R}^3$.
-
-
-::: {.fragment}
-
-- La matriz de rotación $\ls{2}R_{1}^\T$ es igual a la matriz de rotación del marco $\ls{2}{\mathcal{F}}$ al marco $\ls{1}{\mathcal{F}}$, *i.e.*
-
-$$
+\]</span></p>
+</section>
+<section id="section-38" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Las matrices de rotación forman un grupo con respecto a la multiplicación matricial. Dicho grupo es conocido como <strong>grupo especial ortonormal de orden 3</strong> y se denota como <span class="math inline">\(SO(3)\)</span>, el cual cumple con las siguientes propiedades.</p>
+<p>Sea <span class="math inline">\(R_i\in SO(3)\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\det(R)=1\)</span>.</li>
+<li><span class="math inline">\(R^{-1}=R^\top \Rightarrow RR^\top=I\)</span>.</li>
+<li><span class="math inline">\(R_1R_2\in SO(3)\)</span>.</li>
+<li>Las columnas y los renglones de <span class="math inline">\(R\)</span> tienen norma unitaria y son mutuamente ortogonales entre sí.</li>
+</ul>
+<p><em>i.e.</em>, las columnas de <span class="math inline">\(R\)</span> forman una base ortonormal derecha en <span class="math inline">\(\mathbb{R}^3\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>La matriz de rotación <span class="math inline">\(\ls{2}R_{1}^\T\)</span> es igual a la matriz de rotación del marco <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span> al marco <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span>, <em>i.e.</em></li>
+</ul>
+<p><span class="math display">\[
 \ls{2}R_{1}^\top=\ls{1}R_{2}
-$$
-
-:::
-
-
-::: {.fragment}
-
-- Note además que para la matriz de rotación $\ls{2}R_1$, cada columna corresponde a las componentes de los vectores de la base $\ls{1}{\mathcal{F}}$ expresados en la base $\ls{2}{\mathcal{F}}$, y viceversa, cada renglón corresponde a las componentes de los vectores de la base $\ls{2}{\mathcal{F}}$ expresados en la base $\ls{1}{\mathcal{F}}$.
-
-:::
-
-
-
-
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/2drm.svg){width=100%}
-
-
-$$
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Note además que para la matriz de rotación <span class="math inline">\(\ls{2}R_1\)</span>, cada columna corresponde a las componentes de los vectores de la base <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> expresados en la base <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span>, y viceversa, cada renglón corresponde a las componentes de los vectores de la base <span class="math inline">\(\ls{2}{\mathcal{F}}\)</span> expresados en la base <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span>.</li>
+</ul>
+</div>
+</div><div class="column">
+<p><img data-src=".\Figures/c2/2drm.svg" style="width:100.0%"></p>
+<p><span class="math display">\[
 \ls{2}R_{1}=
     \begin{bmatrix}
-        \cos\theta_1 & \sin\theta_1 & 0\\
-        -\sin\theta_1 & \cos\theta_1 & 0\\
-        0 & 0 & 1
+        \cos\theta_1 &amp; \sin\theta_1 &amp; 0\\
+        -\sin\theta_1 &amp; \cos\theta_1 &amp; 0\\
+        0 &amp; 0 &amp; 1
     \end{bmatrix}
-$$
-
-
-:::
-
-:::
-
-
-
-
----
-
-## Matrices de rotación elementales
-
-Las rotaciones sobre los ejes del marco de referencia base (*e.g.* $\ls{1}{\mathcal{F}}$ en el ejemplo anterior) se pueden representar mediante las siguientes matrices de rotación elementales:
-
-- Rotación alrededor del eje $x$:
-
-$$
+\]</span></p>
+</div></div>
+</section>
+<section id="matrices-de-rotación-elementales" class="slide level2">
+<h2>Matrices de rotación elementales</h2>
+<p>Las rotaciones sobre los ejes del marco de referencia base (<em>e.g.</em> <span class="math inline">\(\ls{1}{\mathcal{F}}\)</span> en el ejemplo anterior) se pueden representar mediante las siguientes matrices de rotación elementales:</p>
+<ul>
+<li>Rotación alrededor del eje <span class="math inline">\(x\)</span>:</li>
+</ul>
+<p><span class="math display">\[
     R_x(\theta)=
     \begin{bmatrix}
-        1 & 0 & 0\\
-        0 & \cos(\theta) & \sin(\theta)\\
-        0 & -\sin(\theta) & \cos(\theta)
+        1 &amp; 0 &amp; 0\\
+        0 &amp; \cos(\theta) &amp; \sin(\theta)\\
+        0 &amp; -\sin(\theta) &amp; \cos(\theta)
     \end{bmatrix}
-$$
-
-- Rotación alrededor del eje $y$:
-
-$$
+\]</span></p>
+<ul>
+<li>Rotación alrededor del eje <span class="math inline">\(y\)</span>:</li>
+</ul>
+<p><span class="math display">\[
     R_y(\theta)=
     \begin{bmatrix}
-        \cos(\theta) & 0 & -\sin(\theta)\\
-        0 & 1 & 0\\
-        \sin(\theta) & 0 & \cos(\theta)
+        \cos(\theta) &amp; 0 &amp; -\sin(\theta)\\
+        0 &amp; 1 &amp; 0\\
+        \sin(\theta) &amp; 0 &amp; \cos(\theta)
     \end{bmatrix}
-$$
-
-- Rotación alrededor del eje $z$:
-
-$$
+\]</span></p>
+<ul>
+<li>Rotación alrededor del eje <span class="math inline">\(z\)</span>:</li>
+</ul>
+<p><span class="math display">\[
     R_z(\theta)=
     \begin{bmatrix}
-        \cos(\theta) & \sin(\theta) & 0\\
-        -\sin(\theta) & \cos(\theta) & 0\\
-        0 & 0 & 1
+        \cos(\theta) &amp; \sin(\theta) &amp; 0\\
+        -\sin(\theta) &amp; \cos(\theta) &amp; 0\\
+        0 &amp; 0 &amp; 1
     \end{bmatrix}
-$$
-
----
-
-
-
-## Composición de matrices de rotación
-
-::: {.incremental}
-
-- Una **rotación general** es aquella que no necesariamente está alineada con un eje del marco de referencia. Estas pueden construirse como la composición de varias matrices de rotación.
-
-- Matemáticamente, la composición se expresa como un producto de matrices de rotación:
-
-    $$
-        \ls{n}R_0
-        =
-        \ls{n}R_{n-1}
-        \ls{n-1}R_{n-2}
-        \cdots
-        \ls{2}R_1
-        \ls{1}R_0
-        =
-        \prod_{j=0}^{n-1}\ls{j+1}R_j
-    $$
-
-    donde cada $\ls{j+1}R_j$ corresponde a una rotación entre el marco de referencia $j+1$ y el marco de referencia $j$.
-
-- El orden de multiplicación es esencial: la composición de rotaciones no es conmutativa.
-
-- Así, cualquier orientación en el espacio puede obtenerse mediante una secuencia adecuada de rotaciones.
-
-- Toda rotación general en $\mathbb{R}^3$ puede describirse como el producto de tres rotaciones elementales.
-
-- Existen 12 posibles secuencias según el orden de los ejes:
-
-    $$
-        ZXZ,\;
-        ZYZ,\;
-        XYX,\;
-        XZX,\;
-        YXY,\;
-        YZY,\;
-        XYZ,\;
-        XZY,\;
-        YXZ,\;
-        YZX,\;
-        ZXY,\;
-        ZYX.
-    $$
-
-- Estas secuencias definen diferentes **convenciones de parametrización** de la rotación, *e.g.* ángulos de Euler y ángulos de Tait-Bryan (*roll-pitch-yaw*).
-
-:::
-
-## Ejemplo: composición de matrices
-
-Sean
-
-$$
+\]</span></p>
+</section>
+<section id="composición-de-matrices-de-rotación" class="slide level2">
+<h2>Composición de matrices de rotación</h2>
+<ul>
+<li class="fragment"><p>Una <strong>rotación general</strong> es aquella que no necesariamente está alineada con un eje del marco de referencia. Estas pueden construirse como la composición de varias matrices de rotación.</p></li>
+<li class="fragment"><p>Matemáticamente, la composición se expresa como un producto de matrices de rotación:</p>
+<p><span class="math display">\[
+      \ls{n}R_0
+      =
+      \ls{n}R_{n-1}
+      \ls{n-1}R_{n-2}
+      \cdots
+      \ls{2}R_1
+      \ls{1}R_0
+      =
+      \prod_{j=0}^{n-1}\ls{j+1}R_j
+  \]</span></p>
+<p>donde cada <span class="math inline">\(\ls{j+1}R_j\)</span> corresponde a una rotación entre el marco de referencia <span class="math inline">\(j+1\)</span> y el marco de referencia <span class="math inline">\(j\)</span>.</p></li>
+<li class="fragment"><p>El orden de multiplicación es esencial: la composición de rotaciones no es conmutativa.</p></li>
+<li class="fragment"><p>Así, cualquier orientación en el espacio puede obtenerse mediante una secuencia adecuada de rotaciones.</p></li>
+<li class="fragment"><p>Toda rotación general en <span class="math inline">\(\mathbb{R}^3\)</span> puede describirse como el producto de tres rotaciones elementales.</p></li>
+<li class="fragment"><p>Existen 12 posibles secuencias según el orden de los ejes:</p>
+<p><span class="math display">\[
+      ZXZ,\;
+      ZYZ,\;
+      XYX,\;
+      XZX,\;
+      YXY,\;
+      YZY,\;
+      XYZ,\;
+      XZY,\;
+      YXZ,\;
+      YZX,\;
+      ZXY,\;
+      ZYX.
+  \]</span></p></li>
+<li class="fragment"><p>Estas secuencias definen diferentes <strong>convenciones de parametrización</strong> de la rotación, <em>e.g.</em> ángulos de Euler y ángulos de Tait-Bryan (<em>roll-pitch-yaw</em>).</p></li>
+</ul>
+</section>
+<section id="ejemplo-composición-de-matrices" class="slide level2">
+<h2>Ejemplo: composición de matrices</h2>
+<p>Sean</p>
+<p><span class="math display">\[
 {}^{2}R_{1}=
 \begin{bmatrix}
-0&-1&0\\
-1&0&0\\
-0&0&1
+0&amp;-1&amp;0\\
+1&amp;0&amp;0\\
+0&amp;0&amp;1
 \end{bmatrix},
 \qquad
 {}^{1}R_{0}=
 \begin{bmatrix}
-1&0&0\\
-0&0&-1\\
-0&1&0
+1&amp;0&amp;0\\
+0&amp;0&amp;-1\\
+0&amp;1&amp;0
 \end{bmatrix}.
-$$
-
-La rotación total es
-
-$$
+\]</span></p>
+<p>La rotación total es</p>
+<p><span class="math display">\[
 {}^{2}R_0={}^{2}R_{1}\,{}^{1}R_{0}.
-$$
-
-::: {.fragment}
-
-Al efectuar la multiplicación,
-
-$$
+\]</span></p>
+<div class="fragment">
+<p>Al efectuar la multiplicación,</p>
+<p><span class="math display">\[
 {}^{2}R_0=
 \begin{bmatrix}
-0&0&1\\
-1&0&0\\
-0&1&0
+0&amp;0&amp;1\\
+1&amp;0&amp;0\\
+0&amp;1&amp;0
 \end{bmatrix}.
-$$
-
-La orientación final depende del orden de multiplicación.
-
-:::
-
-
-## Ejemplo: secuencia ZXZ
-
-Considérese la secuencia de Euler
-
-$$
+\]</span></p>
+<p>La orientación final depende del orden de multiplicación.</p>
+</div>
+</section>
+<section id="ejemplo-secuencia-zxz" class="slide level2">
+<h2>Ejemplo: secuencia ZXZ</h2>
+<p>Considérese la secuencia de Euler</p>
+<p><span class="math display">\[
 {}^{3}R_0=
 R_z(30^\circ)\,
 R_x(45^\circ)\,
 R_z(60^\circ).
-$$
-
-::: {.fragment}
-
-Las rotaciones elementales son
-
-$$
+\]</span></p>
+<div class="fragment">
+<p>Las rotaciones elementales son</p>
+<p><span class="math display">\[
 R_z(30^\circ)=
 \begin{bmatrix}
-\frac{\sqrt3}{2}&\frac12&0\\
--\frac12&\frac{\sqrt3}{2}&0\\
-0&0&1
+\frac{\sqrt3}{2}&amp;\frac12&amp;0\\
+-\frac12&amp;\frac{\sqrt3}{2}&amp;0\\
+0&amp;0&amp;1
 \end{bmatrix},
 \qquad
 R_x(45^\circ)=
 \begin{bmatrix}
-1&0&0\\
-0&\frac{\sqrt2}{2}&\frac{\sqrt2}{2}\\
-0&-\frac{\sqrt2}{2}&\frac{\sqrt2}{2}
+1&amp;0&amp;0\\
+0&amp;\frac{\sqrt2}{2}&amp;\frac{\sqrt2}{2}\\
+0&amp;-\frac{\sqrt2}{2}&amp;\frac{\sqrt2}{2}
 \end{bmatrix},
 \qquad
 R_z(60^\circ)=
 \begin{bmatrix}
-\frac12&\frac{\sqrt3}{2}&0\\
--\frac{\sqrt3}{2}&\frac12&0\\
-0&0&1
+\frac12&amp;\frac{\sqrt3}{2}&amp;0\\
+-\frac{\sqrt3}{2}&amp;\frac12&amp;0\\
+0&amp;0&amp;1
 \end{bmatrix}.
-$$
-
-Por tanto,
-
-$$
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
 {}^{3}R_0=
 R_z(30^\circ)\,
 R_x(45^\circ)\,
 R_z(60^\circ)=
 \begin{bmatrix}
-\dfrac{2\sqrt3-\sqrt6}{8} & \dfrac{6+\sqrt2}{8} & \dfrac{\sqrt2}{4}\\[6pt]
--\dfrac{2+3\sqrt2}{8} & \dfrac{\sqrt6-2\sqrt3}{8} & \dfrac{\sqrt6}{4}\\[6pt]
-\dfrac{\sqrt6}{4} & -\dfrac{\sqrt2}{4} & \dfrac{\sqrt2}{2}
+\dfrac{2\sqrt3-\sqrt6}{8} &amp; \dfrac{6+\sqrt2}{8} &amp; \dfrac{\sqrt2}{4}\\[6pt]
+-\dfrac{2+3\sqrt2}{8} &amp; \dfrac{\sqrt6-2\sqrt3}{8} &amp; \dfrac{\sqrt6}{4}\\[6pt]
+\dfrac{\sqrt6}{4} &amp; -\dfrac{\sqrt2}{4} &amp; \dfrac{\sqrt2}{2}
 \end{bmatrix}
-$$
-:::
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
 
-
-
-
-
-
-
----
-
-La rotación inversa se obtiene mediante la transpuesta:
-
-$$
+<p>La rotación inversa se obtiene mediante la transpuesta:</p>
+<p><span class="math display">\[
 {}^{0}R_{3}=({}^{3}R_{0})^\top
 =\left(R_z(30^\circ)\,R_x(45^\circ)\,R_z(60^\circ)\right)^\top.
-$$
-
-::: {.fragment}
-
-
-Utilizando $(AB)^\top=B^\top A^\top$,
-
-$$
+\]</span></p>
+<div class="fragment">
+<p>Utilizando <span class="math inline">\((AB)^\top=B^\top A^\top\)</span>,</p>
+<p><span class="math display">\[
 {}^{0}R_{3}
 =
 R_z(-60^\circ)\,
 R_x(-45^\circ)\,
 R_z(-30^\circ),
-$$
-
-donde 
-
-$$
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
 R_z(-30^\circ)=
 \begin{bmatrix}
-\frac{\sqrt3}{2}&-\frac12&0\\
-\frac12&\frac{\sqrt3}{2}&0\\
-0&0&1
+\frac{\sqrt3}{2}&amp;-\frac12&amp;0\\
+\frac12&amp;\frac{\sqrt3}{2}&amp;0\\
+0&amp;0&amp;1
 \end{bmatrix},
 \qquad
 R_x(-45^\circ)=
 \begin{bmatrix}
-1&0&0\\
-0&\frac{\sqrt2}{2}&-\frac{\sqrt2}{2}\\
-0&\frac{\sqrt2}{2}&\frac{\sqrt2}{2}
+1&amp;0&amp;0\\
+0&amp;\frac{\sqrt2}{2}&amp;-\frac{\sqrt2}{2}\\
+0&amp;\frac{\sqrt2}{2}&amp;\frac{\sqrt2}{2}
 \end{bmatrix},
 \qquad
 R_z(-60^\circ)=
 \begin{bmatrix}
-\frac12&-\frac{\sqrt3}{2}&0\\
-\frac{\sqrt3}{2}&\frac12&0\\
-0&0&1
+\frac12&amp;-\frac{\sqrt3}{2}&amp;0\\
+\frac{\sqrt3}{2}&amp;\frac12&amp;0\\
+0&amp;0&amp;1
 \end{bmatrix}.
-$$
-
-Por lo tanto 
-
-$$
+\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
 {}^{0}R_{3}
 =
 \begin{bmatrix}
-\dfrac{2\sqrt3-\sqrt6}{8} & -\dfrac{2+3\sqrt2}{8} & \dfrac{\sqrt6}{4}\\[6pt]
-\dfrac{6+\sqrt2}{8} & \dfrac{\sqrt6-2\sqrt3}{8} & -\dfrac{\sqrt2}{4}\\[6pt]
-\dfrac{\sqrt2}{4} & \dfrac{\sqrt6}{4} & \dfrac{\sqrt2}{2}
+\dfrac{2\sqrt3-\sqrt6}{8} &amp; -\dfrac{2+3\sqrt2}{8} &amp; \dfrac{\sqrt6}{4}\\[6pt]
+\dfrac{6+\sqrt2}{8} &amp; \dfrac{\sqrt6-2\sqrt3}{8} &amp; -\dfrac{\sqrt2}{4}\\[6pt]
+\dfrac{\sqrt2}{4} &amp; \dfrac{\sqrt6}{4} &amp; \dfrac{\sqrt2}{2}
 \end{bmatrix}.
-$$
-
-:::
-
----
-
-
-## Relación entre $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$
-
-![](/Figures/c2/frame_ip.svg){width=100% fig-align="center"}
-
----
-
-## Relación entre $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$
-
-![](/Figures/c2/i2p1.svg){width=100% fig-align="center"}
-
----
-
-## Relación entre $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$
-
-![](/Figures/c2/i2p2.svg){width=100% fig-align="center"}
-
----
-
-## Relación entre $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$
-
-![](/Figures/c2/i2p3.svg){width=100% fig-align="center"}
-
----
-
-## Relación entre $\ls{p}{\mathcal{F}}$ y $\ls{r}{\mathcal{F}}$
-
-![](/Figures/c2/i2p4.svg){width=100% fig-align="center"}
-
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Elementos orbitales
-
-<div class="menu-title" style="display:none;"> ▸ Elementos orbitales</div>
-:::
-
-:::
-
-##
-
-- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la trayectoria de un satélite orbitando alrededor de un cuerpo central.
-
-- En particular, los elementos orbitales permiten definir:
-
-  - La **<span style="color:red">forma y tamaño</span>** de la órbita.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:red">$a,e$</span>
-
-    :::
-
-  - La **<span style="color:teal">orientación</span>** de la órbita.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:teal">$i,\Omega,\omega$</span>
-
-    :::
-
-  - La **<span style="color:blue">posición instantánea</span>** del cuerpo en su trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:blue">$\nu(t)$</span>
-
-    :::
-
-- Estos seis parámetros son la base del análisis orbital.
-
-
-
-
-
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="60%"}
-
-La **forma** y el **tamaño** de una órbita se determinan a partir de:
-
-
-::: {.fragment}
-
-- La <span style="color:red">**excentricidad** $e$</span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de $e$:
-
-  - $e=0$: órbita circular.
-  - $0<e<1$: órbita elíptica.
-  - $e=1$: parábola (caso límite de escape).
-  - $e>1$: hipérbola (órbita de escape).
-
-:::
-
-
-::: {.fragment}
-
-- En el caso de órbitas elípticas, el <span style="color:red">**semieje mayor** $a$</span> determina su tamaño.
-
-$$
-    e=\frac{c}{a},
-    \qquad
-    c=\sqrt{a^2-b^2}
-$$
-
-donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
-
-:::
-
-:::
-
-::: {.column width="40%"}
-
-![](/Figures/c2/ellipse.svg){width=100%}
-
-:::
-
-:::
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="48%"}
-
-![](/Figures/c2/orientation_parameters.svg){width=120%}
-
-:::
-
-::: {.column width="52%"}
-
-La **orientación de la órbita** se determina con tres ángulos:
-
-:::{.incremental}
-
-- <span style="color:teal">**Longitud del nodo ascendente** $\Omega\in[0,2\pi)$</span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Inclinación** $i\in[0,\pi]$</span>: ángulo entre el *plano orbital* y el *plano de referencia*.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Argumento del periapsis** $\omega\in[0,2\pi)$</span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.
-
-:::
-
-:::
-
-:::
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="48%"}
-
-![](/Figures/c2/true_anomaly.svg){width=120%}
-
-:::
-
-::: {.column width="52%"}
-
-La **posición instantánea** del cuerpo en su órbita se describe con la <span style="color:blue">**anomalía verdadera** $\nu(t)$</span>.
-
-
-:::{.incremental}
-- La anomalía verdadera $\nu(t)$ es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.
-
-    <div class="vspace-3"></div>
-
-- En lugar de $\nu(t)$, también pueden emplearse otras variables para describir la posición:
-
-  - **Anomalía excéntrica** $\psi(t)$.
-  - **Anomalía media** $M(t)$.
-
-:::
-
-:::
-
-:::
-
----
-
-##
-
-
-
-- La relación entre el marco de referencia inercial $\ls{i}{\mathcal{F}}$ y el marco perifocal $\ls{p}{\mathcal{F}}$ está dada por la matriz de rotación
-
-$$
-    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
-$${#eq-Ri2Rp}
-
-
-donde $R_x(\cdot)$ y $R_z(\cdot)$ son las matrices de rotación elementales alrededor de los ejes $x$ y $z$, respectivamente.
-
-<div class="vspace-3"></div>
-
-
-:::{.fragment}
-
-- Mientras que la relación entre el marco perifocal $\ls{p}{\mathcal{F}}$ y el marco RSW $\ls{r}{\mathcal{F}}$ está dada por la matriz de rotación
-
-    $$
-    \ls{r}R_p(t)=R_z(\nu(t))
-    $$
-
-    <span style="color:red">**La matriz de rotación $\ls{p}R_i$ es constante en el tiempo, mientras que la matriz de rotación $\ls{r}R_p$ varía con el tiempo a medida que cambia la anomalía verdadera $\nu(t)$.**</span>
-
-:::
-
-::: {.fragment style="display:flex;justify-content:center;"}
-
-::: {.xlarge}
-
-<span style="color:blue">**Y ... ¿Cómo se calcula $\nu(t)$?**</span>
-
-:::
-
-:::
-
- -->
+\]</span></p>
+</div>
+</section>
+<section id="relación-entre-lsimathcalf-y-lspmathcalf" class="slide level2">
+<h2>Relación entre <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span></h2>
+
+<img data-src=".\Figures/c2/frames_ip_mo.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="relación-entre-lsimathcalf-y-lspmathcalf-1" class="slide level2">
+<h2>Relación entre <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span></h2>
+
+<img data-src=".\Figures/c2/i2p1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="relación-entre-lsimathcalf-y-lspmathcalf-2" class="slide level2">
+<h2>Relación entre <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span></h2>
+
+<img data-src=".\Figures/c2/i2p2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="relación-entre-lsimathcalf-y-lspmathcalf-3" class="slide level2">
+<h2>Relación entre <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span></h2>
+
+<img data-src=".\Figures/c2/i2p3.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>La relación entre el marco de referencia inercial <span class="math inline">\(\ls{i}{\mathcal{F}}\)</span> y el marco perifocal <span class="math inline">\(\ls{p}{\mathcal{F}}\)</span> está dada por la matriz de rotación</p>
+<p><span id="eq-Ri2Rp"><span class="math display">\[
+      \ls{p}R_i=R_z(\theta_3)\,R_x(\theta_2)\,R_z(\theta_1)
+   \tag{60}\]</span></span></p>
+<p>donde <span class="math inline">\(R_x(\cdot)\)</span> y <span class="math inline">\(R_z(\cdot)\)</span> son las matrices de rotación elementales alrededor de los ejes <span class="math inline">\(x\)</span> y <span class="math inline">\(z\)</span>, respectivamente.</p></li>
+<li><p>Con dicha matriz, podemos cambiar la base de las efemérides de la siguiente manera:</p>
+<p><span class="math display">\[
+      \ls{i}{\vec{r}(t)}=\ls{p}R_i^\top\ls{p}{\vec{r}(t)},\qquad \ls{i}{\vec{v}(t)}=\ls{p}R_i^\top\ls{p}{\vec{v}(t)}
+  \]</span></p></li>
+</ul>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li>La pregunta ahora es …</li>
+</ul>
+<div class="fragment" style="display:flex;justify-content:center;">
+<div class="xlarge">
+<p><span style="color:blue"><strong>¿Cómo obtenemos <span class="math inline">\(\theta_1\)</span>, <span class="math inline">\(\theta_2\)</span> y <span class="math inline">\(\theta_3\)</span>?</strong></span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/orbital_parameters_neh.svg" style="width:100.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Elementos orbitales</p>
+<div class="menu-title" style="display:none;">
+▸ Elementos orbitales
+</div>
+</div>
+</div>
+</section>
+<section id="section-39" class="slide level2">
+<h2></h2>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>Los <strong>elementos orbitales</strong> (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.</p></li>
+<li><p>En particular, los elementos orbitales permiten definir:</p>
+<ul>
+<li><p>La <strong><span style="color:red">forma y tamaño</span></strong> de la trayectoria.</p>
+<div class="text-center xlarge">
+<p><span style="color:red"><span class="math inline">\(a,e\)</span></span></p>
+</div></li>
+<li><p>La <strong><span style="color:teal">orientación</span></strong> de la trayectoria.</p>
+<div class="text-center xlarge">
+<p><span style="color:teal"><span class="math inline">\(i,\Omega,\omega\)</span></span></p>
+</div></li>
+<li><p>La <strong><span style="color:blue">posición instantánea</span></strong> del cuerpo en su trayectoria.</p>
+<div class="text-center xlarge">
+<p><span style="color:blue"><span class="math inline">\(\nu(t)\)</span></span></p>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="section-40" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>La <strong>forma</strong> y el <strong>tamaño</strong> de una órbita se determinan a partir de:</p>
+<div class="fragment">
+<ul>
+<li><p>La <span style="color:red"><strong>excentricidad</strong> <span class="math inline">\(e\)</span></span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de <span class="math inline">\(e\)</span>:</p>
+<ul>
+<li><span class="math inline">\(e=0\)</span>: órbita circular.</li>
+<li><span class="math inline">\(0&lt;e&lt;1\)</span>: órbita elíptica.</li>
+<li><span class="math inline">\(e=1\)</span>: parábola.</li>
+<li><span class="math inline">\(e&gt;1\)</span>: hipérbola.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>En el caso de órbitas elípticas, el <span style="color:red"><strong>semieje mayor</strong> <span class="math inline">\(a\)</span></span> determina su tamaño.</p>
+<p><span class="math display">\[
+      e=\frac{c}{a},
+      \qquad
+      c=\sqrt{a^2-b^2}
+  \]</span></p>
+<p>donde <span class="math inline">\(c\)</span> es la distancia del centro al foco y <span class="math inline">\(b\)</span> es el semieje menor.</p></li>
+<li><p>Sin embargo, para trayectorias en general, podemos utilizar el semi parametro <span class="math inline">\(p\)</span> para describir el tamaño de la trayectoria.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src=".\Figures/c2/ellipse.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-41" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><img data-src=".\Figures/c2/orientation_parameters.svg" style="width:120.0%"></p>
+</div><div class="column" style="width:52%;">
+<p>La <strong>orientación de la órbita</strong> se determina con tres ángulos:</p>
+<ul>
+<li class="fragment"><span style="color:teal"><strong>Longitud del nodo ascendente</strong> <span class="math inline">\(\Omega\in[0,2\pi)\)</span></span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
+<div class="vspace-3">
+
+</div></li>
+<li class="fragment"><span style="color:teal"><strong>Inclinación</strong> <span class="math inline">\(i\in[0,\pi]\)</span></span>: ángulo entre el <em>plano orbital</em> y el <em>plano de referencia</em>.
+<div class="vspace-3">
+
+</div></li>
+<li class="fragment"><span style="color:teal"><strong>Argumento del periapsis</strong> <span class="math inline">\(\omega\in[0,2\pi)\)</span></span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.</li>
+</ul>
+</div></div>
+</section>
+<section id="section-42" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><img data-src=".\Figures/c2/true_anomaly.svg" style="width:120.0%"></p>
+</div><div class="column" style="width:52%;">
+<p>La <strong>posición instantánea</strong> del cuerpo en su órbita se describe con la <span style="color:blue"><strong>anomalía verdadera</strong> <span class="math inline">\(\nu(t)\)</span></span>.</p>
+<ul>
+<li class="fragment"><p>La anomalía verdadera <span class="math inline">\(\nu(t)\)</span> es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.</p></li>
+<li class="fragment"><p>Se dice que es <em>verdadera</em> porque está presente en todos las posibles secciones cónicas que describen una trayectoria.</p></li>
+<li class="fragment"><p>En lugar de <span class="math inline">\(\nu(t)\)</span>, también pueden emplearse otras variables para describir la posición:</p>
+<ul>
+<li class="fragment"><strong>Anomalía excéntrica, parabólica o hiperbólica</strong> <span class="math inline">\(\psi(t)\)</span>.</li>
+<li class="fragment"><strong>Anomalía media</strong> <span class="math inline">\(M(t)\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo .</p></li>
+</ul>
+</div></div>
 
 </section>
 
@@ -7165,7 +6156,7 @@ donde $R_x(\cdot)$ y $R_z(\cdot)$ son las matrices de rotación elementales alre
     
 
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXMgPSBJbnB1dHMuZm9ybShcclxuICB7XHJcbiAgICBwOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5wPC9zcGFuPmB9KSxcclxuICAgIGU6IElucHV0cy5yYW5nZShbMC4wLCAxLjRdLCB7dmFsdWU6IDAuNSwgc3RlcDogMC4wNSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5lPC9zcGFuPmB9KSxcclxuICAgIG51MDogSW5wdXRzLnJhbmdlKFswLCAzNjBdLCB7dmFsdWU6IDAsIHN0ZXA6IDUsIGxhYmVsOiBodG1sYDxzcGFuIHN0eWxlPVwiZm9udC1mYW1pbHk6c2VyaWY7Zm9udC1zdHlsZTppdGFsaWM7XCI+zr3igoAgKMKwKTwvc3Bhbj5gfSlcclxuICB9LFxyXG4gIHtcclxuICAgIHRlbXBsYXRlOiBpbnB1dHMgPT4gaHRtbGBcclxuICAgICAgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2dhcDoyLjVyZW07YWxpZ24taXRlbXM6ZmxleC1zdGFydDtcIj5cclxuICAgICAgICA8ZGl2PiR7aW5wdXRzLnB9PC9kaXY+XHJcbiAgICAgICAgPGRpdj4ke2lucHV0cy5lfTwvZGl2PlxyXG4gICAgICAgIDxkaXY+JHtpbnB1dHMubnUwfTwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIGBcclxuICB9XHJcbilcclxuXHJcbnAgPSBwYXJhbXMucFxyXG5lID0gcGFyYW1zLmVcclxubnUwID0gcGFyYW1zLm51MFxyXG5cclxucHVudG9zX29yYml0YSA9IHtcclxuICBjb25zdCBzdGVwID0gMC4wMTtcclxuICBjb25zdCBkYXRhID0gW107XHJcbiAgY29uc3QgbnUwX3JhZCA9IG51MCAqIE1hdGguUEkgLyAxODA7XHJcbiAgY29uc3Qgcl9tYXhfbGltaXRlID0gMTAuMDtcclxuXHJcbiAgZm9yIChsZXQgbnUgPSAwOyBudSA8PSAyICogTWF0aC5QSSArIHN0ZXA7IG51ICs9IHN0ZXApIHtcclxuICAgIGNvbnN0IGRlbiA9IDEgKyBlICogTWF0aC5jb3MobnUgLSBudTBfcmFkKTtcclxuXHJcbiAgICBpZiAoZGVuID4gMC4wMDEpIHtcclxuICAgICAgY29uc3QgciA9IHAgLyBkZW47XHJcbiAgICAgIGlmIChyIDw9IHJfbWF4X2xpbWl0ZSlcclxuICAgICAgICBkYXRhLnB1c2goe3g6IHIgKiBNYXRoLmNvcyhudSksIHk6IHIgKiBNYXRoLnNpbihudSksIHZhbGlkbzogdHJ1ZX0pO1xyXG4gICAgICBlbHNlXHJcbiAgICAgICAgZGF0YS5wdXNoKHt4OiBOYU4sIHk6IE5hTiwgdmFsaWRvOiBmYWxzZX0pO1xyXG4gICAgfSBlbHNlXHJcbiAgICAgIGRhdGEucHVzaCh7eDogTmFOLCB5OiBOYU4sIHZhbGlkbzogZmFsc2V9KTtcclxuICB9XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5wdW50b3NfbWFsbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGZvciAobGV0IHIgPSAyOyByIDw9IDEwOyByICs9IDIpXHJcbiAgICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSSArIDAuMTsgdCArPSAwLjEpXHJcbiAgICAgIGRhdGEucHVzaCh7aWQ6IHIsIHg6IHIgKiBNYXRoLmNvcyh0KSwgeTogciAqIE1hdGguc2luKHQpfSk7XHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcbmxpbmVhc19ncmFkb3MgPVxyXG4gIFswLDMwLDYwLDkwLDEyMCwxNTAsMTgwLDIxMCwyNDAsMjcwLDMwMCwzMzBdLm1hcChkZWcgPT4gKHtcclxuICAgIGRlZyxcclxuICAgIHgxOiAxMCAqIE1hdGguY29zKGRlZyAqIE1hdGguUEkgLyAxODApLFxyXG4gICAgeTE6IDEwICogTWF0aC5zaW4oZGVnICogTWF0aC5QSSAvIDE4MClcclxuICB9KSk7XHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xyXG4gIGhlaWdodDogNjUwLFxyXG4gIHdpZHRoOiA2NTAsXHJcbiAgYXNwZWN0UmF0aW86IDEsXHJcbiAgc3R5bGU6IHtcclxuICAgIGJhY2tncm91bmQ6IFwidHJhbnNwYXJlbnRcIixcclxuICAgIGZvbnRGYW1pbHk6IFwic2VyaWZcIixcclxuICAgIGZvbnRTaXplOiBcIjEycHhcIlxyXG4gIH0sXHJcbiAgYXhpczogbnVsbCxcclxuICB4OiB7ZG9tYWluOiBbLTEwLCAxMF19LFxyXG4gIHk6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgbWFya3M6IFtcclxuICAgIFBsb3QubGluZShwdW50b3NfbWFsbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTUpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmxpbmsobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4MTogMCxcclxuICAgICAgeTE6IDAsXHJcbiAgICAgIHgyOiBcIngxXCIsXHJcbiAgICAgIHkyOiBcInkxXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTIpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnRleHQobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4OiBcIngxXCIsXHJcbiAgICAgIHk6IFwieTFcIixcclxuICAgICAgdGV4dDogZCA9PiBgJHtkLmRlZ33CsGAsXHJcbiAgICAgIGZpbGw6IFwiZ3JheVwiLFxyXG4gICAgICBkeDogOCxcclxuICAgICAgZHk6IC0yXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmRvdChbe3g6MCx5OjB9XSwge1xyXG4gICAgICB4OlwieFwiLFxyXG4gICAgICB5OlwieVwiLFxyXG4gICAgICByOjUsXHJcbiAgICAgIGZpbGw6XCIjMzMzXCJcclxuICAgIH0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3Nfb3JiaXRhLHtcclxuICAgICAgeDpcInhcIixcclxuICAgICAgeTpcInlcIixcclxuICAgICAgZGVmaW5lZDpkPT5kLnZhbGlkbyxcclxuICAgICAgc3Ryb2tlOlwiIzFmNzdiNFwiLFxyXG4gICAgICBzdHJva2VXaWR0aDozXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXNfZWxpcHNlID0gSW5wdXRzLmZvcm0oe1xyXG4gIHBfZWxpcHNlOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9lbGlwc2U6IElucHV0cy5yYW5nZShbMC4wLCAwLjk1XSwge3ZhbHVlOiAwLjUsIHN0ZXA6IDAuMDUsIGxhYmVsOiBcImVcIn0pXHJcbn0pXHJcblxyXG5wX2VsaXBzZSA9IHBhcmFtc19lbGlwc2UucF9lbGlwc2VcclxuXHJcbmVfZWxpcHNlID0gcGFyYW1zX2VsaXBzZS5lX2VsaXBzZVxyXG5cclxuYV9lbGlwc2UgPSBwX2VsaXBzZSAvICgxIC0gZV9lbGlwc2UgKiogMilcclxuXHJcbmJfZWxpcHNlID0gYV9lbGlwc2UgKiBNYXRoLnNxcnQoMSAtIGVfZWxpcHNlICoqIDIpXHJcblxyXG5jX2VsaXBzZSA9IGFfZWxpcHNlICogZV9lbGlwc2VcclxuXHJcbnB1bnRvc19lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSTsgdCArPSAwLjAxKVxyXG4gICAgZGF0YS5wdXNoKHtcclxuICAgICAgeDogLWNfZWxpcHNlICsgYV9lbGlwc2UgKiBNYXRoLmNvcyh0KSxcclxuICAgICAgeTogYl9lbGlwc2UgKiBNYXRoLnNpbih0KVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG52aWV3b2YgcF9wYXJhYm9sYSA9IElucHV0cy5yYW5nZShbMC41LCAzLjBdLCB7XHJcbiAgdmFsdWU6IDEuMCxcclxuICBzdGVwOiAwLjEsXHJcbiAgbGFiZWw6IFwicFwiXHJcbn0pXHJcblxyXG5wdW50b3NfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IHBfcGFyYWJvbGEgLyAyOyB4ICs9IDAuMDEpIHtcclxuICAgIGNvbnN0IHkgPSBNYXRoLnNxcnQoLTIgKiBwX3BhcmFib2xhICogKHggLSBwX3BhcmFib2xhIC8gMikpO1xyXG5cclxuICAgIGRhdGEucHVzaCh7aWQ6IDEsIHgsIHl9KTtcclxuICAgIGRhdGEucHVzaCh7aWQ6IDIsIHgsIHk6IC15fSk7XHJcbiAgfVxyXG5cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxubWFsbGFfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX3BhcmFib2xhLCB7XHJcbiAgICAgIHg6IFwieFwiLFxyXG4gICAgICB5OiBcInlcIixcclxuICAgICAgejogXCJpZFwiLFxyXG4gICAgICBzdHJva2U6IFwicmdiYSgxMjgsMTI4LDEyOCwwLjE1KVwiXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnJ1bGVYKFswXSksXHJcblxyXG4gICAgUGxvdC5ydWxlWShbMF0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3NfcGFyYWJvbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxudmlld29mIHBhcmFtc19oaXBlcmJvbGEgPSBJbnB1dHMuZm9ybSh7XHJcbiAgcF9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMC41LCAyNS4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMS4wNSwgMjUuMF0sIHt2YWx1ZTogMS41LCBzdGVwOiAwLjA1LCBsYWJlbDogXCJlXCJ9KVxyXG59KVxyXG5cclxucF9oaXBlcmJvbGEgPSBwYXJhbXNfaGlwZXJib2xhLnBfaGlwZXJib2xhXHJcblxyXG5lX2hpcGVyYm9sYSA9IHBhcmFtc19oaXBlcmJvbGEuZV9oaXBlcmJvbGFcclxuXHJcbmFfaGlwZXJib2xhID0gLXBfaGlwZXJib2xhIC8gKGVfaGlwZXJib2xhICoqIDIgLSAxKVxyXG5cclxuYl9oaXBlcmJvbGEgPSBNYXRoLmFicyhhX2hpcGVyYm9sYSkgKiBNYXRoLnNxcnQoZV9oaXBlcmJvbGEgKiogMiAtIDEpXHJcblxyXG5jX2hpcGVyYm9sYSA9IGFfaGlwZXJib2xhICogZV9oaXBlcmJvbGFcclxuXHJcbnB1bnRvc19oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGNvbnN0IEhtYXggPSAyLjU7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMSxcclxuICAgICAgeDogLWNfaGlwZXJib2xhICsgTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMixcclxuICAgICAgeDogLWNfaGlwZXJib2xhIC0gTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcIiMxZjc3YjRcIixcclxuICAgICAgc3Ryb2tlV2lkdGg6IDNcclxuICAgIH0pXHJcbiAgXVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTExIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHZ4ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMSwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygb3ggPSBJbnB1dHMucmFuZ2UoWy01LCA1XSwge3ZhbHVlOiAwLCBzdGVwOiAwLjF9KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE0IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIG95ID0gSW5wdXRzLnJhbmdlKFstNSwgNV0sIHt2YWx1ZTogMCwgc3RlcDogMC4xfSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd2eScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdveScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwYXJhbXMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncGFyYW1zX2VsaXBzZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwX3BhcmFib2xhJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BhcmFtc19oaXBlcmJvbGEnKSJ9XX0=
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB2eSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDEsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveCA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBveSA9IElucHV0cy5yYW5nZShbLTUsIDVdLCB7dmFsdWU6IDAsIHN0ZXA6IDAuMX0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XHJcbiAgd2lkdGg6IDUwMCxcclxuICBoZWlnaHQ6IDUwMCxcclxuICB4OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICB5OiB7ZG9tYWluOiBbLTUsIDVdLCBncmlkOiB0cnVlfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5hcnJvdyhcclxuICAgICAgW3t4MTogb3gsIHkxOiBveSwgeDI6IHZ4K294LCB5Mjogdnkrb3l9XSxcclxuICAgICAge1xyXG4gICAgICAgIHgxOiBcIngxXCIsXHJcbiAgICAgICAgeTE6IFwieTFcIixcclxuICAgICAgICB4MjogXCJ4MlwiLFxyXG4gICAgICAgIHkyOiBcInkyXCJcclxuICAgICAgfVxyXG4gICAgKVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXMgPSBJbnB1dHMuZm9ybShcclxuICB7XHJcbiAgICBwOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5wPC9zcGFuPmB9KSxcclxuICAgIGU6IElucHV0cy5yYW5nZShbMC4wLCAxLjRdLCB7dmFsdWU6IDAuNSwgc3RlcDogMC4wNSwgbGFiZWw6IGh0bWxgPHNwYW4gc3R5bGU9XCJmb250LWZhbWlseTpzZXJpZjtmb250LXN0eWxlOml0YWxpYztcIj5lPC9zcGFuPmB9KSxcclxuICAgIG51MDogSW5wdXRzLnJhbmdlKFswLCAzNjBdLCB7dmFsdWU6IDAsIHN0ZXA6IDUsIGxhYmVsOiBodG1sYDxzcGFuIHN0eWxlPVwiZm9udC1mYW1pbHk6c2VyaWY7Zm9udC1zdHlsZTppdGFsaWM7XCI+zr3igoAgKMKwKTwvc3Bhbj5gfSlcclxuICB9LFxyXG4gIHtcclxuICAgIHRlbXBsYXRlOiBpbnB1dHMgPT4gaHRtbGBcclxuICAgICAgPGRpdiBzdHlsZT1cImRpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyO2dhcDoyLjVyZW07YWxpZ24taXRlbXM6ZmxleC1zdGFydDtcIj5cclxuICAgICAgICA8ZGl2PiR7aW5wdXRzLnB9PC9kaXY+XHJcbiAgICAgICAgPGRpdj4ke2lucHV0cy5lfTwvZGl2PlxyXG4gICAgICAgIDxkaXY+JHtpbnB1dHMubnUwfTwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIGBcclxuICB9XHJcbilcclxuXHJcbnAgPSBwYXJhbXMucFxyXG5lID0gcGFyYW1zLmVcclxubnUwID0gcGFyYW1zLm51MFxyXG5cclxucHVudG9zX29yYml0YSA9IHtcclxuICBjb25zdCBzdGVwID0gMC4wMTtcclxuICBjb25zdCBkYXRhID0gW107XHJcbiAgY29uc3QgbnUwX3JhZCA9IG51MCAqIE1hdGguUEkgLyAxODA7XHJcbiAgY29uc3Qgcl9tYXhfbGltaXRlID0gMTAuMDtcclxuXHJcbiAgZm9yIChsZXQgbnUgPSAwOyBudSA8PSAyICogTWF0aC5QSSArIHN0ZXA7IG51ICs9IHN0ZXApIHtcclxuICAgIGNvbnN0IGRlbiA9IDEgKyBlICogTWF0aC5jb3MobnUgLSBudTBfcmFkKTtcclxuXHJcbiAgICBpZiAoZGVuID4gMC4wMDEpIHtcclxuICAgICAgY29uc3QgciA9IHAgLyBkZW47XHJcbiAgICAgIGlmIChyIDw9IHJfbWF4X2xpbWl0ZSlcclxuICAgICAgICBkYXRhLnB1c2goe3g6IHIgKiBNYXRoLmNvcyhudSksIHk6IHIgKiBNYXRoLnNpbihudSksIHZhbGlkbzogdHJ1ZX0pO1xyXG4gICAgICBlbHNlXHJcbiAgICAgICAgZGF0YS5wdXNoKHt4OiBOYU4sIHk6IE5hTiwgdmFsaWRvOiBmYWxzZX0pO1xyXG4gICAgfSBlbHNlXHJcbiAgICAgIGRhdGEucHVzaCh7eDogTmFOLCB5OiBOYU4sIHZhbGlkbzogZmFsc2V9KTtcclxuICB9XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5wdW50b3NfbWFsbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGZvciAobGV0IHIgPSAyOyByIDw9IDEwOyByICs9IDIpXHJcbiAgICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSSArIDAuMTsgdCArPSAwLjEpXHJcbiAgICAgIGRhdGEucHVzaCh7aWQ6IHIsIHg6IHIgKiBNYXRoLmNvcyh0KSwgeTogciAqIE1hdGguc2luKHQpfSk7XHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcbmxpbmVhc19ncmFkb3MgPVxyXG4gIFswLDMwLDYwLDkwLDEyMCwxNTAsMTgwLDIxMCwyNDAsMjcwLDMwMCwzMzBdLm1hcChkZWcgPT4gKHtcclxuICAgIGRlZyxcclxuICAgIHgxOiAxMCAqIE1hdGguY29zKGRlZyAqIE1hdGguUEkgLyAxODApLFxyXG4gICAgeTE6IDEwICogTWF0aC5zaW4oZGVnICogTWF0aC5QSSAvIDE4MClcclxuICB9KSk7XHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xyXG4gIGhlaWdodDogNjUwLFxyXG4gIHdpZHRoOiA2NTAsXHJcbiAgYXNwZWN0UmF0aW86IDEsXHJcbiAgc3R5bGU6IHtcclxuICAgIGJhY2tncm91bmQ6IFwidHJhbnNwYXJlbnRcIixcclxuICAgIGZvbnRGYW1pbHk6IFwic2VyaWZcIixcclxuICAgIGZvbnRTaXplOiBcIjEycHhcIlxyXG4gIH0sXHJcbiAgYXhpczogbnVsbCxcclxuICB4OiB7ZG9tYWluOiBbLTEwLCAxMF19LFxyXG4gIHk6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgbWFya3M6IFtcclxuICAgIFBsb3QubGluZShwdW50b3NfbWFsbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTUpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmxpbmsobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4MTogMCxcclxuICAgICAgeTE6IDAsXHJcbiAgICAgIHgyOiBcIngxXCIsXHJcbiAgICAgIHkyOiBcInkxXCIsXHJcbiAgICAgIHN0cm9rZTogXCJyZ2JhKDEyOCwxMjgsMTI4LDAuMTIpXCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAxXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnRleHQobGluZWFzX2dyYWRvcywge1xyXG4gICAgICB4OiBcIngxXCIsXHJcbiAgICAgIHk6IFwieTFcIixcclxuICAgICAgdGV4dDogZCA9PiBgJHtkLmRlZ33CsGAsXHJcbiAgICAgIGZpbGw6IFwiZ3JheVwiLFxyXG4gICAgICBkeDogOCxcclxuICAgICAgZHk6IC0yXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LmRvdChbe3g6MCx5OjB9XSwge1xyXG4gICAgICB4OlwieFwiLFxyXG4gICAgICB5OlwieVwiLFxyXG4gICAgICByOjUsXHJcbiAgICAgIGZpbGw6XCIjMzMzXCJcclxuICAgIH0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3Nfb3JiaXRhLHtcclxuICAgICAgeDpcInhcIixcclxuICAgICAgeTpcInlcIixcclxuICAgICAgZGVmaW5lZDpkPT5kLnZhbGlkbyxcclxuICAgICAgc3Ryb2tlOlwiIzFmNzdiNFwiLFxyXG4gICAgICBzdHJva2VXaWR0aDozXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcbnZpZXdvZiBwYXJhbXNfZWxpcHNlID0gSW5wdXRzLmZvcm0oe1xyXG4gIHBfZWxpcHNlOiBJbnB1dHMucmFuZ2UoWzAuNSwgMy4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9lbGlwc2U6IElucHV0cy5yYW5nZShbMC4wLCAwLjk1XSwge3ZhbHVlOiAwLjUsIHN0ZXA6IDAuMDUsIGxhYmVsOiBcImVcIn0pXHJcbn0pXHJcblxyXG5wX2VsaXBzZSA9IHBhcmFtc19lbGlwc2UucF9lbGlwc2VcclxuXHJcbmVfZWxpcHNlID0gcGFyYW1zX2VsaXBzZS5lX2VsaXBzZVxyXG5cclxuYV9lbGlwc2UgPSBwX2VsaXBzZSAvICgxIC0gZV9lbGlwc2UgKiogMilcclxuXHJcbmJfZWxpcHNlID0gYV9lbGlwc2UgKiBNYXRoLnNxcnQoMSAtIGVfZWxpcHNlICoqIDIpXHJcblxyXG5jX2VsaXBzZSA9IGFfZWxpcHNlICogZV9lbGlwc2VcclxuXHJcbnB1bnRvc19lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB0ID0gMDsgdCA8PSAyICogTWF0aC5QSTsgdCArPSAwLjAxKVxyXG4gICAgZGF0YS5wdXNoKHtcclxuICAgICAgeDogLWNfZWxpcHNlICsgYV9lbGlwc2UgKiBNYXRoLmNvcyh0KSxcclxuICAgICAgeTogYl9lbGlwc2UgKiBNYXRoLnNpbih0KVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9lbGlwc2UgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2VsaXBzZSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG52aWV3b2YgcF9wYXJhYm9sYSA9IElucHV0cy5yYW5nZShbMC41LCAzLjBdLCB7XHJcbiAgdmFsdWU6IDEuMCxcclxuICBzdGVwOiAwLjEsXHJcbiAgbGFiZWw6IFwicFwiXHJcbn0pXHJcblxyXG5wdW50b3NfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IHBfcGFyYWJvbGEgLyAyOyB4ICs9IDAuMDEpIHtcclxuICAgIGNvbnN0IHkgPSBNYXRoLnNxcnQoLTIgKiBwX3BhcmFib2xhICogKHggLSBwX3BhcmFib2xhIC8gMikpO1xyXG5cclxuICAgIGRhdGEucHVzaCh7aWQ6IDEsIHgsIHl9KTtcclxuICAgIGRhdGEucHVzaCh7aWQ6IDIsIHgsIHk6IC15fSk7XHJcbiAgfVxyXG5cclxuICByZXR1cm4gZGF0YTtcclxufVxyXG5cclxubWFsbGFfcGFyYWJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX3BhcmFib2xhLCB7XHJcbiAgICAgIHg6IFwieFwiLFxyXG4gICAgICB5OiBcInlcIixcclxuICAgICAgejogXCJpZFwiLFxyXG4gICAgICBzdHJva2U6IFwicmdiYSgxMjgsMTI4LDEyOCwwLjE1KVwiXHJcbiAgICB9KSxcclxuXHJcbiAgICBQbG90LnJ1bGVYKFswXSksXHJcblxyXG4gICAgUGxvdC5ydWxlWShbMF0pLFxyXG5cclxuICAgIFBsb3QubGluZShwdW50b3NfcGFyYWJvbGEsIHtcclxuICAgICAgeDogXCJ4XCIsXHJcbiAgICAgIHk6IFwieVwiLFxyXG4gICAgICB6OiBcImlkXCIsXHJcbiAgICAgIHN0cm9rZTogXCIjMWY3N2I0XCIsXHJcbiAgICAgIHN0cm9rZVdpZHRoOiAzXHJcbiAgICB9KVxyXG4gIF1cclxufSlcclxuXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcclxudmlld29mIHBhcmFtc19oaXBlcmJvbGEgPSBJbnB1dHMuZm9ybSh7XHJcbiAgcF9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMC41LCAyNS4wXSwge3ZhbHVlOiAxLjAsIHN0ZXA6IDAuMSwgbGFiZWw6IFwicFwifSksXHJcbiAgZV9oaXBlcmJvbGE6IElucHV0cy5yYW5nZShbMS4wNSwgMjUuMF0sIHt2YWx1ZTogMS41LCBzdGVwOiAwLjA1LCBsYWJlbDogXCJlXCJ9KVxyXG59KVxyXG5cclxucF9oaXBlcmJvbGEgPSBwYXJhbXNfaGlwZXJib2xhLnBfaGlwZXJib2xhXHJcblxyXG5lX2hpcGVyYm9sYSA9IHBhcmFtc19oaXBlcmJvbGEuZV9oaXBlcmJvbGFcclxuXHJcbmFfaGlwZXJib2xhID0gLXBfaGlwZXJib2xhIC8gKGVfaGlwZXJib2xhICoqIDIgLSAxKVxyXG5cclxuYl9oaXBlcmJvbGEgPSBNYXRoLmFicyhhX2hpcGVyYm9sYSkgKiBNYXRoLnNxcnQoZV9oaXBlcmJvbGEgKiogMiAtIDEpXHJcblxyXG5jX2hpcGVyYm9sYSA9IGFfaGlwZXJib2xhICogZV9oaXBlcmJvbGFcclxuXHJcbnB1bnRvc19oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG4gIGNvbnN0IEhtYXggPSAyLjU7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMSxcclxuICAgICAgeDogLWNfaGlwZXJib2xhICsgTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIGZvciAobGV0IEggPSAtSG1heDsgSCA8PSBIbWF4OyBIICs9IDAuMDEpXHJcbiAgICBkYXRhLnB1c2goe1xyXG4gICAgICBpZDogMixcclxuICAgICAgeDogLWNfaGlwZXJib2xhIC0gTWF0aC5hYnMoYV9oaXBlcmJvbGEpICogTWF0aC5jb3NoKEgpLFxyXG4gICAgICB5OiBiX2hpcGVyYm9sYSAqIE1hdGguc2luaChIKVxyXG4gICAgfSk7XHJcblxyXG4gIHJldHVybiBkYXRhO1xyXG59XHJcblxyXG5tYWxsYV9oaXBlcmJvbGEgPSB7XHJcbiAgY29uc3QgZGF0YSA9IFtdO1xyXG5cclxuICBmb3IgKGxldCB4ID0gLTEwOyB4IDw9IDEwOyB4KyspXHJcbiAgICBkYXRhLnB1c2goe2lkOiBgdiR7eH1gLCB4LCB5OiAtMTB9LCB7aWQ6IGB2JHt4fWAsIHgsIHk6IDEwfSk7XHJcblxyXG4gIGZvciAobGV0IHkgPSAtMTA7IHkgPD0gMTA7IHkrKylcclxuICAgIGRhdGEucHVzaCh7aWQ6IGBoJHt5fWAsIHg6IC0xMCwgeX0sIHtpZDogYGgke3l9YCwgeDogMTAsIHl9KTtcclxuXHJcbiAgcmV0dXJuIGRhdGE7XHJcbn1cclxuXHJcblBsb3QucGxvdCh7XHJcbiAgaGVpZ2h0OiA2NTAsXHJcbiAgd2lkdGg6IDY1MCxcclxuICBhc3BlY3RSYXRpbzogMSxcclxuICBheGlzOiBudWxsLFxyXG4gIHg6IHtkb21haW46IFstMTAsIDEwXX0sXHJcbiAgeToge2RvbWFpbjogWy0xMCwgMTBdfSxcclxuICBtYXJrczogW1xyXG4gICAgUGxvdC5saW5lKG1hbGxhX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcInJnYmEoMTI4LDEyOCwxMjgsMC4xNSlcIlxyXG4gICAgfSksXHJcblxyXG4gICAgUGxvdC5ydWxlWChbMF0pLFxyXG5cclxuICAgIFBsb3QucnVsZVkoWzBdKSxcclxuXHJcbiAgICBQbG90LmxpbmUocHVudG9zX2hpcGVyYm9sYSwge1xyXG4gICAgICB4OiBcInhcIixcclxuICAgICAgeTogXCJ5XCIsXHJcbiAgICAgIHo6IFwiaWRcIixcclxuICAgICAgc3Ryb2tlOiBcIiMxZjc3YjRcIixcclxuICAgICAgc3Ryb2tlV2lkdGg6IDNcclxuICAgIH0pXHJcbiAgXVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3Z4JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3Z5JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ294JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ295JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BhcmFtcycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwYXJhbXNfZWxpcHNlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3BfcGFyYWJvbGEnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncGFyYW1zX2hpcGVyYm9sYScpIn1dfQ==
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

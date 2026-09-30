@@ -3349,7 +3349,7 @@ $$
     r(\psi)=a(e\cosh(\psi)-1).
 $${#eq-orbit_equation_hyp_psi}
 
-- Ahora, para conocer la trayectoria temporal de $\psi$, vamos a comenzar derivando $\cos(\nu)$ de la @eq-sin_cos_nu_hyp} respecto a $\psi$:
+- Ahora, para conocer la trayectoria temporal de $\psi$, vamos a comenzar derivando $\cos(\nu)$ de la @eq-sin_cos_nu_hyp respecto a $\psi$:
 
 $$
     \begin{split}
@@ -3376,7 +3376,7 @@ $$
 
 ::: {.column}
 
-- Sustituyendo la @eq-sin_cos_nu_hyp} y $\cosh(\psi)$ desde la @eq-orbit_equation_hyp_psi tenemos 
+- Sustituyendo la @eq-sin_cos_nu_hyp y $\cosh(\psi)$ desde la @eq-orbit_equation_hyp_psi tenemos 
 
 $$
     \frac{\partial \nu}{\partial \psi}=\frac{a}{r}\sqrt{e^2-1}.
@@ -3427,7 +3427,7 @@ $$
 $$
     \begin{split}
     \frac{\sqrt{\mu a(e^2-1)}}{a^2\sqrt{e^2-1}}(t-t_p)=e\sinh(\psi(t))-\psi(t),\\
-    \Rightarrow \eta_h(t-t_p)=\sinh(\psi(t))-\psi(t)=M(t),
+    \Rightarrow \eta_h(t-t_p)=e\sinh(\psi(t))-\psi(t)=M(t),
     \end{split}
 $$
 
@@ -3442,7 +3442,7 @@ $$
 Entonces 
 
 $$
-    M(t)=\eta_h(t-t_0)+M_0=\sinh(\psi(t))-\psi(t).
+    M(t)=\eta_h(t-t_0)+M_0=e\sinh(\psi(t))-\psi(t).
 $${#eq-kepler_hyperbolic}
 
 Similar a los otro casos, el problema de propagación se reduce a resolver la ecuación de Kepler para el caso hiperbólico.
@@ -3680,7 +3680,7 @@ Cuando $e=0$, entonces $\nu_0=\psi_0=M_0=0$ y $a=p=r$. El concepto de periapsis 
 
 ::: {.algorithm}
 
-<div class="algorithm-title">Algoritmo 2.1.1: Determinación de la anomalia excentrica en el caso elíptico</div>
+<div class="algorithm-title">Algoritmo 2.1.1: Determinación de la anomalia media en el caso elíptico</div>
 
 <div class="algorithm-io">
 <strong>Entrada:</strong>
@@ -3738,7 +3738,7 @@ $\eta_e$ y $M_0$.
 
 ::: {.algorithm}
 
-<div class="algorithm-title">Algoritmo 2.2.1: Determinación de la anomalia excentrica en el caso parabólico</div>
+<div class="algorithm-title">Algoritmo 2.2.1: Determinación de la anomalia media en el caso parabólico</div>
 
 <div class="algorithm-io">
 <strong>Entrada:</strong>
@@ -3762,7 +3762,7 @@ $\eta_p$ y $M_0$.
 ## Caso hiperbólico
 
 
-- Comenzamos determinando la anomalía parabólica $\psi_0$ en la época $t_0$:
+- Comenzamos determinando la anomalía hiperbólica $\psi_0$ en la época $t_0$:
 
     $$
         \begin{aligned}
@@ -3781,7 +3781,7 @@ $\eta_p$ y $M_0$.
     $$
         a=\frac{p}{e^2-1}.
     $$ {#eq-a_h}
-- Finalmente, podemos determinar el movimiento angular medio $\eta_h$
+- Finalmente, podemos determinar el movimiento hiperbólico medio $\eta_h$
 
     $$
         \eta_h=\sqrt{\frac{\mu}{a^3}}.
@@ -3796,7 +3796,7 @@ $\eta_p$ y $M_0$.
 
 ::: {.algorithm}
 
-<div class="algorithm-title">Algoritmo 2.3.1: Determinación de la anomalia excentrica en el caso hiperbólico</div>
+<div class="algorithm-title">Algoritmo 2.3.1: Determinación de la anomalia media en el caso hiperbólico</div>
 
 <div class="algorithm-io">
 <strong>Entrada:</strong>
@@ -3998,7 +3998,7 @@ $$ {#eq-prog_p_kepler}
 - Posteriormente, se resuelve la ecuación de Kepler para encontrar la anomalía excéntrica $\psi(t)$. Para ello, definimos la función:
 
     $$
-        g(\uppsi,t) = \uppsi - e\sin(\uppsi)- M(t)
+        g(\uppsi,t) = \uppsi + \frac{1}{3}\uppsi^3- M(t)
     $${#eq-prog_p_g_root}
 
 - La raíz de $g(\uppsi^\star,t)$=0 corresponde a la aproximación de la anomalía excéntrica $\psi(t)$ en el instante $t$ ($\uppsi^\star=\psi(t)$).
@@ -4136,7 +4136,7 @@ Para todo instante de tiempo $t>t0$:
 - Definiendo la función transcendental:
 
     $$
-    g(\uppsi,t) = e\sinh(\uppsi)-\psi(t)- M(t)
+    g(\uppsi,t) = e\sinh(\uppsi)-\uppsi(t)- M(t)
     $$ {#eq-prog_h_g_root}
 
     y asignamos $\uppsi^\star=\psi(t)$.
@@ -4246,27 +4246,7 @@ Para todo instante de tiempo $t>t0$:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ##
+---
 
 ::: {.center-vertical}
 
@@ -4280,659 +4260,39 @@ Propagación
 
 ::: {.chapter-subtitle}
 
-Marcos de referencia auxiliares
+Orientación 
 
 
-<div class="menu-title" style="display:none;"> ▸ Marcos de referencia auxiliares </div>
-
-:::
+<div class="menu-title" style="display:none;"> ▸ Orientación </div>
 
 :::
-
----
-
-- Como se mencionó anteriormente, para relacionar el marco $\ls{p}\mathcal{F}$ y el marco $\ls{r}\mathcal{F}$ es necesario conocer la anomalía verdadera $\nu(t)$, dado que
-
-    $$
-    \ls{r}R_p(t)=R_z(\nu(t)).
-    $$
-
-:::{.incremental}
-
-- Para conocer $\nu(t)$, es necesario calcular la anomalía excéntrica $\psi(t)$, que puede obtenerse de la misma forma que en el problema de propagación de órbita. Una vez conocida $\psi(t)$, la anomalía verdadera $\nu(t)$ puede obtenerse mediante @eq-cos_sin_nu, de tal modo que
-
-    $$
-    \nu(t) = \tan^{-1}\left(\frac{\sin(\psi(t))\sqrt{1-e^2}}{\cos(\psi(t))-e}\right).
-    $$
-
-- Debido a que la función $\tan^{-1}(\cdot)$ tiene un rango de $(-\pi/2,\pi/2)$, es necesario considerar el cuadrante en el que se encuentra $\nu(t)$ para obtener el valor correcto. Por ello , es recomendable utilizar la función $\text{atan2}(y,x)$, que considera el cuadrante correcto, de modo que
-
-    $$
-    \nu(t) = \text{atan2}\left(\sin(\psi(t))\sqrt{1-e^2},\cos(\psi(t))-e\right).
-    $$
-
-
-    donde $\text{atan2}(y,x)$ se define como
-
-    $$
-        \text{atan2}(y,x) =
-        \begin{cases}
-            \tan^{-1}(y/x),     & x>0,\\
-            \tan^{-1}(y/x)+\pi, & x<0,y\geq 0,\\
-            \tan^{-1}(y/x)-\pi, & x<0,y<0,\\
-            +\pi/2,             & x=0,y>0,\\
-            -\pi/2,             & x=0,y<0,\\
-            \text{indefinido},  & x=0,y=0.
-        \end{cases}
-    $$
-
 
 :::
 
 ---
-
-Finalmente, para relacionar el marco $\ls{r}\mathcal{F}$ con el marco de referencia orbital $\ls{h}\mathcal{F}$, podemos construir la matriz de rotación
-
-$$
-\ls{h}R_r = R_z\left(\frac{\pi}{2}\right)R_y\left(-\frac{\pi}{2}\right).
-$$
-
-:::{.fragment}
-
-- Con ello, la matriz de rotación desde el marco $\ls{i}\mathcal{F}$ al marco $\ls{h}\mathcal{F}$ está dada por
-
-$$
-    \begin{split}
-        \ls{h}R_i(t) & = \ls{h}R_r\ls{r}R_p(t)\ls{p}R_i,\\
-        & = R_z\left(\frac{\pi}{2}\right)R_y\left(-\frac{\pi}{2}\right)R_z(\nu(t))R_z(\omega)R_x(i)R_z(\Omega).
-    \end{split}
-$$
-
-:::
-
-
-::: {.fragment style="display:flex;justify-content:center;"}
-Y ahora ...
-
-::: {.xlarge}
 
 <div class="vspace-3"></div>
-
-<span style="color:blue">**¿Cómo se calcula $\ls{b}R_h\td$?**</span>
-
-:::
-
-:::
+<div class="vspace-3"></div>
 
 
+- Hasta el momento, hemos desarrollado algoritmos que nos permiten conocer las efemérides de un satélite en un plano, específicamente el plano formados por los ejes $\ls{p}{\vec{x}}$ y $\ls{p}{\vec{y}}$ del marco de referenica $\ls{p}{\mathcal{F}}$.
 
-
----
-
-## Algunos datos antes de pasar de tema
-
-- El marco de referencia RSW debe su nombre dada la dirección de sus ejes en inglés:
-  - **R**adial: Apunta desde el centro del cuerpo central hacia el satélite.
-  - **S** (Along-track): Apunta en la dirección de la velocidad del satélite, es tangente a la órbita.
-  - **W** (Cross-track): Apunta perpendicularmente al plano orbital, siguiendo la regla de la mano derecha.
-
-  La elección de las siglas *S* y *W* puede deberse a convenciones históricas o a la necesidad de evitar confusiones con otras letras.
 
 :::{.incremental}
 
-- El análisis que hicimos la sección de mecánica orbital se realizó bajo la suposición de los cuerpos son puntuales. En la práctica, los cuerpos tienen una distribución de masa que puede afectar la órbita. Sin embargo, para las escalas de órbita que vimos hasta este punto del curso, la suposición de cuerpos puntuales es suficientemente precisa.
+- La pregunta natural regresando al problema de los dos cuerpos es: ¿qué componentes tienen las efemérides del marco de referencia $\ls{i}{\mathcal{F}}$?, es decir, como calculamos 
 
-- También consideramos que los elementos orbitales son constantes con el tiempo. Eso nace de la suposición que hicimos sobre la ausencia de fuerza externas. Para mejorar el resultado, el comportamiento temporal de los elementos orbitales debe ser considerado. 
+    $$
+    \ls{i}{\vec{r}(t)}, \ls{i}{\vec{v}(t)}.
+    $$
 
-- Existe otra forma más de describir la órbita, y es mediante los **coeficientes de Lagrange**. Estos coeficientes permiten calcular la posición y velocidad en función de las condiciones iniciales.
+- Al ser marcos de referencia, estos están conformados por un origen y una base ortonormal derecha. Esto nos permite describir la relación que existe entre los marcos de referencia $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$ como si se tratase de una transformación de coordenadas, o en otros terminos, como si se tratase de un cambio de base.
 
-:::
- -->
+- Dado a que las bases son ortonormales, podemos entender que el marco de referencia $\ls{p}{\mathcal{F}}$ **está rotado** respecto al marco de referencia $\ls{i}{\mathcal{F}}$, o viceversa.
 
-
-
-
-
-<!-- ---
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
+- Esto nos exige estudiar herramientas que nos permitan describir la orientación que existe entre los marcos de referencia. 
 
 :::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Repaso de álgebra
-
-<div class="menu-title" style="display:none;"> ▸ Repaso de álgebra </div>
-
-:::
-
-:::
-
-
-## Vectores
-
-
-::: {.columns}
-::: {.column width="70%"}
-
-Un **vector** (columna) es una $n$-tupla ordenada de números reales:
-
-$$
-    \vec{v}=
-    \begin{bmatrix}
-        v_1\\
-        v_2\\
-        \vdots\\
-        v_n
-    \end{bmatrix} \in\mathbb{R}^n ,
-    \qquad v_i\in\mathbb{R}
-$$
-
-o de forma equivalente,
-
-$$
-    \vec{v}\equiv
-    [v_1\quad v_2\quad \dots\quad v_n]^\top.
-$$
-
-donde $n\in\mathbb{N}$ y $\top$ denota transposición. El conjunto de todos los vectores de dimensión $n$ es el espacio $\mathbb{R}^n$.
-
-Físicamente nos permiten representar **magnitudes vectoriales**, *e.g.*, la posición y la velocidad.
-
-Pueden clasificarse como libres o fijos, dependiendo si origen es invariante.
-
-:::
-::: {.column width="30%"}
-
-:::{.small}
-
-$v_x$
-```{ojs}
-viewof vx = Inputs.range([-5, 5], {value: 1, step: 0.1})
-```
-$v_y$
-```{ojs}
-viewof vy = Inputs.range([-5, 5], {value: 1, step: 0.1})
-```
-
-$o_x$
-```{ojs}
-viewof ox = Inputs.range([-5, 5], {value: 0, step: 0.1})
-```
-$o_y$
-```{ojs}
-viewof oy = Inputs.range([-5, 5], {value: 0, step: 0.1})
-```
-
-:::
-
-```{ojs}
-Plot.plot({
-  width: 500,
-  height: 500,
-  x: {domain: [-5, 5], grid: true},
-  y: {domain: [-5, 5], grid: true},
-  marks: [
-    Plot.arrow(
-      [{x1: ox, y1: oy, x2: vx+ox, y2: vy+oy}],
-      {
-        x1: "x1",
-        y1: "y1",
-        x2: "x2",
-        y2: "y2"
-      }
-    )
-  ]
-})
-```
-:::
-
-:::
-
----
-
-## Operaciones típicas entre vectores
-
-Sean $\vec{u},\vec{v}\in\mathbb{R}^n$ y $\alpha\in\mathbb{R}$:
-
-- **Suma:** $\vec{u}+\vec{v}=[u_1+v_1,\dots,u_n+v_n]^\top$
-
-- **Producto por escalar:** $\alpha\vec{u}=[\alpha u_1,\dots,\alpha u_n]^\top$
-
-- **Producto punto:**
-
-$$
-    \begin{aligned}
-        \vec{u}\cdot\vec{v}&=\sum_{i=1}^{n}u_iv_i\\
-        &=\vec{u}^{\top}\vec{v}\\
-        &=\|\vec{u}\|\,\|\vec{v}\|\cos\theta
-    \end{aligned}
-$$
-
-donde $\theta$ es el ángulo comprendido entre $\vec{u}$ y $\vec{v}$ al hacer coincidir sus orígenes.
-
-- **Norma Euclidiana:** $\|\vec{u}\|=\sqrt{\vec{u}\cdot\vec{u}}$
-
----
-
-## Producto cruz (definición por componentes)
-
-En $\mathbb{R}^3$, el **producto cruz** de dos vectores $\vec{u},\vec{v}\in\mathbb{R}^3$ se define como
-
-$$
-    \vec{u}\times\vec{v}=
-    \begin{bmatrix}
-        u_2v_3-u_3v_2\\
-        u_3v_1-u_1v_3\\
-        u_1v_2-u_2v_1
-    \end{bmatrix}=
-    \begin{vmatrix}
-        \vec{i} & \vec{j} & \vec{k}\\
-        u_1 & u_2 & u_3\\
-        v_1 & v_2 & v_3
-    \end{vmatrix},
-$$
-
-donde $\{\vec{i},\vec{j},\vec{k}\}$ es la base canónica de $\mathbb{R}^3$.
-
-::: {.fragment}
-
-**Propiedades**:
-
-- $\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$
-- $\vec{u}\times\vec{u}=\vec{0}$
-- $\vec{u}\cdot(\vec{u}\times\vec{v})=0$
-- $\vec{u}\times\vec{v}$ es ortogonal (perpendicular) a $\vec{u}$ y $\vec{v}$.
-- Si $\vec{u}$ y $\vec{v}$ son colineales, entonces $\vec{u}\times\vec{v}=\vec{0}$.
-- $\|\vec{u}\times\vec{v}\|=\|\vec{u}\|\,\|\vec{v}\|\sin\theta.$
-
-:::
-
----
-
-## Espacio vectorial (real)
-
-Un **espacio vectorial real** es una tupla
-
-$$
-(\mathcal{V},+,\cdot)
-$$
-
-donde $\mathcal{V}$ es un conjunto de vectores reales, $+:\mathcal{V}\times\mathcal{V}\rightarrow\mathcal{V}$ y $\cdot:\mathbb{R}\times\mathcal{V}\rightarrow\mathcal{V}$ satisfacen, para todo $\vec{u},\vec{v},\vec{w}\in\mathcal{V}$ y $\alpha,\beta\in\mathbb{R}$:
-
-- $\alpha(\vec{u}+\vec{v})=\alpha\vec{u}+\alpha\vec{v}$.
-- $(\alpha+\beta)\vec{u}=\alpha\vec{u}+\beta\vec{u}$.
-- $(\alpha\beta)\vec{u}=\alpha(\beta\vec{u})$.
-- $1\cdot\vec{u}=\vec{u}$.
-
----
-
-## Base
-
-Sea $\mathcal{V}$ un espacio vectorial real de dimensión $n$. Un conjunto ordenado
-
-$$
-\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_n\}\subset\mathcal{V}
-$$
-
-es una **base** de $\mathcal{V}$ si:
-
-1. **Independencia lineal**
-
-$$
-    \alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n=\vec{0}
-    \;\Rightarrow\;
-    \alpha_1=\cdots=\alpha_n=0.
-$$
-
-
-::: {.fragment}
-
-1. **Generación**
-
-Todo $\vec{u}\in\mathcal{V}$ se escribe de forma *única* como
-
-$$
-    \vec{u}=\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n,
-    \qquad \alpha_i\in\mathbb{R}.
-$$
-
-:::
-
-
-
-::: {.callout-note .fragment}
-### Nota:
-
- Una *combinación lineal* es toda expresión
-
-$$
-\alpha_1\vec{v}_1+\cdots+\alpha_n\vec{v}_n
-$$
-
-con $\alpha_i\in\mathbb{R}$. La independencia lineal de la base implica que ningún vector se expresa como combinación lineal de los demás.
-
-:::
-
----
-
-## Matrices
-
-Una **matriz** $A\in\mathbb{R}^{m\times n}$ es un arreglo rectangular:
-
-$$
-    A=
-    \begin{bmatrix}
-        a_{11} & \cdots & a_{1n}\\
-        \vdots & \ddots & \vdots\\
-        a_{m1} & \cdots & a_{mn}
-    \end{bmatrix}.
-$$
-
-::: {.fragment}
-
-**Operaciones con matrices**
-
-Sean $A,B\in\mathbb{R}^{m\times n}$ y $\alpha\in\mathbb{R}$:
-
-- **Suma:** $(A+B)_{ij}=a_{ij}+b_{ij}$.
-- **Producto por escalar:** $(\alpha A)_{ij}=\alpha a_{ij}$.
-- **Producto matricial:** Si $A\in\mathbb{R}^{m\times p}$ y $B\in\mathbb{R}^{p\times n}$,
-
-$$
-    (AB)_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj},
-    \qquad
-    AB\in\mathbb{R}^{m\times n}.
-$$
-
-- **Transpuesta:** $(A^\top)_{ij}=a_{ji}$.
-
-**Nota:** La notación $(A)_{ij}$ denota el elemento de $A$ en la fila $i$ y columna $j$.
-
-:::
-
-
-## Inversa de una matriz
-
-Sea $A\in\mathbb{R}^{n\times n}$ (matriz cuadrada). Se dice que $A$ es **invertible** si existe $B\in\mathbb{R}^{n\times n}$ tal que
-
-$$
-AB=BA=I_n.
-$$
-
-Dicha $B$ es única y se denota $A^{-1}$.
-
-Equivalencias:
-
-- $A$ invertible $\iff \det(A)\neq0 \iff$ las columnas de $A$ son linealmente independientes.
-- $A$ invertible $\iff \operatorname{rank}(A)=n$.
-
-::: {.callout-note}
-### Nota:
-
-El determinante de una matriz cuadrada es un escalar asociado que puede interpretarse como una combinación alternada de todos los posibles productos de sus elementos. Por otro lado, el rango de una matriz es el número de sus columnas linealmente independientes. En el caso de matrices cuadradas, el rango de $A$ es $n$ si y solo si $\det(A)\neq0$.
-
-:::
-
----
-
-## Matrices simétricas y antisimétricas
-
-Sea $A\in\mathbb{R}^{n\times n}$.
-
-- $A$ es **simétrica** si
-
-$$
-A^\top=A.
-$$
-
-Ejemplo:
-
-$$
-    A=
-    \begin{bmatrix}
-        a & b\\
-        b & c
-    \end{bmatrix}.
-$$
-
-- $A$ es **antisimétrica** si
-
-$$
-A^\top=-A.
-$$
-
-Ejemplo:
-
-$$
-    A=
-    \begin{bmatrix}
-        0 & -a\\
-        a & 0
-    \end{bmatrix}.
-$$
-
----
-
-## Producto cruz: matriz antisimétrica
-
-Dado $\vec{u}=[u_1,u_2,u_3]^\top$, se define
-
-$$
-S(\vec{u})=
-\begin{bmatrix}
-0 & -u_3 & u_2\\
-u_3 & 0 & -u_1\\
--u_2 & u_1 & 0
-\end{bmatrix},
-\qquad
-\vec{u}\times\vec{v}=S(\vec{u})\vec{v}.
-$$
-
-::: {.fragment}
-
-**Ejemplo**
-
-$$
-\vec{u}=
-\begin{bmatrix}
-2\\-1\\3
-\end{bmatrix},
-\qquad
-\vec{v}=
-\begin{bmatrix}
-1\\4\\2
-\end{bmatrix},
-$$
-
-$$
-S(\vec{u})=
-\begin{bmatrix}
-0&-3&-1\\
-3&0&-2\\
-1&2&0
-\end{bmatrix},
-\qquad
-S(\vec{u})\vec{v}=
-\begin{bmatrix}
--14\\-1\\9
-\end{bmatrix}
-=
-\vec{u}\times\vec{v}.
-$$
-
-:::
-
----
-
-## Matrices ortonormales
-
-Sea $Q\in\mathbb{R}^{n\times n}$.
-
-Decimos que $Q$ es **ortonormal** si
-
-$$
-Q^\top Q=QQ^\top=I_n.
-$$
-
-Esto implica:
-
-- Las columnas $\{\vec{q}_1,\dots,\vec{q}_n\}$ de $Q$ forman una **base ortonormal** de $\mathbb{R}^n$:
-
-$$
-    \vec{q}_i^\top\vec{q}_j=
-    \begin{cases}
-        1,&\text{si }i=j,\\
-        0,&\text{si }i\neq j.
-    \end{cases}
-$$
-
-- Cada columna tiene norma $1$ y distintas columnas son perpendiculares entre sí; en consecuencia, $|\det(Q)|=1$.
-- Consecuencia algebraica: $Q^{-1}=Q^\top$.
-
----
-
-## Valores y vectores propios
-
-Sea $A\in\mathbb{R}^{n\times n}$.
-
-Un escalar $\lambda\in\mathbb{R}$ es un **valor propio** de $A$ si existe un vector no nulo $\vec{v}\in\mathbb{R}^n$ tal que
-
-$$
-A\vec{v}=\lambda\vec{v}.
-$$
-
-**Condición equivalente:**
-
-$$
-\det(\lambda I_n-A)=0.
-$$
-
-donde $\det(\lambda I_n-A)$ es el polinomio característico de $A$.
-
-
-::: {.fragment}
-
-Si $\lambda$ es un valor propio de $A$, entonces todo vector no nulo $\vec{v}\in\mathbb{R}^n$ que cumple
-
-$$
-A\vec{v}=\lambda\vec{v}
-$$
-
-se denomina **vector propio** asociado a $\lambda$.
-
-El conjunto de todos los vectores propios asociados a un mismo $\lambda$, junto con el vector cero, forma el **espacio propio**:
-
-$$
-E_\lambda=\ker(A-\lambda I_n).
-$$
-
-:::
-
-
----
-
-## Ejemplo: valores y vectores propios
-
-Sea
-
-$$
-A=
-\begin{bmatrix}
-2&0\\
-0&3
-\end{bmatrix}.
-$$
-
-Como
-
-$$
-\det(\lambda I-A)=
-\begin{vmatrix}
-\lambda-2&0\\
-0&\lambda-3
-\end{vmatrix}
-=(\lambda-2)(\lambda-3),
-$$
-
-los valores propios son
-
-$$
-\lambda_1=2,\qquad \lambda_2=3.
-$$
-
-::: {.fragment}
-
-Para $\lambda_1=2$,
-
-$$
-(2I-A)\vec{v}=0
-\quad\Longrightarrow\quad
-\vec{v}=
-\alpha
-\begin{bmatrix}
-1\\0
-\end{bmatrix},
-\qquad
-E_2=\mathrm{span}\left\{
-\begin{bmatrix}
-1\\0
-\end{bmatrix}
-\right\}.
-$$
-
-Para $\lambda_2=3$,
-
-$$
-(3I-A)\vec{v}=0
-\quad\Longrightarrow\quad
-\vec{v}=
-\beta
-\begin{bmatrix}
-0\\1
-\end{bmatrix},
-\qquad
-E_3=\mathrm{span}\left\{
-\begin{bmatrix}
-0\\1
-\end{bmatrix}
-\right\}.
-$$
-
-:::
-
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Marcos de referencia
-
-
-<div class="menu-title" style="display:none;"> ▸ Marcos de referencia </div>
-
-:::
-
-:::
-
-##
-
 
 ## Marco de referencia
 
@@ -4980,70 +4340,40 @@ $$
 :::
 
 
-
-## Marcos de referencia para satélites
-
-
-::: {.columns}
-
-::: {.column width=50%}
-
-Un marco de referencia provee un sistema cartesiano para expresar coordenadas de vectores en el espacio. Mediante estos, es posible describir la orientación de un cuerpo.
-
-En general, es necesario definir:
-
-- Un **marco inercial**.
-- Un **marco sujeto al cuerpo**.
-- Marcos **auxiliares**.
-
-Con ello, podemos cuantificar la orientación mediante un parámetro que describa qué tan inclinado está el marco sujeto al cuerpo con respecto a otro marco.
-
-
-::: {.fragment}
-
-:::{.definition-block}
- **Caso de estudio del curso**
-
-Vamos a estudiar los marcos de referencia necesarios para describir el movimiento rotacional de un satélite orbitando a la Tierra. 
-
-:::
-
-:::
-
-:::
-
-::: {.column width=50%}
-
-![](/Figures/c2/frame_empty.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-## Marco inercial geocéntrico $\ls{i}{\mathcal{F}}$
-
+## Marco de referencia inercial $\ls{i}{\mathcal{F}}$
 
 ::: {.columns}
 
 ::: {.column}
 
-**Centro:** $\ls{i}{O}$ (centro de la Tierra).
+**Origen:** $\ls{i}{O}$, punto de referencia elegido para describir el movimiento.
 
 **Ejes:**
 
-- $\ls{i}{\vec{x}}$: apunta al equinoccio vernal.
-- $\ls{i}{\vec{y}}$: completa la regla de la mano derecha.
-- $\ls{i}{\vec{z}}$: apunta al eje de rotación terrestre.
+- $\ls{i}{\vec{x}}$: eje de referencia elegido.
+- $\ls{i}{\vec{y}}$: eje perpendicular que completa la base.
+- $\ls{i}{\vec{z}}$: eje que completa la regla de la mano derecha.
 
-El adjetivo **inercial** indica que es un marco de referencia **no acelerado** (velocidad constante). 
+- Un **marco de referencia inercial** es aquel en el que un cuerpo sobre el que no actúa una fuerza neta permanece en reposo o se mueve con **velocidad constante**.
 
-Este marco inercial es una referencia constante que nos permite medir de forma absoluta la posición y velocidad angular del satélite. Es necesario para aplicar las leyes de la mecánica clásica y describir el movimiento orbital.
+- En un marco inercial, las **leyes de Newton** pueden aplicarse directamente sin necesidad de introducir fuerzas ficticias asociadas al movimiento del propio marco.
+
+- Tiene asociado un **plano de referencia**, el cual es el plano que pasa por el origen y comúnmente es normal al eje $\ls{i}{\vec{z}}$, es decir, contiene los ejes $\ls{i}{\vec{x}}$ y $\ls{i}{\vec{y}}$.
+
+::: {.callout-note}
+
+**Algunos de los marcos inerciales más utilizados son:**
+
+- Marco de referencia inercial geocéntrico (ECI, por sus siglas en inglés).
+- Marco de referencia celeste internacional (ICRF, por sus siglas en inglés).
 
 :::
 
+::: 
+
 ::: {.column}
 
-![](/Figures/c2/frame_i.svg){width=100% fig-align="center"}
+![](/Figures/c2/frames_ip_mo.svg){width=100% fig-align="center"}
 
 :::
 
@@ -5060,22 +4390,23 @@ Este marco inercial es una referencia constante que nos permite medir de forma a
 ::: {.column}
 
 
-**Centro:** $\ls{p}{O}$ (centro de la Tierra).
+**Centro:** $\ls{p}{O}$ ( punto de referencia elegido para describir el movimiento).
 
 **Ejes:**
 
-- $\ls{p}{\vec{x}}$: apunta al perigeo.
+- $\ls{p}{\vec{x}}$: apunta a la periapsis.
 - $\ls{p}{\vec{y}}$: apunta perpendicular a $\ls{p}{\vec{x}}$ en el plano orbital.
 - $\ls{p}{\vec{z}}$: apunta normal al plano orbital (dirección del momento angular orbital).
 
-Es el marco fundamental de la órbita, directamente relacionado con los elementos orbitales. Se usa para describir trayectorias elípticas y la geometría de la órbita en su plano. También es un marco de referencia inercial.
-
+- Es el marco fundamental de la órbita. Los propagadores que hemos visto hasta ahora se basan en el marco perifocal.
+- También es un marco de referencia inercial bajo las suposiciones que hemos hecho hasta el momento. 
+- De igual forma que el marco de referencia inercial, tiene asociado un plano de referencia, el cual es el plano que pasa por el origen y es normal al eje $\ls{p}{\vec{z}}$, es decir, contiene los ejes $\ls{p}{\vec{x}}$ y $\ls{p}{\vec{y}}$. A dicho plano se le llama **plano orbital**.
 
 :::
 
 ::: {.column}
 
-![](/Figures/c2/frame_p.svg){width=100% fig-align="center"}
+![](/Figures/c2/frames_ip_mo.svg){width=100% fig-align="center"}
 
 :::
 
@@ -5083,130 +4414,47 @@ Es el marco fundamental de la órbita, directamente relacionado con los elemento
 
 
 ---
-
-## Marco RSW $\ls{r}{\mathcal{F}}$
 
 
 ::: {.columns}
 
 ::: {.column}
 
-**Centro:** $\ls{r}{O}$ (centro de masa del satélite).
+<div class="vspace-3"></div>
 
-**Ejes:**
+- La intersección entre el plano de referencia y el plano orbital se llama **línea de nodos**.
+- La intersección entre el plano de referencia y la trayectoria del satélite define dos puntos conocidos como **nodos**.
+- El **nodo ascendente** es el punto donde el cuerpo cruza el plano de referencia pasando del lado negativo al lado positivo respecto a la normal del plano de referencia.
+- El **nodo descendente** es el punto donde cruza en sentido contrario, del lado positivo al lado negativo.
 
-- $\ls{r}{\vec{x}}$: apunta al cenit (radial, de la Tierra al satélite).
-- $\ls{r}{\vec{y}}$: apunta ortogonal a $\ls{r}{\vec{x}}$, en dirección de la velocidad $\vec{v}$ (no necesariamente colineal salvo en órbitas circulares).
-- $\ls{r}{\vec{z}}$: apunta normal al plano orbital.
+<div class="vspace-3"></div>
 
-Su origen está ligado a la posición orbital del satélite; *i.e.*, **cambia con el tiempo**.
+:::{.large}
+
+Ahora ...
+
+<span style="color:red"> ¿Cómo describimos cuantitativamente la orientación que el marco $\ls{p}{\mathcal{F}}$ tiene respecto al marco $\ls{i}{\mathcal{F}}$? </span>
+
+y 
+
+<span style="color:red"> ¿Cómo convertimos las componentes de las efemérides del marco $\ls{p}{\mathcal{F}}$ a las componentes del marco $\ls{i}{\mathcal{F}}$? </span>
+:::
+
+Para ello, considere el siguiente problema ...
 
 :::
 
 ::: {.column}
 
-![](/Figures/c2/frame_r.svg){width=100% fig-align="center"}
+![](/Figures/c2/frames_ip_mo.svg){width=100% fig-align="center"}
 
 :::
 
 :::
-
 
 
 
 ---
-
-## Marco orbital (Local Vertical Local Horizontal) $\ls{h}{\mathcal{F}}$
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{h}{O}$ (centro de masa del satélite).
-
-**Ejes:**
-
-- $\ls{h}{\vec{x}}$: apunta en dirección de la velocidad $\vec{v}$.
-- $\ls{h}{\vec{y}}$: apunta normal al plano orbital (opuesto al momento angular orbital).
-- $\ls{h}{\vec{z}}$: apunta a nadir (hacia el centro de la Tierra).
-
-También llamado **LVLH**, es el marco natural para misiones que requieren apuntar instrumentos hacia la Tierra. Sirve como marco de referencia local desde la perspectiva del satélite en órbita.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_h.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
-
----
-
-## Marco sujeto al cuerpo $\ls{b}{\mathcal{F}}$ {auto-animate=true}
-
-
-::: {.columns}
-
-::: {.column}
-
-**Centro:** $\ls{b}{O}$ (centro de masa del satélite).
-
-**Ejes:**
-
-- $\ls{b}{\vec{x}}$: definido por la geometría o estructura del satélite.
-- $\ls{b}{\vec{y}}$: definido por la geometría o estructura del satélite.
-- $\ls{b}{\vec{z}}$: definido por la geometría o estructura del satélite.
-
-Es el marco en el que se montan sensores y actuadores. Todos los algoritmos de control de orientación se implementan en este marco porque representa la orientación física real del vehículo espacial.
-
-:::
-
-::: {.column}
-
-![](/Figures/c2/frame_b.svg){width=100% fig-align="center"}
-
-:::
-
-:::
-
-
-
-
----
-
-## {auto-animate=true}
-
-![](/Figures/c2/frames.svg){width=70% fig-align="center"}
-
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Matrices de rotación
-<div class="menu-title" style="display:none;"> ▸ Matrices de rotación </div>
-
-:::
-
-:::
-
-## Matrices de rotación en dos dimensiones
 
 ::: {.columns}
 
@@ -5272,7 +4520,6 @@ $$
 
 ---
 
-## Matrices de rotación en dos dimensiones
 
 ::: {.columns}
 
@@ -5706,7 +4953,7 @@ $$
 
 ## Relación entre $\ls{i}{\mathcal{F}}$ y $\ls{p}{\mathcal{F}}$
 
-![](/Figures/c2/frame_ip.svg){width=100% fig-align="center"}
+![](/Figures/c2/frames_ip_mo.svg){width=100% fig-align="center"}
 
 ---
 
@@ -5726,11 +4973,45 @@ $$
 
 ![](/Figures/c2/i2p3.svg){width=100% fig-align="center"}
 
+
 ---
 
-## Relación entre $\ls{p}{\mathcal{F}}$ y $\ls{r}{\mathcal{F}}$
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
 
-![](/Figures/c2/i2p4.svg){width=100% fig-align="center"}
+- La relación entre el marco de referencia inercial $\ls{i}{\mathcal{F}}$ y el marco perifocal $\ls{p}{\mathcal{F}}$ está dada por la matriz de rotación
+
+    $$
+        \ls{p}R_i=R_z(\theta_3)\,R_x(\theta_2)\,R_z(\theta_1)
+    $${#eq-Ri2Rp}
+
+
+    donde $R_x(\cdot)$ y $R_z(\cdot)$ son las matrices de rotación elementales alrededor de los ejes $x$ y $z$, respectivamente.
+
+- Con dicha matriz, podemos cambiar la base de las efemérides de la siguiente manera:
+
+    $$
+        \ls{i}{\vec{r}(t)}=\ls{p}R_i^\top\ls{p}{\vec{r}(t)},\qquad \ls{i}{\vec{v}(t)}=\ls{p}R_i^\top\ls{p}{\vec{v}(t)}
+    $$
+    
+<div class="vspace-3"></div>
+
+-   La pregunta ahora es ...
+
+::: {.fragment style="display:flex;justify-content:center;"}
+
+::: {.xlarge}
+
+<span style="color:blue">**¿Cómo obtenemos $\theta_1$, $\theta_2$ y $\theta_3$?**</span>
+
+:::
+
+:::
+
+---
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100%}
+
 
 ---
 
@@ -5755,11 +5036,15 @@ Elementos orbitales
 
 ##
 
-- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la trayectoria de un satélite orbitando alrededor de un cuerpo central.
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.
 
 - En particular, los elementos orbitales permiten definir:
 
-  - La **<span style="color:red">forma y tamaño</span>** de la órbita.
+  - La **<span style="color:red">forma y tamaño</span>** de la trayectoria.
 
     ::: {.text-center .xlarge}
 
@@ -5767,7 +5052,7 @@ Elementos orbitales
 
     :::
 
-  - La **<span style="color:teal">orientación</span>** de la órbita.
+  - La **<span style="color:teal">orientación</span>** de la trayectoria.
 
     ::: {.text-center .xlarge}
 
@@ -5782,12 +5067,6 @@ Elementos orbitales
     <span style="color:blue">$\nu(t)$</span>
 
     :::
-
-- Estos seis parámetros son la base del análisis orbital.
-
-
-
-
 
 
 ---
@@ -5807,8 +5086,8 @@ La **forma** y el **tamaño** de una órbita se determinan a partir de:
 
   - $e=0$: órbita circular.
   - $0<e<1$: órbita elíptica.
-  - $e=1$: parábola (caso límite de escape).
-  - $e>1$: hipérbola (órbita de escape).
+  - $e=1$: parábola.
+  - $e>1$: hipérbola.
 
 :::
 
@@ -5817,14 +5096,15 @@ La **forma** y el **tamaño** de una órbita se determinan a partir de:
 
 - En el caso de órbitas elípticas, el <span style="color:red">**semieje mayor** $a$</span> determina su tamaño.
 
-$$
-    e=\frac{c}{a},
-    \qquad
-    c=\sqrt{a^2-b^2}
-$$
+    $$
+        e=\frac{c}{a},
+        \qquad
+        c=\sqrt{a^2-b^2}
+    $$
 
-donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
+    donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
 
+- Sin embargo, para trayectorias en general, podemos utilizar el semi parametro $p$ para describir el tamaño de la trayectoria.
 :::
 
 :::
@@ -5889,58 +5169,23 @@ La **posición instantánea** del cuerpo en su órbita se describe con la <span 
 :::{.incremental}
 - La anomalía verdadera $\nu(t)$ es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.
 
-    <div class="vspace-3"></div>
+- Se dice que es *verdadera* porque está presente en todos las posibles secciones cónicas que describen una trayectoria. 
 
 - En lugar de $\nu(t)$, también pueden emplearse otras variables para describir la posición:
 
-  - **Anomalía excéntrica** $\psi(t)$.
+  - **Anomalía excéntrica, parabólica o hiperbólica** $\psi(t)$.
   - **Anomalía media** $M(t)$.
 
-:::
+- Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo . 
 
 :::
 
-:::
-
----
-
-##
-
-
-
-- La relación entre el marco de referencia inercial $\ls{i}{\mathcal{F}}$ y el marco perifocal $\ls{p}{\mathcal{F}}$ está dada por la matriz de rotación
-
-$$
-    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
-$${#eq-Ri2Rp}
-
-
-donde $R_x(\cdot)$ y $R_z(\cdot)$ son las matrices de rotación elementales alrededor de los ejes $x$ y $z$, respectivamente.
-
-<div class="vspace-3"></div>
-
-
-:::{.fragment}
-
-- Mientras que la relación entre el marco perifocal $\ls{p}{\mathcal{F}}$ y el marco RSW $\ls{r}{\mathcal{F}}$ está dada por la matriz de rotación
-
-    $$
-    \ls{r}R_p(t)=R_z(\nu(t))
-    $$
-
-    <span style="color:red">**La matriz de rotación $\ls{p}R_i$ es constante en el tiempo, mientras que la matriz de rotación $\ls{r}R_p$ varía con el tiempo a medida que cambia la anomalía verdadera $\nu(t)$.**</span>
-
-:::
-
-::: {.fragment style="display:flex;justify-content:center;"}
-
-::: {.xlarge}
-
-<span style="color:blue">**Y ... ¿Cómo se calcula $\nu(t)$?**</span>
 
 :::
 
 :::
 
- -->
+
+
+
 
