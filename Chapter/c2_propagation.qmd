@@ -4242,11 +4242,411 @@ Para todo instante de tiempo $t>t0$:
 
 :::
 
+---
 
+<div class="vspace-3"></div>
+
+- El paso crusial en la propagación de órbita es la resolución de la ecuación de Kepler, que es una ecuación trascendental, es decir, un ecuación que no puede resolverse de forma analítica, a excepción de algunos casos particulares.
+
+-  Por ello, es necesario recurrir a métodos numéricos para encontrar la raíz de la ecuación de Kepler.
+
+- La ecuación de Kepler en cada caso es:
+
+  - Para órbitas elípticas
+
+      $$
+      M(t) = \eta_{e}(t-t_0) + M_0 =\psi(t) - e\sin(\psi(t)).
+      $$
+
+  - Para trayectorias parabólicas
+      $$
+      M(t) = \eta_{p}(t-t_0) + M_0= \frac{1}{3}\psi(t)^3+\psi(t).
+      $$
+
+  - Para trayectorias hiperbólicas
+      $$
+      M(t) = \eta_{h}(t-t_0) + M_0=  e\sinh(\psi(t))-\psi(t).
+      $$
+
+- Como ya estipulamos en cada algoritmo de progración, la ecuación de Kepler se puede reescribir como una función trascendental $g(\uppsi,t)$, de tal modo que encontrar la raíz de $g(\uppsi^\star,t)=0$ corresponde a encontrar la anomalía excéntrica $\psi(t)$ en el instante $t$.
+
+- Con ello, podemos aplicar métodos numéricos clásicos para encontrar la raíz de la función $g(\uppsi,t)$. Uno de ellos es el siguiente: 
+
+
+---
+
+## Método de Newton-Raphson
+
+Queremos resolver una ecuación no lineal de la forma
+
+$$
+g(\psi)=0.
+$$
+
+Sea $\uppsi^\star$ la solución exacta y $\uppsi$ una aproximación a dicha solución. Definimos
+
+$$
+\uppsi^\star=\uppsi+\delta,
+$$
+
+donde $\delta$ es una pequeña corrección.
+
+Desarrollando $g(\psi)$ mediante una serie de Taylor alrededor de $\psi=\uppsi$,
+
+$$
+0=g(\uppsi^\star)=g(\uppsi+\delta)
+\approx
+g(\uppsi)
++
+\left.
+\frac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}\delta
++
+\frac{1}{2!}
+\left.
+\frac{\partial^2g(\psi)}{\partial\psi^2}
+\right|_{\psi=\uppsi}\delta^2
++\cdots
+$$
+
+Despreciando los términos de segundo orden y superiores,
+
+$$
+0\approx
+g(\uppsi)
++
+\left.
+\frac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}\delta
+\qquad  \Rightarrow \qquad
+\delta\approx
+-\frac{g(\uppsi)}
+{\left.
+\dfrac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}}.
+$$
+
+Como $\uppsi^\star=\uppsi+\delta$, obtenemos la iteración
+
+$$
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{g(\uppsi_n)}
+{\left.
+\dfrac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi_n}}
+}
+$$
+
+---
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.large}
+**Eliptico**
+:::
+
+$$
+M(t)=\eta_e(t-t_0)+M_0
+=\psi(t)-e\sin\bigl(\psi(t)\bigr)
+$$
+
+Por lo tanto,
+
+$$
+g_e(\psi)=\psi-e\sin(\psi)-M(t), \qquad
+\frac{\partial g_e}{\partial\psi}
+=1-e\cos(\psi)
+$$
+
+y la iteración es
+
+$$
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+\uppsi_n-e\sin(\uppsi_n)-M(t)
+}{
+1-e\cos(\uppsi_n)
+}
+}
+$$
+
+---
+
+![](/Figures/c2/kepler_e.svg){width=100% fig-align="center"}
+
+---
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.large}
+**Parabólico**
+:::
+$$
+M(t)=\eta_p(t-t_0)+M_0
+=\frac{1}{3}\psi(t)^3+\psi(t)
+$$
+
+Por lo tanto,
+
+$$
+g_p(\psi)
+=
+\frac{1}{3}\psi^3+\psi-M(t), \qquad
+\frac{\partial g_p}{\partial\psi}
+=\psi^2+1
+$$
+
+y la iteración es
+
+$$
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+\frac{1}{3}\uppsi_n^3+\uppsi_n-M(t)
+}{
+\uppsi_n^2+1
+}
+}
+$$
+
+
+::: {.callout-note .fragment}
+### Nota:
+
+Para el caso parabólico, la ecuación de Kepler puede resolverse de forma analítica con cualquier método algebraico para encontrar raíces de polinomios de tercer grado. Sin embargo, el método de Newton-Raphson es más eficiente y rápido que cualquier método algebraico. Si por alguna razón se desea resolver la ecuación de Kepler de forma analítica, se puede utilizar el método de Barker (revisa la bibliografía).
+
+:::
+
+
+---
+
+![](/Figures/c2/kepler_p1.svg){width=100% fig-align="center"}
+
+---
+
+![](/Figures/c2/kepler_p2.svg){width=100% fig-align="center"}
+
+---
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+:::{.large}
+**Hiperbólico**
+:::
+$$
+M(t)=\eta_h(t-t_0)+M_0
+=e\sinh\bigl(\psi(t)\bigr)-\psi(t)
+$$
+
+Por lo tanto,
+
+$$
+g_h(\psi)
+=
+e\sinh(\psi)-\psi-M(t), \qquad
+\frac{\partial g_h}{\partial\psi}
+=e\cosh(\psi)-1
+$$
+
+y la iteración es
+
+$$
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+e\sinh(\uppsi_n)-\uppsi_n-M(t)
+}{
+e\cosh(\uppsi_n)-1
+}
+}
+$$
 
 
 
 ---
+
+![](/Figures/c2/kepler_h1.svg){width=100% fig-align="center"}
+
+---
+
+![](/Figures/c2/kepler_h2.svg){width=100% fig-align="center"}
+
+## Ejemplo
+
+Considere un satélite de masa $m=1\;\mathrm{kg}$ cuya trayectoria se encuetra alrededor de la Tierra. La posición inicial del satélite es 
+
+$$
+\ls{i}{\vec{r}}(t_0) = \begin{bmatrix}
+-2.2\\
+-2\\
+0\\
+\end{bmatrix}\times 10^7\;\mathrm{m}.
+$$ 
+
+Vamos a estudiar los siguiente cuatro casos de velocidad inicial:
+
+::: {.columns}
+
+::: {.column}
+
+- Caso 1
+
+    $$
+    \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+    -3.300\\
+    -0.600\\
+    0\\
+    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    $$
+
+:::
+
+::: {.column}
+
+- Caso 2
+
+    $$
+    \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+    2.463\\
+    -2.7092\\
+    0\\
+    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    $$
+
+:::
+
+::: {.column}
+
+- Caso 3
+
+    $$
+    \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+    4.829\\
+    1.867\\
+    0\\
+    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    $$
+
+:::
+
+::: {.column}
+
+- Caso 4
+
+    $$
+    \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+    5.795\\
+    2.241\\
+    0\\
+    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    $$
+
+:::
+
+:::
+
+Como parámetros generales considere $G= 6.674\times 10 ^{-11} \mathrm{N m^2 / kg^2}$ y $m_0=5.972\times 10 ^{24} \mathrm{kg}$. 
+
+
+---
+
+
+| Parámetro | Caso 1 | Caso 2 | Caso 3 | Caso 4 |
+|:--|--:|--:|--:|--:|
+| $\mu$ [m$^3$/s$^2$] | $3.9857\times10^{14}$ | $3.9857\times10^{14}$ | $3.9857\times10^{14}$ | $3.9857\times10^{14}$ |
+| $h$ [m$^2$/s] | $7.9200\times10^{10}$ | $1.0886\times10^{11}$ | $5.5514\times10^{10}$ | $6.6617\times10^{10}$ |
+| $e$ | $0.6209$ | $1.4901\times10^{-8}$ | $1.0000$ | $1.1531$ |
+| $p$ [m] | $1.5738\times10^7$ | $2.9732\times10^7$ | $7.7321\times10^6$ | $1.1134\times10^7$ |
+| $E$ [J/kg] | $-7.7804\times10^6$ | $-6.7027\times10^6$ | $-5.5879\times10^{-9}$ | $5.8984\times10^6$ |
+| $\psi_0$ | $-1.7928$ | $-2.4038$ | $-2.5866$ | $-1.6946$ |
+| $M_0$ | $-1.1870$ | $-2.4038$ | $-8.3552$ | $-1.3384$ |
+| $a$ [m] | $2.5614\times10^7$ | $2.9732\times10^7$ | $f=3.8661\times10^6$ | $3.3787\times10^7$ |
+| $n$ [rad/s] | $1.5401\times10^{-4}$ | $1.2314\times10^{-4}$ | $1.9000\times10^{-3}$ | $1.0166\times10^{-4}$ |
+
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/e_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 1.
+
+:::
+
+---
+
+![](/Figures/c2/e_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/c_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 2.
+
+:::
+
+---
+
+![](/Figures/c2/c_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/p_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 3.
+
+:::
+
+---
+
+![](/Figures/c2/p_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/h_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 4.
+
+:::
+
+---
+
+![](/Figures/c2/h_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
 
 ::: {.center-vertical}
 
@@ -4883,10 +5283,6 @@ $$
 
 
 
-
-
-
-
 ---
 
 La rotación inversa se obtiene mediante la transpuesta:
@@ -5010,10 +5406,405 @@ $$
 
 ---
 
-![](/Figures/c2/orbital_parameters_neh.svg){width=100%}
+::: {.columns}
+
+::: {.column}
+
+- Para obtener los ángulos $\theta_1$, $\theta_2$ y $\theta_3$, se requiere extender el concepto que tenemos sobre la excentricidad. Para ello, partamos de la ecuación de órbita
+
+    $$
+        \begin{split}
+            & r(\nu)=\frac{p}{1+e\cos(\nu)}\\
+            \Rightarrow & r e \cos(\nu)=p-r
+        \end{split}
+    $$
+
+- De aquí, podemos definir que 
+
+
+    $$
+        re \cos(\nu)= \vec{e}\cdot \vec{r}, 
+    $$
+
+    donde $\vec{e}$ es el vector de excentricidad. Este vector apunta en dirección a la periapsis, y su magnitud es igual a la excentricidad de la trayectoria. 
+
+- Mediante una deducción alternativa de la ecuación de órbita, podemos saber que 
+
+    $$
+        \vec{e}=\frac{1}{\mu}\vec{v}\times \vec{h}-\hat{r}=\begin{bmatrix} e_x & e_y & e_z \end{bmatrix}^\top
+    $$
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+- Otro vector importante es el vector que apunta en dirección del nodo ascendente. Se obtiene mediante
+
+    $$
+        \vec{n} = \hat{z}_i \times \vec{h}
+        = \begin{bmatrix}
+        n_x & n_y & n_z
+        \end{bmatrix}^{T}.
+    $$
+
+
+- El ángulo $\theta_1$ es el ángulo entre los vectores $\hat{x}_I$ y $\vec{n}$. Por lo tanto, podemos calcularlo como
+
+    $$
+    \cos(\theta_1)
+    =
+    \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{h}\|},
+    $$
+
+    de donde
+
+    $$
+    \theta_1
+    =
+    \cos^{-1}
+    \left(
+    \frac{\hat{x}_i \cdot \vec{n}}
+    {\|\vec{h}\|}
+    \right)
+    =
+    \Omega.
+    $$
+
+    Si $n_y < 0$, entonces
+
+    $$
+    \Omega = 2\pi - \Omega.
+    $$
+
+    A este ángulo se le conoce como **longitud del nodo ascendente** o **ascención derecha del nodo ascendente** (RAAN, por sus siglas en inglés) y se denota comúnmente con la letra $\Omega$.
+
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
 
 
 ---
+
+::: {.columns}
+
+::: {.column}
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+-  El ángulo $\theta_2$ es el ángulo entre el vector $\hat{z}_I$ y $\vec{h}$. Para cubrir todo el rango hacemos uso de
+
+    $$
+    \hat{z}_i \cdot \vec{h}
+    =
+    \|\vec{h}\|\cos(\theta_2).
+    $$
+
+    Por lo tanto,
+
+    $$
+    \theta_2
+    =
+    \cos^{-1}
+    \left(
+    \frac{\hat{z}_i \cdot \vec{h}}
+    {\|\vec{h}\|}
+    \right)=i,
+    \qquad
+    i \in [0,\pi].
+    $$
+
+    A este ángulo se le conoce como **inclinación**, dado que también es la inclinación entre el plano de referencia y el plano de la trayectoria. Se denota comúnmente con la letra $i$.
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Finalmente, el ángulo $\theta_3$ es el ángulo entre el vector $\vec{n}$ y el vector $\vec{e}$. El ángulo $\omega$ se obtiene mediante
+
+    $$
+    \vec{n}\cdot\vec{e}=\|\vec{h}\|e\cos(\theta_3),
+    $$
+
+    por lo que
+
+    $$
+    \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{h}\|e}\right)=\omega,
+    \qquad
+    \omega\in[0,2\pi).
+    $$
+
+    Si $e_z<0$, entonces
+
+    $$
+    \omega=\pi-\omega.
+    $$
+
+    A este ángulo se le conoce como **argumento del periapsis** y se denota comúnmente con la letra $\omega$. Se define como el ángulo medido desde la línea de nodos hasta el vector de excentricidad.
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+## Casos especiales
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Se pueden presentar tres casos especiales dependiendo la forma y la orientación de la trayectoria. 
+
+    - **Trayectoria no circulares sobre el plano de referencia**: $i\approx 0$.
+    - **Órbita circular inclinada**: $e\approx 0$.
+    - **Órbita circular sobre le plano de referencia**: $e\approx 0$ y $i\approx 0$.
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+:::{.large}
+
+**Trayectoria no circulares sobre el plano de referencia**
+
+:::
+
+
+- Este caso sucede cuando el plano orbital y el plano de referencia son bastante próximos, es decir, 
+
+    $$
+    i \approx 0.
+    $$
+
+- Bajo esta condición, definimos la **longitud verdadera del periapsis** $\tilde{\omega}_{\mathrm{true}}$ como
+
+    $$
+    \cos(\tilde{\omega}_{\mathrm{true}})
+    =
+    \frac{\hat{x}_i\cdot\vec{e}}{e}.
+    $$
+
+    Si $e_y<0$, entonces
+
+    $$
+    \tilde{\omega}_{\mathrm{true}}
+    =
+    \pi-\tilde{\omega}_{\mathrm{true}}.
+    $$
+
+- En este caso, la longitud verdadera del periapsis se relaciona con los elementos orbitales mediante
+
+    $$
+    \tilde{\omega}_{\mathrm{true}}
+    \approx
+    \Omega+\omega.
+    $$
+
+- Además, si $i=0$, se define la **longitud del periapsis** $\tilde{\omega}$ como
+
+    $$
+    \tilde{\omega}=\Omega+\omega=\tilde{\omega}_{\mathrm{true}}
+    \quad\Longleftrightarrow\quad
+    i=0.
+    $$
+
+
+
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+:::{.large}
+
+**Órbita circular inclinada**
+
+:::
+
+- En este caso se pierde la noción de periapsis, por lo que no es posible definir de manera independiente $\omega$ y $\nu$.
+
+- Para ello, definimos el **argumento de latitud** como
+
+    $$
+    \cos(u)
+    =
+    \frac{\vec{n}\cdot\vec{r}}
+    {\|\vec{n}\|r}.
+    $$
+
+    Si $r_z<0$, entonces
+
+    $$
+    u=\pi-u.
+    $$
+
+- Nótese que esta cantidad también es válida para otras trayectorias. En general, se cumple que
+
+    $$
+    u(t)=\omega+\nu(t).
+    $$
+
+- Para órbitas circulares podemos definir el **argumento medio de latitud** como
+
+    $$
+    u_M(t)=\omega+M(t).
+    $$
+
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+:::{.large}
+
+**Órbita circular sobre el plano de referencia**
+
+:::
+
+- Este caso es una combinación de los dos casos anteriores.
+
+- En este caso, definimos la **longitud verdadera** como
+
+    $$
+    \cos(\lambda_{\mathrm{true}})
+    =
+    \frac{\hat{x}_i\cdot\vec{r}}{r}.
+    $$
+nn 
+    Si $r_y<0$, entonces
+
+    $$
+    \lambda_{\mathrm{true}}
+    =
+    \pi-\lambda_{\mathrm{true}}.
+    $$
+
+- Para $i=0$, se cumple que
+
+    $$
+    \lambda_{\mathrm{true}}
+    =
+    \Omega+\omega+\nu.
+    $$
+
+- Para órbitas completamente circulares ($e=0$), podemos definir la **longitud media** como
+
+    $$
+    \lambda_M
+    =
+    \Omega+\omega+M.
+    $$
+
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
+---
+
 
 ::: {.center-vertical}
 

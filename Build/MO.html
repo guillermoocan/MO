@@ -5162,6 +5162,447 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p
 </section>
 <section class="slide level2">
 
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>El paso crusial en la propagación de órbita es la resolución de la ecuación de Kepler, que es una ecuación trascendental, es decir, un ecuación que no puede resolverse de forma analítica, a excepción de algunos casos particulares.</p></li>
+<li><p>Por ello, es necesario recurrir a métodos numéricos para encontrar la raíz de la ecuación de Kepler.</p></li>
+<li><p>La ecuación de Kepler en cada caso es:</p>
+<ul>
+<li><p>Para órbitas elípticas</p>
+<p><span class="math display">\[
+  M(t) = \eta_{e}(t-t_0) + M_0 =\psi(t) - e\sin(\psi(t)).
+  \]</span></p></li>
+<li><p>Para trayectorias parabólicas <span class="math display">\[
+  M(t) = \eta_{p}(t-t_0) + M_0= \frac{1}{3}\psi(t)^3+\psi(t).
+  \]</span></p></li>
+<li><p>Para trayectorias hiperbólicas <span class="math display">\[
+  M(t) = \eta_{h}(t-t_0) + M_0=  e\sinh(\psi(t))-\psi(t).
+  \]</span></p></li>
+</ul></li>
+<li><p>Como ya estipulamos en cada algoritmo de progración, la ecuación de Kepler se puede reescribir como una función trascendental <span class="math inline">\(g(\uppsi,t)\)</span>, de tal modo que encontrar la raíz de <span class="math inline">\(g(\uppsi^\star,t)=0\)</span> corresponde a encontrar la anomalía excéntrica <span class="math inline">\(\psi(t)\)</span> en el instante <span class="math inline">\(t\)</span>.</p></li>
+<li><p>Con ello, podemos aplicar métodos numéricos clásicos para encontrar la raíz de la función <span class="math inline">\(g(\uppsi,t)\)</span>. Uno de ellos es el siguiente:</p></li>
+</ul>
+</section>
+<section id="método-de-newton-raphson" class="slide level2">
+<h2>Método de Newton-Raphson</h2>
+<p>Queremos resolver una ecuación no lineal de la forma</p>
+<p><span class="math display">\[
+g(\psi)=0.
+\]</span></p>
+<p>Sea <span class="math inline">\(\uppsi^\star\)</span> la solución exacta y <span class="math inline">\(\uppsi\)</span> una aproximación a dicha solución. Definimos</p>
+<p><span class="math display">\[
+\uppsi^\star=\uppsi+\delta,
+\]</span></p>
+<p>donde <span class="math inline">\(\delta\)</span> es una pequeña corrección.</p>
+<p>Desarrollando <span class="math inline">\(g(\psi)\)</span> mediante una serie de Taylor alrededor de <span class="math inline">\(\psi=\uppsi\)</span>,</p>
+<p><span class="math display">\[
+0=g(\uppsi^\star)=g(\uppsi+\delta)
+\approx
+g(\uppsi)
++
+\left.
+\frac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}\delta
++
+\frac{1}{2!}
+\left.
+\frac{\partial^2g(\psi)}{\partial\psi^2}
+\right|_{\psi=\uppsi}\delta^2
++\cdots
+\]</span></p>
+<p>Despreciando los términos de segundo orden y superiores,</p>
+<p><span class="math display">\[
+0\approx
+g(\uppsi)
++
+\left.
+\frac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}\delta
+\qquad  \Rightarrow \qquad
+\delta\approx
+-\frac{g(\uppsi)}
+{\left.
+\dfrac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi}}.
+\]</span></p>
+<p>Como <span class="math inline">\(\uppsi^\star=\uppsi+\delta\)</span>, obtenemos la iteración</p>
+<p><span class="math display">\[
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{g(\uppsi_n)}
+{\left.
+\dfrac{\partial g(\psi)}{\partial\psi}
+\right|_{\psi=\uppsi_n}}
+}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="large">
+<p><strong>Eliptico</strong></p>
+</div>
+<p><span class="math display">\[
+M(t)=\eta_e(t-t_0)+M_0
+=\psi(t)-e\sin\bigl(\psi(t)\bigr)
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+g_e(\psi)=\psi-e\sin(\psi)-M(t), \qquad
+\frac{\partial g_e}{\partial\psi}
+=1-e\cos(\psi)
+\]</span></p>
+<p>y la iteración es</p>
+<p><span class="math display">\[
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+\uppsi_n-e\sin(\uppsi_n)-M(t)
+}{
+1-e\cos(\uppsi_n)
+}
+}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/kepler_e.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="large">
+<p><strong>Parabólico</strong></p>
+</div>
+<p><span class="math display">\[
+M(t)=\eta_p(t-t_0)+M_0
+=\frac{1}{3}\psi(t)^3+\psi(t)
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+g_p(\psi)
+=
+\frac{1}{3}\psi^3+\psi-M(t), \qquad
+\frac{\partial g_p}{\partial\psi}
+=\psi^2+1
+\]</span></p>
+<p>y la iteración es</p>
+<p><span class="math display">\[
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+\frac{1}{3}\uppsi_n^3+\uppsi_n-M(t)
+}{
+\uppsi_n^2+1
+}
+}
+\]</span></p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Para el caso parabólico, la ecuación de Kepler puede resolverse de forma analítica con cualquier método algebraico para encontrar raíces de polinomios de tercer grado. Sin embargo, el método de Newton-Raphson es más eficiente y rápido que cualquier método algebraico. Si por alguna razón se desea resolver la ecuación de Kepler de forma analítica, se puede utilizar el método de Barker (revisa la bibliografía).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/kepler_p1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/kepler_p2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="large">
+<p><strong>Hiperbólico</strong></p>
+</div>
+<p><span class="math display">\[
+M(t)=\eta_h(t-t_0)+M_0
+=e\sinh\bigl(\psi(t)\bigr)-\psi(t)
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+g_h(\psi)
+=
+e\sinh(\psi)-\psi-M(t), \qquad
+\frac{\partial g_h}{\partial\psi}
+=e\cosh(\psi)-1
+\]</span></p>
+<p>y la iteración es</p>
+<p><span class="math display">\[
+\boxed{
+\uppsi_{n+1}
+=
+\uppsi_n
+-
+\frac{
+e\sinh(\uppsi_n)-\uppsi_n-M(t)
+}{
+e\cosh(\uppsi_n)-1
+}
+}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/kepler_h1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/kepler_h2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="ejemplo" class="slide level2">
+<h2>Ejemplo</h2>
+<p>Considere un satélite de masa <span class="math inline">\(m=1\;\mathrm{kg}\)</span> cuya trayectoria se encuetra alrededor de la Tierra. La posición inicial del satélite es</p>
+<p><span class="math display">\[
+\ls{i}{\vec{r}}(t_0) = \begin{bmatrix}
+-2.2\\
+-2\\
+0\\
+\end{bmatrix}\times 10^7\;\mathrm{m}.
+\]</span></p>
+<p>Vamos a estudiar los siguiente cuatro casos de velocidad inicial:</p>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Caso 1</p>
+<p><span class="math display">\[
+  \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+  -3.300\\
+  -0.600\\
+  0\\
+  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><p>Caso 2</p>
+<p><span class="math display">\[
+  \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+  2.463\\
+  -2.7092\\
+  0\\
+  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><p>Caso 3</p>
+<p><span class="math display">\[
+  \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+  4.829\\
+  1.867\\
+  0\\
+  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><p>Caso 4</p>
+<p><span class="math display">\[
+  \ls{i}{\vec{v}}(t_0) = \begin{bmatrix}
+  5.795\\
+  2.241\\
+  0\\
+  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \]</span></p></li>
+</ul>
+</div></div>
+<p>Como parámetros generales considere <span class="math inline">\(G= 6.674\times 10 ^{-11} \mathrm{N m^2 / kg^2}\)</span> y <span class="math inline">\(m_0=5.972\times 10 ^{24} \mathrm{kg}\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: right;">Caso 1</th>
+<th style="text-align: right;">Caso 2</th>
+<th style="text-align: right;">Caso 3</th>
+<th style="text-align: right;">Caso 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span> [m<span class="math inline">\(^3\)</span>/s<span class="math inline">\(^2\)</span>]</td>
+<td style="text-align: right;"><span class="math inline">\(3.9857\times10^{14}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.9857\times10^{14}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.9857\times10^{14}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.9857\times10^{14}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(h\)</span> [m<span class="math inline">\(^2\)</span>/s]</td>
+<td style="text-align: right;"><span class="math inline">\(7.9200\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0886\times10^{11}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.5514\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.6617\times10^{10}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.6209\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.4901\times10^{-8}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0000\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.1531\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span> [m]</td>
+<td style="text-align: right;"><span class="math inline">\(1.5738\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.9732\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.7321\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.1134\times10^7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(E\)</span> [J/kg]</td>
+<td style="text-align: right;"><span class="math inline">\(-7.7804\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.7027\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-5.5879\times10^{-9}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.8984\times10^6\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\psi_0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.7928\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.4038\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.5866\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.6946\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(M_0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.1870\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.4038\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-8.3552\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.3384\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(a\)</span> [m]</td>
+<td style="text-align: right;"><span class="math inline">\(2.5614\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.9732\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(f=3.8661\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.3787\times10^7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(n\)</span> [rad/s]</td>
+<td style="text-align: right;"><span class="math inline">\(1.5401\times10^{-4}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.2314\times10^{-4}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.9000\times10^{-3}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0166\times10^{-4}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/e_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;1: Efemérides del caso 1.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/e_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/e_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/c_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;2: Efemérides del caso 2.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/c_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/c_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/p_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;3: Efemérides del caso 3.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/p_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/p_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/h_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;4: Efemérides del caso 4.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/h_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/h_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
 <div class="center-vertical">
 <div class="chapter-title">
 <p>Propagación</p>
@@ -5753,8 +6194,334 @@ R_z(-60^\circ)=
 </section>
 <section class="slide level2">
 
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Para obtener los ángulos <span class="math inline">\(\theta_1\)</span>, <span class="math inline">\(\theta_2\)</span> y <span class="math inline">\(\theta_3\)</span>, se requiere extender el concepto que tenemos sobre la excentricidad. Para ello, partamos de la ecuación de órbita</p>
+<p><span class="math display">\[
+      \begin{split}
+          &amp; r(\nu)=\frac{p}{1+e\cos(\nu)}\\
+          \Rightarrow &amp; r e \cos(\nu)=p-r
+      \end{split}
+  \]</span></p></li>
+<li><p>De aquí, podemos definir que</p>
+<p><span class="math display">\[
+      re \cos(\nu)= \vec{e}\cdot \vec{r},
+  \]</span></p>
+<p>donde <span class="math inline">\(\vec{e}\)</span> es el vector de excentricidad. Este vector apunta en dirección a la periapsis, y su magnitud es igual a la excentricidad de la trayectoria.</p></li>
+<li><p>Mediante una deducción alternativa de la ecuación de órbita, podemos saber que</p>
+<p><span class="math display">\[
+      \vec{e}=\frac{1}{\mu}\vec{v}\times \vec{h}-\hat{r}=\begin{bmatrix} e_x &amp; e_y &amp; e_z \end{bmatrix}^\top
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
 
-<img data-src=".\Figures/c2/orbital_parameters_neh.svg" style="width:100.0%" class="r-stretch"></section>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Otro vector importante es el vector que apunta en dirección del nodo ascendente. Se obtiene mediante</p>
+<p><span class="math display">\[
+      \vec{n} = \hat{z}_i \times \vec{h}
+      = \begin{bmatrix}
+      n_x &amp; n_y &amp; n_z
+      \end{bmatrix}^{T}.
+  \]</span></p></li>
+<li><p>El ángulo <span class="math inline">\(\theta_1\)</span> es el ángulo entre los vectores <span class="math inline">\(\hat{x}_I\)</span> y <span class="math inline">\(\vec{n}\)</span>. Por lo tanto, podemos calcularlo como</p>
+<p><span class="math display">\[
+  \cos(\theta_1)
+  =
+  \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{h}\|},
+  \]</span></p>
+<p>de donde</p>
+<p><span class="math display">\[
+  \theta_1
+  =
+  \cos^{-1}
+  \left(
+  \frac{\hat{x}_i \cdot \vec{n}}
+  {\|\vec{h}\|}
+  \right)
+  =
+  \Omega.
+  \]</span></p>
+<p>Si <span class="math inline">\(n_y &lt; 0\)</span>, entonces</p>
+<p><span class="math display">\[
+  \Omega = 2\pi - \Omega.
+  \]</span></p>
+<p>A este ángulo se le conoce como <strong>longitud del nodo ascendente</strong> o <strong>ascención derecha del nodo ascendente</strong> (RAAN, por sus siglas en inglés) y se denota comúnmente con la letra <span class="math inline">\(\Omega\)</span>.</p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>El ángulo <span class="math inline">\(\theta_2\)</span> es el ángulo entre el vector <span class="math inline">\(\hat{z}_I\)</span> y <span class="math inline">\(\vec{h}\)</span>. Para cubrir todo el rango hacemos uso de</p>
+<p><span class="math display">\[
+\hat{z}_i \cdot \vec{h}
+=
+\|\vec{h}\|\cos(\theta_2).
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+\theta_2
+=
+\cos^{-1}
+\left(
+\frac{\hat{z}_i \cdot \vec{h}}
+{\|\vec{h}\|}
+\right)=i,
+\qquad
+i \in [0,\pi].
+\]</span></p>
+<p>A este ángulo se le conoce como <strong>inclinación</strong>, dado que también es la inclinación entre el plano de referencia y el plano de la trayectoria. Se denota comúnmente con la letra <span class="math inline">\(i\)</span>.</p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>Finalmente, el ángulo <span class="math inline">\(\theta_3\)</span> es el ángulo entre el vector <span class="math inline">\(\vec{n}\)</span> y el vector <span class="math inline">\(\vec{e}\)</span>. El ángulo <span class="math inline">\(\omega\)</span> se obtiene mediante</p>
+<p><span class="math display">\[
+  \vec{n}\cdot\vec{e}=\|\vec{h}\|e\cos(\theta_3),
+  \]</span></p>
+<p>por lo que</p>
+<p><span class="math display">\[
+  \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{h}\|e}\right)=\omega,
+  \qquad
+  \omega\in[0,2\pi).
+  \]</span></p>
+<p>Si <span class="math inline">\(e_z&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+  \omega=\pi-\omega.
+  \]</span></p>
+<p>A este ángulo se le conoce como <strong>argumento del periapsis</strong> y se denota comúnmente con la letra <span class="math inline">\(\omega\)</span>. Se define como el ángulo medido desde la línea de nodos hasta el vector de excentricidad.</p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="casos-especiales" class="slide level2">
+<h2>Casos especiales</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>Se pueden presentar tres casos especiales dependiendo la forma y la orientación de la trayectoria.</p>
+<ul>
+<li><strong>Trayectoria no circulares sobre el plano de referencia</strong>: <span class="math inline">\(i\approx 0\)</span>.</li>
+<li><strong>Órbita circular inclinada</strong>: <span class="math inline">\(e\approx 0\)</span>.</li>
+<li><strong>Órbita circular sobre le plano de referencia</strong>: <span class="math inline">\(e\approx 0\)</span> y <span class="math inline">\(i\approx 0\)</span>.</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="large">
+<p><strong>Trayectoria no circulares sobre el plano de referencia</strong></p>
+</div>
+<ul>
+<li><p>Este caso sucede cuando el plano orbital y el plano de referencia son bastante próximos, es decir,</p>
+<p><span class="math display">\[
+  i \approx 0.
+  \]</span></p></li>
+<li><p>Bajo esta condición, definimos la <strong>longitud verdadera del periapsis</strong> <span class="math inline">\(\tilde{\omega}_{\mathrm{true}}\)</span> como</p>
+<p><span class="math display">\[
+  \cos(\tilde{\omega}_{\mathrm{true}})
+  =
+  \frac{\hat{x}_i\cdot\vec{e}}{e}.
+  \]</span></p>
+<p>Si <span class="math inline">\(e_y&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+  \tilde{\omega}_{\mathrm{true}}
+  =
+  \pi-\tilde{\omega}_{\mathrm{true}}.
+  \]</span></p></li>
+<li><p>En este caso, la longitud verdadera del periapsis se relaciona con los elementos orbitales mediante</p>
+<p><span class="math display">\[
+  \tilde{\omega}_{\mathrm{true}}
+  \approx
+  \Omega+\omega.
+  \]</span></p></li>
+<li><p>Además, si <span class="math inline">\(i=0\)</span>, se define la <strong>longitud del periapsis</strong> <span class="math inline">\(\tilde{\omega}\)</span> como</p>
+<p><span class="math display">\[
+  \tilde{\omega}=\Omega+\omega=\tilde{\omega}_{\mathrm{true}}
+  \quad\Longleftrightarrow\quad
+  i=0.
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="large">
+<p><strong>Órbita circular inclinada</strong></p>
+</div>
+<ul>
+<li><p>En este caso se pierde la noción de periapsis, por lo que no es posible definir de manera independiente <span class="math inline">\(\omega\)</span> y <span class="math inline">\(\nu\)</span>.</p></li>
+<li><p>Para ello, definimos el <strong>argumento de latitud</strong> como</p>
+<p><span class="math display">\[
+  \cos(u)
+  =
+  \frac{\vec{n}\cdot\vec{r}}
+  {\|\vec{n}\|r}.
+  \]</span></p>
+<p>Si <span class="math inline">\(r_z&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+  u=\pi-u.
+  \]</span></p></li>
+<li><p>Nótese que esta cantidad también es válida para otras trayectorias. En general, se cumple que</p>
+<p><span class="math display">\[
+  u(t)=\omega+\nu(t).
+  \]</span></p></li>
+<li><p>Para órbitas circulares podemos definir el <strong>argumento medio de latitud</strong> como</p>
+<p><span class="math display">\[
+  u_M(t)=\omega+M(t).
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="large">
+<p><strong>Órbita circular sobre el plano de referencia</strong></p>
+</div>
+<ul>
+<li><p>Este caso es una combinación de los dos casos anteriores.</p></li>
+<li><p>En este caso, definimos la <strong>longitud verdadera</strong> como</p>
+<p><span class="math display">\[
+  \cos(\lambda_{\mathrm{true}})
+  =
+  \frac{\hat{x}_i\cdot\vec{r}}{r}.
+  \]</span> nn Si <span class="math inline">\(r_y&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+  \lambda_{\mathrm{true}}
+  =
+  \pi-\lambda_{\mathrm{true}}.
+  \]</span></p></li>
+<li><p>Para <span class="math inline">\(i=0\)</span>, se cumple que</p>
+<p><span class="math display">\[
+  \lambda_{\mathrm{true}}
+  =
+  \Omega+\omega+\nu.
+  \]</span></p></li>
+<li><p>Para órbitas completamente circulares (<span class="math inline">\(e=0\)</span>), podemos definir la <strong>longitud media</strong> como</p>
+<p><span class="math display">\[
+  \lambda_M
+  =
+  \Omega+\omega+M.
+  \]</span></p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
 <section class="slide level2">
 
 <div class="center-vertical">
