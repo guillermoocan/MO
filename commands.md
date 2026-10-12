@@ -22,10 +22,10 @@
 :::{.large}
 
 :::
-
 :::{.small}
 
 :::
+
 
 ::: {.fragment style="display:flex;justify-content:center;"}
 

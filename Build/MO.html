@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-ebe111e89015f2ecee3e610c344906b2.css">
+  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-f1c9523c090984df1ca1b94bb0d574ef.css">
   <link href="MO_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -4993,11 +4993,11 @@ Calcular <span class="math inline">\(\nu(t)\)</span> mediante la <a href="#/eq-p
   \]</span></p></li>
 <li><p>Y derivando la <a href="#/eq-kepler_parabolic" class="quarto-xref">Ecuación&nbsp;19</a> respecto al tiempo</p>
 <p><span class="math display">\[
-      \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_e}{1+\psi^2(t)}.
+      \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_p}{1+\psi^2(t)}.
   \]</span></p></li>
 <li><p>Entonces, el vector de velocidad es</p>
 <p><span id="eq-prog_p_v"><span class="math display">\[
-      \ls{p}\vec{v}(t) = \frac{2\eta_e}{1+\psi^2(t)}\begin{bmatrix}
+      \ls{p}\vec{v}(t) = \frac{2f\eta_p}{1+\psi^2(t)}\begin{bmatrix}
       -\psi(t)\\
       1\\
       0
@@ -5417,7 +5417,7 @@ e\cosh(\uppsi_n)-1
   -3.300\\
   -0.600\\
   0\\
-  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
   \]</span></p></li>
 </ul>
 </div><div class="column">
@@ -5428,7 +5428,7 @@ e\cosh(\uppsi_n)-1
   2.463\\
   -2.7092\\
   0\\
-  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
   \]</span></p></li>
 </ul>
 </div><div class="column">
@@ -5439,7 +5439,7 @@ e\cosh(\uppsi_n)-1
   4.829\\
   1.867\\
   0\\
-  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
   \]</span></p></li>
 </ul>
 </div><div class="column">
@@ -5450,7 +5450,7 @@ e\cosh(\uppsi_n)-1
   5.795\\
   2.241\\
   0\\
-  \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+  \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
   \]</span></p></li>
 </ul>
 </div></div>
@@ -5583,9 +5583,6 @@ Figura&nbsp;3: Efemérides del caso 3.
 <p><video data-src=".\Figures/c2/p_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/p_orbit.mp4">Video</a></video></p>
 </figure>
 </div>
-</section>
-<section class="slide level2">
-
 </section>
 <section class="slide level2">
 
@@ -6241,7 +6238,7 @@ R_z(-60^\circ)=
 <p><span class="math display">\[
   \cos(\theta_1)
   =
-  \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{h}\|},
+  \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{n}\|},
   \]</span></p>
 <p>de donde</p>
 <p><span class="math display">\[
@@ -6250,7 +6247,7 @@ R_z(-60^\circ)=
   \cos^{-1}
   \left(
   \frac{\hat{x}_i \cdot \vec{n}}
-  {\|\vec{h}\|}
+  {\|\vec{n}\|}
   \right)
   =
   \Omega.
@@ -6337,15 +6334,57 @@ i \in [0,\pi].
   \]</span></p>
 <p>por lo que</p>
 <p><span class="math display">\[
-  \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{h}\|e}\right)=\omega,
+  \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{n}\|e}\right)=\omega,
   \qquad
   \omega\in[0,2\pi).
   \]</span></p>
 <p>Si <span class="math inline">\(e_z&lt;0\)</span>, entonces</p>
 <p><span class="math display">\[
-  \omega=\pi-\omega.
+  \omega=2\pi-\omega.
   \]</span></p>
 <p>A este ángulo se le conoce como <strong>argumento del periapsis</strong> y se denota comúnmente con la letra <span class="math inline">\(\omega\)</span>. Se define como el ángulo medido desde la línea de nodos hasta el vector de excentricidad.</p></li>
+</ul>
+</div><div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/orbital_parameters_neh.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>Adicionalmente podemos obtener la anomalia verdadera <span class="math inline">\(\nu\)</span> mediante</p>
+<p><span class="math display">\[
+  \vec{e}\cdot\vec{r}=\|\vec{e}\|\,\|\vec{r}\|\cos(\nu),
+  \]</span></p>
+<p>por lo que</p>
+<p><span class="math display">\[
+  \nu=\cos^{-1}\left(\frac{\vec{e}\cdot\vec{r}}{\|\vec{e}\|\,\|\vec{r}\|}\right),
+  \qquad
+  \nu\in[0,2\pi).
+  \]</span></p>
+<p>Si <span class="math inline">\(\vec{r}\cdot\vec{v}&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+  \nu=2\pi-\nu.
+  \]</span></p></li>
+<li><p>Esto es de utilidad cuando se quiere conocer la anomalía verdadera sin necesidad de transformar el vector de posición a coordenadas perifocales.</p></li>
+<li><p>Sin embargo, puede fallar cuando la trayectoria es circular, ya que el vector de excentricidad es nulo.</p></li>
 </ul>
 </div><div class="column">
 <div class="vspace-3">
@@ -6524,6 +6563,336 @@ i \in [0,\pi].
 </section>
 <section class="slide level2">
 
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.4: Obtención de los parámetros orbitales de orientación
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\ls{i}\vec{r}\)</span> y <span class="math inline">\(\ls{i}\vec{v}\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(i\)</span>, <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\omega\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular el momento angular específico <span class="math inline">\(\vec{h}\)</span>
+</li>
+<span class="math display">\[
+    \ls{i}\vec{h}=\ls{i}\vec{r}\times\ls{i}\vec{v}
+\]</span>
+<li>
+Calcular el vector de excentricidad <span class="math inline">\(\vec{e}\)</span>
+</li>
+<span class="math display">\[
+    \ls{i}\vec{e}=\frac{1}{\mu}\ls{i}\vec{v}\times\ls{i}\vec{h}-\hat{r}
+\]</span>
+<li>
+Calcular el vector del nodo ascendente <span class="math inline">\(\vec{n}\)</span>
+</li>
+<span class="math display">\[
+    \ls{i}\vec{n}=\hat{z}_i\times\ls{i}\vec{h}
+\]</span>
+<li>
+Calcular la inclinación <span class="math inline">\(i\)</span>
+</li>
+<span class="math display">\[
+    i=\cos^{-1}\left(\frac{\hat{z}_i\cdot\ls{i}\vec{h}}{\|\ls{i}\vec{h}\|}\right).
+\]</span>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.4: Obtención de los parámetros orbitales de orientación (Continuación)
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\ls{i}\vec{r}\)</span> y <span class="math inline">\(\ls{i}\vec{v}\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(i\)</span>, <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\omega\)</span>.</p>
+</div>
+<ol>
+<li>
+Calcular la ascensión recta del nodo ascendente <span class="math inline">\(\Omega\)</span>
+</li>
+<p><span class="math display">\[
+\Omega=\cos^{-1}\left(\frac{\hat{x}_i\cdot\ls{i}\vec{n}}{\|\ls{i}\vec{n}\|}\right)
+\]</span></p>
+<p>Si <span class="math inline">\(n_y&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+\Omega=2\pi-\Omega
+\]</span></p>
+<li>
+Calcular el argumento del periapsis <span class="math inline">\(\omega\)</span>
+</li>
+<p><span class="math display">\[
+\omega=\cos^{-1}\left(\frac{\ls{i}\vec{n}\cdot\ls{i}\vec{e}}{\|\ls{i}\vec{n}\|e}\right)
+\]</span></p>
+<p>Si <span class="math inline">\(e_z&lt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+\omega=2\pi-\omega
+\]</span></p>
+</ol>
+</div>
+</div><div class="column">
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Si bien podría presentarse uno de los casos especiales, el algoritmo anterior es capaz de calcular por lo menos un conjunto de los parámetros orbitales de orientación sin importar la forma y la orientación de la trayectoria. Si se quieren caracterizar completamente los parámetros orbitales de orientación, se recomienda extender el algoritmo con las variables especiales <span class="math inline">\(\tilde{\omega}_{\mathrm{true}}, u\)</span> y <span class="math inline">\(\lambda_{\mathrm{true}}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.5.1: Tranformación de coordenadas <span class="math inline">\(\ls{i}\mathcal{F} \to \ls{p}\mathcal{F}\)</span>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\ls{i}\vec{r}\)</span>, <span class="math inline">\(\ls{i}\vec{v}\)</span>, <span class="math inline">\(i\)</span>, <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\omega\)</span>.</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{p}\vec{r}\)</span> y <span class="math inline">\(\ls{p}\vec{v}\)</span></p>
+</div>
+<div class="small">
+<ol>
+<li>
+Calcular la matriz de rotación <span class="math inline">\(\ls{p}R_i\)</span>
+</li>
+<span class="math display">\[
+    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
+\]</span>
+<li>
+Calcular el vector de posición <span class="math inline">\(\ls{p}\vec{r}\)</span> y el vector de velocidad <span class="math inline">\(\ls{p}\vec{v}\)</span>
+</li>
+<p><span class="math display">\[
+    \ls{p}\vec{r}=\ls{p}R_i\,\ls{i}\vec{r}, \qquad \ls{p}\vec{v}=\ls{p}R_i\,\ls{i}\vec{v}
+\]</span></p>
+</ol>
+</div>
+</div>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.5.2: Tranformación de coordenadas <span class="math inline">\(\ls{p}\mathcal{F} \to \ls{i}\mathcal{F}\)</span>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\ls{p}\vec{r}\)</span>, <span class="math inline">\(\ls{p}\vec{v}\)</span>, <span class="math inline">\(i\)</span>, <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\omega\)</span>.</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{i}\vec{r}\)</span> y <span class="math inline">\(\ls{i}\vec{v}\)</span></p>
+</div>
+<div class="small">
+<ol>
+<li>
+Calcular la matriz de rotación <span class="math inline">\(\ls{p}R_i\)</span>
+</li>
+<span class="math display">\[
+    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
+\]</span>
+<li>
+Calcular el vector de posición <span class="math inline">\(\ls{i}\vec{r}\)</span> y el vector de velocidad <span class="math inline">\(\ls{i}\vec{v}\)</span>
+</li>
+<p><span class="math display">\[
+    \ls{i}\vec{r}=\ls{p}R_i^\top\,\ls{p}\vec{r}, \qquad \ls{i}\vec{v}=\ls{p}R_i^\top\,\ls{p}\vec{v}
+\]</span></p>
+</ol>
+</div>
+</div>
+</section>
+<section id="ejercicio" class="slide level2">
+<h2>Ejercicio</h2>
+<p>Sean <span class="math display">\[
+^{i}\vec{r}_0 =
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\,\mathrm{m},
+\qquad
+\ls{i}\vec{v}_0 =
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\,\mathrm{m/seg}.
+\]</span></p>
+<p>Considere el parámetro gravitacional terrestre</p>
+<p><span class="math display">\[
+\mu = 3.986\times10^{14}\,\mathrm{m^3/s^2}.
+\]</span></p>
+<ul>
+<li>Considerando que la base del marco de referencia inercial es la base canónica, determine los parámetros de orientación de la órbita:</li>
+</ul>
+<p><span class="math display">\[
+\Omega,\qquad i,\qquad \omega
+\]</span></p>
+<ul>
+<li><p>Obtenga las condiciones iniciales en el marco de referencia perifocal.</p></li>
+<li><p>Obtenga las condiciones iniciales en el marco de referencia inercial utilizando los resultados del punto anterior.</p></li>
+</ul>
+</section>
+<section id="solución" class="slide level2">
+<h2>Solución</h2>
+<p>Se calculan los vectores auxiliares:</p>
+<p><span class="math display">\[
+{}^i\vec h={}^i\vec r_0\times{}^i\vec v_0
+=
+\begin{bmatrix}
+3.7663\times10^{10}\\
+6.3207\times10^9\\
+-5.3218\times10^{10}
+\end{bmatrix}\mathrm{m^2/s}.
+\]</span></p>
+<p><span class="math display">\[
+{}^i\vec e=
+\frac{1}{\mu}
+\left({}^i\vec v_0\times{}^i\vec h\right)-\ls{i}\hat r_0
+=
+\begin{bmatrix}
+-0.117094\\
+0.291779\\
+-0.048214
+\end{bmatrix},
+\qquad
+e=\|{}^i\vec{e}\|=0.318073
+\qquad
+{}^i\vec n=\hat z_i\times{}^i\vec h
+=
+\begin{bmatrix}
+-6.3207\times10^9\\
+3.7663\times10^{10}\\
+0
+\end{bmatrix}.
+\]</span></p>
+<p>La inclinación resulta</p>
+<p><span class="math display">\[
+i=\cos^{-1}\left(
+\frac{\hat z_i\cdot{}^i\vec h}
+{\|{}^i\vec h\|}
+\right)
+=\boxed{2.51915\ \mathrm{rad}=144.337^\circ}.
+\]</span></p>
+<p>La longitud del nodo ascendente es</p>
+<p><span class="math display">\[
+\Omega=
+\cos^{-1}\left(
+\frac{\hat x_i\cdot{}^i\vec n}
+{\|{}^i\vec n\|}
+\right)
+=1.73707\ \mathrm{rad}.
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Como</p>
+<p><span class="math display">\[
+n_y&gt;0,
+\]</span></p>
+<p>no se aplica la corrección de cuadrante:</p>
+<p><span class="math display">\[
+\boxed{\Omega=1.73707\ \mathrm{rad}=99.527^\circ}.
+\]</span></p>
+<p>El argumento del periapsis se obtiene mediante</p>
+<p><span class="math display">\[
+\omega=
+\cos^{-1}\left(
+\frac{{}^i\vec n\cdot{}^i\vec e}
+{\|{}^i\vec n\|e}
+\right)
+=0.262912\ \mathrm{rad}.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+e_z&lt;0,
+\]</span></p>
+<p>se aplica</p>
+<p><span class="math display">\[
+\omega=2\pi-0.262912.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\omega=6.02017\ \mathrm{rad}=344.930^\circ}.
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>A partir de los parámetros de orientación,</p>
+<p><span class="math display">\[
+\Omega=1.74,\qquad i=2.52,\qquad \omega=6.02\ \mathrm{rad},
+\]</span></p>
+<p>se obtiene la matriz de rotación</p>
+<p><span class="math display">\[
+{}^pR_i=R_z(\omega)R_x(i)R_z(\Omega)
+=
+\begin{bmatrix}
+-0.37 &amp; 0.92 &amp; -0.15\\
+0.73 &amp; 0.39 &amp; 0.56\\
+0.57 &amp; 0.10 &amp; -0.81
+\end{bmatrix}.
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+{}^p\vec r_0={}^pR_i\,{}^i\vec r_0
+=
+\begin{bmatrix}
+7.18\\
+-4.52\\
+0.00
+\end{bmatrix}\times10^6\ \mathrm{m},
+\]</span></p>
+<p><span class="math display">\[
+{}^p\vec v_0={}^pR_i\,{}^i\vec v_0
+=
+\begin{bmatrix}
+3.24\\
+7.08\\
+0.00
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Como <span class="math inline">\({}^pR_i\)</span> es una matriz de rotación,</p>
+<p><span class="math display">\[
+({}^pR_i)^{-1}=\;pR_i^{\top}.
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+{}^i\vec r_0=\;^pR_i^{\top}{}^p\vec r_0
+=
+\begin{bmatrix}
+-5.95\\
+4.84\\
+-3.63
+\end{bmatrix}\times10^6\ \mathrm{m},
+\]</span></p>
+<p><span class="math display">\[
+{}^i\vec v_0=\:^pR_i^{\top}{}^p\vec v_0
+=
+\begin{bmatrix}
+3.98\\
+5.71\\
+3.50
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+<p>Se recuperan las condiciones iniciales originales, dentro del redondeo numérico.</p>
+</section>
+<section class="slide level2">
+
 <div class="center-vertical">
 <div class="chapter-title">
 <p>Propagación</p>
@@ -6532,113 +6901,1254 @@ i \in [0,\pi].
 
 </div>
 <div class="chapter-subtitle">
-<p>Elementos orbitales</p>
+<p>Resumen 1</p>
 <div class="menu-title" style="display:none;">
-▸ Elementos orbitales
+▸ Resumen 1
 </div>
 </div>
 </div>
 </section>
-<section id="section-39" class="slide level2">
-<h2></h2>
-<div class="vspace-3">
-
-</div>
-<div class="vspace-3">
-
-</div>
-<div class="vspace-3">
-
-</div>
-<ul>
-<li><p>Los <strong>elementos orbitales</strong> (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.</p></li>
-<li><p>En particular, los elementos orbitales permiten definir:</p>
-<ul>
-<li><p>La <strong><span style="color:red">forma y tamaño</span></strong> de la trayectoria.</p>
-<div class="text-center xlarge">
-<p><span style="color:red"><span class="math inline">\(a,e\)</span></span></p>
-</div></li>
-<li><p>La <strong><span style="color:teal">orientación</span></strong> de la trayectoria.</p>
-<div class="text-center xlarge">
-<p><span style="color:teal"><span class="math inline">\(i,\Omega,\omega\)</span></span></p>
-</div></li>
-<li><p>La <strong><span style="color:blue">posición instantánea</span></strong> del cuerpo en su trayectoria.</p>
-<div class="text-center xlarge">
-<p><span style="color:blue"><span class="math inline">\(\nu(t)\)</span></span></p>
-</div></li>
-</ul></li>
-</ul>
+<section id="formulario---ecuaciones-generales" class="slide level2">
+<h2>Formulario - Ecuaciones generales</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: center;">Ecuación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Parámetro gravitacional</td>
+<td style="text-align: center;"><span class="math display">\[\mu = G(m_1+m_2)\approx G m_1 \; \text{si}\; m_1 \gg m_0\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Magnitudes de posición y velocidad</td>
+<td style="text-align: center;"><span class="math display">\[r = \|\vec r\|,\qquad v = \|\vec v\|\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Momento angular específico</td>
+<td style="text-align: center;"><span class="math display">\[\vec h = \vec r \times \vec v,\qquad h = \|\vec h\|\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Semi-latus rectum</td>
+<td style="text-align: center;"><span class="math display">\[p = \dfrac{h^2}{\mu}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Energía mecánica específica</td>
+<td style="text-align: center;"><span class="math display">\[E = \dfrac{v^2}{2}-\dfrac{\mu}{r}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Excentricidad</td>
+<td style="text-align: center;"><span class="math display">\[e = \sqrt{1+\dfrac{2Eh^2}{\mu^2}}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anomalía verdadera</td>
+<td style="text-align: center;"><span class="math display">\[\nu = \operatorname{atan2}(r_y,r_x)\]</span></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="section-40" class="slide level2">
-<h2></h2>
+<section id="formulario---secciones-cónicas" class="slide level2">
+<h2>Formulario - Secciones cónicas</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Elipse</th>
+<th style="text-align: center;">Parábola</th>
+<th style="text-align: center;">Hipérbola</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Excentricidad</td>
+<td style="text-align: center;"><span class="math display">\[0\leq e&lt;1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[e=1\]</span></td>
+<td style="text-align: center;"><span class="math display">\[e&gt;1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Energía específica</td>
+<td style="text-align: center;"><span class="math display">\[E&lt;0\]</span></td>
+<td style="text-align: center;"><span class="math display">\[E=0\]</span></td>
+<td style="text-align: center;"><span class="math display">\[E&gt;0\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Semi-latus rectum</td>
+<td style="text-align: center;"><span class="math display">\[p=a(1-e^2)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[p=2f\]</span></td>
+<td style="text-align: center;"><span class="math display">\[p=a(e^2-1)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ecuación de la órbita</td>
+<td style="text-align: center;"><span class="math display">\[r=\dfrac{p}{1+e\cos\nu}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r=\dfrac{p}{1+\cos\nu}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r=\dfrac{p}{1+e\cos\nu}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Distancia al periapsis</td>
+<td style="text-align: center;"><span class="math display">\[r_p=a(1-e)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r_p=f\]</span></td>
+<td style="text-align: center;"><span class="math display">\[r_p=a(e-1)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Semieje</td>
+<td style="text-align: center;"><span class="math display">\[a=\dfrac{p}{1-e^2}\]</span></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><span class="math display">\[a=\dfrac{p}{e^2-1}\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formulario---ecuación-de-kepler" class="slide level2">
+<h2>Formulario - Ecuación de Kepler</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Elipse</th>
+<th style="text-align: center;">Parábola</th>
+<th style="text-align: center;">Hipérbola</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Relación con <span class="math inline">\(\nu\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\tan(\psi)=\dfrac{\sin(\nu)\sqrt{1-e^2}}{e+\cos(\nu)}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\psi=\tan\left(\dfrac{\nu}{2}\right)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\sinh(\psi)=\dfrac{\sqrt{e^2-1}\sin(\nu)}{1+e\cos(\nu)}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Movimiento medio</td>
+<td style="text-align: center;"><span class="math display">\[\eta_e=\sqrt{\dfrac{\mu}{a^3}}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\eta_p=\sqrt{\dfrac{\mu}{2f^3}}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\eta_h=\sqrt{\dfrac{\mu}{a^3}}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anomalía media</td>
+<td style="text-align: center;"><span class="math display">\[M=M_0+\eta_e(t-t_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[M=M_0+\eta_p(t-t_0)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[M=M_0+\eta_h(t-t_0)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ecuación de Kepler</td>
+<td style="text-align: center;"><span class="math display">\[M=\psi-e\sin\psi\]</span></td>
+<td style="text-align: center;"><span class="math display">\[M=\psi+\dfrac{\psi^3}{3}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[M=e\sinh\psi-\psi\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formulario---efemérides" class="slide level2">
+<h2>Formulario - Efemérides</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Elipse</th>
+<th style="text-align: center;">Parábola</th>
+<th style="text-align: center;">Hipérbola</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Anomalía verdadera</td>
+<td style="text-align: center;"><span class="math display">\[\nu= \operatorname{atan2}\left(\sqrt{1-e^2}\sin\psi,\cos\psi-e\right)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\nu=\operatorname{atan2}\left(\psi,1\right)\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\nu=\operatorname{atan2}\left(\sqrt{e^2-1}\sinh\psi,e-\cosh\psi\right)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vector posición</td>
+<td style="text-align: center;"><span class="math display">\[\vec r=a\begin{bmatrix}\cos\psi-e\\\sqrt{1-e^2}\sin\psi\\0\end{bmatrix}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\vec r=f\begin{bmatrix}1-\psi^2\\2\psi\\0\end{bmatrix}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\vec r=a\begin{bmatrix}e-\cosh\psi\\\sqrt{e^2-1}\sinh\psi\\0\end{bmatrix}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vector velocidad</td>
+<td style="text-align: center;"><span class="math display">\[\vec v=\frac{a\eta_e}{1-e\cos\psi}\begin{bmatrix}-\sin\psi\\\sqrt{1-e^2}\cos\psi\\0\end{bmatrix}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\vec v=\frac{2f\eta_p}{1+\psi^2}\begin{bmatrix}-\psi\\1\\0\end{bmatrix}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\vec v=\frac{a\eta_h}{e\cosh\psi-1}\begin{bmatrix}-\sinh\psi\\\sqrt{e^2-1}\cosh\psi\\0\end{bmatrix}\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formulario---orientación-orbital" class="slide level2">
+<h2>Formulario - Orientación orbital</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: center;">Ecuación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Vector de excentricidad</td>
+<td style="text-align: center;"><span class="math display">\[\vec e=\frac{1}{\mu}\vec v\times\vec h-\frac{\vec r}{r}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vector nodal</td>
+<td style="text-align: center;"><span class="math display">\[\vec n=\hat{z}_i\times\vec h\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inclinación</td>
+<td style="text-align: center;"><span class="math display">\[i=\cos^{-1}\left(\frac{\hat{ z}_i\cdot\vec h}{h}\right)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Longitud del nodo asc.</td>
+<td style="text-align: center;"><span class="math display">\[\Omega=\cos^{-1}\left(\frac{\hat{ x}_i\cdot\vec n}{n}\right)\qquad n_y&lt;0\Rightarrow\Omega=2\pi-\Omega\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Argumento del periapsis</td>
+<td style="text-align: center;"><span class="math display">\[\omega=\cos^{-1}\left(\frac{\vec n\cdot\vec e}{ne}\right)\qquad e_z&lt;0\Rightarrow\omega=2\pi-\omega\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anomalía verdadera</td>
+<td style="text-align: center;"><span class="math display">\[\nu=\cos^{-1}\left(\frac{\vec e\cdot\vec r}{er}\right)\qquad \vec r\cdot\vec v&lt;0\Rightarrow\nu=2\pi-\nu\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="formulario---transformación-de-coordenadas" class="slide level2">
+<h2>Formulario - Transformación de coordenadas</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p>La <strong>forma</strong> y el <strong>tamaño</strong> de una órbita se determinan a partir de:</p>
-<div class="fragment">
-<ul>
-<li><p>La <span style="color:red"><strong>excentricidad</strong> <span class="math inline">\(e\)</span></span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de <span class="math inline">\(e\)</span>:</p>
-<ul>
-<li><span class="math inline">\(e=0\)</span>: órbita circular.</li>
-<li><span class="math inline">\(0&lt;e&lt;1\)</span>: órbita elíptica.</li>
-<li><span class="math inline">\(e=1\)</span>: parábola.</li>
-<li><span class="math inline">\(e&gt;1\)</span>: hipérbola.</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p>En el caso de órbitas elípticas, el <span style="color:red"><strong>semieje mayor</strong> <span class="math inline">\(a\)</span></span> determina su tamaño.</p>
+<div class="column">
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Rotación</th>
+<th style="text-align: center;">Matriz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Eje <span class="math inline">\(x\)</span></td>
+<td style="text-align: center;"><span class="math display">\[R_x(\theta)=\begin{bmatrix}1&amp;0&amp;0\\0&amp;\cos\theta&amp;\sin\theta\\0&amp;-\sin\theta&amp;\cos\theta\end{bmatrix}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Eje <span class="math inline">\(y\)</span></td>
+<td style="text-align: center;"><span class="math display">\[R_y(\theta)=\begin{bmatrix}\cos\theta&amp;0&amp;-\sin\theta\\0&amp;1&amp;0\\\sin\theta&amp;0&amp;\cos\theta\end{bmatrix}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eje <span class="math inline">\(z\)</span></td>
+<td style="text-align: center;"><span class="math display">\[R_z(\theta)=\begin{bmatrix}\cos\theta&amp;\sin\theta&amp;0\\-\sin\theta&amp;\cos\theta&amp;0\\0&amp;0&amp;1\end{bmatrix}\]</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Conversión</th>
+<th style="text-align: center;">Ecuación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Matriz de rotación</td>
+<td style="text-align: center;"><span class="math display">\[^{p}\!R_i=R_z(\omega)R_x(i)R_z(\Omega)\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inercial <span class="math inline">\(\rightarrow\)</span> perifocal</td>
+<td style="text-align: center;"><span class="math display">\[^{p}\!\vec r={}^{p}\!R_i\,{}^{i}\!\vec r,\qquad{}^{p}\!\vec v={}^{p}\!R_i\,{}^{i}\!\vec v\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Perifocal <span class="math inline">\(\rightarrow\)</span> inercial</td>
+<td style="text-align: center;"><span class="math display">\[^{i}\!\vec r={}^{p}\!R_i^{\top}\,{}^{p}\!\vec r,\qquad{}^{i}\!\vec v={}^{p}\!R_i^{\top}\,{}^{p}\!\vec v\]</span></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="algoritmo-de-propagación-completo" class="slide level2">
+<h2>Algoritmo de propagación completo</h2>
+
+<img data-src=".\Figures/c2/full_propagation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"></section>
+<section id="ejercicio-1" class="slide level2">
+<h2>Ejercicio</h2>
+<p>Sean las siguientes condiciones iniciales de posición y velocidad, expresadas en el marco de referencia inercial:</p>
 <p><span class="math display">\[
-      e=\frac{c}{a},
-      \qquad
-      c=\sqrt{a^2-b^2}
-  \]</span></p>
-<p>donde <span class="math inline">\(c\)</span> es la distancia del centro al foco y <span class="math inline">\(b\)</span> es el semieje menor.</p></li>
-<li><p>Sin embargo, para trayectorias en general, podemos utilizar el semi parametro <span class="math inline">\(p\)</span> para describir el tamaño de la trayectoria.</p></li>
-</ul>
+{}^{i}\vec{r}_0^{(1)}=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(1)}=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(2)}=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(2)}=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(3)}=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(3)}=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(4)}=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(4)}=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+<p>Considere el parámetro gravitacional terrestre <span class="math inline">\(\mu=3.986\times10^{14}\ \mathrm{m^3/seg^2}\)</span> y <span class="math inline">\(t_0=0\ \mathrm{ seg}\)</span>. Para cada caso, obtenga los parámetros orbitales <span class="math inline">\(h\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(e\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(\nu_0\)</span>, <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(i\)</span> y <span class="math inline">\(\omega\)</span> y realice la propagación correspondiente.</p>
+</section>
+<section id="resultados" class="slide level2">
+<h2>Resultados</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: right;">Caso 1<br>Circular</th>
+<th style="text-align: right;">Caso 2<br>Elíptica</th>
+<th style="text-align: right;">Caso 3<br>Parabólica</th>
+<th style="text-align: right;">Caso 4<br>Hiperbólica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.3181</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1.553</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span> [m]</td>
+<td style="text-align: right;"><span class="math inline">\(8.013\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.077\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.462\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.863\times10^7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\nu_0\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(-1.225\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.5621\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.763\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.397\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Omega\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(1.203\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.737\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.148\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.08651\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(i\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(1.954\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.519\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.147\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.428\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\omega\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(2.750\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.020\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4.478\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.546\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(E\)</span> [J/kg]</td>
+<td style="text-align: right;"><span class="math inline">\(-2.487\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.664\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.509\times10^7\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(h\)</span> [m<span class="math inline">\(^2\)</span>/s]</td>
+<td style="text-align: right;"><span class="math inline">\(5.651\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.550\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.632\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8.617\times10^{10}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/c_inertial_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;5: Efemérides del caso 1 (anomalia verdadera calculada con el vector de excentricidad nulo).
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/c_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/c_inertial_orbit.mp4">Video</a></video></p>
+</figure>
 </div>
-</div><div class="column" style="width:40%;">
-<p><img data-src=".\Figures/c2/ellipse.svg" style="width:100.0%"></p>
-</div></div>
 </section>
-<section id="section-41" class="slide level2">
-<h2></h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p><img data-src=".\Figures/c2/orientation_parameters.svg" style="width:120.0%"></p>
-</div><div class="column" style="width:52%;">
-<p>La <strong>orientación de la órbita</strong> se determina con tres ángulos:</p>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/e_inertial_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;6: Efemérides del caso 2.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/e_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/e_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/p_inertial_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;7: Efemérides del caso 3.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/p_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/p_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/h_inertial_orbit.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;8: Efemérides del caso 4.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/h_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/h_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
 <ul>
-<li class="fragment"><span style="color:teal"><strong>Longitud del nodo ascendente</strong> <span class="math inline">\(\Omega\in[0,2\pi)\)</span></span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
-<div class="vspace-3">
-
-</div></li>
-<li class="fragment"><span style="color:teal"><strong>Inclinación</strong> <span class="math inline">\(i\in[0,\pi]\)</span></span>: ángulo entre el <em>plano orbital</em> y el <em>plano de referencia</em>.
-<div class="vspace-3">
-
-</div></li>
-<li class="fragment"><span style="color:teal"><strong>Argumento del periapsis</strong> <span class="math inline">\(\omega\in[0,2\pi)\)</span></span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.</li>
+<li>Hasta este punto, hemos desarrollado un conjunto de herramientas que nos permiten describir y propagar la posición de un cuerpo en una trayectoria alrededor de otro cuerpo central.</li>
 </ul>
-</div></div>
-</section>
-<section id="section-42" class="slide level2">
-<h2></h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p><img data-src=".\Figures/c2/true_anomaly.svg" style="width:120.0%"></p>
-</div><div class="column" style="width:52%;">
-<p>La <strong>posición instantánea</strong> del cuerpo en su órbita se describe con la <span style="color:blue"><strong>anomalía verdadera</strong> <span class="math inline">\(\nu(t)\)</span></span>.</p>
 <ul>
-<li class="fragment"><p>La anomalía verdadera <span class="math inline">\(\nu(t)\)</span> es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.</p></li>
-<li class="fragment"><p>Se dice que es <em>verdadera</em> porque está presente en todos las posibles secciones cónicas que describen una trayectoria.</p></li>
-<li class="fragment"><p>En lugar de <span class="math inline">\(\nu(t)\)</span>, también pueden emplearse otras variables para describir la posición:</p>
+<li class="fragment"><p>Dicho esquema se compone de compone de algoritmos que permiten:</p>
 <ul>
-<li class="fragment"><strong>Anomalía excéntrica, parabólica o hiperbólica</strong> <span class="math inline">\(\psi(t)\)</span>.</li>
-<li class="fragment"><strong>Anomalía media</strong> <span class="math inline">\(M(t)\)</span>.</li>
+<li class="fragment">Determinar los parámetros orbitales a partir de las condiciones iniciales de posición y velocidad.</li>
+<li class="fragment">Transformar las condiciones iniciales entre el marco de referencia inercial y el perifocal.</li>
+<li class="fragment">Propagar la posición del cuerpo en su trayectoria a partir de los parámetros orbitales.</li>
 </ul></li>
-<li class="fragment"><p>Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo .</p></li>
+<li class="fragment"><p>No obstante, surgen las siguientes preguntas:</p>
+<ul>
+<li class="fragment">¿Es posible propagar la posición de un cuerpo en su trayectoria sin necesidad de calcular explicitamente los parámetros orbitales?</li>
+<li class="fragment">¿Existen métodos más <strong>eficientes</strong> para propagar la posición de un cuerpo en su trayectoria?</li>
+<li class="fragment">¿Existen métodos <strong>universales</strong> que permitan propagar la posición de un cuerpo en su trayectoria sin importar la forma de la trayectoria?</li>
+</ul></li>
+<li class="fragment"><p>Todas estas preguntas nos llevan al estado del arte de la propagación de trayectorias para el caso kepleriano.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Coeficientes de Lagrange</p>
+<div class="menu-title" style="display:none;">
+▸ Coeficientes de Lagrange
+</div>
+</div>
+</div>
+</section>
+<section id="coeficientes-de-lagrange" class="slide level2">
+<h2>Coeficientes de Lagrange</h2>
+<ul>
+<li><p>Se desea determinar la posición y la velocidad de un satélite a partir de sus condiciones iniciales. Para ello, suponemos que la posición puede expresarse como una combinación lineal de los vectores de posición y velocidad iniciales:</p>
+<p><span class="math display">\[
+{}^{i}\vec{r}(t)=f(t)\,{}^{i}\vec{r}_0+g(t)\,{}^{i}\vec{v}_0
+\]</span></p>
+<p>donde <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son escalares que dependen del tiempo.</p></li>
+<li><p>Derivando respecto al tiempo, obtenemos la velocidad:</p>
+<p><span class="math display">\[
+{}^{i}\vec{v}(t)=\dot{f}(t)\,{}^{i}\vec{r}_0+\dot{g}(t)\,{}^{i}\vec{v}_0
+\]</span></p></li>
+<li><p>Por lo tanto, la posición y la velocidad pueden calcularse mediante:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+{}^{i}\vec{r}(t)\\
+{}^{i}\vec{v}(t)
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(t) &amp; g(t)\\
+\dot{f}(t) &amp; \dot{g}(t)
+\end{bmatrix}
+\begin{bmatrix}
+{}^{i}\vec{r}_0\\
+{}^{i}\vec{v}_0
+\end{bmatrix}
+\]</span></p></li>
+<li><p>Los escalares <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(\dot{f}\)</span> y <span class="math inline">\(\dot{g}\)</span> se conocen como <strong>coeficientes de Lagrange</strong>.</p></li>
+<li><p>Los coeficientes de Lagrange son independientes de la orientación del marco de referencia. Para demostrarlo, consideramos la matriz de rotación constante <span class="math inline">\({}^{p}R_i\)</span>, que transforma del marco inercial al perifocal.</p></li>
+<li><p>Multiplicando la ecuación de posición por dicha matriz, obtenemos:</p>
+<p><span class="math display">\[
+{}^{p}R_i\,{}^{i}\vec{r}(t)
+=f(t)\,{}^{p}R_i\,{}^{i}\vec{r}_0
++g(t)\,{}^{p}R_i\,{}^{i}\vec{v}_0
+\Rightarrow
+{}^{p}\vec{r}(t)
+=f(t)\,{}^{p}\vec{r}_0+g(t)\,{}^{p}\vec{v}_0
+\]</span></p></li>
+</ul>
+</section>
+<section id="obtención-del-coeficiente-f" class="slide level2">
+<h2>Obtención del coeficiente <span class="math inline">\(f\)</span></h2>
+<ul>
+<li>Partimos de la relación de posición y calculamos el producto cruz con la velocidad inicial:</li>
+</ul>
+<p><span class="math display">\[
+{}^{p}\vec{r}\times{}^{p}\vec{v}_0
+=f\left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+\]</span></p>
+<ul>
+<li class="fragment"><p>Recordando el momento angular específico inicial, <span class="math inline">\({}^{p}\vec{h}={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\)</span>, con magnitud <span class="math inline">\(h=\|{}^{p}\vec{h}\|\)</span>, y los vectores en coordenadas perifocales son:</p>
+<p><span class="math display">\[
+  {}^{p}\vec{r}=\begin{bmatrix}r_x &amp; r_y &amp; 0\end{bmatrix}^{\top},
+  \qquad
+  {}^{p}\vec{v}=\begin{bmatrix}v_x &amp; v_y &amp; 0\end{bmatrix}^{\top}
+  \]</span></p></li>
+<li class="fragment"><p>El producto cruz entre la posición actual y la velocidad inicial es: <span class="math display">\[
+  {}^{p}\vec{r}\times{}^{p}\vec{v}_0
+  =\begin{bmatrix}0 &amp; 0 &amp; r_xv_{y,0}-r_yv_{x,0}\end{bmatrix}^{\top}
+  \]</span></p></li>
+<li class="fragment"><p>Igualando las componentes <span class="math inline">\(z\)</span> y despejando <span class="math inline">\(f\)</span>:</p>
+<p><span class="math display">\[
+r_xv_{y,0}-r_yv_{x,0}=fh
+\]</span></p>
+<p><span class="math display">\[
+f=\frac{r_xv_{y,0}-r_yv_{x,0}}{h}
+\]</span></p></li>
+<li class="fragment"><p>Derivando respecto al tiempo, obtenemos:</p>
+<p><span class="math display">\[
+\dot{f}=\frac{v_xv_{y,0}-v_yv_{x,0}}{h}
+\]</span></p></li>
+</ul>
+</section>
+<section id="obtención-del-coeficiente-g" class="slide level2">
+<h2>Obtención del coeficiente <span class="math inline">\(g\)</span></h2>
+<ul>
+<li>Calculamos el producto cruz entre la posición inicial y la posición actual:</li>
+</ul>
+<p><span class="math display">\[
+{}^{p}\vec{r}_0\times{}^{p}\vec{r}
+=g\left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+\]</span></p>
+<ul>
+<li class="fragment"><p>Recordando el momento angular específico inicial, <span class="math inline">\({}^{p}\vec{h}={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\)</span>, con magnitud <span class="math inline">\(h=\|{}^{p}\vec{h}\|\)</span>, los vectores en coordenadas perifocales son:</p>
+<p><span class="math display">\[
+{}^{p}\vec{r}_0=\begin{bmatrix}r_{x,0} &amp; r_{y,0} &amp; 0\end{bmatrix}^{\top},
+\qquad
+{}^{p}\vec{r}=\begin{bmatrix}r_x &amp; r_y &amp; 0\end{bmatrix}^{\top}
+\]</span></p></li>
+<li class="fragment"><p>El producto cruz entre la posición inicial y la posición actual es:</p>
+<p><span class="math display">\[
+{}^{p}\vec{r}_0\times{}^{p}\vec{r}
+=\begin{bmatrix}0 &amp; 0 &amp; r_{x,0}r_y-r_{y,0}r_x\end{bmatrix}^{\top}
+\]</span></p></li>
+<li class="fragment"><p>Igualando las componentes <span class="math inline">\(z\)</span> y despejando <span class="math inline">\(g\)</span>:</p>
+<p><span class="math display">\[
+r_{x,0}r_y-r_{y,0}r_x=gh
+\]</span></p>
+<p><span class="math display">\[
+g=\frac{r_{x,0}r_y-r_{y,0}r_x}{h}
+\]</span></p></li>
+<li class="fragment"><p>Derivando respecto al tiempo, obtenemos:</p>
+<p><span class="math display">\[
+\dot{g}=\frac{r_{x,0}v_y-r_{y,0}v_x}{h}
+\]</span></p></li>
+</ul>
+</section>
+<section id="relación-entre-los-coeficientes-de-lagrange" class="slide level2">
+<h2>Relación entre los coeficientes de Lagrange</h2>
+<ul>
+<li>Por conservación del momento angular específico:</li>
+</ul>
+<p><span class="math display">\[
+{}^{p}\vec{h}
+={}^{p}\vec{r}\times{}^{p}\vec{v}
+={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0
+\]</span></p>
+<ul>
+<li class="fragment"><p>Sustituyendo las expresiones de la posición y la velocidad actuales:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{}^{p}\vec{h}
+&amp;=
+\left(f\,{}^{p}\vec{r}_0+g\,{}^{p}\vec{v}_0\right)\times
+\left(\dot{f}\,{}^{p}\vec{r}_0+\dot{g}\,{}^{p}\vec{v}_0\right)
+\end{aligned}
+\]</span></p></li>
+<li class="fragment"><p>Desarrollando el producto cruz y considerando que <span class="math inline">\({}^{p}\vec{v}_0\times{}^{p}\vec{r}_0=-{}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\)</span>, obtenemos:</p>
+<p><span class="math display">\[
+{}^{p}\vec{h}
+=\left(f\dot{g}-\dot{f}g\right)
+\left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+\]</span></p></li>
+<li class="fragment"><p>Como <span class="math inline">\({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0={}^p\vec{h}\)</span>, para una órbita con <span class="math inline">\(h\neq 0\)</span> se concluye que:</p>
+<p><span class="math display">\[
+f\dot{g}-\dot{f}g=1
+\]</span></p></li>
+<li class="fragment"><p>En el instante inicial <span class="math inline">\(t=t_0\)</span>, los coeficientes deben satisfacer:</p>
+<p><span class="math display">\[
+f(t_0)=1,\qquad g(t_0)=0
+\]</span></p>
+<p><span class="math display">\[
+\dot{f}(t_0)=0,\qquad \dot{g}(t_0)=1
+\]</span></p>
+<p>Estas condiciones garantizan que las expresiones generales recuperen exactamente la posición y la velocidad iniciales.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Para obtener los coeficientes de Lagrange en términos de las coordenadas polares <span class="math inline">\(r, \nu\)</span>, vamos a empezar derivando la ecuación de órbita respecto al tiempo:</p>
+<p><span class="math display">\[
+  \frac{dr}{dt}
+  =\frac{pe\sin(\nu)}{(1+e\cos(\nu))^2}\frac{d\nu}{dt}
+  \]</span></p></li>
+</ul>
+<ul>
+<li class="fragment"><p>Recordando el momento angular específico:</p>
+<p><span class="math display">\[
+h=r^2\frac{d\nu}{dt}=\sqrt{\mu p}
+\]</span></p></li>
+<li class="fragment"><p>Sustituyendo <span class="math inline">\(\dot{\nu}=h/r^2\)</span> y utilizando <span class="math inline">\(r=p/(1+e\cos(\nu))\)</span>, obtenemos:</p>
+<p><span class="math display">\[
+\dot{r}=\frac{he\sin(\nu)}{p}
+=\sqrt{\frac{\mu}{p}}\,e\sin(\nu)
+\]</span></p></li>
+<li class="fragment"><p>Ahora, el vector de posición en función de la anomalía verdadera es:</p>
+<p><span class="math display">\[
+{}^{p}\vec{r}(t)=r(t)
+\begin{bmatrix}
+\cos(\nu(t))\\
+\sin(\nu(t))\\
+0
+\end{bmatrix}
+\]</span></p></li>
+<li class="fragment"><p>Por consiguiente, sus componentes cartesianas son:</p>
+<p><span class="math display">\[
+r_x=r\cos(\nu),\qquad
+r_y=r\sin(\nu),\qquad
+r_z=0
+\]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Derivando <span class="math inline">\(r_x=r\cos(\nu)\)</span>:</p>
+<p><span class="math display">\[
+v_x=\dot{r}\cos(\nu)-r\sin(\nu)\dot{\nu}
+\]</span></p></li>
+<li><p>Sustituyendo <span class="math inline">\(\dot{r}\)</span> y <span class="math inline">\(\dot{\nu}\)</span>:</p>
+<p><span class="math display">\[
+v_x=\sqrt{\frac{\mu}{p}}\sin(\nu)
+\left(e\cos(\nu)-\frac{p}{r}\right)
+\]</span></p></li>
+<li><p>Usando <span class="math inline">\(p/r=1+e\cos(\nu)\)</span>:</p>
+<p><span class="math display">\[
+v_x=\sqrt{\frac{\mu}{p}}\sin(\nu)
+\left[e\cos(\nu)-(1+e\cos(\nu))\right]
+\]</span></p></li>
+<li><p>Simplificando:</p>
+<p><span class="math display">\[
+v_x=-\sqrt{\frac{\mu}{p}}\sin(\nu)
+\]</span></p></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<ul>
+<li><p>Derivando <span class="math inline">\(r_y=r\sin(\nu)\)</span>:</p>
+<p><span class="math display">\[
+v_y=\dot{r}\sin(\nu)+r\cos(\nu)\dot{\nu}
+\]</span></p></li>
+<li><p>Sustituyendo <span class="math inline">\(\dot{r}\)</span> y <span class="math inline">\(\dot{\nu}\)</span>:</p>
+<p><span class="math display">\[
+v_y=\sqrt{\frac{\mu}{p}}
+\left(e\sin^2(\nu)+\frac{p}{r}\cos(\nu)\right)
+\]</span></p></li>
+<li><p>Usando <span class="math inline">\(p/r=1+e\cos(\nu)\)</span>:</p>
+<p><span class="math display">\[
+v_y=\sqrt{\frac{\mu}{p}}
+\left[e\sin^2(\nu)+(1+e\cos(\nu))\cos(\nu)\right]
+\]</span></p></li>
+<li><p>Simplificando con <span class="math inline">\(\sin^2(\nu)+\cos^2(\nu)=1\)</span>:</p>
+<p><span class="math display">\[
+v_y=\sqrt{\frac{\mu}{p}}\left(e+\cos(\nu)\right)
+\]</span></p></li>
 </ul>
 </div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>En consecuencia, los vectores en el marco perifocal son:</p>
+<p><span class="math display">\[
+{}^{p}\vec{r}(t)=
+\begin{bmatrix}
+r(t)\cos(\nu(t))\\
+r(t)\sin(\nu(t))\\
+0
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+{}^{p}\vec{v}(t)=
+\sqrt{\frac{\mu}{p}}
+\begin{bmatrix}
+-\sin(\nu(t))\\
+e+\cos(\nu(t))\\
+0
+\end{bmatrix}
+\]</span></p></li>
+<li><p>Evaluando en el instante inicial <span class="math inline">\(t=t_0\)</span>, con <span class="math inline">\(r_0=r(t_0)\)</span> y <span class="math inline">\(\nu_0=\nu(t_0)\)</span>, obtenemos las condiciones iniciales:</p>
+<p><span class="math display">\[
+{}^{p}\vec{r}_0=
+\begin{bmatrix}
+r_0\cos(\nu_0)\\
+r_0\sin(\nu_0)\\
+0
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+{}^{p}\vec{v}_0=
+\sqrt{\frac{\mu}{p}}
+\begin{bmatrix}
+-\sin(\nu_0)\\
+e+\cos(\nu_0)\\
+0
+\end{bmatrix}
+\]</span></p></li>
+<li><p>A partir de los vectores de posición y velocidad en el marco perifocal, se obtienen los coeficientes de Lagrange en función de los parámetros orbitales general. Para simplificar, definimos la diferencia de anomalía verdadera:</p></li>
+</ul>
+<p><span class="math display">\[
+\Delta\nu=\nu-\nu_0
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>A partir de las componentes de posición y velocidad en el marco perifocal, recordamos que</p>
+<p><span class="math display">\[
+f=\frac{r_xv_{y,0}-r_yv_{x,0}}{h}
+\]</span></p>
+<p>Sustituyendo las componentes, resulta</p>
+<p><span class="math display">\[
+f=\frac{r}{p}\left[
+e\cos(\nu)+\cos(\nu)\cos(\nu_0)+\sin(\nu)\sin(\nu_0)
+\right]
+\]</span></p>
+<p>Utilizando la identidad trigonométrica del coseno de una diferencia,</p>
+<p><span class="math display">\[
+\cos(\Delta\nu)=\cos(\nu)\cos(\nu_0)+\sin(\nu)\sin(\nu_0)
+\]</span></p>
+<p>se obtiene</p>
+<p><span class="math display">\[
+f=\frac{r}{p}\left[e\cos(\nu)+\cos(\Delta\nu)\right]
+\]</span></p>
+<p>De la ecuación de órbita</p>
+<p><span class="math display">\[
+e\cos(\nu)=p/r-1
+\]</span>.</p>
+<p>Sustituyendo y simplificando, obtenemos finalmente</p>
+<p><span class="math display">\[
+f=1-\frac{r}{p}\left[1-\cos(\Delta\nu)\right]
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Para el coeficiente <span class="math inline">\(g\)</span>, partimos de la expresión</p>
+<p><span class="math display">\[
+g=\frac{r_{x,0}r_y-r_{y,0}r_x}{h}
+\]</span></p>
+<p>Sustituyendo las componentes de los vectores de posición,</p>
+<p><span class="math display">\[
+g=\frac{r_0r}{h}\left[
+\cos(\nu_0)\sin(\nu)-\sin(\nu_0)\cos(\nu)
+\right]
+\]</span></p>
+<p>Aplicando la identidad trigonométrica del seno de una diferencia,</p>
+<p><span class="math display">\[
+\sin(\Delta\nu)=\cos(\nu_0)\sin(\nu)-\sin(\nu_0)\cos(\nu)
+\]</span></p>
+<p>resulta</p>
+<p><span class="math display">\[
+g=\frac{r_0r}{h}\sin(\Delta\nu)
+\]</span></p>
+<p>Como el momento angular específico es <span class="math inline">\(h=\sqrt{\mu p}\)</span>, el coeficiente queda expresado como</p>
+<p><span class="math display">\[
+g=\frac{r_0r}{\sqrt{\mu p}}\sin(\Delta\nu)
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Ahora, partimos de la expresión</p>
+<p><span class="math display">\[
+\dot{g}=\frac{r_{x,0}v_y-r_{y,0}v_x}{h}
+\]</span></p>
+<p>Sustituyendo las componentes de posición y velocidad, obtenemos</p>
+<p><span class="math display">\[
+\dot{g}=\frac{r_0}{p}\left[
+e\cos(\nu_0)+\cos(\nu_0)\cos(\nu)+\sin(\nu_0)\sin(\nu)
+\right]
+\]</span></p>
+<p>Aplicando la identidad del coseno de una diferencia,</p>
+<p><span class="math display">\[
+\dot{g}=\frac{r_0}{p}\left[
+e\cos(\nu_0)+\cos(\Delta\nu)
+\right]
+\]</span></p>
+<p>De la ecuación de órbita en el instante inicial, <span class="math inline">\(e\cos(\nu_0)=p/r_0-1\)</span>. Sustituyendo y simplificando, obtenemos</p>
+<p><span class="math display">\[
+\dot{g}=1-\frac{r_0}{p}\left[1-\cos(\Delta\nu)\right]
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Para obtener <span class="math inline">\(\dot{f}\)</span>, utilizamos la identidad fundamental de los coeficientes de Lagrange:</p>
+<p><span class="math display">\[
+f\dot{g}-\dot{f}g=1
+\]</span></p>
+<p>Despejando <span class="math inline">\(\dot{f}\)</span>,</p>
+<p><span class="math display">\[
+\dot{f}=\frac{f\dot{g}-1}{g}
+\]</span></p>
+<p>Sustituyendo las expresiones de <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span> y <span class="math inline">\(\dot{g}\)</span>, y simplificando, se obtiene</p>
+<p><span class="math display">\[
+\dot{f}
+=\sqrt{\frac{\mu}{p}}\,
+\frac{1-\cos(\Delta\nu)}{\sin(\Delta\nu)}
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right]
+\]</span></p>
+<p>Finalmente, utilizando la identidad de medio ángulo,</p>
+<p><span class="math display">\[
+\tan\left(\frac{\Delta\nu}{2}\right)
+=\frac{1-\cos(\Delta\nu)}{\sin(\Delta\nu)}
+\]</span></p>
+<p>la expresión se escribe como</p>
+<p><span class="math display">\[
+\dot{f}
+=\sqrt{\frac{\mu}{p}}\,
+\tan\left(\frac{\Delta\nu}{2}\right)
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right]
+\]</span></p>
+</section>
+<section id="resumen-de-los-coeficientes-de-lagrange" class="slide level2">
+<h2>Resumen de los coeficientes de Lagrange</h2>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<p>Los cuatro coeficientes de Lagrange quedan expresados en función de las magnitudes orbitales como:</p>
+<p><span class="math display">\[
+\begin{split}
+f &amp;= 1-\frac{r}{p}\left[1-\cos(\Delta\nu)\right],\\[6pt]
+\dot{f} &amp;= \sqrt{\frac{\mu}{p}}\,
+\tan\left(\frac{\Delta\nu}{2}\right)
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right],\\[6pt]
+g &amp;= \frac{r_0r}{\sqrt{\mu p}}\sin(\Delta\nu),\\[6pt]
+\dot{g} &amp;= 1-\frac{r_0}{p}\left[1-\cos(\Delta\nu)\right].
+\end{split}
+\]</span></p>
+<ul>
+<li><p>Para evaluar los coeficientes de Lagrange, es necesario conocer los radios inicial y final, <span class="math inline">\(r_0\)</span> y <span class="math inline">\(r\)</span>, el parámetro orbital <span class="math inline">\(p\)</span>, el parámetro gravitacional <span class="math inline">\(\mu\)</span> y la diferencia de anomalía verdadera <span class="math inline">\(\Delta\nu\)</span>.</p></li>
+<li><p>Estas expresiones permiten propagar el estado orbital a partir de las condiciones iniciales, sin necesidad de calcular explícitamente la orientación de la órbita respecto al marco inercial.</p></li>
+</ul>
+</section>
+<section id="coeficientes-de-lagrange-en-función-de-la-anomalía-psi" class="slide level2">
+<h2>Coeficientes de Lagrange en función de la anomalía <span class="math inline">\(\psi\)</span></h2>
+<p>Los coeficientes de Lagrange también pueden expresarse en función de una anomalía orbital <span class="math inline">\(\psi\)</span>, cuya definición depende del tipo de trayectoria:</p>
+<ul>
+<li>Órbita elíptica: <span class="math inline">\(\psi\)</span>, anomalía excéntrica.</li>
+<li>Órbita parabólica: <span class="math inline">\(\psi\)</span>, anomalía parabólica.</li>
+<li>Órbita hiperbólica: <span class="math inline">\(\psi\)</span>, anomalía hiperbólica.</li>
+</ul>
+<p>Definimos <span class="math inline">\(\Delta\psi=\psi-\psi_0\)</span> y <span class="math inline">\(\Delta t=t-t_0\)</span>.</p>
+<ul>
+<li>Para una órbita elíptica, los coeficientes de Lagrange son:</li>
+</ul>
+<p><span class="math display">\[
+\begin{split}
+f &amp;= 1-\frac{a}{r_0}\left[1-\cos(\Delta\psi)\right],\\[6pt]
+g &amp;= \Delta t-\sqrt{\frac{a^3}{\mu}}
+\left[\Delta\psi-\sin(\Delta\psi)\right],\\[6pt]
+\dot{f} &amp;= -\frac{\sqrt{\mu a}}{rr_0}\sin(\Delta\psi),\\[6pt]
+\dot{g} &amp;= 1-\frac{a}{r}\left[1-\cos(\Delta\psi)\right].
+\end{split}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Para una trayectoria parabólica, los coeficientes son:</li>
+</ul>
+<p><span class="math display">\[
+\begin{split}
+f &amp;= \frac{1-\psi^2+2\psi\psi_0}
+{1+\psi_0^2},\\[6pt]
+g &amp;= \frac{p^2\Delta\psi(1+\psi\psi_0)}
+{2h},\\[6pt]
+\dot{f} &amp;= -\frac{4\sqrt{\mu p}\,\Delta\psi}
+{p^2(1+\psi^2)(1+\psi_0^2)},\\[6pt]
+\dot{g} &amp;= \frac{1-\psi_0^2+2\psi\psi_0}
+{1+\psi^2}.
+\end{split}
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Para una trayectoria hiperbólica, los coeficientes son:</li>
+</ul>
+<p><span class="math display">\[
+\begin{split}
+f &amp;= 1+\frac{a}{r_0}
+\left[1-\cosh(\Delta\psi)\right],\\[6pt]
+g &amp;= \Delta t-\sqrt{\frac{a^3}{\mu}}
+\left[\sinh(\Delta\psi)-\Delta\psi\right],\\[6pt]
+\dot{f} &amp;= -\frac{\sqrt{\mu a}}{rr_0}
+\sinh(\Delta\psi),\\[6pt]
+\dot{g} &amp;= 1+\frac{a}{r}
+\left[1-\cosh(\Delta\psi)\right].
+\end{split}
+\]</span></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<p>En los cuatro casos, los vectores de posición y velocidad inerciales se obtienen mediante las mismas relaciones:</p>
+<p><span class="math display">\[
+{}^{i}\vec{r}(t)=f(t)\,{}^{i}\vec{r}_0+g(t)\,{}^{i}\vec{v}_0
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{v}(t)=\dot{f}(t)\,{}^{i}\vec{r}_0+\dot{g}(t)\,{}^{i}\vec{v}_0
+\]</span></p>
+<ul>
+<li>Para evaluar los coeficientes de Lagrange en un instante dado, es necesario conocer la evolución temporal de la anomalía verdadera <span class="math inline">\(\nu(t)\)</span> (o de la variable <span class="math inline">\(\psi(t)\)</span>) y del radio <span class="math inline">\(r(t)\)</span>. En los desarrollos anteriores, estas cantidades se obtuvieron a partir de la ecuación de la órbita</li>
+</ul>
+<p><span class="math display">\[
+r=\frac{p}{1+e\cos(\nu)}
+\]</span> y de las ecuaciones de Kepler correspondientes a cada tipo de cónica.</p>
+<p><span class="math display">\[
+M(t)=\psi-e\sin(\psi),\qquad
+M(t)=\psi+\frac{1}{3}\psi^3,\qquad
+M(t)=e\sinh(\psi)-\psi
+\]</span></p>
+<p>Todas estas relaciones dependen de la excentricidad <span class="math inline">\(e\)</span>.</p>
+<ul>
+<li>Por lo tanto, este procedimiento requiere identificar previamente el tipo de órbita y emplear formulaciones específicas para los casos elíptico, parabólico e hiperbólico. <strong>Esta dependencia motiva la búsqueda de una formulación universal que permita propagar sin distinguir explícitamente entre los distintos tipos de cónica</strong>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Propagador universal</p>
+<div class="menu-title" style="display:none;">
+▸ Propagador universal
+</div>
+</div>
+</div>
+<!-- 
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Propagación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Elementos orbitales
+
+<div class="menu-title" style="display:none;"> ▸ Elementos orbitales</div>
+:::
+
+:::
+
+##
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.
+
+- En particular, los elementos orbitales permiten definir:
+
+  - La **<span style="color:red">forma y tamaño</span>** de la trayectoria.
+
+    ::: {.text-center .xlarge}
+
+    <span style="color:red">$a,e$</span>
+
+    :::
+
+  - La **<span style="color:teal">orientación</span>** de la trayectoria.
+
+    ::: {.text-center .xlarge}
+
+    <span style="color:teal">$i,\Omega,\omega$</span>
+
+    :::
+
+  - La **<span style="color:blue">posición instantánea</span>** del cuerpo en su trayectoria.
+
+    ::: {.text-center .xlarge}
+
+    <span style="color:blue">$\nu(t)$</span>
+
+    :::
+
+
+---
+
+##
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+La **forma** y el **tamaño** de una órbita se determinan a partir de:
+
+
+::: {.fragment}
+
+- La <span style="color:red">**excentricidad** $e$</span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de $e$:
+
+  - $e=0$: órbita circular.
+  - $0<e<1$: órbita elíptica.
+  - $e=1$: parábola.
+  - $e>1$: hipérbola.
+
+:::
+
+
+::: {.fragment}
+
+- En el caso de órbitas elípticas, el <span style="color:red">**semieje mayor** $a$</span> determina su tamaño.
+
+    $$
+        e=\frac{c}{a},
+        \qquad
+        c=\sqrt{a^2-b^2}
+    $$
+
+    donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
+
+- Sin embargo, para trayectorias en general, podemos utilizar el semi parametro $p$ para describir el tamaño de la trayectoria.
+:::
+
+:::
+
+::: {.column width="40%"}
+
+![](/Figures/c2/ellipse.svg){width=100%}
+
+:::
+
+:::
+
+---
+
+##
+
+::: {.columns}
+
+::: {.column width="48%"}
+
+![](/Figures/c2/orientation_parameters.svg){width=120%}
+
+:::
+
+::: {.column width="52%"}
+
+La **orientación de la órbita** se determina con tres ángulos:
+
+:::{.incremental}
+
+- <span style="color:teal">**Longitud del nodo ascendente** $\Omega\in[0,2\pi)$</span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
+  <div class="vspace-3"></div>
+
+- <span style="color:teal">**Inclinación** $i\in[0,\pi]$</span>: ángulo entre el *plano orbital* y el *plano de referencia*.
+  <div class="vspace-3"></div>
+
+- <span style="color:teal">**Argumento del periapsis** $\omega\in[0,2\pi)$</span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.
+
+:::
+
+:::
+
+:::
+
+---
+
+##
+
+::: {.columns}
+
+::: {.column width="48%"}
+
+![](/Figures/c2/true_anomaly.svg){width=120%}
+
+:::
+
+::: {.column width="52%"}
+
+La **posición instantánea** del cuerpo en su órbita se describe con la <span style="color:blue">**anomalía verdadera** $\nu(t)$</span>.
+
+
+:::{.incremental}
+- La anomalía verdadera $\nu(t)$ es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.
+
+- Se dice que es *verdadera* porque está presente en todos las posibles secciones cónicas que describen una trayectoria. 
+
+- En lugar de $\nu(t)$, también pueden emplearse otras variables para describir la posición:
+
+  - **Anomalía excéntrica, parabólica o hiperbólica** $\psi(t)$.
+  - **Anomalía media** $M(t)$.
+
+- Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo . 
+
+:::
+
+
+:::
+
+
+::: -->
 
 </section>
 

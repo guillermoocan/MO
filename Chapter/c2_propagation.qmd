@@ -4067,13 +4067,13 @@ $$ {#eq-prog_p_kepler}
 - Y derivando la @eq-kepler_parabolic respecto al tiempo 
 
     $$
-        \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_e}{1+\psi^2(t)}.
+        \frac{\text{d}\psi(t)}{\text{d}t} = \frac{\eta_p}{1+\psi^2(t)}.
     $$
 
 - Entonces, el vector de velocidad es
 
     $$
-        \ls{p}\vec{v}(t) = \frac{2\eta_e}{1+\psi^2(t)}\begin{bmatrix}
+        \ls{p}\vec{v}(t) = \frac{2f\eta_p}{1+\psi^2(t)}\begin{bmatrix}
         -\psi(t)\\
         1\\
         0
@@ -4518,7 +4518,7 @@ Vamos a estudiar los siguiente cuatro casos de velocidad inicial:
     -3.300\\
     -0.600\\
     0\\
-    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
     $$
 
 :::
@@ -4532,7 +4532,7 @@ Vamos a estudiar los siguiente cuatro casos de velocidad inicial:
     2.463\\
     -2.7092\\
     0\\
-    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
     $$
 
 :::
@@ -4546,7 +4546,7 @@ Vamos a estudiar los siguiente cuatro casos de velocidad inicial:
     4.829\\
     1.867\\
     0\\
-    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
     $$
 
 :::
@@ -4560,7 +4560,7 @@ Vamos a estudiar los siguiente cuatro casos de velocidad inicial:
     5.795\\
     2.241\\
     0\\
-    \end{bmatrix}\times 10^3\;\mathrm{m/s}.
+    \end{bmatrix}\times 10^3\;\mathrm{m/seg}.
     $$
 
 :::
@@ -5466,7 +5466,7 @@ $$
     $$
     \cos(\theta_1)
     =
-    \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{h}\|},
+    \frac{\hat{x}_i \cdot \vec{n}}{\|\vec{n}\|},
     $$
 
     de donde
@@ -5477,7 +5477,7 @@ $$
     \cos^{-1}
     \left(
     \frac{\hat{x}_i \cdot \vec{n}}
-    {\|\vec{h}\|}
+    {\|\vec{n}\|}
     \right)
     =
     \Omega.
@@ -5572,7 +5572,7 @@ $$
     por lo que
 
     $$
-    \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{h}\|e}\right)=\omega,
+    \theta_3=\cos^{-1}\left(\frac{\vec{n}\cdot\vec{e}}{\|\vec{n}\|e}\right)=\omega,
     \qquad
     \omega\in[0,2\pi).
     $$
@@ -5580,7 +5580,7 @@ $$
     Si $e_z<0$, entonces
 
     $$
-    \omega=\pi-\omega.
+    \omega=2\pi-\omega.
     $$
 
     A este ángulo se le conoce como **argumento del periapsis** y se denota comúnmente con la letra $\omega$. Se define como el ángulo medido desde la línea de nodos hasta el vector de excentricidad.
@@ -5595,6 +5595,54 @@ $$
 :::
 
 :::
+
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Adicionalmente podemos obtener la anomalia verdadera $\nu$ mediante
+
+    $$
+    \vec{e}\cdot\vec{r}=\|\vec{e}\|\,\|\vec{r}\|\cos(\nu),
+    $$
+
+    por lo que
+
+    $$
+    \nu=\cos^{-1}\left(\frac{\vec{e}\cdot\vec{r}}{\|\vec{e}\|\,\|\vec{r}\|}\right),
+    \qquad
+    \nu\in[0,2\pi).
+    $$
+
+    Si $\vec{r}\cdot\vec{v}<0$, entonces
+
+    $$
+    \nu=2\pi-\nu.
+    $$
+
+- Esto es de utilidad cuando se quiere conocer la anomalía verdadera sin necesidad de transformar el vector de posición a coordenadas perifocales. 
+- Sin embargo, puede fallar cuando la trayectoria es circular, ya que el vector de excentricidad es nulo.
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c2/orbital_parameters_neh.svg){width=100% fig-align="center"}
+
+:::
+
+:::
+
 
 ## Casos especiales
 
@@ -5803,8 +5851,1364 @@ nn
 
 :::
 
+
 ---
 
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.4: Obtención de los parámetros orbitales de orientación</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$\ls{i}\vec{r}$ y $\ls{i}\vec{v}$
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$i$, $\Omega$, $\omega$.
+</div>
+
+<ol>
+<li> Calcular el momento angular específico $\vec{h}$</li>
+$$
+    \ls{i}\vec{h}=\ls{i}\vec{r}\times\ls{i}\vec{v}
+$$
+<li> Calcular el vector de excentricidad $\vec{e}$</li>
+$$
+    \ls{i}\vec{e}=\frac{1}{\mu}\ls{i}\vec{v}\times\ls{i}\vec{h}-\hat{r}
+$$
+<li> Calcular el vector del nodo ascendente $\vec{n}$</li>
+$$
+    \ls{i}\vec{n}=\hat{z}_i\times\ls{i}\vec{h}
+$$
+<li> Calcular la inclinación $i$</li>
+$$
+    i=\cos^{-1}\left(\frac{\hat{z}_i\cdot\ls{i}\vec{h}}{\|\ls{i}\vec{h}\|}\right).
+$$
+</ol>
+
+:::
+
+
+
+---
+
+
+
+
+
+
+
+::: {.columns}
+
+::: {.column}
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.4: Obtención de los parámetros orbitales de orientación (Continuación)</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$\ls{i}\vec{r}$ y $\ls{i}\vec{v}$
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$i$, $\Omega$, $\omega$.
+</div>
+
+<ol>
+
+<li>Calcular la ascensión recta del nodo ascendente $\Omega$</li>
+
+$$
+\Omega=\cos^{-1}\left(\frac{\hat{x}_i\cdot\ls{i}\vec{n}}{\|\ls{i}\vec{n}\|}\right)
+$$
+
+Si $n_y<0$, entonces
+
+$$
+\Omega=2\pi-\Omega
+$$
+
+<li>Calcular el argumento del periapsis $\omega$</li>
+
+$$
+\omega=\cos^{-1}\left(\frac{\ls{i}\vec{n}\cdot\ls{i}\vec{e}}{\|\ls{i}\vec{n}\|e}\right)
+$$
+
+Si $e_z<0$, entonces
+
+$$
+\omega=2\pi-\omega
+$$
+
+</ol>
+
+:::
+
+:::
+
+::: {.column}
+
+::: {.callout-note .fragment}
+### Nota:
+
+Si bien podría presentarse uno de los casos especiales, el algoritmo anterior es capaz de calcular por lo menos un conjunto de los parámetros orbitales de orientación sin importar la forma y la orientación de la trayectoria. Si se quieren caracterizar completamente los parámetros orbitales de orientación, se recomienda extender el algoritmo con las variables especiales $\tilde{\omega}_{\mathrm{true}}, u$ y $\lambda_{\mathrm{true}}$.
+
+:::
+
+:::
+
+:::
+
+
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.5.1: Tranformación de coordenadas $\ls{i}\mathcal{F} \to \ls{p}\mathcal{F}$</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$\ls{i}\vec{r}$, $\ls{i}\vec{v}$, $i$, $\Omega$, $\omega$.
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\ls{p}\vec{r}$ y $\ls{p}\vec{v}$
+</div>
+
+:::{.small}
+
+<ol>
+<li> Calcular la matriz de rotación $\ls{p}R_i$</li>
+$$
+    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
+$$
+<li> Calcular el vector de posición $\ls{p}\vec{r}$ y el vector de velocidad $\ls{p}\vec{v}$</li> 
+$$
+    \ls{p}\vec{r}=\ls{p}R_i\,\ls{i}\vec{r}, \qquad \ls{p}\vec{v}=\ls{p}R_i\,\ls{i}\vec{v}
+$$
+
+</ol>
+
+:::
+:::
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.5.2: Tranformación de coordenadas $\ls{p}\mathcal{F} \to \ls{i}\mathcal{F}$</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$\ls{p}\vec{r}$, $\ls{p}\vec{v}$, $i$, $\Omega$, $\omega$.
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\ls{i}\vec{r}$ y $\ls{i}\vec{v}$
+</div>
+
+:::{.small}
+
+
+<ol>
+<li> Calcular la matriz de rotación $\ls{p}R_i$</li>
+$$
+    \ls{p}R_i=R_z(\omega)\,R_x(i)\,R_z(\Omega)
+$$
+<li> Calcular el vector de posición $\ls{i}\vec{r}$ y el vector de velocidad $\ls{i}\vec{v}$</li> 
+$$
+    \ls{i}\vec{r}=\ls{p}R_i^\top\,\ls{p}\vec{r}, \qquad \ls{i}\vec{v}=\ls{p}R_i^\top\,\ls{p}\vec{v}
+$$
+
+</ol>
+
+:::
+
+:::
+
+
+---
+
+## Ejercicio
+
+Sean
+$$
+^{i}\vec{r}_0 =
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\,\mathrm{m},
+\qquad
+\ls{i}\vec{v}_0 =
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\,\mathrm{m/seg}.
+$$
+
+Considere el parámetro gravitacional terrestre
+
+$$
+\mu = 3.986\times10^{14}\,\mathrm{m^3/s^2}.
+$$
+
+- Considerando que la base del marco de referencia inercial es la base canónica, determine los parámetros de orientación de la órbita:
+
+$$
+\Omega,\qquad i,\qquad \omega
+$$
+
+- Obtenga las condiciones iniciales en el marco de referencia perifocal.
+
+- Obtenga las condiciones iniciales en el marco de referencia inercial utilizando los resultados del punto anterior.
+
+## Solución
+
+Se calculan los vectores auxiliares:
+
+$$
+{}^i\vec h={}^i\vec r_0\times{}^i\vec v_0
+=
+\begin{bmatrix}
+3.7663\times10^{10}\\
+6.3207\times10^9\\
+-5.3218\times10^{10}
+\end{bmatrix}\mathrm{m^2/s}.
+$$
+
+$$
+{}^i\vec e=
+\frac{1}{\mu}
+\left({}^i\vec v_0\times{}^i\vec h\right)-\ls{i}\hat r_0
+=
+\begin{bmatrix}
+-0.117094\\
+0.291779\\
+-0.048214
+\end{bmatrix},
+\qquad
+e=\|{}^i\vec{e}\|=0.318073
+\qquad
+{}^i\vec n=\hat z_i\times{}^i\vec h
+=
+\begin{bmatrix}
+-6.3207\times10^9\\
+3.7663\times10^{10}\\
+0
+\end{bmatrix}.
+$$
+
+La inclinación resulta
+
+$$
+i=\cos^{-1}\left(
+\frac{\hat z_i\cdot{}^i\vec h}
+{\|{}^i\vec h\|}
+\right)
+=\boxed{2.51915\ \mathrm{rad}=144.337^\circ}.
+$$
+
+
+La longitud del nodo ascendente es
+
+$$
+\Omega=
+\cos^{-1}\left(
+\frac{\hat x_i\cdot{}^i\vec n}
+{\|{}^i\vec n\|}
+\right)
+=1.73707\ \mathrm{rad}.
+$$
+
+---
+
+Como
+
+$$
+n_y>0,
+$$
+
+no se aplica la corrección de cuadrante:
+
+$$
+\boxed{\Omega=1.73707\ \mathrm{rad}=99.527^\circ}.
+$$
+
+El argumento del periapsis se obtiene mediante
+
+$$
+\omega=
+\cos^{-1}\left(
+\frac{{}^i\vec n\cdot{}^i\vec e}
+{\|{}^i\vec n\|e}
+\right)
+=0.262912\ \mathrm{rad}.
+$$
+
+Como
+
+$$
+e_z<0,
+$$
+
+se aplica
+
+$$
+\omega=2\pi-0.262912.
+$$
+
+Por tanto,
+
+$$
+\boxed{\omega=6.02017\ \mathrm{rad}=344.930^\circ}.
+$$
+
+---
+
+A partir de los parámetros de orientación,
+
+$$
+\Omega=1.74,\qquad i=2.52,\qquad \omega=6.02\ \mathrm{rad},
+$$
+
+se obtiene la matriz de rotación
+
+$$
+{}^pR_i=R_z(\omega)R_x(i)R_z(\Omega)
+=
+\begin{bmatrix}
+-0.37 & 0.92 & -0.15\\
+0.73 & 0.39 & 0.56\\
+0.57 & 0.10 & -0.81
+\end{bmatrix}.
+$$
+
+Por lo tanto,
+
+$$
+{}^p\vec r_0={}^pR_i\,{}^i\vec r_0
+=
+\begin{bmatrix}
+7.18\\
+-4.52\\
+0.00
+\end{bmatrix}\times10^6\ \mathrm{m},
+$$
+
+$$
+{}^p\vec v_0={}^pR_i\,{}^i\vec v_0
+=
+\begin{bmatrix}
+3.24\\
+7.08\\
+0.00
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
+
+---
+
+Como ${}^pR_i$ es una matriz de rotación,
+
+$$
+({}^pR_i)^{-1}=\;pR_i^{\top}.
+$$
+
+Por lo tanto,
+
+$$
+{}^i\vec r_0=\;^pR_i^{\top}{}^p\vec r_0
+=
+\begin{bmatrix}
+-5.95\\
+4.84\\
+-3.63
+\end{bmatrix}\times10^6\ \mathrm{m},
+$$
+
+$$
+{}^i\vec v_0=\:^pR_i^{\top}{}^p\vec v_0
+=
+\begin{bmatrix}
+3.98\\
+5.71\\
+3.50
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
+
+Se recuperan las condiciones iniciales originales, dentro del redondeo numérico.
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Propagación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Resumen 1
+
+<div class="menu-title" style="display:none;"> ▸ Resumen 1</div>
+:::
+
+::: 
+
+---
+
+## Formulario - Ecuaciones generales
+
+
+| Parámetro | Ecuación |
+|:---|:---:|
+| Parámetro gravitacional | $$\mu = G(m_1+m_2)\approx G m_1 \; \text{si}\; m_1 \gg m_0$$ |
+| Magnitudes de posición y velocidad | $$r = \|\vec r\|,\qquad v = \|\vec v\|$$ |
+| Momento angular específico | $$\vec h = \vec r \times \vec v,\qquad h = \|\vec h\|$$ |
+| Semi-latus rectum | $$p = \dfrac{h^2}{\mu}$$ |
+| Energía mecánica específica | $$E = \dfrac{v^2}{2}-\dfrac{\mu}{r}$$ |
+| Excentricidad | $$e = \sqrt{1+\dfrac{2Eh^2}{\mu^2}}$$ |
+| Anomalía verdadera | $$\nu = \operatorname{atan2}(r_y,r_x)$$ |
+
+
+## Formulario - Secciones cónicas
+
+| | Elipse | Parábola | Hipérbola |
+|:---|:---:|:---:|:---:|
+| Excentricidad | $$0\leq e<1$$ | $$e=1$$ | $$e>1$$ |
+| Energía específica | $$E<0$$ | $$E=0$$ | $$E>0$$ |
+| Semi-latus rectum | $$p=a(1-e^2)$$ | $$p=2f$$ | $$p=a(e^2-1)$$ |
+| Ecuación de la órbita | $$r=\dfrac{p}{1+e\cos\nu}$$ | $$r=\dfrac{p}{1+\cos\nu}$$ | $$r=\dfrac{p}{1+e\cos\nu}$$ |
+| Distancia al periapsis | $$r_p=a(1-e)$$ | $$r_p=f$$ | $$r_p=a(e-1)$$ |
+| Semieje | $$a=\dfrac{p}{1-e^2}$$ | - | $$a=\dfrac{p}{e^2-1}$$ |
+
+
+## Formulario -  Ecuación de Kepler
+
+| | Elipse | Parábola | Hipérbola |
+|:---|:---:|:---:|:---:|
+| Relación con $\nu$ | $$\tan(\psi)=\dfrac{\sin(\nu)\sqrt{1-e^2}}{e+\cos(\nu)}$$ | $$\psi=\tan\left(\dfrac{\nu}{2}\right)$$ | $$\sinh(\psi)=\dfrac{\sqrt{e^2-1}\sin(\nu)}{1+e\cos(\nu)}$$ |
+| Movimiento medio | $$\eta_e=\sqrt{\dfrac{\mu}{a^3}}$$ | $$\eta_p=\sqrt{\dfrac{\mu}{2f^3}}$$ | $$\eta_h=\sqrt{\dfrac{\mu}{a^3}}$$ |
+| Anomalía media| $$M=M_0+\eta_e(t-t_0)$$ | $$M=M_0+\eta_p(t-t_0)$$ | $$M=M_0+\eta_h(t-t_0)$$ |
+| Ecuación de Kepler | $$M=\psi-e\sin\psi$$ | $$M=\psi+\dfrac{\psi^3}{3}$$ | $$M=e\sinh\psi-\psi$$ |
+
+
+## Formulario - Efemérides
+
+
+| | Elipse | Parábola | Hipérbola |
+|:---|:---:|:---:|:---:|
+| Anomalía verdadera | $$\nu= \operatorname{atan2}\left(\sqrt{1-e^2}\sin\psi,\cos\psi-e\right)$$ | $$\nu=\operatorname{atan2}\left(\psi,1\right)$$ | $$\nu=\operatorname{atan2}\left(\sqrt{e^2-1}\sinh\psi,e-\cosh\psi\right)$$ |
+| Vector posición | $$\vec r=a\begin{bmatrix}\cos\psi-e\\\sqrt{1-e^2}\sin\psi\\0\end{bmatrix}$$ | $$\vec r=f\begin{bmatrix}1-\psi^2\\2\psi\\0\end{bmatrix}$$ | $$\vec r=a\begin{bmatrix}e-\cosh\psi\\\sqrt{e^2-1}\sinh\psi\\0\end{bmatrix}$$ |
+| Vector velocidad | $$\vec v=\frac{a\eta_e}{1-e\cos\psi}\begin{bmatrix}-\sin\psi\\\sqrt{1-e^2}\cos\psi\\0\end{bmatrix}$$ | $$\vec v=\frac{2f\eta_p}{1+\psi^2}\begin{bmatrix}-\psi\\1\\0\end{bmatrix}$$ | $$\vec v=\frac{a\eta_h}{e\cosh\psi-1}\begin{bmatrix}-\sinh\psi\\\sqrt{e^2-1}\cosh\psi\\0\end{bmatrix}$$ |
+
+
+## Formulario - Orientación orbital
+
+| Parámetro | Ecuación |
+|:---|:---:|
+| Vector de excentricidad | $$\vec e=\frac{1}{\mu}\vec v\times\vec h-\frac{\vec r}{r}$$ |
+| Vector nodal | $$\vec n=\hat{z}_i\times\vec h$$ |
+| Inclinación | $$i=\cos^{-1}\left(\frac{\hat{ z}_i\cdot\vec h}{h}\right)$$ |
+| Longitud del nodo asc.| $$\Omega=\cos^{-1}\left(\frac{\hat{ x}_i\cdot\vec n}{n}\right)\qquad n_y<0\Rightarrow\Omega=2\pi-\Omega$$ |
+| Argumento del periapsis | $$\omega=\cos^{-1}\left(\frac{\vec n\cdot\vec e}{ne}\right)\qquad e_z<0\Rightarrow\omega=2\pi-\omega$$ |
+| Anomalía verdadera | $$\nu=\cos^{-1}\left(\frac{\vec e\cdot\vec r}{er}\right)\qquad \vec r\cdot\vec v<0\Rightarrow\nu=2\pi-\nu$$ |
+
+
+## Formulario - Transformación de coordenadas
+
+
+::: {.columns}
+
+::: {.column}
+
+
+| Rotación | Matriz |
+|:---|:---:|
+| Eje $x$ | $$R_x(\theta)=\begin{bmatrix}1&0&0\\0&\cos\theta&\sin\theta\\0&-\sin\theta&\cos\theta\end{bmatrix}$$ |
+| Eje $y$ | $$R_y(\theta)=\begin{bmatrix}\cos\theta&0&-\sin\theta\\0&1&0\\\sin\theta&0&\cos\theta\end{bmatrix}$$ |
+| Eje $z$ | $$R_z(\theta)=\begin{bmatrix}\cos\theta&\sin\theta&0\\-\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix}$$ |
+
+:::
+
+::: {.column}
+
+| Conversión | Ecuación |
+|:---|:---:|
+| Matriz de rotación | $$^{p}\!R_i=R_z(\omega)R_x(i)R_z(\Omega)$$ |
+| Inercial $\rightarrow$ perifocal | $$^{p}\!\vec r={}^{p}\!R_i\,{}^{i}\!\vec r,\qquad{}^{p}\!\vec v={}^{p}\!R_i\,{}^{i}\!\vec v$$ |
+| Perifocal $\rightarrow$ inercial | $$^{i}\!\vec r={}^{p}\!R_i^{\top}\,{}^{p}\!\vec r,\qquad{}^{i}\!\vec v={}^{p}\!R_i^{\top}\,{}^{p}\!\vec v$$ |
+
+:::
+
+:::
+
+## Algoritmo de propagación completo
+
+![](/Figures/c2/full_propagation.svg){width=95% fig-align="center"}
+
+
+## Ejercicio
+
+Sean las siguientes condiciones iniciales de posición y velocidad,
+expresadas en el marco de referencia inercial:
+
+$$
+{}^{i}\vec{r}_0^{(1)}=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(1)}=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(2)}=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(2)}=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(3)}=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(3)}=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(4)}=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(4)}=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
+
+Considere el parámetro gravitacional terrestre $\mu=3.986\times10^{14}\ \mathrm{m^3/seg^2}$ y $t_0=0\ \mathrm{ seg}$. Para cada caso, obtenga los parámetros orbitales $h$, $E$, $e$, $p$, $\nu_0$, $\Omega$, $i$ y $\omega$ y realice la propagación correspondiente. 
+
+## Resultados
+
+| Parámetro | Caso 1<br>Circular | Caso 2<br>Elíptica | Caso 3<br>Parabólica | Caso 4<br>Hiperbólica |
+|:---|---:|---:|---:|---:|
+| $e$ | 0.0000 | 0.3181 | 1.000 | 1.553 |
+| $p$ [m] | $8.013\times10^6$ | $1.077\times10^7$ | $1.462\times10^7$ | $1.863\times10^7$ |
+| $\nu_0$ [rad] | $-1.225$ | $-0.5621$ | $-1.763$ | $-1.397$ |
+| $\Omega$ [rad] | $1.203$ | $1.737$ | $3.148$ | $0.08651$ |
+| $i$ [rad] | $1.954$ | $2.519$ | $2.147$ | $2.428$ |
+| $\omega$ [rad] | $2.750$ | $6.020$ | $4.478$ | $5.546$ |
+| $E$ [J/kg] | $-2.487\times10^7$ | $-1.664\times10^7$ | $0$ | $1.509\times10^7$ |
+| $h$ [m$^2$/s] | $5.651\times10^{10}$ | $6.550\times10^{10}$ | $7.632\times10^{10}$ | $8.617\times10^{10}$ |
+
+
+
+
+
+
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/c_inertial_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 1 (anomalia verdadera calculada con el vector de excentricidad nulo).
+
+:::
+
+---
+
+![](/Figures/c2/c_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/e_inertial_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 2.
+
+:::
+
+---
+
+![](/Figures/c2/e_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/p_inertial_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 3.
+
+:::
+
+---
+
+![](/Figures/c2/p_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/h_inertial_orbit.svg){width=95% fig-align="center"}
+
+Efemérides del caso 4.
+
+:::
+
+---
+
+![](/Figures/c2/h_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+## Resumen 
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Hasta este punto, hemos desarrollado un conjunto de herramientas que nos permiten describir y propagar la posición de un cuerpo en una trayectoria alrededor de otro cuerpo central.
+
+:::{.incremental}
+- Dicho esquema se compone de compone de algoritmos que permiten:
+
+  - Determinar los parámetros orbitales a partir de las condiciones iniciales de posición y velocidad.
+  - Transformar las condiciones iniciales entre el marco de referencia inercial y el perifocal.
+  - Propagar la posición del cuerpo en su trayectoria a partir de los parámetros orbitales.
+
+- No obstante, surgen las siguientes preguntas:
+
+    - ¿Es posible propagar la posición de un cuerpo en su trayectoria sin necesidad de calcular explicitamente los parámetros orbitales?
+    - ¿Existen métodos más **eficientes** para propagar la posición de un cuerpo en su trayectoria?
+    - ¿Existen métodos **universales** que permitan propagar la posición de un cuerpo en su trayectoria sin importar la forma de la trayectoria?
+
+- Todas estas preguntas nos llevan al estado del arte de la propagación de trayectorias para el caso kepleriano.
+
+:::
+
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Propagación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Coeficientes de Lagrange
+
+<div class="menu-title" style="display:none;"> ▸ Coeficientes de Lagrange</div>
+:::
+
+:::
+
+## Coeficientes de Lagrange
+
+
+- Se desea determinar la posición y la velocidad de un satélite a partir de sus condiciones iniciales. Para ello, suponemos que la posición puede expresarse como una combinación lineal de los vectores de posición y velocidad iniciales:
+
+  $$
+  {}^{i}\vec{r}(t)=f(t)\,{}^{i}\vec{r}_0+g(t)\,{}^{i}\vec{v}_0
+  $$
+
+    
+    donde $f$ y $g$ son escalares que dependen del tiempo.
+
+- Derivando respecto al tiempo, obtenemos la velocidad:
+
+  $$
+  {}^{i}\vec{v}(t)=\dot{f}(t)\,{}^{i}\vec{r}_0+\dot{g}(t)\,{}^{i}\vec{v}_0
+  $$
+
+- Por lo tanto, la posición y la velocidad pueden calcularse mediante:
+
+  $$
+  \begin{bmatrix}
+  {}^{i}\vec{r}(t)\\
+  {}^{i}\vec{v}(t)
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  f(t) & g(t)\\
+  \dot{f}(t) & \dot{g}(t)
+  \end{bmatrix}
+  \begin{bmatrix}
+  {}^{i}\vec{r}_0\\
+  {}^{i}\vec{v}_0
+  \end{bmatrix}
+  $$
+
+- Los escalares $f$, $g$, $\dot{f}$ y $\dot{g}$ se conocen como **coeficientes de Lagrange**.
+
+- Los coeficientes de Lagrange son independientes de la orientación del marco de referencia. Para demostrarlo, consideramos la matriz de rotación constante ${}^{p}R_i$, que transforma del marco inercial al perifocal.
+
+- Multiplicando la ecuación de posición por dicha matriz, obtenemos:
+
+  $$
+  {}^{p}R_i\,{}^{i}\vec{r}(t)
+  =f(t)\,{}^{p}R_i\,{}^{i}\vec{r}_0
+  +g(t)\,{}^{p}R_i\,{}^{i}\vec{v}_0
+  \Rightarrow
+  {}^{p}\vec{r}(t)
+  =f(t)\,{}^{p}\vec{r}_0+g(t)\,{}^{p}\vec{v}_0
+  $$
+
+## Obtención del coeficiente $f$
+
+
+- Partimos de la relación de posición y calculamos el producto cruz con la velocidad inicial:
+
+$$
+{}^{p}\vec{r}\times{}^{p}\vec{v}_0
+=f\left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+$$
+
+::: {.incremental}
+
+- Recordando el momento angular específico inicial, ${}^{p}\vec{h}={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0$, con magnitud $h=\|{}^{p}\vec{h}\|$, y los vectores en coordenadas perifocales son:
+
+    $$
+    {}^{p}\vec{r}=\begin{bmatrix}r_x & r_y & 0\end{bmatrix}^{\top},
+    \qquad
+    {}^{p}\vec{v}=\begin{bmatrix}v_x & v_y & 0\end{bmatrix}^{\top}
+    $$
+
+- El producto cruz entre la posición actual y la velocidad inicial es:
+    $$
+    {}^{p}\vec{r}\times{}^{p}\vec{v}_0
+    =\begin{bmatrix}0 & 0 & r_xv_{y,0}-r_yv_{x,0}\end{bmatrix}^{\top}
+    $$
+
+- Igualando las componentes $z$ y despejando $f$:
+
+  $$
+  r_xv_{y,0}-r_yv_{x,0}=fh
+  $$
+
+  $$
+  f=\frac{r_xv_{y,0}-r_yv_{x,0}}{h}
+  $$
+
+- Derivando respecto al tiempo, obtenemos:
+
+  $$
+  \dot{f}=\frac{v_xv_{y,0}-v_yv_{x,0}}{h}
+  $$
+:::
+
+## Obtención del coeficiente $g$
+
+
+
+- Calculamos el producto cruz entre la posición inicial y la posición actual:
+
+$$
+{}^{p}\vec{r}_0\times{}^{p}\vec{r}
+=g\left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+$$
+
+::: {.incremental}
+
+- Recordando el momento angular específico inicial, ${}^{p}\vec{h}={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0$, con magnitud $h=\|{}^{p}\vec{h}\|$, los vectores en coordenadas perifocales son:
+
+  $$
+  {}^{p}\vec{r}_0=\begin{bmatrix}r_{x,0} & r_{y,0} & 0\end{bmatrix}^{\top},
+  \qquad
+  {}^{p}\vec{r}=\begin{bmatrix}r_x & r_y & 0\end{bmatrix}^{\top}
+  $$
+
+- El producto cruz entre la posición inicial y la posición actual es:
+
+  $$
+  {}^{p}\vec{r}_0\times{}^{p}\vec{r}
+  =\begin{bmatrix}0 & 0 & r_{x,0}r_y-r_{y,0}r_x\end{bmatrix}^{\top}
+  $$
+
+- Igualando las componentes $z$ y despejando $g$:
+
+  $$
+  r_{x,0}r_y-r_{y,0}r_x=gh
+  $$
+
+  $$
+  g=\frac{r_{x,0}r_y-r_{y,0}r_x}{h}
+  $$
+
+- Derivando respecto al tiempo, obtenemos:
+
+  $$
+  \dot{g}=\frac{r_{x,0}v_y-r_{y,0}v_x}{h}
+  $$
+
+:::
+
+
+## Relación entre los coeficientes de Lagrange
+
+- Por conservación del momento angular específico:
+
+$$
+{}^{p}\vec{h}
+={}^{p}\vec{r}\times{}^{p}\vec{v}
+={}^{p}\vec{r}_0\times{}^{p}\vec{v}_0
+$$
+
+
+::: {.incremental}
+
+- Sustituyendo las expresiones de la posición y la velocidad actuales:
+
+  $$
+  \begin{aligned}
+  {}^{p}\vec{h}
+  &=
+  \left(f\,{}^{p}\vec{r}_0+g\,{}^{p}\vec{v}_0\right)\times
+  \left(\dot{f}\,{}^{p}\vec{r}_0+\dot{g}\,{}^{p}\vec{v}_0\right)
+  \end{aligned}
+  $$
+
+- Desarrollando el producto cruz y considerando que ${}^{p}\vec{v}_0\times{}^{p}\vec{r}_0=-{}^{p}\vec{r}_0\times{}^{p}\vec{v}_0$, obtenemos:
+
+  $$
+  {}^{p}\vec{h}
+  =\left(f\dot{g}-\dot{f}g\right)
+  \left({}^{p}\vec{r}_0\times{}^{p}\vec{v}_0\right)
+  $$
+
+- Como ${}^{p}\vec{r}_0\times{}^{p}\vec{v}_0={}^p\vec{h}$, para una órbita con $h\neq 0$ se concluye que:
+
+  $$
+  f\dot{g}-\dot{f}g=1
+  $$
+
+
+- En el instante inicial $t=t_0$, los coeficientes deben satisfacer:
+
+  $$
+  f(t_0)=1,\qquad g(t_0)=0
+  $$
+
+  $$
+  \dot{f}(t_0)=0,\qquad \dot{g}(t_0)=1
+  $$
+
+    Estas condiciones garantizan que las expresiones generales recuperen exactamente la posición y la velocidad iniciales.
+
+:::
+
+--- 
+
+- Para obtener los coeficientes de Lagrange en términos de las coordenadas polares $r, \nu$, vamos a empezar derivando la ecuación de órbita respecto al tiempo:
+
+    $$
+    \frac{dr}{dt}
+    =\frac{pe\sin(\nu)}{(1+e\cos(\nu))^2}\frac{d\nu}{dt}
+    $$
+
+::: {.incremental}
+
+- Recordando el momento angular específico:
+
+  $$
+  h=r^2\frac{d\nu}{dt}=\sqrt{\mu p}
+  $$
+
+- Sustituyendo $\dot{\nu}=h/r^2$ y utilizando $r=p/(1+e\cos(\nu))$, obtenemos:
+
+  $$
+  \dot{r}=\frac{he\sin(\nu)}{p}
+  =\sqrt{\frac{\mu}{p}}\,e\sin(\nu)
+  $$
+
+- Ahora, el vector de posición en función de la anomalía verdadera es:
+
+  $$
+  {}^{p}\vec{r}(t)=r(t)
+  \begin{bmatrix}
+  \cos(\nu(t))\\
+  \sin(\nu(t))\\
+  0
+  \end{bmatrix}
+  $$
+
+- Por consiguiente, sus componentes cartesianas son:
+
+  $$
+  r_x=r\cos(\nu),\qquad
+  r_y=r\sin(\nu),\qquad
+  r_z=0
+  $$
+
+:::
+
+---
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+::: {.columns}
+
+::: {.column width="50%"}
+- Derivando $r_x=r\cos(\nu)$:
+
+  $$
+  v_x=\dot{r}\cos(\nu)-r\sin(\nu)\dot{\nu}
+  $$
+
+- Sustituyendo $\dot{r}$ y $\dot{\nu}$:
+
+  $$
+  v_x=\sqrt{\frac{\mu}{p}}\sin(\nu)
+  \left(e\cos(\nu)-\frac{p}{r}\right)
+  $$
+
+- Usando $p/r=1+e\cos(\nu)$:
+
+  $$
+  v_x=\sqrt{\frac{\mu}{p}}\sin(\nu)
+  \left[e\cos(\nu)-(1+e\cos(\nu))\right]
+  $$
+
+- Simplificando:
+
+  $$
+  v_x=-\sqrt{\frac{\mu}{p}}\sin(\nu)
+  $$
+
+
+:::
+
+::: {.column width="50%" .fragment}
+
+- Derivando $r_y=r\sin(\nu)$:
+
+  $$
+  v_y=\dot{r}\sin(\nu)+r\cos(\nu)\dot{\nu}
+  $$
+
+- Sustituyendo $\dot{r}$ y $\dot{\nu}$:
+
+  $$
+  v_y=\sqrt{\frac{\mu}{p}}
+  \left(e\sin^2(\nu)+\frac{p}{r}\cos(\nu)\right)
+  $$
+
+- Usando $p/r=1+e\cos(\nu)$:
+
+  $$
+  v_y=\sqrt{\frac{\mu}{p}}
+  \left[e\sin^2(\nu)+(1+e\cos(\nu))\cos(\nu)\right]
+  $$
+
+- Simplificando con $\sin^2(\nu)+\cos^2(\nu)=1$:
+
+  $$
+  v_y=\sqrt{\frac{\mu}{p}}\left(e+\cos(\nu)\right)
+  $$
+
+
+:::
+:::
+
+---
+
+- En consecuencia, los vectores en el marco perifocal son:
+
+  $$
+  {}^{p}\vec{r}(t)=
+  \begin{bmatrix}
+  r(t)\cos(\nu(t))\\
+  r(t)\sin(\nu(t))\\
+  0
+  \end{bmatrix}
+  $$
+
+  $$
+  {}^{p}\vec{v}(t)=
+  \sqrt{\frac{\mu}{p}}
+  \begin{bmatrix}
+  -\sin(\nu(t))\\
+  e+\cos(\nu(t))\\
+  0
+  \end{bmatrix}
+  $$
+
+- Evaluando en el instante inicial $t=t_0$, con $r_0=r(t_0)$ y $\nu_0=\nu(t_0)$, obtenemos las condiciones iniciales:
+
+  $$
+  {}^{p}\vec{r}_0=
+  \begin{bmatrix}
+  r_0\cos(\nu_0)\\
+  r_0\sin(\nu_0)\\
+  0
+  \end{bmatrix}
+  $$
+
+  $$
+  {}^{p}\vec{v}_0=
+  \sqrt{\frac{\mu}{p}}
+  \begin{bmatrix}
+  -\sin(\nu_0)\\
+  e+\cos(\nu_0)\\
+  0
+  \end{bmatrix}
+  $$
+
+- A partir de los vectores de posición y velocidad en el marco perifocal, se obtienen los coeficientes de Lagrange en función de los parámetros orbitales general. Para simplificar, definimos la diferencia de anomalía verdadera:
+
+$$
+\Delta\nu=\nu-\nu_0
+$$
+
+---
+
+A partir de las componentes de posición y velocidad en el marco perifocal, recordamos que
+
+$$
+f=\frac{r_xv_{y,0}-r_yv_{x,0}}{h}
+$$
+
+Sustituyendo las componentes, resulta
+
+$$
+f=\frac{r}{p}\left[
+e\cos(\nu)+\cos(\nu)\cos(\nu_0)+\sin(\nu)\sin(\nu_0)
+\right]
+$$
+
+Utilizando la identidad trigonométrica del coseno de una diferencia,
+
+$$
+\cos(\Delta\nu)=\cos(\nu)\cos(\nu_0)+\sin(\nu)\sin(\nu_0)
+$$
+
+se obtiene
+
+$$
+f=\frac{r}{p}\left[e\cos(\nu)+\cos(\Delta\nu)\right]
+$$
+
+De la ecuación de órbita
+
+$$
+e\cos(\nu)=p/r-1
+$$.
+
+Sustituyendo y simplificando, obtenemos finalmente
+
+$$
+f=1-\frac{r}{p}\left[1-\cos(\Delta\nu)\right]
+$$
+
+---
+
+Para el coeficiente $g$, partimos de la expresión
+
+$$
+g=\frac{r_{x,0}r_y-r_{y,0}r_x}{h}
+$$
+
+Sustituyendo las componentes de los vectores de posición,
+
+$$
+g=\frac{r_0r}{h}\left[
+\cos(\nu_0)\sin(\nu)-\sin(\nu_0)\cos(\nu)
+\right]
+$$
+
+Aplicando la identidad trigonométrica del seno de una diferencia,
+
+$$
+\sin(\Delta\nu)=\cos(\nu_0)\sin(\nu)-\sin(\nu_0)\cos(\nu)
+$$
+
+resulta
+
+$$
+g=\frac{r_0r}{h}\sin(\Delta\nu)
+$$
+
+Como el momento angular específico es $h=\sqrt{\mu p}$, el coeficiente queda expresado como
+
+$$
+g=\frac{r_0r}{\sqrt{\mu p}}\sin(\Delta\nu)
+$$
+
+---
+
+Ahora, partimos de la expresión
+
+$$
+\dot{g}=\frac{r_{x,0}v_y-r_{y,0}v_x}{h}
+$$
+
+Sustituyendo las componentes de posición y velocidad, obtenemos
+
+$$
+\dot{g}=\frac{r_0}{p}\left[
+e\cos(\nu_0)+\cos(\nu_0)\cos(\nu)+\sin(\nu_0)\sin(\nu)
+\right]
+$$
+
+Aplicando la identidad del coseno de una diferencia,
+
+$$
+\dot{g}=\frac{r_0}{p}\left[
+e\cos(\nu_0)+\cos(\Delta\nu)
+\right]
+$$
+
+De la ecuación de órbita en el instante inicial, $e\cos(\nu_0)=p/r_0-1$. Sustituyendo y simplificando, obtenemos
+
+$$
+\dot{g}=1-\frac{r_0}{p}\left[1-\cos(\Delta\nu)\right]
+$$
+
+---
+
+Para obtener $\dot{f}$, utilizamos la identidad fundamental de los coeficientes de Lagrange:
+
+$$
+f\dot{g}-\dot{f}g=1
+$$
+
+Despejando $\dot{f}$,
+
+$$
+\dot{f}=\frac{f\dot{g}-1}{g}
+$$
+
+Sustituyendo las expresiones de $f$, $g$ y $\dot{g}$, y simplificando, se obtiene
+
+$$
+\dot{f}
+=\sqrt{\frac{\mu}{p}}\,
+\frac{1-\cos(\Delta\nu)}{\sin(\Delta\nu)}
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right]
+$$
+
+Finalmente, utilizando la identidad de medio ángulo,
+
+$$
+\tan\left(\frac{\Delta\nu}{2}\right)
+=\frac{1-\cos(\Delta\nu)}{\sin(\Delta\nu)}
+$$
+
+la expresión se escribe como
+
+$$
+\dot{f}
+=\sqrt{\frac{\mu}{p}}\,
+\tan\left(\frac{\Delta\nu}{2}\right)
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right]
+$$
+
+## Resumen de los coeficientes de Lagrange
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+Los cuatro coeficientes de Lagrange quedan expresados en función de las magnitudes orbitales como:
+
+$$
+\begin{split}
+f &= 1-\frac{r}{p}\left[1-\cos(\Delta\nu)\right],\\[6pt]
+\dot{f} &= \sqrt{\frac{\mu}{p}}\,
+\tan\left(\frac{\Delta\nu}{2}\right)
+\left[
+\frac{1-\cos(\Delta\nu)}{p}
+-\frac{1}{r}
+-\frac{1}{r_0}
+\right],\\[6pt]
+g &= \frac{r_0r}{\sqrt{\mu p}}\sin(\Delta\nu),\\[6pt]
+\dot{g} &= 1-\frac{r_0}{p}\left[1-\cos(\Delta\nu)\right].
+\end{split}
+$$
+
+- Para evaluar los coeficientes de Lagrange, es necesario conocer los radios inicial y final, $r_0$ y $r$, el parámetro orbital $p$, el parámetro gravitacional $\mu$ y la diferencia de anomalía verdadera $\Delta\nu$.
+
+- Estas expresiones permiten propagar el estado orbital a partir de las condiciones iniciales, sin necesidad de calcular explícitamente la orientación de la órbita respecto al marco inercial.
+
+
+## Coeficientes de Lagrange en función de la anomalía $\psi$
+
+Los coeficientes de Lagrange también pueden expresarse en función de una anomalía orbital $\psi$, cuya definición depende del tipo de trayectoria:
+
+- Órbita elíptica: $\psi$, anomalía excéntrica.
+- Órbita parabólica: $\psi$, anomalía parabólica.
+- Órbita hiperbólica: $\psi$, anomalía hiperbólica.
+
+Definimos $\Delta\psi=\psi-\psi_0$ y $\Delta t=t-t_0$.
+
+- Para una órbita elíptica, los coeficientes de Lagrange son:
+
+$$
+\begin{split}
+f &= 1-\frac{a}{r_0}\left[1-\cos(\Delta\psi)\right],\\[6pt]
+g &= \Delta t-\sqrt{\frac{a^3}{\mu}}
+\left[\Delta\psi-\sin(\Delta\psi)\right],\\[6pt]
+\dot{f} &= -\frac{\sqrt{\mu a}}{rr_0}\sin(\Delta\psi),\\[6pt]
+\dot{g} &= 1-\frac{a}{r}\left[1-\cos(\Delta\psi)\right].
+\end{split}
+$$
+
+---
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+
+::: columns
+::: {.column width="50%"}
+
+- Para una trayectoria parabólica, los coeficientes son:
+
+$$
+\begin{split}
+f &= \frac{1-\psi^2+2\psi\psi_0}
+{1+\psi_0^2},\\[6pt]
+g &= \frac{p^2\Delta\psi(1+\psi\psi_0)}
+{2h},\\[6pt]
+\dot{f} &= -\frac{4\sqrt{\mu p}\,\Delta\psi}
+{p^2(1+\psi^2)(1+\psi_0^2)},\\[6pt]
+\dot{g} &= \frac{1-\psi_0^2+2\psi\psi_0}
+{1+\psi^2}.
+\end{split}
+$$
+:::
+
+::: {.column width="50%"}
+
+- Para una trayectoria hiperbólica, los coeficientes son:
+
+$$
+\begin{split}
+f &= 1+\frac{a}{r_0}
+\left[1-\cosh(\Delta\psi)\right],\\[6pt]
+g &= \Delta t-\sqrt{\frac{a^3}{\mu}}
+\left[\sinh(\Delta\psi)-\Delta\psi\right],\\[6pt]
+\dot{f} &= -\frac{\sqrt{\mu a}}{rr_0}
+\sinh(\Delta\psi),\\[6pt]
+\dot{g} &= 1+\frac{a}{r}
+\left[1-\cosh(\Delta\psi)\right].
+\end{split}
+$$
+:::
+:::
+
+---
+
+<div class="vspace-3"></div>
+
+En los cuatro casos, los vectores de posición y velocidad inerciales se obtienen mediante las mismas relaciones:
+
+$$
+{}^{i}\vec{r}(t)=f(t)\,{}^{i}\vec{r}_0+g(t)\,{}^{i}\vec{v}_0
+$$
+
+$$
+{}^{i}\vec{v}(t)=\dot{f}(t)\,{}^{i}\vec{r}_0+\dot{g}(t)\,{}^{i}\vec{v}_0
+$$
+
+- Para evaluar los coeficientes de Lagrange en un instante dado, es necesario conocer la evolución temporal de la anomalía verdadera $\nu(t)$ (o de la variable $\psi(t)$) y del radio $r(t)$. En los desarrollos anteriores, estas cantidades se obtuvieron a partir de la ecuación de la órbita 
+
+$$
+r=\frac{p}{1+e\cos(\nu)}
+$$
+y de las ecuaciones de Kepler correspondientes a cada tipo de cónica.
+
+$$
+M(t)=\psi-e\sin(\psi),\qquad 
+M(t)=\psi+\frac{1}{3}\psi^3,\qquad
+M(t)=e\sinh(\psi)-\psi
+$$
+
+Todas estas relaciones dependen de la excentricidad $e$.
+
+- Por lo tanto, este procedimiento requiere identificar previamente el tipo de órbita y emplear formulaciones específicas para los casos elíptico, parabólico e hiperbólico. **Esta dependencia motiva la búsqueda de una formulación universal que permita propagar sin distinguir explícitamente entre los distintos tipos de cónica**.
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Propagación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Propagador universal
+
+<div class="menu-title" style="display:none;"> ▸ Propagador universal</div>
+:::
+
+:::
+
+
+<!-- 
+---
 
 ::: {.center-vertical}
 
@@ -5974,7 +7378,8 @@ La **posición instantánea** del cuerpo en su órbita se describe con la <span 
 
 :::
 
-:::
+
+::: -->
 
 
 
