@@ -7949,7 +7949,8 @@ g &amp;= \Delta t-\sqrt{\frac{a^3}{\mu}}
 </ul>
 <p><span class="math display">\[
 r=\frac{p}{1+e\cos(\nu)}
-\]</span> y de las ecuaciones de Kepler correspondientes a cada tipo de cónica.</p>
+\]</span></p>
+<p>y de las ecuaciones de Kepler correspondientes a cada tipo de cónica.</p>
 <p><span class="math display">\[
 M(t)=\psi-e\sin(\psi),\qquad
 M(t)=\psi+\frac{1}{3}\psi^3,\qquad
@@ -7975,6 +7976,931 @@ M(t)=e\sinh(\psi)-\psi
 ▸ Propagador universal
 </div>
 </div>
+</div>
+</section>
+<section id="motivación" class="slide level2">
+<h2>Motivación</h2>
+<p>La energía mecánica específica se relaciona con el semilatus rectum <span class="math inline">\(p\)</span> y la excentricidad <span class="math inline">\(e\)</span> mediante</p>
+<p><span class="math display">\[
+E=\frac{\mu}{2p}(e^2-1).
+\]</span></p>
+<p>Esta expresión permite distinguir los tipos de trayectoria:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="large">
+<p><strong>Elipse</strong></p>
+</div>
+<p><span class="math display">\[
+\begin{gathered}
+0\leq e&lt;1,\\
+p=a(1-e^2),\\
+E=-\frac{\mu}{2a}&lt;0.
+\end{gathered}
+\]</span></p>
+</div><div class="column" style="width:33%;">
+<div class="large">
+<p><strong>Parábola</strong></p>
+</div>
+<p><span class="math display">\[
+\begin{gathered}
+e=1,\\
+p=2f,\\
+E=0.
+\end{gathered}
+\]</span></p>
+</div><div class="column" style="width:33%;">
+<div class="large">
+<p><strong>Hipérbola</strong></p>
+</div>
+<p><span class="math display">\[
+\begin{gathered}
+e&gt;1,\\
+p=-a(1-e^2),\\
+E=\frac{\mu}{2a}&gt;0.
+\end{gathered}
+\]</span></p>
+</div></div>
+<div class="fragment">
+<p>Las expresiones de la energía para las órbitas elípticas e hiperbólicas tienen una estructura similar. Para unificarlas, se introduce el parámetro <span class="math inline">\(\alpha\)</span>, definido como</p>
+<p><span class="math display">\[
+\boxed{E=-\frac{\mu}{2\alpha}}
+\]</span></p>
+<p>El signo de <span class="math inline">\(\alpha\)</span> permite distinguir la trayectoria:</p>
+<p><span class="math display">\[
+E=\begin{cases}
+&lt;0 &amp; \text{si }\alpha&gt;0,\\
+0  &amp; \text{si }|\alpha|\to \infty\,\\
+&gt;0 &amp;  \text{si } \alpha&lt;0.
+\end{cases}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/energia_alpha.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
+<section id="formulación" class="slide level2">
+<h2>Formulación</h2>
+<p>La energía mecánica específica está dada por</p>
+<p><span class="math display">\[
+E=\frac{1}{2}\left\|{}^{p}\vec{v}\right\|^2-\frac{\mu}{r}.
+\]</span></p>
+<p>En coordenadas polares del plano orbital, la rapidez satisface</p>
+<p><span class="math display">\[
+\left\|{}^{p}\vec{v}\right\|^2
+=\dot{r}^{\,2}+r^2\dot{\nu}^{\,2}.
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+E=\frac{1}{2}\dot{r}^{\,2}
++\frac{1}{2}r^2\dot{\nu}^{\,2}
+-\frac{\mu}{r}.
+\]</span></p>
+<p>El momento angular específico se conserva y cumple</p>
+<p><span class="math display">\[
+h=r^2\dot{\nu}=\sqrt{\mu p}.
+\]</span></p>
+<p>Sustituyendo en la expresión de la energía,</p>
+<p><span class="math display">\[
+E=\frac{1}{2}\dot{r}^{\,2}
++\frac{\mu p}{2r^2}
+-\frac{\mu}{r}.
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Utilizando la relación <span class="math inline">\(E=-\mu/(2\alpha)\)</span>, obtenemos</p>
+<p><span class="math display">\[
+\boxed{
+\dot{r}^{\,2}
+=-\frac{\mu}{\alpha}
+-\frac{\mu p}{r^2}
++\frac{2\mu}{r}
+}
+\]</span></p>
+<p>Para obtener una formulación válida para cualquier tipo de cónica, se introduce la anomalía universal <span class="math inline">\(\chi\)</span>, definida mediante</p>
+<p><span class="math display">\[
+\boxed{
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r}
+}
+\]</span></p>
+<p>Aplicando la regla de la cadena,</p>
+<p><span class="math display">\[
+\frac{dr}{dt}
+=\frac{dr}{d\chi}\frac{d\chi}{dt}.
+\]</span></p>
+<p>Por lo tanto,</p>
+<p><span class="math display">\[
+\left(\frac{dr}{dt}\right)^2
+=\frac{\mu}{r^2}
+\left(\frac{dr}{d\chi}\right)^2.
+\]</span></p>
+<p>Sustituyendo la expresión anterior en la ecuación radial de la energía,</p>
+<p><span class="math display">\[
+\boxed{
+\left(\frac{dr}{d\chi}\right)^2
+=2r-p-\frac{r^2}{\alpha}
+}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Despejando e integrando, se obtiene</p>
+<p><span class="math display">\[
+\Delta\chi
+=\int_{r_0}^{r}
+\frac{d\rho}
+{\pm\sqrt{2\rho-p-\dfrac{\rho^2}{\alpha}}}.
+\]</span></p>
+<p>El signo depende de si el radio orbital aumenta o disminuye durante el intervalo considerado. Una solución de la anterior integral es</p>
+<p><span class="math display">\[
+\chi+c_0=
+\sqrt{\alpha}\sin^{-1}\left(
+\frac{\dfrac{r}{\alpha}-1}
+{\sqrt{1-\dfrac{p}{\alpha}}}
+\right),
+\]</span></p>
+<p>donde <span class="math inline">\(c_0\)</span> es una constante de integración. Despejando el radio de la expresión anterior y sustituyento <span class="math inline">\(p=\alpha(1-e^2)\)</span>, se tiene</p>
+<p><span class="math display">\[
+\boxed{
+r(\chi)=\alpha\left[
+1+e\sin\left(
+\frac{\chi+c_0}{\sqrt{\alpha}}
+\right)
+\right]
+}
+\]</span></p>
+<p>Esta expresión relaciona el radio orbital <span class="math inline">\(r\)</span> con la anomalía universal <span class="math inline">\(\chi\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<p>Ahora, para obtener la relación entre la anomalía universal y el tiempo, partimos de la definición de <span class="math inline">\(\chi\)</span>:</p>
+<p><span class="math display">\[
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r}.
+\]</span></p>
+<p>Despejando e integrando respecto al tiempo,</p>
+<p><span class="math display">\[
+\sqrt{\mu}(t-t_0)
+=\int_{\chi(t_0)}^{\chi(t)}r(\chi)\,d\chi.
+\]</span></p>
+<p>Tomando <span class="math inline">\(\chi(t_0)=0\)</span> y sustituyendo la expresión del radio,</p>
+<p><span class="math display">\[
+\sqrt{\mu}(t-t_0)=\int_0^{\chi(t)}\alpha\left[1+e\sin\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)\right]d\chi.
+\]</span></p>
+<p>Separando la integral,</p>
+<p><span class="math display">\[
+\begin{split}
+\sqrt{\mu}(t-t_0)=\alpha\chi(t)+\alpha e\int_0^{\chi(t)}\sin\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)d\chi.
+\end{split}
+\]</span></p>
+<p>Evaluando la integral, se obtiene</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+\sqrt{\mu}(t-t_0)
+={}&amp;\alpha\chi(t)+\alpha^{3/2}e
+\left[
+\cos\left(\frac{c_0}{\sqrt{\alpha}}\right)
+-\cos\left(\frac{\chi(t)+c_0}{\sqrt{\alpha}}\right)
+\right].
+\end{aligned}
+}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Aplicando la condición inicial <span class="math inline">\(r(t_0)=r_0\)</span>, con <span class="math inline">\(\chi(t_0)=0\)</span>, a la ecuación del radio:</p>
+<p><span class="math display">\[
+r_0=\alpha\left[
+1+e\sin\left(\frac{c_0}{\sqrt{\alpha}}\right)
+\right].
+\]</span></p>
+<p>Despejando,</p>
+<p><span class="math display">\[
+\boxed{
+e\sin\left(\frac{c_0}{\sqrt{\alpha}}\right)
+=\frac{r_0}{\alpha}-1
+}
+\]</span></p>
+<p>Derivando la expresión del radio respecto al tiempo,</p>
+<p><span class="math display">\[
+\dot{r}=
+\sqrt{\alpha}\,e
+\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)
+\frac{d\chi}{dt}.
+\]</span></p>
+<p>Utilizando la definición de la anomalía universal,</p>
+<p><span class="math display">\[
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r},
+\]</span></p>
+<p>obtenemos</p>
+<p><span class="math display">\[
+\dot{r}=
+\frac{\sqrt{\mu\alpha}}{r}\,
+e\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right).
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Como <span class="math inline">\(\vec{r}\cdot\vec{v}=r\dot{r}\)</span>,</p>
+<p><span class="math display">\[
+\boxed{
+e\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)
+=\frac{\vec{r}\cdot\vec{v}}{\sqrt{\mu\alpha}}
+}
+\]</span></p>
+<p>En el instante inicial,</p>
+<p><span class="math display">\[
+e\cos\left(\frac{c_0}{\sqrt{\alpha}}\right)
+=\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu\alpha}}.
+\]</span></p>
+<p>Sustituyendo las relaciones iniciales para el seno y el coseno en la ecuación temporal, se obtiene</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&amp;\alpha\left[
+\chi-\sqrt{\alpha}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right)
+\right]+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\,
+\alpha\left[
+1-\cos\left(\frac{\chi}{\sqrt{\alpha}}\right)
+\right]+r_0\sqrt{\alpha}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right).
+\end{aligned}
+\]</span></p>
+<p>Esta expresión relaciona el tiempo transcurrido <span class="math inline">\(\Delta t=t-t_0\)</span> con la anomalía universal <span class="math inline">\(\chi\)</span> y las condiciones iniciales del movimiento. Por otro lado, sustituyendo en la ecuación del orbita</p>
+<p><span class="math display">\[
+r = \alpha + \sqrt{\alpha}\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right) + (r_0-\alpha)\cos\left(\frac{\chi}{\sqrt{\alpha}}\right)
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Se introduce la variable auxiliar <span class="math inline">\(\psi\)</span>, definida como</p>
+<p><span class="math display">\[
+\psi=\frac{\chi^2}{\alpha}
+\qquad\Rightarrow\qquad
+\alpha=\frac{\chi^2}{\psi}.
+\]</span></p>
+<p>Sustituyendo tenemos,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&amp;\frac{\chi^3}{\psi}\left[1-\frac{\sin(\sqrt{\psi})}{\sqrt{\psi}}\right]
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\frac{\chi^2}{\psi}
+\left[1-\cos(\sqrt{\psi})\right]+r_0\frac{\chi}{\sqrt{\psi}}\sin(\sqrt{\psi}).\\
+r=&amp;\frac{\chi^2}{\psi}+\frac{\chi}{\sqrt{\psi}}\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\sin\left(\sqrt{\psi}\right)+\left(r_0-\frac{\chi^2}{\psi}\right)\cos\left(\sqrt{\psi}\right).
+\end{aligned}
+\]</span></p>
+<p>Reordenando los términos,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&amp;\chi^3\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2
+\frac{1-\cos(\sqrt{\psi})}{\psi}+r_0\chi\frac{\sin(\sqrt{\psi})}{\sqrt{\psi}}.\\
+r={}&amp;\chi^2\frac{1-\cos(\sqrt{\psi})}{\psi}
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi
+\left[1-\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi}}\right]+r_0\left[1-\left(1-\cos(\sqrt{\psi})\right)\right].
+\end{aligned}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<p>Para simplificar las expresiones, definimos las funciones auxiliares</p>
+<p><span class="math display">\[
+C(\psi)=\frac{1-\cos(\sqrt{\psi})}{\psi},
+\qquad
+S(\psi)=\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}.
+\]</span></p>
+<p>Con estas definiciones, las ecuaciones universales quedan expresadas como</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+&amp;=\chi^3S(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2C(\psi)
++r_0\chi\left[1-\psi S(\psi)\right],\\[8pt]
+r(\chi)
+&amp;=\chi^2C(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi\left[1-\psi S(\psi)\right]
++r_0\left[1-\psi C(\psi)\right].
+\end{aligned}
+\]</span></p>
+<p>La primera ecuación es la <strong>ecuación universal de tiempo</strong> y permite determinar <span class="math inline">\(\chi\)</span> para un instante dado. La segunda es la <strong>ecuación universal de la órbita</strong> y permite calcular el radio orbital.</p>
+<p>A las funciones auxiliares <span class="math inline">\(C(\psi)\)</span> y <span class="math inline">\(S(\psi)\)</span> se les conoce como <strong>funciones de Stumpff</strong>, en honor a Karl Stumpff, quien fue quien propuso este método entre en la década de 1950.</p>
+</section>
+<section id="funciones-de-stumpff" class="slide level2">
+<h2>Funciones de Stumpff</h2>
+<p>Las funciones de Stumpff permiten expresar las ecuaciones del propagador universal mediante una formulación común para órbitas elípticas, trayectorias parabólicas e hiperbólicas. Su evaluación depende del signo de la variable auxiliar <span class="math inline">\(\psi\)</span>.</p>
+<ul>
+<li>Para <span class="math inline">\(\psi&gt;0\)</span>, aparecen funciones trigonométricas, asociadas al caso elíptico.</li>
+<li>Para <span class="math inline">\(\psi&lt;0\)</span>, aparecen funciones hiperbólicas, asociadas al caso hiperbólico.</li>
+<li>Para <span class="math inline">\(\psi=0\)</span>, las funciones toman valores finitos correspondientes al caso parabólico.</li>
+</ul>
+<p>Las funciones se definen como</p>
+<p><span class="math display">\[
+C(\psi)=
+\begin{cases}
+\dfrac{1-\cos(\sqrt{\psi})}{\psi}, &amp; \psi&gt;0,\\[8pt]
+\dfrac{1}{2}, &amp; \psi=0,\\[8pt]
+\dfrac{\cosh(\sqrt{-\psi})-1}{-\psi}, &amp; \psi&lt;0,
+\end{cases}\qquad
+S(\psi)=
+\begin{cases}
+\dfrac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}, &amp; \psi&gt;0,\\[8pt]
+\dfrac{1}{6}, &amp; \psi=0,\\[8pt]
+\dfrac{\sinh(\sqrt{-\psi})-\sqrt{-\psi}}{\sqrt{(-\psi)^3}}, &amp; \psi&lt;0.
+\end{cases}
+\]</span></p>
+<p>Ambas funciones también pueden calcularse mediante series de potencias, válidas para cualquier valor real de <span class="math inline">\(\psi\)</span>:</p>
+<p><span class="math display">\[
+C(\psi)=\sum_{k=0}^{\infty}\frac{(-\psi)^k}{(2k+2)!},
+\qquad
+S(\psi)=\sum_{k=0}^{\infty}\frac{(-\psi)^k}{(2k+3)!}.
+\]</span></p>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/stumpff_comparison.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.6.2: Funciones de Stumpff
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(\psi\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(C(\psi),S(\psi)\)</span></p>
+</div>
+<ol>
+<ul>
+<li>Si <span class="math inline">\(\psi&gt;\varepsilon\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+C(\psi)=\frac{1-\cos(\sqrt{\psi})}{\psi},\qquad S(\psi)=\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(|\psi|&lt;\varepsilon\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+C(\psi)=\frac{1}{2},\qquad S(\psi)=\frac{1}{6}
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(\psi&lt;-\varepsilon\)</span>:</li>
+</ul>
+<span class="math display">\[
+C(\psi)=\frac{\cosh(\sqrt{-\psi})-1}{-\psi},\qquad S(\psi)=\frac{\sinh(\sqrt{-\psi})-\sqrt{-\psi}}{\sqrt{(-\psi)^3}}
+\]</span>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>También podemos calcular <span class="math inline">\(C(\psi)\)</span> y <span class="math inline">\(S(\psi)\)</span> mediante series de potencias. Para ello, se recomienda al menos usar 8 términos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Hasta este punto, tenemos un par de ecuaciones que nos relacionan el tiempo y el radio con la anomalía universal <span class="math inline">\(\chi\)</span>. Sin embargo, para realizar la propagación, necesitamos conocer explicitamente el valor de <span class="math inline">\(\chi\)</span> en cada instante de tiempo. Para ello, debemos resolver la ecuación universal de tiempo de la misma manera que resolvemos la ecuación de Kepler, es decir, mediante un método iterativo.</p>
+<p>Planteamos la función transcendental</p>
+<p><span class="math display">\[
+\mathcal{G}(\chi)=\chi^3S(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2C(\psi)+r_0\chi\left[1-\psi S(\psi)\right]-\sqrt{\mu}\Delta t=0.
+\]</span></p>
+<p>La particularidad de esta ecuación aparece al calcular su parcial respecto a <span class="math inline">\(\chi\)</span>. Recordando que</p>
+<p><span class="math display">\[
+\sqrt{\mu}\Delta t=\int_{0}^{\chi(t)}r(\chi)\,d\chi,
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+\begin{split}
+\mathcal{G}(\chi)&amp;=\int_{0}^{\chi(t)}r(\chi)\,d\chi-\sqrt{\mu}\Delta t,\\
+\Rightarrow\frac{d\mathcal{G}(\chi)}{d\chi}&amp;=r(\chi).
+\end{split}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<p>Con ello, podemos encontrar la raíz de la ecuación <span class="math inline">\(\mathcal{G}(\upchi)=0\)</span> mediante la siguiente iteración:</p>
+<p><span class="math display">\[
+\begin{split}
+\upchi_{n+1}&amp;=\upchi_n-\frac{\mathcal{G}(\upchi_n)}{r(\upchi_n)}\\
+&amp;=\upchi_n-\frac{\upchi_n^3S(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n^2C(\uppsi_n)+r_0\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]-\sqrt{\mu}\Delta t}{\upchi_n^2C(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]+r_0\left[1-\uppsi_n C(\uppsi_n)\right].}
+\end{split}
+\]</span></p>
+<p>donde <span class="math display">\[
+\uppsi_n=\frac{\upchi_n^2}{\alpha}.
+\]</span></p>
+<ul>
+<li>La anomalía universal <span class="math inline">\(\chi\)</span> se obtiene al iterar hasta que la diferencia entre dos iteraciones consecutivas sea menor a una tolerancia predefinida. Una vez obtenida, se puede calcular el radio <span class="math inline">\(r(\chi)\)</span>.</li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c2/universal_anomaly.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<p>Para acelerar la convergencia del método de Newton, se selecciona <span class="math inline">\(\chi_0\)</span> según el tipo de trayectoria. Para diferenciar la trayectoria, hacemos uso de <span class="math inline">\(\beta=\alpha^{-1}\)</span>.</p>
+<ul>
+<li>Órbita elíptica (<span class="math inline">\(\beta&gt;\varepsilon\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\upchi_0=\sqrt{\mu}\beta\,\Delta t }
+\]</span></p>
+<ul>
+<li>Trayectoria parabólica (<span class="math inline">\(|\beta|&lt;\varepsilon\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\upchi_0=\sqrt{p}\tan\left(\frac{\nu_0}{2}\right)}
+\]</span></p>
+<ul>
+<li>Trayectoria hiperbólica (<span class="math inline">\(\beta&lt;-\varepsilon\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{
+\upchi_0=\operatorname{sign}(\Delta t)\sqrt{-\alpha}\,
+\ln\left(
+\frac{-2\mu\beta\Delta t}
+{\vec r_0\cdot\vec v_0+
+\operatorname{sign}(\Delta t)\sqrt{-\mu\beta}
+(1-r_0\beta)}
+\right)
+}
+\]</span></p>
+<p>donde <span class="math inline">\(\operatorname{sign}(\cdot)\)</span> es la función signo.</p>
+<p><span class="math display">\[
+\operatorname{sign}(x)=
+\begin{cases}
+1 &amp; \text{si } x&gt;0\\
+0 &amp; \text{si } x=0\\
+-1 &amp; \text{si } x&lt;0
+\end{cases}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.6.2: Estimación inicial
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu, \alpha,\beta\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\upchi_0\)</span></p>
+</div>
+<ol>
+<ul>
+<li>Si <span class="math inline">\(\beta&gt;\varepsilon\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\upchi_0=\sqrt{\mu}\beta\,\Delta t  
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(|\beta|&lt;\varepsilon\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+^{i}\vec{h}= ^{i}\vec{r}\times^{i}\vec{v}
+\]</span></p>
+<p><span class="math display">\[
+p=\|\vec{h}\|^2/\mu
+\]</span></p>
+<p><span class="math display">\[
+\nu_0=\mathrm{atan2}(r_{0,y},r_{0,x})
+\]</span> <span class="math display">\[
+\upchi_0=\sqrt{p}\tan\left(\frac{\nu_0}{2}\right)
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(\beta&lt;-\varepsilon\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\upchi_0=\operatorname{sign}(\Delta t)\sqrt{-\alpha}\,
+\ln\left(
+\frac{-2\mu\beta\Delta t}
+{\vec r_0\cdot\vec v_0+
+\operatorname{sign}(\Delta t)\sqrt{-\mu\beta \:}
+(1-r_0\beta)}
+\right)
+\]</span></p>
+</ol>
+</div>
+</section>
+<section id="relación-entre-la-anomalía-universal-y-las-anomalías-clásicas" class="slide level2">
+<h2>Relación entre la anomalía universal y las anomalías clásicas</h2>
+<p>La anomalía universal <span class="math inline">\(\chi\)</span> se relaciona con las anomalías clásicas según el tipo de trayectoria. Estas relaciones permiten expresar el desplazamiento en términos de la anomalía correspondiente.</p>
+<ul>
+<li>Órbita elíptica (<span class="math inline">\(\beta&gt;0\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\chi=\sqrt{\alpha}\,(\psi-\psi_0)}
+\]</span></p>
+<p>donde <span class="math inline">\(\psi\)</span> y <span class="math inline">\(\psi_0\)</span> son las anomalías excentricas.</p>
+<ul>
+<li>Trayectoria parabólica (<span class="math inline">\(|\beta|=0\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\chi=\sqrt{p}\left( \psi-\psi_0\right)}
+\]</span></p>
+<p>donde <span class="math inline">\(\psi\)</span> y <span class="math inline">\(\psi_0\)</span> son las anomalías parabólicas.</p>
+<ul>
+<li>Trayectoria hiperbólica (<span class="math inline">\(\beta&lt;0\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\chi=\sqrt{-\alpha}\,(\psi-\psi_0)}
+\]</span></p>
+<p>donde <span class="math inline">\(\psi\)</span> y <span class="math inline">\(\psi_0\)</span> son las anomalías hiperbólicas.</p>
+<ul>
+<li>Sin embargo, <strong>no existe una relación directa entre la anomalía universal <span class="math inline">\(\chi\)</span> y la anomalía verdadera <span class="math inline">\(\nu(t)\)</span></strong>.</li>
+</ul>
+</section>
+<section id="coeficientes-de-lagrange-1" class="slide level2">
+<h2>Coeficientes de Lagrange</h2>
+<ul>
+<li><p>Si nos apegamos a la formulación que hicimos en los propagadores anteriores, deberíamos conocer una relación explicita entre la anomalía universal <span class="math inline">\(\chi\)</span> y la anomalía verdadera <span class="math inline">\(\nu(t)\)</span>, el vector posición <span class="math inline">\(\vec{r}(t)\)</span> y el vector velocidad <span class="math inline">\(\vec{v}(t)\)</span>.</p></li>
+<li><p>Como se mencionó, no existe una relación directa entre la anomalía universal <span class="math inline">\(\chi\)</span> y la anomalía verdadera <span class="math inline">\(\nu(t)\)</span>, por lo que no podemos reconstruir los vectores <span class="math inline">\(\vec{r}(t)\)</span> y <span class="math inline">\(\vec{v}(t)\)</span> como lo habiamos hecho en los propagadores anteriores.</p></li>
+<li><p>Aquí es donde los coeficientes de Lagrange adquieren su importancia. En términos de la anomalía universal <span class="math inline">\(\chi\)</span>, los podemos escribir:</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{split}
+f(t) &amp;= 1-\frac{\chi^2(t)}{r_0}C(\psi),\\
+g(t) &amp;= \Delta t-\frac{\chi^3(t)}{\sqrt{\mu}}S(\psi),\\
+\dot{f}(t) &amp;= \frac{\sqrt{\mu}}{r_0r(t)}\chi(t)\left[\psi S(\psi)-1\right],\\
+\dot{g}(t) &amp;= 1-\frac{\chi^2(t)}{r(t)}C(\psi).
+\end{split}
+\]</span></p>
+<p>Con ello, los vectores de posición y velocidad en el marco de referencia inercial se pueden escribir como:</p>
+<p><span class="math display">\[
+\boxed{\begin{split}
+\ls{i}\vec{r}(t) &amp;= f(t)\ls{i}\vec{r}_0+g(t)\ls{i}\vec{v}_0\\
+\ls{i}\vec{v}(t) &amp;= \dot{f}(t)\ls{i}\vec{r}_0+\dot{g}(t)\ls{i}\vec{v}_0.
+\end{split}}
+\]</span></p>
+</section>
+<section id="propagador-universal" class="slide level2">
+<h2>Propagador universal</h2>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.6: Propagador universal (1/3)
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)\)</span></p>
+</div>
+<ol>
+<li>
+Calcular <span class="math inline">\(r_0\)</span> y <span class="math inline">\(v_0\)</span>.
+</li>
+<span class="math display">\[
+r_0=\|{}^{i}\vec{r}_0\| \qquad v_0=\|{}^{i}\vec{v}_0\|.
+\]</span>
+<li>
+Calcular <span class="math inline">\(E\)</span>.
+</li>
+<span class="math display">\[
+E=\frac{v_0^2}{2}-\frac{\mu}{r_0},
+\]</span>
+<li>
+Calcular <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>.
+</li>
+<span class="math display">\[
+\alpha=-\frac{\mu}{2E}. \qquad \beta=\alpha^{-1}.
+\]</span>
+<li>
+Calcular la estimación inicial <span class="math inline">\(\upchi_0\)</span> mediante el Algoritmo.
+</li>
+</ol>
+</div>
+</section>
+<section id="propagador-universal-1" class="slide level2">
+<h2>Propagador universal</h2>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.6: Propagador universal (2/3)
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)\)</span></p>
+</div>
+<p>Para todo instante de tiempo <span class="math inline">\(t&gt;t_0\)</span>:</p>
+<ol>
+<li>
+<strong>Ciclo</strong>
+</li>
+<ul>
+<li><p>Calcular <span class="math inline">\(\uppsi_n\)</span>.</p>
+<p><span class="math display">\[
+  \uppsi_n=\frac{\upchi_n^2}{\alpha}.
+  \]</span></p></li>
+<li><p>Calcular las funciones de Stumpff <span class="math inline">\(C(\uppsi_n)\)</span> y <span class="math inline">\(S(\uppsi_n)\)</span> mediante el Algoritmo.</p></li>
+<li><p>Calcular <span class="math display">\[
+  \begin{split}
+  \upchi_{n+1}=\upchi_n-\frac{\upchi_n^3S(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n^2C(\uppsi_n)+r_0\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]-\sqrt{\mu}\Delta t}{\upchi_n^2C(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]+r_0\left[1-\uppsi_n C(\uppsi_n)\right].}
+  \end{split}
+  \]</span></p></li>
+</ul>
+<p><strong>Hasta</strong> <span class="math inline">\(|\upchi_{n+1}-\upchi_n|&lt;\varepsilon\)</span>.</p>
+<li>
+Asignar <span class="math inline">\(\chi(t)=\upchi_{n+1}\)</span> y <span class="math inline">\(\psi(t)=\upchi_{n+1}^2/\alpha\)</span>.
+</li>
+</ol>
+</div>
+</section>
+<section id="propagador-universal-2" class="slide level2">
+<h2>Propagador universal</h2>
+<div class="algorithm">
+<div class="algorithm-title">
+Algoritmo 2.6: Propagador universal (3/3)
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu\)</span></p>
+</div>
+<div class="algorithm-io">
+<p><strong>Salida:</strong> <span class="math inline">\(\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)\)</span></p>
+</div>
+<p>Para todo instante de tiempo <span class="math inline">\(t&gt;t0\)</span>:</p>
+<ol>
+<li>
+Calcular las funciones de Stumpff <span class="math inline">\(C(\psi)\)</span> y <span class="math inline">\(S(\psi)\)</span> mediante el Algoritmo.
+</li>
+<li>
+Calcular el radio
+</li>
+<p><span class="math display">\[
+r(t)=\chi^2(t)C(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi(t)\left[1-\psi S(\psi)\right]+r_0\left[1-\psi(t) C(\psi)\right].
+\]</span></p>
+<li>
+Calcular los coeficientes de Lagrange
+</li>
+<p><span class="math display">\[
+\begin{split}
+f(t) &amp;= 1-\frac{\chi^2(t)}{r_0}C(\psi) \qquad g(t) = \Delta t-\frac{\chi^3(t)}{\sqrt{\mu}}S(\psi), \qquad \dot{f}(t) &amp;= \frac{\sqrt{\mu}}{r_0r(t)}\chi(t)\left[\psi S(\psi)-1\right], \qquad \dot{g}(t) = 1-\frac{\chi^2(t)}{r(t)}C(\psi).
+\end{split}
+\]</span></p>
+<li>
+Calcular <span class="math inline">\(\ls{i}\vec{r}(t)\)</span> y <span class="math inline">\(\ls{i}\vec{v}(t)\)</span>
+</li>
+<p><span class="math display">\[
+\begin{split}
+\ls{i}\vec{r}(t) &amp;= f(t)\ls{i}\vec{r}_0+g(t)\ls{i}\vec{v}_0\\
+\ls{i}\vec{v}(t) &amp;= \dot{f}(t)\ls{i}\vec{r}_0+\dot{g}(t)\ls{i}\vec{v}_0.
+\end{split}
+\]</span></p>
+</ol>
+</div>
+</section>
+<section id="ejercicio-2" class="slide level2">
+<h2>Ejercicio</h2>
+<p>Sean las siguientes condiciones iniciales de posición y velocidad, expresadas en el marco de referencia inercial:</p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(1)}=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(1)}=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(2)}=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(2)}=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(3)}=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(3)}=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_0^{(4)}=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(4)}=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+<p>Considere el parámetro gravitacional terrestre <span class="math inline">\(\mu=3.986\times10^{14}\ \mathrm{m^3/seg^2}\)</span> y <span class="math inline">\(t_0=0\ \mathrm{ seg}\)</span>. Para cada caso, aplique el algoritmo de propagación correspondiente.</p>
+</section>
+<section id="resultados-1" class="slide level2">
+<h2>Resultados</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: right;">Caso 1<br>Circular</th>
+<th style="text-align: right;">Caso 2<br>Elíptica</th>
+<th style="text-align: right;">Caso 3<br>Parabólica</th>
+<th style="text-align: right;">Caso 4<br>Hiperbólica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.3181</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1.553</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span> [m]</td>
+<td style="text-align: right;"><span class="math inline">\(8.013\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.077\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.462\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.863\times10^7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\nu_0\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(-1.225\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.5621\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.763\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.397\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Omega\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(1.203\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.737\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.148\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.08651\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(i\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(1.954\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.519\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.147\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.428\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\omega\)</span> [rad]</td>
+<td style="text-align: right;"><span class="math inline">\(2.750\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.020\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4.478\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.546\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(h\)</span> [m<span class="math inline">\(^2\)</span>/s]</td>
+<td style="text-align: right;"><span class="math inline">\(5.651\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.550\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.632\times10^{10}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8.617\times10^{10}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(E\)</span> [J/kg]</td>
+<td style="text-align: right;"><span class="math inline">\(-2.487\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.664\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.509\times10^7\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha\)</span> [m]</td>
+<td style="text-align: right;"><span class="math inline">\(8.013\times10^6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.198\times10^7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.320\times10^7\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span> [<span class="math inline">\(\mathrm{m}^{-1}\)</span>]</td>
+<td style="text-align: right;"><span class="math inline">\(1.248\times10^{-7}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8.346\times10^{-8}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-7.578\times10^{-8}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Las tolerancias dependen de la precisión de la computadora. Por ejemplo, para este caso el algoritmo necesitaría una tolerancia de <span class="math inline">\(\varepsilon=10^{-8}\)</span> para diferenciar cada caso.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/c_inertial_orbit_chi.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;9: Efemérides del caso 1 (anomalia verdadera calculada con el vector de excentricidad nulo).
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/c_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/c_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/e_inertial_orbit_chi.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;10: Efemérides del caso 2.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/e_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/e_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/p_inertial_orbit_chi.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;11: Efemérides del caso 3.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/p_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/p_inertial_orbit.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src=".\Figures/c2/h_inertial_orbit_chi.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" id="fig-map"><p class="caption">
+Figura&nbsp;12: Efemérides del caso 4.
+</p></section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/h_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/h_inertial_orbit.mp4">Video</a></video></p>
+</figure>
 </div>
 <!-- 
 ---

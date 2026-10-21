@@ -6442,11 +6442,6 @@ Considere el parámetro gravitacional terrestre $\mu=3.986\times10^{14}\ \mathrm
 | $h$ [m$^2$/s] | $5.651\times10^{10}$ | $6.550\times10^{10}$ | $7.632\times10^{10}$ | $8.617\times10^{10}$ |
 
 
-
-
-
-
-
 ---
 
 ::: {#fig-map layout-align="center"}
@@ -7173,6 +7168,7 @@ $$
 $$
 r=\frac{p}{1+e\cos(\nu)}
 $$
+
 y de las ecuaciones de Kepler correspondientes a cada tipo de cónica.
 
 $$
@@ -7205,6 +7201,997 @@ Propagador universal
 :::
 
 :::
+
+
+## Motivación
+
+La energía mecánica específica se relaciona con el semilatus rectum $p$ y la excentricidad $e$ mediante
+
+$$
+E=\frac{\mu}{2p}(e^2-1).
+$$
+
+Esta expresión permite distinguir los tipos de trayectoria:
+
+::: columns
+::: {.column width="33%"}
+
+:::{.large}
+**Elipse**
+:::
+
+$$
+\begin{gathered}
+0\leq e<1,\\
+p=a(1-e^2),\\
+E=-\frac{\mu}{2a}<0.
+\end{gathered}
+$$
+:::
+
+::: {.column width="33%"}
+:::{.large}
+**Parábola**
+:::
+
+$$
+\begin{gathered}
+e=1,\\
+p=2f,\\
+E=0.
+\end{gathered}
+$$
+:::
+
+::: {.column width="33%"}
+
+:::{.large}
+**Hipérbola**
+:::
+
+$$
+\begin{gathered}
+e>1,\\
+p=-a(1-e^2),\\
+E=\frac{\mu}{2a}>0.
+\end{gathered}
+$$
+:::
+:::
+
+
+::: {.fragment}
+
+Las expresiones de la energía para las órbitas elípticas e hiperbólicas tienen una estructura similar. Para unificarlas, se introduce el parámetro $\alpha$, definido como
+
+$$
+\boxed{E=-\frac{\mu}{2\alpha}}
+$$
+
+El signo de $\alpha$ permite distinguir la trayectoria:
+
+$$
+E=\begin{cases}
+<0 & \text{si }\alpha>0,\\
+0  & \text{si }|\alpha|\to \infty\,\\
+>0 &  \text{si } \alpha<0.
+\end{cases}
+$$
+
+:::
+
+---
+
+![](/Figures/c2/energia_alpha.svg){width=60% fig-align="center"}
+
+
+## Formulación 
+
+La energía mecánica específica está dada por
+
+$$
+E=\frac{1}{2}\left\|{}^{p}\vec{v}\right\|^2-\frac{\mu}{r}.
+$$
+
+En coordenadas polares del plano orbital, la rapidez satisface
+
+$$
+\left\|{}^{p}\vec{v}\right\|^2
+=\dot{r}^{\,2}+r^2\dot{\nu}^{\,2}.
+$$
+
+Por lo tanto,
+
+$$
+E=\frac{1}{2}\dot{r}^{\,2}
++\frac{1}{2}r^2\dot{\nu}^{\,2}
+-\frac{\mu}{r}.
+$$
+
+El momento angular específico se conserva y cumple
+
+$$
+h=r^2\dot{\nu}=\sqrt{\mu p}.
+$$
+
+Sustituyendo en la expresión de la energía,
+
+$$
+E=\frac{1}{2}\dot{r}^{\,2}
++\frac{\mu p}{2r^2}
+-\frac{\mu}{r}.
+$$
+
+---
+
+Utilizando la relación $E=-\mu/(2\alpha)$, obtenemos
+
+$$
+\boxed{
+\dot{r}^{\,2}
+=-\frac{\mu}{\alpha}
+-\frac{\mu p}{r^2}
++\frac{2\mu}{r}
+}
+$$
+
+Para obtener una formulación válida para cualquier tipo de cónica, se introduce la anomalía universal $\chi$, definida mediante
+
+$$
+\boxed{
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r}
+}
+$$
+
+Aplicando la regla de la cadena,
+
+$$
+\frac{dr}{dt}
+=\frac{dr}{d\chi}\frac{d\chi}{dt}.
+$$
+
+Por lo tanto,
+
+$$
+\left(\frac{dr}{dt}\right)^2
+=\frac{\mu}{r^2}
+\left(\frac{dr}{d\chi}\right)^2.
+$$
+
+Sustituyendo la expresión anterior en la ecuación radial de la energía,
+
+$$
+\boxed{
+\left(\frac{dr}{d\chi}\right)^2
+=2r-p-\frac{r^2}{\alpha}
+}
+$$
+
+---
+
+Despejando e integrando, se obtiene
+
+$$
+\Delta\chi
+=\int_{r_0}^{r}
+\frac{d\rho}
+{\pm\sqrt{2\rho-p-\dfrac{\rho^2}{\alpha}}}.
+$$
+
+El signo depende de si el radio orbital aumenta o disminuye durante el intervalo considerado. Una solución de la anterior integral es
+
+$$
+\chi+c_0=
+\sqrt{\alpha}\sin^{-1}\left(
+\frac{\dfrac{r}{\alpha}-1}
+{\sqrt{1-\dfrac{p}{\alpha}}}
+\right),
+$$
+
+donde $c_0$ es una constante de integración. Despejando el radio de la expresión anterior y sustituyento $p=\alpha(1-e^2)$, se tiene
+
+$$
+\boxed{
+r(\chi)=\alpha\left[
+1+e\sin\left(
+\frac{\chi+c_0}{\sqrt{\alpha}}
+\right)
+\right]
+}
+$$
+
+Esta expresión relaciona el radio orbital $r$ con la anomalía universal $\chi$. 
+
+---
+
+Ahora, para obtener la relación entre la anomalía universal y el tiempo, partimos de la definición de $\chi$:
+
+$$
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r}.
+$$
+
+Despejando e integrando respecto al tiempo,
+
+$$
+\sqrt{\mu}(t-t_0)
+=\int_{\chi(t_0)}^{\chi(t)}r(\chi)\,d\chi.
+$$
+
+Tomando $\chi(t_0)=0$ y sustituyendo la expresión del radio,
+
+$$
+\sqrt{\mu}(t-t_0)=\int_0^{\chi(t)}\alpha\left[1+e\sin\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)\right]d\chi.
+$$
+
+Separando la integral,
+
+$$
+\begin{split}
+\sqrt{\mu}(t-t_0)=\alpha\chi(t)+\alpha e\int_0^{\chi(t)}\sin\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)d\chi.
+\end{split}
+$$
+
+Evaluando la integral, se obtiene
+
+$$
+\boxed{
+\begin{aligned}
+\sqrt{\mu}(t-t_0)
+={}&\alpha\chi(t)+\alpha^{3/2}e
+\left[
+\cos\left(\frac{c_0}{\sqrt{\alpha}}\right)
+-\cos\left(\frac{\chi(t)+c_0}{\sqrt{\alpha}}\right)
+\right].
+\end{aligned}
+}
+$$
+
+---
+
+Aplicando la condición inicial $r(t_0)=r_0$, con $\chi(t_0)=0$, a la ecuación del radio:
+
+$$
+r_0=\alpha\left[
+1+e\sin\left(\frac{c_0}{\sqrt{\alpha}}\right)
+\right].
+$$
+
+Despejando,
+
+$$
+\boxed{
+e\sin\left(\frac{c_0}{\sqrt{\alpha}}\right)
+=\frac{r_0}{\alpha}-1
+}
+$$
+
+Derivando la expresión del radio respecto al tiempo,
+
+$$
+\dot{r}=
+\sqrt{\alpha}\,e
+\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)
+\frac{d\chi}{dt}.
+$$
+
+Utilizando la definición de la anomalía universal,
+
+$$
+\frac{d\chi}{dt}=\frac{\sqrt{\mu}}{r},
+$$
+
+obtenemos
+
+$$
+\dot{r}=
+\frac{\sqrt{\mu\alpha}}{r}\,
+e\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right).
+$$
+
+---
+
+Como $\vec{r}\cdot\vec{v}=r\dot{r}$,
+
+$$
+\boxed{
+e\cos\left(\frac{\chi+c_0}{\sqrt{\alpha}}\right)
+=\frac{\vec{r}\cdot\vec{v}}{\sqrt{\mu\alpha}}
+}
+$$
+
+En el instante inicial,
+
+$$
+e\cos\left(\frac{c_0}{\sqrt{\alpha}}\right)
+=\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu\alpha}}.
+$$
+
+
+Sustituyendo las relaciones iniciales para el seno y el coseno en la ecuación temporal, se obtiene
+
+$$
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&\alpha\left[
+\chi-\sqrt{\alpha}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right)
+\right]+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\,
+\alpha\left[
+1-\cos\left(\frac{\chi}{\sqrt{\alpha}}\right)
+\right]+r_0\sqrt{\alpha}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right).
+\end{aligned}
+$$
+
+Esta expresión relaciona el tiempo transcurrido $\Delta t=t-t_0$ con la anomalía universal $\chi$ y las condiciones iniciales del movimiento.
+Por otro lado, sustituyendo en la ecuación del orbita
+
+$$
+r = \alpha + \sqrt{\alpha}\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\sin\left(\frac{\chi}{\sqrt{\alpha}}\right) + (r_0-\alpha)\cos\left(\frac{\chi}{\sqrt{\alpha}}\right)
+$$
+
+---
+
+
+Se introduce la variable auxiliar $\psi$, definida como
+
+$$
+\psi=\frac{\chi^2}{\alpha}
+\qquad\Rightarrow\qquad
+\alpha=\frac{\chi^2}{\psi}.
+$$
+
+Sustituyendo tenemos,
+
+$$
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&\frac{\chi^3}{\psi}\left[1-\frac{\sin(\sqrt{\psi})}{\sqrt{\psi}}\right]
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\frac{\chi^2}{\psi}
+\left[1-\cos(\sqrt{\psi})\right]+r_0\frac{\chi}{\sqrt{\psi}}\sin(\sqrt{\psi}).\\
+r=&\frac{\chi^2}{\psi}+\frac{\chi}{\sqrt{\psi}}\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\sin\left(\sqrt{\psi}\right)+\left(r_0-\frac{\chi^2}{\psi}\right)\cos\left(\sqrt{\psi}\right).
+\end{aligned}
+$$
+
+
+Reordenando los términos,
+
+$$
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+={}&\chi^3\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2
+\frac{1-\cos(\sqrt{\psi})}{\psi}+r_0\chi\frac{\sin(\sqrt{\psi})}{\sqrt{\psi}}.\\
+r={}&\chi^2\frac{1-\cos(\sqrt{\psi})}{\psi}
++\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi
+\left[1-\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi}}\right]+r_0\left[1-\left(1-\cos(\sqrt{\psi})\right)\right].
+\end{aligned}
+$$
+
+---
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+Para simplificar las expresiones, definimos las funciones auxiliares
+
+$$
+C(\psi)=\frac{1-\cos(\sqrt{\psi})}{\psi},
+\qquad
+S(\psi)=\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}.
+$$
+
+Con estas definiciones, las ecuaciones universales quedan expresadas como
+
+$$
+\begin{aligned}
+\sqrt{\mu}\,\Delta t
+&=\chi^3S(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2C(\psi)
++r_0\chi\left[1-\psi S(\psi)\right],\\[8pt]
+r(\chi)
+&=\chi^2C(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi\left[1-\psi S(\psi)\right]
++r_0\left[1-\psi C(\psi)\right].
+\end{aligned}
+$$
+
+La primera ecuación es la **ecuación universal de tiempo** y permite determinar $\chi$ para un instante dado. La segunda es la **ecuación universal de la órbita** y permite calcular el radio orbital.
+
+A las funciones auxiliares $C(\psi)$ y $S(\psi)$ se les conoce como **funciones de Stumpff**, en honor a Karl Stumpff, quien fue quien propuso este método entre en la década de 1950. 
+
+
+
+## Funciones de Stumpff
+
+Las funciones de Stumpff permiten expresar las ecuaciones del propagador universal mediante una formulación común para órbitas elípticas, trayectorias parabólicas e hiperbólicas. Su evaluación depende del signo de la variable auxiliar $\psi$.
+
+- Para $\psi>0$, aparecen funciones trigonométricas, asociadas al caso elíptico.
+- Para $\psi<0$, aparecen funciones hiperbólicas, asociadas al caso hiperbólico.
+- Para $\psi=0$, las funciones toman valores finitos correspondientes al caso parabólico.
+
+Las funciones se definen como
+
+$$
+C(\psi)=
+\begin{cases}
+\dfrac{1-\cos(\sqrt{\psi})}{\psi}, & \psi>0,\\[8pt]
+\dfrac{1}{2}, & \psi=0,\\[8pt]
+\dfrac{\cosh(\sqrt{-\psi})-1}{-\psi}, & \psi<0,
+\end{cases}\qquad
+S(\psi)=
+\begin{cases}
+\dfrac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}, & \psi>0,\\[8pt]
+\dfrac{1}{6}, & \psi=0,\\[8pt]
+\dfrac{\sinh(\sqrt{-\psi})-\sqrt{-\psi}}{\sqrt{(-\psi)^3}}, & \psi<0.
+\end{cases}
+$$
+
+Ambas funciones también pueden calcularse mediante series de potencias, válidas para cualquier valor real de $\psi$:
+
+$$
+C(\psi)=\sum_{k=0}^{\infty}\frac{(-\psi)^k}{(2k+2)!},
+\qquad
+S(\psi)=\sum_{k=0}^{\infty}\frac{(-\psi)^k}{(2k+3)!}.
+$$
+
+---
+
+![](/Figures/c2/stumpff_comparison.svg){width=70% fig-align="center"}
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.6.2: Funciones de Stumpff </div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$\psi$
+</div>
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$C(\psi),S(\psi)$
+</div>
+
+
+<ol>
+- Si $\psi>\varepsilon$:
+
+$$
+C(\psi)=\frac{1-\cos(\sqrt{\psi})}{\psi},\qquad S(\psi)=\frac{\sqrt{\psi}-\sin(\sqrt{\psi})}{\sqrt{\psi^3}}
+$$
+
+- Si $|\psi|<\varepsilon$:
+
+$$
+C(\psi)=\frac{1}{2},\qquad S(\psi)=\frac{1}{6}
+$$
+
+- Si $\psi<-\varepsilon$:
+
+$$
+C(\psi)=\frac{\cosh(\sqrt{-\psi})-1}{-\psi},\qquad S(\psi)=\frac{\sinh(\sqrt{-\psi})-\sqrt{-\psi}}{\sqrt{(-\psi)^3}}
+$$
+</ol>
+
+
+:::
+
+::: {.callout-note .fragment}
+### Nota:
+
+También podemos calcular $C(\psi)$ y $S(\psi)$ mediante series de potencias. Para ello, se recomienda al menos usar 8 términos.
+:::
+
+
+---
+
+Hasta este punto, tenemos un par de ecuaciones que nos relacionan el tiempo y el radio con la anomalía universal $\chi$. Sin embargo, para realizar la propagación, necesitamos conocer explicitamente el valor de $\chi$ en cada instante de tiempo. Para ello, debemos resolver la ecuación universal de tiempo de la misma manera que resolvemos la ecuación de Kepler, es decir, mediante un método iterativo. 
+
+Planteamos la función transcendental
+
+$$
+\mathcal{G}(\chi)=\chi^3S(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi^2C(\psi)+r_0\chi\left[1-\psi S(\psi)\right]-\sqrt{\mu}\Delta t=0.
+$$
+
+La particularidad de esta ecuación aparece al calcular su parcial respecto a $\chi$. Recordando que 
+
+$$
+\sqrt{\mu}\Delta t=\int_{0}^{\chi(t)}r(\chi)\,d\chi,
+$$
+
+Entonces
+
+$$
+\begin{split}
+\mathcal{G}(\chi)&=\int_{0}^{\chi(t)}r(\chi)\,d\chi-\sqrt{\mu}\Delta t,\\
+\Rightarrow\frac{d\mathcal{G}(\chi)}{d\chi}&=r(\chi).
+\end{split}
+$$
+
+---
+
+
+
+
+::: {.columns}
+
+::: {.column}
+
+Con ello, podemos encontrar la raíz de la ecuación $\mathcal{G}(\upchi)=0$ mediante la siguiente iteración:
+
+
+$$
+\begin{split}
+\upchi_{n+1}&=\upchi_n-\frac{\mathcal{G}(\upchi_n)}{r(\upchi_n)}\\
+&=\upchi_n-\frac{\upchi_n^3S(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n^2C(\uppsi_n)+r_0\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]-\sqrt{\mu}\Delta t}{\upchi_n^2C(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]+r_0\left[1-\uppsi_n C(\uppsi_n)\right].}
+\end{split}
+$$
+
+donde 
+$$
+\uppsi_n=\frac{\upchi_n^2}{\alpha}.
+$$
+
+- La anomalía universal $\chi$ se obtiene al iterar hasta que la diferencia entre dos iteraciones consecutivas sea menor a una tolerancia predefinida. Una vez obtenida, se puede calcular el radio $r(\chi)$. 
+
+
+
+
+:::
+
+::: {.column}
+
+
+![](/Figures/c2/universal_anomaly.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+Para acelerar la convergencia del método de Newton, se selecciona $\chi_0$ según el tipo de trayectoria. Para diferenciar la trayectoria, hacemos uso de $\beta=\alpha^{-1}$.
+
+- Órbita elíptica ($\beta>\varepsilon$):
+
+$$
+\boxed{\upchi_0=\sqrt{\mu}\beta\,\Delta t } 
+$$
+
+- Trayectoria parabólica ($|\beta|<\varepsilon$):
+
+$$
+\boxed{\upchi_0=\sqrt{p}\tan\left(\frac{\nu_0}{2}\right)}
+$$
+
+- Trayectoria hiperbólica ($\beta<-\varepsilon$):
+
+$$
+\boxed{
+\upchi_0=\operatorname{sign}(\Delta t)\sqrt{-\alpha}\,
+\ln\left(
+\frac{-2\mu\beta\Delta t}
+{\vec r_0\cdot\vec v_0+
+\operatorname{sign}(\Delta t)\sqrt{-\mu\beta}
+(1-r_0\beta)}
+\right)
+}
+$$
+
+donde $\operatorname{sign}(\cdot)$ es la función signo.
+
+$$
+\operatorname{sign}(x)=
+\begin{cases}
+1 & \text{si } x>0\\
+0 & \text{si } x=0\\
+-1 & \text{si } x<0
+\end{cases}
+$$
+
+---
+
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.6.2: Estimación inicial </div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu, \alpha,\beta$
+</div>
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\upchi_0$
+</div>
+
+
+<ol>
+
+- Si $\beta>\varepsilon$:
+
+$$
+\upchi_0=\sqrt{\mu}\beta\,\Delta t  
+$$
+
+- Si $|\beta|<\varepsilon$:
+
+$$
+^{i}\vec{h}= ^{i}\vec{r}\times^{i}\vec{v}
+$$
+
+$$
+p=\|\vec{h}\|^2/\mu
+$$
+
+$$
+\nu_0=\mathrm{atan2}(r_{0,y},r_{0,x})
+$$
+$$
+\upchi_0=\sqrt{p}\tan\left(\frac{\nu_0}{2}\right)
+$$
+
+- Si $\beta<-\varepsilon$:
+
+$$
+\upchi_0=\operatorname{sign}(\Delta t)\sqrt{-\alpha}\,
+\ln\left(
+\frac{-2\mu\beta\Delta t}
+{\vec r_0\cdot\vec v_0+
+\operatorname{sign}(\Delta t)\sqrt{-\mu\beta \:}
+(1-r_0\beta)}
+\right)
+$$
+
+</ol>
+
+
+:::
+
+
+
+## Relación entre la anomalía universal y las anomalías clásicas
+
+La anomalía universal $\chi$ se relaciona con las anomalías clásicas según el tipo de trayectoria. Estas relaciones permiten expresar el desplazamiento en términos de la anomalía correspondiente.
+
+- Órbita elíptica ($\beta>0$):
+
+$$
+\boxed{\chi=\sqrt{\alpha}\,(\psi-\psi_0)}
+$$
+
+donde $\psi$ y $\psi_0$ son las anomalías excentricas.
+
+
+- Trayectoria parabólica ($|\beta|=0$):
+
+$$
+\boxed{\chi=\sqrt{p}\left( \psi-\psi_0\right)}
+$$
+
+donde $\psi$ y $\psi_0$ son las anomalías parabólicas.
+
+- Trayectoria hiperbólica ($\beta<0$):
+
+$$
+\boxed{\chi=\sqrt{-\alpha}\,(\psi-\psi_0)}
+$$
+
+donde $\psi$ y $\psi_0$ son las anomalías hiperbólicas.
+
+- Sin embargo, **no existe una relación directa entre la anomalía universal $\chi$ y la anomalía verdadera $\nu(t)$**.
+
+
+## Coeficientes de Lagrange
+
+- Si nos apegamos a la formulación que hicimos en los propagadores anteriores, deberíamos conocer una relación explicita entre la anomalía universal $\chi$ y la anomalía verdadera $\nu(t)$, el vector posición $\vec{r}(t)$ y el vector velocidad $\vec{v}(t)$.
+
+- Como se mencionó, no existe una relación directa entre la anomalía universal $\chi$ y la anomalía verdadera $\nu(t)$, por lo que no podemos reconstruir los vectores $\vec{r}(t)$ y $\vec{v}(t)$ como lo habiamos hecho en los propagadores anteriores.
+
+- Aquí es donde los coeficientes de Lagrange adquieren su importancia. En términos de la anomalía universal $\chi$, los podemos escribir:
+
+$$
+\begin{split}
+f(t) &= 1-\frac{\chi^2(t)}{r_0}C(\psi),\\
+g(t) &= \Delta t-\frac{\chi^3(t)}{\sqrt{\mu}}S(\psi),\\
+\dot{f}(t) &= \frac{\sqrt{\mu}}{r_0r(t)}\chi(t)\left[\psi S(\psi)-1\right],\\
+\dot{g}(t) &= 1-\frac{\chi^2(t)}{r(t)}C(\psi).
+\end{split}
+$$
+
+Con ello, los vectores de posición y velocidad en el marco de referencia inercial se pueden escribir como:
+
+$$
+\boxed{\begin{split}
+\ls{i}\vec{r}(t) &= f(t)\ls{i}\vec{r}_0+g(t)\ls{i}\vec{v}_0\\
+\ls{i}\vec{v}(t) &= \dot{f}(t)\ls{i}\vec{r}_0+\dot{g}(t)\ls{i}\vec{v}_0.
+\end{split}}
+$$
+
+## Propagador universal
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.6: Propagador universal (1/3)</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu$
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)$
+</div>
+
+
+
+<ol>
+
+<li>Calcular $r_0$ y $v_0$.</li>
+$$
+r_0=\|{}^{i}\vec{r}_0\| \qquad v_0=\|{}^{i}\vec{v}_0\|.
+$$
+<li>Calcular $E$.</li>
+$$
+E=\frac{v_0^2}{2}-\frac{\mu}{r_0},
+$$
+<li>Calcular $\alpha$ y $\beta$.</li>
+$$
+\alpha=-\frac{\mu}{2E}. \qquad \beta=\alpha^{-1}.
+$$
+<li>Calcular la estimación inicial $\upchi_0$ mediante el Algoritmo.</li>
+
+</ol>
+
+
+:::
+
+
+---
+
+## Propagador universal
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.6: Propagador universal (2/3)</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu$
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)$
+</div>
+
+Para todo instante de tiempo $t>t_0$:
+
+<ol>
+
+<li>**Ciclo**</li>
+
+- Calcular $\uppsi_n$. 
+
+    $$
+    \uppsi_n=\frac{\upchi_n^2}{\alpha}.
+    $$
+
+- Calcular las funciones de Stumpff $C(\uppsi_n)$ y $S(\uppsi_n)$ mediante el Algoritmo.
+- Calcular
+    $$
+    \begin{split}
+    \upchi_{n+1}=\upchi_n-\frac{\upchi_n^3S(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n^2C(\uppsi_n)+r_0\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]-\sqrt{\mu}\Delta t}{\upchi_n^2C(\uppsi_n)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\upchi_n\left[1-\uppsi_n S(\uppsi_n)\right]+r_0\left[1-\uppsi_n C(\uppsi_n)\right].}
+    \end{split}
+    $$
+
+**Hasta** $|\upchi_{n+1}-\upchi_n|<\varepsilon$.
+
+<li> Asignar $\chi(t)=\upchi_{n+1}$ y $\psi(t)=\upchi_{n+1}^2/\alpha$.</li>
+
+</ol>
+
+:::
+
+## Propagador universal
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 2.6: Propagador universal (3/3)</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong>
+$^{i}\vec{r}_0, ^{i}\vec{v}_0,t,t_0, \mu$
+</div>
+
+<div class="algorithm-io">
+<strong>Salida:</strong>
+$\ls{i}\vec{r}(t),\ls{i}\vec{v}(t)$
+</div>
+
+Para todo instante de tiempo $t>t0$:
+
+<ol>
+
+<li> Calcular las funciones de Stumpff $C(\psi)$ y $S(\psi)$ mediante el Algoritmo.</li>
+
+<li>Calcular el radio</li>
+
+$$
+r(t)=\chi^2(t)C(\psi)+\frac{\vec{r}_0\cdot\vec{v}_0}{\sqrt{\mu}}\chi(t)\left[1-\psi S(\psi)\right]+r_0\left[1-\psi(t) C(\psi)\right].
+$$
+
+<li>Calcular los coeficientes de Lagrange</li>
+
+$$
+\begin{split}
+f(t) &= 1-\frac{\chi^2(t)}{r_0}C(\psi) \qquad g(t) = \Delta t-\frac{\chi^3(t)}{\sqrt{\mu}}S(\psi), \qquad \dot{f}(t) &= \frac{\sqrt{\mu}}{r_0r(t)}\chi(t)\left[\psi S(\psi)-1\right], \qquad \dot{g}(t) = 1-\frac{\chi^2(t)}{r(t)}C(\psi).
+\end{split}
+$$
+
+<li>Calcular $\ls{i}\vec{r}(t)$ y $\ls{i}\vec{v}(t)$</li>
+$$
+\begin{split}
+\ls{i}\vec{r}(t) &= f(t)\ls{i}\vec{r}_0+g(t)\ls{i}\vec{v}_0\\
+\ls{i}\vec{v}(t) &= \dot{f}(t)\ls{i}\vec{r}_0+\dot{g}(t)\ls{i}\vec{v}_0.
+\end{split}
+$$
+
+
+</ol>
+
+:::
+
+
+## Ejercicio
+
+Sean las siguientes condiciones iniciales de posición y velocidad,
+expresadas en el marco de referencia inercial:
+
+$$
+{}^{i}\vec{r}_0^{(1)}=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(1)}=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(2)}=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(2)}=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(3)}=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(3)}=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_0^{(4)}=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_0^{(4)}=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
+
+Considere el parámetro gravitacional terrestre $\mu=3.986\times10^{14}\ \mathrm{m^3/seg^2}$ y $t_0=0\ \mathrm{ seg}$. Para cada caso, aplique el algoritmo de propagación correspondiente. 
+
+## Resultados
+
+| Parámetro | Caso 1<br>Circular | Caso 2<br>Elíptica | Caso 3<br>Parabólica | Caso 4<br>Hiperbólica |
+|:---|---:|---:|---:|---:|
+| $e$ | 0.0000 | 0.3181 | 1.000 | 1.553 |
+| $p$ [m] | $8.013\times10^6$ | $1.077\times10^7$ | $1.462\times10^7$ | $1.863\times10^7$ |
+| $\nu_0$ [rad] | $-1.225$ | $-0.5621$ | $-1.763$ | $-1.397$ |
+| $\Omega$ [rad] | $1.203$ | $1.737$ | $3.148$ | $0.08651$ |
+| $i$ [rad] | $1.954$ | $2.519$ | $2.147$ | $2.428$ |
+| $\omega$ [rad] | $2.750$ | $6.020$ | $4.478$ | $5.546$ |
+| $h$ [m$^2$/s] | $5.651\times10^{10}$ | $6.550\times10^{10}$ | $7.632\times10^{10}$ | $8.617\times10^{10}$ |
+| $E$ [J/kg] | $-2.487\times10^7$ | $-1.664\times10^7$ | $0$ | $1.509\times10^7$ |
+| $\alpha$ [m] | $8.013\times10^6$ | $1.198\times10^7$ | $\infty$ | $-1.320\times10^7$ |
+| $\beta$ [$\mathrm{m}^{-1}$] | $1.248\times10^{-7}$ | $8.346\times10^{-8}$ | $0$ | $-7.578\times10^{-8}$ |
+
+
+::: {.callout-note .fragment}
+### Nota:
+
+Las tolerancias dependen de la precisión de la computadora. Por ejemplo, para este caso el algoritmo necesitaría una tolerancia de $\varepsilon=10^{-8}$ para diferenciar cada caso.  
+:::
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/c_inertial_orbit_chi.svg){width=95% fig-align="center"}
+
+Efemérides del caso 1 (anomalia verdadera calculada con el vector de excentricidad nulo).
+
+:::
+
+---
+
+![](/Figures/c2/c_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/e_inertial_orbit_chi.svg){width=95% fig-align="center"}
+
+Efemérides del caso 2.
+
+:::
+
+---
+
+![](/Figures/c2/e_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/p_inertial_orbit_chi.svg){width=95% fig-align="center"}
+
+Efemérides del caso 3.
+
+:::
+
+---
+
+![](/Figures/c2/p_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+::: {#fig-map layout-align="center"}
+
+![](/Figures/c2/h_inertial_orbit_chi.svg){width=95% fig-align="center"}
+
+Efemérides del caso 4.
+
+:::
+
+---
+
+![](/Figures/c2/h_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
 
 
 <!-- 
