@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-f1c9523c090984df1ca1b94bb0d574ef.css">
+  <link rel="stylesheet" href="MO_files/libs/revealjs/dist/theme/quarto-d7e1e9dcbabd5d660aa7cae21d71d977.css">
   <link href="MO_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="MO_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1801,9 +1801,9 @@ Propagación
 \]</span></p></li>
 <li class="fragment"><p>En nuestro caso, las fuerzas totales que actúan sobre las partículas <span class="math inline">\(m_1\)</span> y <span class="math inline">\(m_2\)</span> son</p>
 <p><span class="math display">\[
-      \ls{i}\vec{f}_{12}=m_1\ls{i}\ddot{\vec{r}}_1,
+      \ls{i}\vec{f}_{21}=m_1\ls{i}\ddot{\vec{r}}_1,
       \qquad
-      \ls{i}\vec{f}_{21}=m_2\ls{i}\ddot{\vec{r}}_2
+      \ls{i}\vec{f}_{12}=m_2\ls{i}\ddot{\vec{r}}_2
   \]</span></p></li>
 </ul>
 </div></div>
@@ -2009,7 +2009,7 @@ Propagación
 <p><span class="math display">\[
   \begin{aligned}
       \ls{i}\ddot{\vec{r}}_{12}&amp;=\ls{i}\ddot{\vec{r}}_2-\ls{i}\ddot{\vec{r}}_1\\
-      &amp;=G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
+      &amp;=-G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
   \end{aligned}
   \]</span></p></li>
 <li class="fragment"><p>No obstante, esta ecuación sigue siendo imposible de resolver de manera analítica, por lo que es necesario analizar otros aspectos del problema que nos permitan conocer algo sobre su solución.</p></li>
@@ -2046,7 +2046,7 @@ Propagación
           &amp;=
           \ls{i}\vec{r}_{12}\times\ls{i}\vec{f}_{12}\\
           &amp;=
-          G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
+          -G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
           \ls{i}\vec{r}_{12}\times\ls{i}\vec{r}_{12}\\
           &amp;=
           0.
@@ -8902,179 +8902,986 @@ Figura&nbsp;12: Efemérides del caso 4.
 <p><video data-src=".\Figures/c2/h_inertial_orbit.mp4" class="quarto-figure quarto-figure-center" style="width:100.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/h_inertial_orbit.mp4">Video</a></video></p>
 </figure>
 </div>
-<!-- 
----
-
-::: {.center-vertical}
-
-::: {.chapter-title}
-
-Propagación 
-
-:::
-
-<div class="chapter-line"></div>
-
-::: {.chapter-subtitle}
-
-Elementos orbitales
-
-<div class="menu-title" style="display:none;"> ▸ Elementos orbitales</div>
-:::
-
-:::
-
-##
-
-<div class="vspace-3"></div>
-<div class="vspace-3"></div>
-<div class="vspace-3"></div>
-
-- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.
-
-- En particular, los elementos orbitales permiten definir:
-
-  - La **<span style="color:red">forma y tamaño</span>** de la trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:red">$a,e$</span>
-
-    :::
-
-  - La **<span style="color:teal">orientación</span>** de la trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:teal">$i,\Omega,\omega$</span>
-
-    :::
-
-  - La **<span style="color:blue">posición instantánea</span>** del cuerpo en su trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:blue">$\nu(t)$</span>
-
-    :::
-
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="60%"}
-
-La **forma** y el **tamaño** de una órbita se determinan a partir de:
-
-
-::: {.fragment}
-
-- La <span style="color:red">**excentricidad** $e$</span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de $e$:
-
-  - $e=0$: órbita circular.
-  - $0<e<1$: órbita elíptica.
-  - $e=1$: parábola.
-  - $e>1$: hipérbola.
-
-:::
-
-
-::: {.fragment}
-
-- En el caso de órbitas elípticas, el <span style="color:red">**semieje mayor** $a$</span> determina su tamaño.
-
-    $$
-        e=\frac{c}{a},
-        \qquad
-        c=\sqrt{a^2-b^2}
-    $$
-
-    donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
-
-- Sin embargo, para trayectorias en general, podemos utilizar el semi parametro $p$ para describir el tamaño de la trayectoria.
-:::
-
-:::
-
-::: {.column width="40%"}
-
-![](/Figures/c2/ellipse.svg){width=100%}
-
-:::
-
-:::
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="48%"}
-
-![](/Figures/c2/orientation_parameters.svg){width=120%}
-
-:::
-
-::: {.column width="52%"}
-
-La **orientación de la órbita** se determina con tres ángulos:
-
-:::{.incremental}
-
-- <span style="color:teal">**Longitud del nodo ascendente** $\Omega\in[0,2\pi)$</span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Inclinación** $i\in[0,\pi]$</span>: ángulo entre el *plano orbital* y el *plano de referencia*.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Argumento del periapsis** $\omega\in[0,2\pi)$</span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.
-
-:::
-
-:::
-
-:::
-
----
-
-##
-
-::: {.columns}
-
-::: {.column width="48%"}
-
-![](/Figures/c2/true_anomaly.svg){width=120%}
-
-:::
-
-::: {.column width="52%"}
-
-La **posición instantánea** del cuerpo en su órbita se describe con la <span style="color:blue">**anomalía verdadera** $\nu(t)$</span>.
-
-
-:::{.incremental}
-- La anomalía verdadera $\nu(t)$ es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.
-
-- Se dice que es *verdadera* porque está presente en todos las posibles secciones cónicas que describen una trayectoria. 
-
-- En lugar de $\nu(t)$, también pueden emplearse otras variables para describir la posición:
-
-  - **Anomalía excéntrica, parabólica o hiperbólica** $\psi(t)$.
-  - **Anomalía media** $M(t)$.
-
-- Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo . 
-
-:::
-
-
-:::
-
-
-::: -->
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Propagación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Conclusión</p>
+<div class="menu-title" style="display:none;">
+▸ Conclusión
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Antes de continuar, recordemos que el problema de los dos cuerpos buscaba determinar la trayectoria de dos cuerpos que interactúan entre ellos bajo la influencia de la gravedad, es decir, buscabamos calcular <span class="math inline">\(\vec{r}_1(t)\)</span> y <span class="math inline">\(\vec{r}_2(t)\)</span> a lo largo del tiempo.</li>
+</ul>
+<ul>
+<li class="fragment"><p>Algunas ecuaciones importantes a recordar son:</p>
+<p><span class="math display">\[
+      \begin{aligned}
+          \ls{i}\vec{r}_{12} &amp;= \ls{i}\vec{r}_2-\ls{i}\vec{r}_1\\
+          \ls{i}\ddot{\vec{r}}_{12} &amp;= -G(m_1+m_2)\frac{\ls{i}\vec{r}_{12}}{|\ls{i}\vec{r}_{12}|^3}\\
+          \ls{i}\vec{r}_c &amp;= \frac{m_1}{m_1+m_2}\ls{i}\vec{v}_1+\frac{m_2}{m_1+m_2}\ls{i}\vec{v}_2\\
+          &amp;=\ls{i}\vec{v}_c(t_0)(t-t_0)+\ls{i}\vec{r}_c(t_0)\\
+          \ls{i}\vec{r}_1&amp;=\ls{i}\vec{r}_c-\frac{m_2}{m_1+m_2}\ls{i}\vec{r}_{12}\\
+          \ls{i}\vec{r}_2&amp;=\ls{i}\vec{r}_c+\frac{m_1}{m_1+m_2}\ls{i}\vec{r}_{12}\\
+      \end{aligned}
+  \]</span></p></li>
+<li class="fragment"><p>La propagación nos permite la posición relativa <span class="math inline">\(\ls{i}\vec{r}_{12}\)</span> y la velocidad relativa <span class="math inline">\(\ls{i}\vec{v}_{12}\)</span> de la masa <span class="math inline">\(2\)</span> respecto a la masa central <span class="math inline">\(1\)</span>, considerando <span class="math inline">\(\mu=G(m_1+m_2)\)</span>, mediante las condiciones iniciales <span class="math inline">\(\ls{i}\vec{r}_{12}(t_0)\)</span> y <span class="math inline">\(\ls{i}\vec{v}_{12}(t_0)\)</span>.</p></li>
+<li class="fragment"><p>Lo único que falta definir es <strong>la posición y la velocidad del baricentro</strong> en la época <span class="math inline">\(t_0\)</span>, es decir, <span class="math inline">\(\ls{i}\vec{r}_c(t_0)\)</span> y <span class="math inline">\(\ls{i}\vec{v}_c(t_0)\)</span>. Sin embargo, estas condiciones están definidas explicitamente por la caracterización del marco de referencia inercial, lo cual no hemos hecho hasta el momento.</p></li>
+<li class="fragment"><p>Si bien hemos visto que el movimiento relativo en el problema de los dos cuerpos está caracterizado por secciones cónicas, es intersante observar el <strong>movimiento del sistema completo desde el marco de referencia inercial</strong>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>A su vez, también sabemos que este movimiento relativo es independiente de las masas de las dos cuerpos. Sin embargo, desde el marco de referencia inercial, la proporción entre <strong>las masas de las partículas son importantes</strong>, dado a que la posición de cada uno de ellas depende explicitamente de la posición del baricentro y de una porción de la posición relativa poderada por las masas.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Por ejemplo, considere las siguientes condiciones iniciales:</li>
+</ul>
+<div class="small">
+<p><span class="math display">\[
+{}^{i}\vec{r}_{12}^{(1)}(t_0)=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(1)}(t_0)=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_{12}^{(2)}(t_0)=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(2)}(t_0)=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_{12}^{(3)}(t_0)=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(3)}(t_0)=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+\]</span></p>
+<p><span class="math display">\[
+{}^{i}\vec{r}_{12}^{(4)}(t_0)=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(4)}(t_0)=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+</div>
+<p>Las masas de las partículas son <span class="math inline">\(m_1=5.97\times10^{24}\ \mathrm{kg}\)</span> y <span class="math inline">\(m_2=4.197\times10^{5}\ \mathrm{kg}\)</span>, emulando a la Tierra y a la Estación Espacial Internacional (ISS, por sus siglas en inglés), respectivamente. Adicionalmente, considere las siguientes condiciones iniciales del baricentro.</p>
+<div class="small">
+<p><span class="math display">\[
+{}^{i}\vec{r}_c(t_0)=
+\begin{bmatrix}
+0.0000\\
+0.0000\\
+0.0000
+\end{bmatrix}\mathrm{m},
+\qquad    
+{}^{i}\vec{v}_c(t_0)=
+\begin{bmatrix}
+1.0000\\
+2.0000\\
+1.5000
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e1_1.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e1_1.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e1_2.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e1_2.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e1_3.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e1_3.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e1_4.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e1_4.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<p><strong>1. Sistema Tierra-Luna</strong></p>
+<div class="small">
+<p><span class="math display">\[
+\begin{gathered}
+m_1=5.9722\times10^{24}\ \mathrm{kg},\qquad
+m_2=7.342\times10^{22}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+384.4\\0\\0
+\end{bmatrix}\times10^6\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\1.0245\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+\]</span></p>
+</div>
+<p><strong>2. Sistema Plutón-Caronte</strong></p>
+<div class="small">
+<p><span class="math display">\[
+\begin{gathered}
+m_1=1.303\times10^{22}\ \mathrm{kg},\qquad
+m_2=1.586\times10^{21}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+19.596\\0\\0
+\end{bmatrix}\times10^6\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\0.2231174\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+\]</span></p>
+</div>
+<p><strong>3. Sistema binario circular</strong></p>
+<div class="small">
+<p><span class="math display">\[
+\begin{gathered}
+m_1=m_2=10^{30}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}\times10^{11}\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\3.6536\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+\]</span></p>
+</div>
+<p><strong>4. Sistema binario elíptico</strong></p>
+<div class="small">
+<p><span class="math display">\[
+\begin{gathered}
+m_1=m_2=10^{30}\ \mathrm{kg},\qquad e=0.4,\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}\times10^{11}\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\4.3230\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e2.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e2.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e3.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e3.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e4.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e4.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c2/tbp_e5.mp4" class="quarto-figure quarto-figure-center" style="width:55.0%" data-autoplay="true" controls=""><a href=".\Figures/c2/tbp_e5.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+
+<img data-src=".\Figures/c2/diagramas_orbitales.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="section-39" class="slide level2 title-slide-custom">
+<h2></h2>
+<div class="cover">
+<div class="cover-logo">
+<p><img src="Assets/logo_big.png"></p>
+</div>
+<div class="cover-title">
+<p>Aplicación</p>
+</div>
+<div class="cover-line">
+
+</div>
+<div class="cover-subtitle">
+<p>Capítulo 3</p>
+</div>
+</div>
+<div class="menu-title" style="display:none;">
+Aplicación
+</div>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Aplicación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Representación del estado del satélite</p>
+<div class="menu-title" style="display:none;">
+▸ Representación del estado del satélite
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<ul>
+<li>El <strong>estado de un satélite</strong> está conformado por su <strong>posición</strong> y <strong>velocidad</strong> en un instante de tiempo dado.</li>
+</ul>
+<p><span class="math display">\[
+x(t) = \begin{bmatrix}
+\vec{r}(t)\\
+\vec{v}(t)
+\end{bmatrix} \in \mathbb{R}^6
+\]</span></p>
+<ul>
+<li><p>Al estado <span class="math inline">\(x(t)\)</span> es un instante de tiempo <span class="math inline">\(t\)</span> se le conoce como <strong>efeméride</strong>.</p></li>
+<li><p>Sin embargo, para fines prácticos, representar el estado de un satélite con seis variables cartesianas no es la mejor opción, ya que no permite describir de manera intuitiva la trayectoria del satélite.</p></li>
+<li><p>Para ello, existen conjuntos de variables que lograr una descripción más intuitiva de la trayectoria y de la posición del satélite en ella.</p></li>
+<li><p>Otro aspecto importante a considerar es la necesidad de gestionar la información mediante sistemas computacionales, por lo que es necesario que la representación del estado del satélite tenga un formato <strong>compacto y estandarizado</strong>.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/state_representation.svg" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="elementos-orbitales" class="slide level2">
+<h2>Elementos orbitales</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Los <strong>elementos orbitales</strong> (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.</p></li>
+<li><p>En particular, los elementos orbitales permiten definir:</p>
+<ul>
+<li><p>La <strong><span style="color:red">forma y tamaño</span></strong> de la trayectoria.</p></li>
+<li><p>La <strong><span style="color:teal">orientación</span></strong> de la trayectoria.</p></li>
+<li><p>La <strong><span style="color:blue">posición instantánea</span></strong> del cuerpo en su trayectoria.</p></li>
+</ul></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/keplerian_set.png" class="fragment quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="section-40" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>La <strong>forma</strong> y el <strong>tamaño</strong> de una órbita se determinan a partir de:</p>
+<div class="fragment">
+<ul>
+<li><p>La <span style="color:red"><strong>excentricidad</strong> <span class="math inline">\(e\)</span></span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de <span class="math inline">\(e\)</span>:</p>
+<ul>
+<li><span class="math inline">\(e=0\)</span>: órbita circular.</li>
+<li><span class="math inline">\(0&lt;e&lt;1\)</span>: órbita elíptica.</li>
+<li><span class="math inline">\(e=1\)</span>: parábola.</li>
+<li><span class="math inline">\(e&gt;1\)</span>: hipérbola.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>En el caso de órbitas elípticas, el <span style="color:red"><strong>semieje mayor</strong> <span class="math inline">\(a\)</span></span> determina su tamaño.</p>
+<p><span class="math display">\[
+      e=\frac{c}{a},
+      \qquad
+      c=\sqrt{a^2-b^2}
+  \]</span></p>
+<p>donde <span class="math inline">\(c\)</span> es la distancia del centro al foco y <span class="math inline">\(b\)</span> es el semieje menor.</p></li>
+<li><p>Sin embargo, para trayectorias en general, podemos utilizar el semi parametro <span class="math inline">\(p\)</span> para describir el tamaño de la trayectoria.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src=".\Figures/c2/ellipse.svg" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="section-41" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><img data-src=".\Figures/c2/orientation_parameters.svg" style="width:120.0%"></p>
+</div><div class="column" style="width:52%;">
+<p>La <strong>orientación de la órbita</strong> se determina con tres ángulos:</p>
+<ul>
+<li class="fragment"><span style="color:teal"><strong>Longitud del nodo ascendente</strong> <span class="math inline">\(\Omega\in[0,2\pi)\)</span></span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
+<div class="vspace-3">
+
+</div></li>
+<li class="fragment"><span style="color:teal"><strong>Inclinación</strong> <span class="math inline">\(i\in[0,\pi]\)</span></span>: ángulo entre el <em>plano orbital</em> y el <em>plano de referencia</em>.
+<div class="vspace-3">
+
+</div></li>
+<li class="fragment"><span style="color:teal"><strong>Argumento del periapsis</strong> <span class="math inline">\(\omega\in[0,2\pi)\)</span></span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.</li>
+</ul>
+</div></div>
+</section>
+<section id="section-42" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><img data-src=".\Figures/c2/true_anomaly.svg" style="width:120.0%"></p>
+</div><div class="column" style="width:52%;">
+<p>La <strong>posición instantánea</strong> del cuerpo en su órbita se describe con la <span style="color:blue"><strong>anomalía verdadera</strong> <span class="math inline">\(\nu(t)\)</span></span>.</p>
+<ul>
+<li class="fragment"><p>La anomalía verdadera <span class="math inline">\(\nu(t)\)</span> es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.</p></li>
+<li class="fragment"><p>Se dice que es <em>verdadera</em> porque está presente en todos las posibles secciones cónicas que describen una trayectoria.</p></li>
+<li class="fragment"><p>En lugar de <span class="math inline">\(\nu(t)\)</span>, también pueden emplearse otras variables para describir la posición:</p>
+<ul>
+<li class="fragment"><strong>Anomalía excéntrica, parabólica o hiperbólica</strong> <span class="math inline">\(\psi(t)\)</span>.</li>
+<li class="fragment"><strong>Anomalía media</strong> <span class="math inline">\(M(t)\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo .</p></li>
+</ul>
+</div></div>
+</section>
+<section id="two-line-element-set-tle" class="slide level2">
+<h2>Two-Line Element Set (TLE)</h2>
+<div class="columns">
+<div class="column">
+<p>Un TLE es un formato estandarizado desarrollado por la Fuerza Aérea de los Estados Unidos. Contiene parámetros orbitales <strong>medios</strong> ajustados a observaciones para describir el movimiento de un objeto artificial alrededor de la Tierra.</p>
+<ul>
+<li>Consta de dos líneas de datos de ancho fijo (69 caracteres).</li>
+<li>La primera línea contiene información de identificación, época y parámetros utilizados para modelar perturbaciones.</li>
+<li>La segunda línea contiene seis parámetros orbitales.</li>
+<li>Puedes contener una línea adicional con el nombre del objeto. En dicho caso, se le conoce como Three-Line Element Set.</li>
+<li>Está diseñado para utilizarse con el propagador SGP4 (Propagador + perturbaciones).</li>
+</ul>
+<div class="fragment">
+<p>Por ejemplo, el TLE 34 del estación espacial MIR es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href=""></a>1 16609U 86017A   93352.53502934  .00007889  00000 0  10529-3 0   348</span>
+<span id="cb11-2"><a href=""></a>2 16609  51.6190  13.3340 0005770 102.5680 257.5950 15.59114070447866</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Es importante notar que las lineas contienen espacios en blanco. Por ejemplo, para el caso anterior podemos indicar estos espacios con el símbolo :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href=""></a>1□16609U□86017A□□□93352.53502934□□.00007889□□00000□0□□10529-3□0□□□348</span>
+<span id="cb12-2"><a href=""></a>2□16609□□51.6190□□13.3340□0005770□102.5680□257.5950□15.59114070447866</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/mir.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="línea-1-identificación-y-época" class="slide level2">
+<h2>Línea 1: identificación y época</h2>
+<div class="vspace-2">
+
+</div>
+<div class="tle-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Campo</th>
+<th style="text-align: center;">Columnas</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>Número de línea.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3–7</td>
+<td>Número de catálogo del satélite.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8</td>
+<td>Clasificación: U (no clasificado), C (clasificado), S (secreto).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10–11</td>
+<td>Designador internacional: últimos dos dígitos del año de lanzamiento. Puede dejarse en blanco.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">12–14</td>
+<td>Designador internacional: número de lanzamiento dentro del año. Puede dejarse en blanco.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">15–17</td>
+<td>Designador internacional: identificador de la pieza del lanzamiento. Puede dejarse en blanco.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">19–20</td>
+<td>Año de la época: últimos dos dígitos del año.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">21–32</td>
+<td>Época: día del año y fracción del día.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">34–43</td>
+<td>Primera derivada del movimiento medio; coeficiente balístico (rev/día²).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">45–52</td>
+<td>Segunda derivada del movimiento medio (rev/día³); se supone el punto decimal.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">54–61</td>
+<td><span class="math inline">\(B^*\)</span>: término de arrastre o coeficiente de presión de radiación, en radios terrestres inversos. Se supone el punto decimal.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">63</td>
+<td>Tipo de efemérides (siempre cero; solo se utiliza en datos TLE no distribuidos).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">65–68</td>
+<td>Número del conjunto de elementos. Se incrementa cuando se genera un nuevo TLE para el objeto.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">69</td>
+<td>Checksum (módulo 10).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="línea-2-elementos-orbitales" class="slide level2">
+<h2>Línea 2: elementos orbitales</h2>
+<div class="vspace-2">
+
+</div>
+<div class="tle-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Campo</th>
+<th style="text-align: center;">Columnas</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>Número de línea.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3–7</td>
+<td>Número de catálogo del satélite.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">9–16</td>
+<td>Inclinación (grados).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">18–25</td>
+<td>Ascensión recta del nodo ascendente (grados), en el sistema de referencia ECI, medida desde el punto vernal.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">27–33</td>
+<td>Excentricidad (adimensional; se supone el punto decimal).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">35–42</td>
+<td>Argumento del periapsis (grados).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">44–51</td>
+<td>Anomalía media (grados).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">53–63</td>
+<td>Movimiento medio (revoluciones por día).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">64–68</td>
+<td>Número de revoluciones en la época (revoluciones).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">69</td>
+<td>Checksum (módulo 10).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Tomemos como ejemplo el TLE 34 de la estación espacial MIR:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href=""></a>1 16609U 86017A   93352.53502934  .00007889  00000 0  10529-3 0   348</span>
+<span id="cb13-2"><a href=""></a>2 16609  51.6190  13.3340 0005770 102.5680 257.5950 15.59114070447866</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Podemos seccionarla de la siguiente manera:</p>
+<p><img src="/Figures/c3/adfa.png" style="width: 100%; height: auto; display: block; margin: auto;"></p>
+</section>
+<section id="primera-línea" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 1: Número de línea.</strong></p>
+<p>Siempre es 1 para la primera línea.</p></li>
+<li><p><strong>Campo 2: Número de catálogo NORAD.</strong></p>
+<p>Identificador numérico asignado por el <strong>NORAD</strong> (<em>North American Aerospace Defense Command</em>) a los objetos espaciales catalogados. Actualmente, la gestión del catálogo corresponde al <strong>18.º Escuadrón de Defensa Espacial (18 SDS)</strong> de la Fuerza Espacial de los Estados Unidos. Los números se asignan conforme los objetos se incorporan al catálogo; no siguen necesariamente el orden de lanzamiento. En este ejemplo, <strong>16609</strong> identifica a la estación espacial MIR.</p></li>
+<li><p><strong>Campo 3: Clasificación del objeto.</strong></p>
+<p>Indica el nivel de clasificación de la información asociada al objeto: <code>U</code> (no clasificado), <code>C</code> (clasificado) o <code>S</code> (secreto).</p>
+<p>En este ejemplo, <strong>U</strong> indica que la información no está clasificada.</p></li>
+</ul>
+</section>
+<section id="primera-línea-1" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 4: Año de lanzamiento.</strong></p>
+<p>Indica los dos últimos dígitos del año en que se lanzó el objeto. En este ejemplo, <code>86</code> corresponde a 1986.</p></li>
+<li><p><strong>Campo 5: Número de lanzamiento del año.</strong></p>
+<p>Indica el número secuencial asignado al lanzamiento dentro de ese año. En este ejemplo, <code>017</code> corresponde al lanzamiento número 17 de 1986.</p></li>
+<li><p><strong>Campo 6: Identificador de la pieza del lanzamiento.</strong></p>
+<p>Identifica al objeto particular asociado al lanzamiento mediante una letra. En este ejemplo, <code>A</code> identifica la pieza principal del lanzamiento.</p></li>
+</ul>
+</section>
+<section id="primera-línea-2" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 7: Año de la época.</strong></p>
+<p>Indica los dos últimos dígitos del año al que corresponde la época del TLE. En este ejemplo, <code>93</code> corresponde a 1993.</p></li>
+<li><p><strong>Campo 8: Época.</strong></p>
+<p>Indica el instante de referencia de los elementos orbitales, expresado como el día del año y la fracción del día en tiempo UTC.</p>
+<p>En este ejemplo, <code>352.53502934</code> corresponde al día 352 (18 de diciembre) de 1993, a las 12:50:26.535 UTC, aproximadamente.</p></li>
+</ul>
+</section>
+<section id="primera-línea-3" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 9: Primera derivada del movimiento medio.</strong></p>
+<p>Corresponde a <span class="math inline">\(\dot{\eta}/2\)</span>, donde <span class="math inline">\(\dot{\eta}\)</span> es la primera derivada temporal del movimiento medio. Se utiliza para describir variaciones del movimiento medio asociadas a perturbaciones orbitales, particularmente el arrastre atmosférico.</p>
+<p>En este ejemplo, <span class="math inline">\(\dot{\eta}/2 = 0.00007889\ \text{rev}/\text{día}^2\)</span>, por lo que:</p>
+<p><span class="math display">\[
+\dot{\eta} = 2(0.00007889) = 0.00015778\ \text{rev}/\text{día}^2.
+\]</span></p></li>
+<li><p><strong>Campo 10: Segunda derivada del movimiento medio.</strong></p>
+<p>Corresponde a <span class="math inline">\(\ddot{\eta}/6\)</span>, donde <span class="math inline">\(\ddot{\eta}\)</span> es la segunda derivada temporal del movimiento medio. Describe la variación temporal de la primera derivada.</p>
+<p>En este ejemplo, el campo es cero, por lo que:</p>
+<p><span class="math display">\[
+\ddot{\eta} = 6(0) = 0\ \text{rev}/\text{día}^3.
+\]</span></p>
+<p><strong>Nota:</strong> El signo ocupa un carácter reservado. Si la derivada es positiva, se representa mediante un espacio en blanco; si es negativa, se utiliza el símbolo <code>-</code>.</p></li>
+</ul>
+</section>
+<section id="primera-línea-4" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 11: Parámetro de arrastre <span class="math inline">\(B^*\)</span>.</strong></p>
+<p>Parámetro utilizado por el propagador SGP4 para modelar los efectos del arrastre atmosférico. Se relaciona con el coeficiente de arrastre <span class="math inline">\(C_D\)</span>, el área efectiva <span class="math inline">\(A\)</span>, la masa del objeto <span class="math inline">\(m\)</span> y la densidad atmosférica de referencia <span class="math inline">\(\rho_0\)</span>:</p>
+<p><span class="math display">\[
+B^* = \frac{1}{2}\frac{C_D A}{m}\rho_0 R_\oplus.
+\]</span></p>
+<p>Se expresa en radios terrestres inversos (<span class="math inline">\(R_\oplus^{-1}\)</span>).</p>
+<p>En este ejemplo, el campo <code>10529-3</code> representa:</p>
+<p><span class="math display">\[
+B^* = +0.10529\times10^{-3}\ R_\oplus^{-1}.
+\]</span></p>
+<p><strong>Nota:</strong> El campo utiliza una mantisa de cinco dígitos y un exponente con signo. El signo de la mantisa se representa mediante un espacio en blanco para valores positivos o <code>-</code> para valores negativos.</p></li>
+</ul>
+</section>
+<section id="primera-línea-5" class="slide level2">
+<h2>Primera línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 12: Tipo de efemérides.</strong></p>
+<p>Indica el tipo de efemérides asociado al conjunto de elementos orbitales. En los TLE convencionales distribuidos públicamente, este campo suele contener <code>0</code>, correspondiente al modelo SGP4.</p></li>
+<li><p><strong>Campo 13: Número del conjunto de elementos.</strong></p>
+<p>Identifica la versión del conjunto de elementos orbitales del objeto. Se incrementa cuando se genera un nuevo conjunto de elementos para el mismo objeto. En este ejemplo, el campo <code>34</code> indica que es el conjunto de elementos número 34 para la estación espacial MIR.</p></li>
+<li><p><strong>Campo 14: Checksum.</strong></p>
+<p>Verifica la integridad de la línea mediante la suma de sus primeros 68 caracteres: cada dígito aporta su valor numérico, cada signo <code>-</code> aporta 1 y los demás caracteres no numéricos aportan 0. El checksum es el último dígito de la suma (módulo 10). Por ejemplo, para la primera línea del TLE, la suma de los valores de los primeros 68 caracteres es <span class="math inline">\(158\)</span>. Por tanto, el checksum es:</p>
+<p><span class="math display">\[
+158 \bmod 10 = 8.
+\]</span></p>
+<p>El último carácter de la línea es <code>8</code>, por lo que la verificación es correcta.</p></li>
+</ul>
+</section>
+<section id="segunda-línea" class="slide level2">
+<h2>Segunda línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 1: Número de línea.</strong></p>
+<p>Siempre es 2 para la segunda línea del TLE.</p></li>
+<li><p><strong>Campo 2: Número de catálogo del satélite.</strong></p>
+<p>Identificador numérico del objeto espacial, que debe coincidir con el de la primera línea. En este ejemplo, <strong>16609</strong>.</p></li>
+<li><p><strong>Campo 3: Inclinación.</strong></p>
+<p>Se expresa en grados. En este ejemplo, la inclinación es <span class="math inline">\(51.6190^\circ\)</span>.</p></li>
+<li><p><strong>Campo 4: Ascensión recta del nodo ascendente (<span class="math inline">\(\Omega\)</span>).</strong></p>
+<p>Se expresa en grados. En este ejemplo, <span class="math inline">\(\Omega = 13.3340^\circ\)</span>.</p></li>
+</ul>
+</section>
+<section id="segunda-línea-1" class="slide level2">
+<h2>Segunda línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 5: Excentricidad (<span class="math inline">\(e\)</span>).</strong></p>
+<p>Describe la forma de la órbita. <strong>El formato TLE sólo considera trayectorias cerradas</strong> (<span class="math inline">\(e &lt; 1\)</span>). El valor se expresa sin punto decimal explícito, por lo que debe multiplicarse por <span class="math inline">\(10^{-7}\)</span> para obtener la excentricidad.</p>
+<p>En este ejemplo, <code>0005770</code> corresponde a <span class="math inline">\(e = 0.0005770\)</span>.</p></li>
+<li><p><strong>Campo 6: Argumento del periapsis (<span class="math inline">\(\omega\)</span>).</strong></p>
+<p>Se expresa en grados. En este ejemplo, <span class="math inline">\(\omega = 102.5680^\circ\)</span>.</p></li>
+</ul>
+</section>
+<section id="segunda-línea-2" class="slide level2">
+<h2>Segunda línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 7: Anomalía media (<span class="math inline">\(M\)</span>).</strong></p>
+<p>Ángulo que representa la posición del satélite dentro de su órbita mediante el movimiento angular de un cuerpo ficticio que se mueve uniformemente. No se utiliza la anomalía verdadera <span class="math inline">\(\nu(t)\)</span>. Se expresa en grados y permite determinar la posición orbital a partir de la ecuación de Kepler.</p>
+<p>En este ejemplo, <span class="math inline">\(M = 257.5950^\circ\)</span>.</p></li>
+<li><p><strong>Campo 8: Movimiento medio (<span class="math inline">\(\eta\)</span>).</strong></p>
+<p>Número de revoluciones orbitales por día, utilizado para caracterizar la velocidad angular media del satélite. Se expresa en revoluciones por día y está relacionado con el semieje mayor de la órbita mediante:</p>
+<p><span class="math display">\[
+\eta = \sqrt{\frac{\mu_{\otimes}}{a^3}}
+\quad\Longrightarrow\quad
+a = \sqrt[3]{\frac{\mu_{\otimes}}{\eta^2}}
+= \sqrt[3]{\frac{398600.4418}{\left(15.59114070\frac{2\pi}{86400}\right)^2}}
+\approx 6759.9\ \text{km}.
+\]</span></p>
+<p>donde <span class="math inline">\(\mu_{\oplus}\)</span> es el parámetro gravitacional de la Tierra y <span class="math inline">\(a\)</span> es el semieje mayor. En este ejemplo, <span class="math inline">\(n = 15.59114070\ \text{rev/día}\)</span> y <span class="math inline">\(a= 6759.9\ \text{km}\)</span>.</p></li>
+</ul>
+</section>
+<section id="segunda-línea-3" class="slide level2">
+<h2>Segunda línea</h2>
+<p><img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;"></p>
+<ul>
+<li><p><strong>Campo 9: Número de revoluciones en la época.</strong></p>
+<p>Indica el número de revoluciones orbitales acumuladas por el satélite hasta la época del TLE. Se expresa como un número entero de revoluciones.</p>
+<p>En este ejemplo, el valor es <code>44786</code>, es decir, el satélite ha completado 44786 órbitas.</p></li>
+<li><p><strong>Campo 10: Checksum.</strong></p>
+<p>Verifica la integridad de la línea mediante la suma de los valores numéricos de sus primeros 68 caracteres. Cada dígito aporta su valor, cada signo <code>-</code> aporta 1 y los demás caracteres aportan 0. El checksum corresponde al resultado de la suma módulo 10.</p>
+<p>En este ejemplo, la suma de los primeros 68 caracteres es <span class="math inline">\(196\)</span>, por lo que el checksum es <code>6</code>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Entonces, el TLE</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href=""></a>1 16609U 86017A   93352.53502934  .00007889  00000 0  10529-3 0   348</span>
+<span id="cb14-2"><a href=""></a>2 16609  51.6190  13.3340 0005770 102.5680 257.5950 15.59114070447866</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>nos permite obtener la siguiente información:</p>
+<div class="small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: right;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Número de catálogo NORAD</td>
+<td style="text-align: right;">16609</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Año de lanzamiento</td>
+<td style="text-align: right;">1986</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Número de lanzamiento</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Identificador de la pieza</td>
+<td style="text-align: right;">A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Época</td>
+<td style="text-align: right;">18 de diciembre de 1993, 12:50:26.535 UTC</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Primera derivada del movimiento medio, <span class="math inline">\(\dot{\eta}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.5778\times10^{-4}\ \text{rev/día}^2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Segunda derivada del movimiento medio, <span class="math inline">\(\ddot{\eta}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\ \text{rev/día}^3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parámetro de arrastre, <span class="math inline">\(B^*\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0529\times10^{-4}\ R_\oplus^{-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inclinación, <span class="math inline">\(i\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(51.6190^\circ\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ascensión recta del nodo ascendente, <span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(13.3340^\circ\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Excentricidad, <span class="math inline">\(e\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0005770\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Argumento del periapsis, <span class="math inline">\(\omega\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(102.5680^\circ\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anomalía media, <span class="math inline">\(M\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(257.5950^\circ\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Movimiento medio, <span class="math inline">\(n\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15.59114070\ \text{rev/día}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Semieje mayor estimado, <span class="math inline">\(a\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6759.9\ \text{km}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Número de revoluciones en la época</td>
+<td style="text-align: right;">44786</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Checksum de la línea 1</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Checksum de la línea 2</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li>Algo a considerar es que los TLE sólo son válidos para la época en la que fueron calculados. Por ejemplo, el último TLE de la estación espacial MIR es</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href=""></a>1 16609U 86017A   01082.20636684  .00382588  12180-4  29147-4 0  9997</span>
+<span id="cb15-2"><a href=""></a>2 16609 051.6362 249.6171 0048914 224.8684 134.9353 16.33569098863305</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p>El formato TLE fue desarrollado por la Fuerza Aérea de los Estados Unidos en la década de 1960 para su uso en tarjetas perforadas. Posteriormente, fue adaptado para su uso en sistemas informáticos mediante dos líneas de texto codificados en ASCII, con lineas de 69 caracteres por limitación de la época.</p></li>
+<li><p>Si bien es un formato bastante utilizado actualmente, la limitación de 69 caracteres por línea se mantiene hasta la fecha, lo que hace que el formato TLE no preserve la precisión de los elementos orbitales que tenemos ahora.</p></li>
+<li><p>Además, el formato TLE presenta limitaciones en cuanto a ciertos campos. Por ejemplo, el campo de la época sólo permite representar años entre 1957 y 2056, por lo que será necesario hacer una consideración especial en un futuro.</p></li>
+<li><p>Para ello, se han desarrollado otros formatos de elementos orbitales, como el CCSDS OMM (Orbit Mean-Elements Message), que permiten representar los elementos orbitales con mayor precisión y sin limitaciones de rango de tiempo.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Por ejemplo, el OMM correspondiente al último TLE de la estación espacial MIR es:</p>
+<div class="small">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href=""></a></span>
+<span id="cb16-2"><a href=""></a>&lt;ndm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span id="cb16-3"><a href=""></a>     xsi:noNamespaceSchemaLocation="https://sanaregistry.org/r/ndmxml_unqualified/ndmxml-3.0.0-master-3.0.xsd"&gt;</span>
+<span id="cb16-4"><a href=""></a></span>
+<span id="cb16-5"><a href=""></a>    &lt;omm id="CCSDS_OMM_VERS" version="3.0"&gt;</span>
+<span id="cb16-6"><a href=""></a></span>
+<span id="cb16-7"><a href=""></a>        &lt;header&gt;</span>
+<span id="cb16-8"><a href=""></a>            &lt;COMMENT&gt;GENERATED VIA SPACE-TRACK.ORG API&lt;/COMMENT&gt;</span>
+<span id="cb16-9"><a href=""></a>            &lt;CREATION_DATE&gt;2004-08-17T15:28:24&lt;/CREATION_DATE&gt;</span>
+<span id="cb16-10"><a href=""></a>            &lt;ORIGINATOR&gt;18 SPCS&lt;/ORIGINATOR&gt;</span>
+<span id="cb16-11"><a href=""></a>        &lt;/header&gt;</span>
+<span id="cb16-12"><a href=""></a></span>
+<span id="cb16-13"><a href=""></a>        &lt;body&gt;</span>
+<span id="cb16-14"><a href=""></a>            &lt;segment&gt;</span>
+<span id="cb16-15"><a href=""></a></span>
+<span id="cb16-16"><a href=""></a>                &lt;metadata&gt;</span>
+<span id="cb16-17"><a href=""></a>                    &lt;OBJECT_NAME&gt;MIR&lt;/OBJECT_NAME&gt;</span>
+<span id="cb16-18"><a href=""></a>                    &lt;OBJECT_ID&gt;1986-017A&lt;/OBJECT_ID&gt;</span>
+<span id="cb16-19"><a href=""></a>                    &lt;CENTER_NAME&gt;EARTH&lt;/CENTER_NAME&gt;</span>
+<span id="cb16-20"><a href=""></a>                    &lt;REF_FRAME&gt;TEME&lt;/REF_FRAME&gt;</span>
+<span id="cb16-21"><a href=""></a>                    &lt;TIME_SYSTEM&gt;UTC&lt;/TIME_SYSTEM&gt;</span>
+<span id="cb16-22"><a href=""></a>                    &lt;MEAN_ELEMENT_THEORY&gt;SGP4&lt;/MEAN_ELEMENT_THEORY&gt;</span>
+<span id="cb16-23"><a href=""></a>                &lt;/metadata&gt;</span>
+<span id="cb16-24"><a href=""></a></span>
+<span id="cb16-25"><a href=""></a>                &lt;data&gt;</span>
+<span id="cb16-26"><a href=""></a>                    &lt;meanElements&gt;</span>
+<span id="cb16-27"><a href=""></a>                        &lt;EPOCH&gt;2001-03-23T04:57:10.094976&lt;/EPOCH&gt;</span>
+<span id="cb16-28"><a href=""></a>                        &lt;MEAN_MOTION&gt;16.33569098&lt;/MEAN_MOTION&gt;</span>
+<span id="cb16-29"><a href=""></a>                        &lt;ECCENTRICITY&gt;0.00489140&lt;/ECCENTRICITY&gt;</span>
+<span id="cb16-30"><a href=""></a>                        &lt;INCLINATION&gt;51.6362&lt;/INCLINATION&gt;</span>
+<span id="cb16-31"><a href=""></a>                        &lt;RA_OF_ASC_NODE&gt;249.6171&lt;/RA_OF_ASC_NODE&gt;</span>
+<span id="cb16-32"><a href=""></a>                        &lt;ARG_OF_PERICENTER&gt;224.8684&lt;/ARG_OF_PERICENTER&gt;</span>
+<span id="cb16-33"><a href=""></a>                        &lt;MEAN_ANOMALY&gt;134.9353&lt;/MEAN_ANOMALY&gt;</span>
+<span id="cb16-34"><a href=""></a>                    &lt;/meanElements&gt;</span>
+<span id="cb16-35"><a href=""></a></span>
+<span id="cb16-36"><a href=""></a>                    &lt;tleParameters&gt;</span>
+<span id="cb16-37"><a href=""></a>                        &lt;EPHEMERIS_TYPE&gt;0&lt;/EPHEMERIS_TYPE&gt;</span>
+<span id="cb16-38"><a href=""></a>                        &lt;CLASSIFICATION_TYPE&gt;U&lt;/CLASSIFICATION_TYPE&gt;</span>
+<span id="cb16-39"><a href=""></a>                        &lt;NORAD_CAT_ID&gt;16609&lt;/NORAD_CAT_ID&gt;</span>
+<span id="cb16-40"><a href=""></a>                        &lt;ELEMENT_SET_NO&gt;999&lt;/ELEMENT_SET_NO&gt;</span>
+<span id="cb16-41"><a href=""></a>                        &lt;REV_AT_EPOCH&gt;86330&lt;/REV_AT_EPOCH&gt;</span>
+<span id="cb16-42"><a href=""></a>                        &lt;BSTAR&gt;0.00002914700000&lt;/BSTAR&gt;</span>
+<span id="cb16-43"><a href=""></a>                        &lt;MEAN_MOTION_DOT&gt;0.00382588&lt;/MEAN_MOTION_DOT&gt;</span>
+<span id="cb16-44"><a href=""></a>                        &lt;MEAN_MOTION_DDOT&gt;0.0000121800000&lt;/MEAN_MOTION_DDOT&gt;</span>
+<span id="cb16-45"><a href=""></a>                    &lt;/tleParameters&gt;</span>
+<span id="cb16-46"><a href=""></a></span>
+<span id="cb16-47"><a href=""></a>                    &lt;userDefinedParameters&gt;</span>
+<span id="cb16-48"><a href=""></a>                        &lt;USER_DEFINED parameter="SEMIMAJOR_AXIS"&gt;6561.106&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-49"><a href=""></a>                        &lt;USER_DEFINED parameter="PERIOD"&gt;88.150&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-50"><a href=""></a>                        &lt;USER_DEFINED parameter="APOAPSIS"&gt;215.064&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-51"><a href=""></a>                        &lt;USER_DEFINED parameter="PERIAPSIS"&gt;150.878&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-52"><a href=""></a>                        &lt;USER_DEFINED parameter="OBJECT_TYPE"&gt;PAYLOAD&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-53"><a href=""></a>                        &lt;USER_DEFINED parameter="RCS_SIZE"&gt;LARGE&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-54"><a href=""></a>                        &lt;USER_DEFINED parameter="COUNTRY_CODE"&gt;CIS&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-55"><a href=""></a>                        &lt;USER_DEFINED parameter="LAUNCH_DATE"&gt;1986-02-19&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-56"><a href=""></a>                        &lt;USER_DEFINED parameter="SITE"&gt;TTMTR&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-57"><a href=""></a>                        &lt;USER_DEFINED parameter="DECAY_DATE"&gt;2001-03-23&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-58"><a href=""></a>                        &lt;USER_DEFINED parameter="FILE"&gt;35617&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-59"><a href=""></a>                        &lt;USER_DEFINED parameter="GP_ID"&gt;36257080&lt;/USER_DEFINED&gt;</span>
+<span id="cb16-60"><a href=""></a>                    &lt;/userDefinedParameters&gt;</span>
+<span id="cb16-61"><a href=""></a></span>
+<span id="cb16-62"><a href=""></a>                &lt;/data&gt;</span>
+<span id="cb16-63"><a href=""></a></span>
+<span id="cb16-64"><a href=""></a>            &lt;/segment&gt;</span>
+<span id="cb16-65"><a href=""></a>        &lt;/body&gt;</span>
+<span id="cb16-66"><a href=""></a></span>
+<span id="cb16-67"><a href=""></a>    &lt;/omm&gt;</span>
+<span id="cb16-68"><a href=""></a>&lt;/ndm&gt;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><p>Referencias:</p>
+<ul>
+<li><a href="https://www.space-track.org/">Space Track</a>: sitio web oficial de la Fuerza Espacial de los Estados Unidos para el seguimiento de objetos espaciales. Proporciona acceso a TLE, OMM y otros datos relacionados con satélites y desechos espaciales.</li>
+<li><a href="https://celestrak.org/">Celestrak</a>: sitio web de la comunidad que proporciona TLE y otros datos relacionados con satélites y desechos espaciales. Es una fuente popular para obtener TLE de satélites activos y desechos espaciales.</li>
+<li><a href="https://ccsds.org/Pubs/502x0b3e1.pdf">CCSDS OMM</a>: documento oficial del CCSDS que describe el formato OMM.</li>
+</ul></li>
+</ul>
 
 </section>
 

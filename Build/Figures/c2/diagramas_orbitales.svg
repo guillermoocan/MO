@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720" height="260" viewBox="0 0 720 260">
+  <title>Trayectorias orbitales de sistemas de dos cuerpos</title>
+  <desc>Tres diagramas con órbitas, cuerpos, baricentros y ejes etiquetados con notación matemática.</desc>
+  <defs>
+    <style>
+      .panel { fill: none; stroke: #555; stroke-width: 1; }
+      .axis { fill: #222; font-family: serif; font-size: 17px; }
+      .orbit-blue { fill: none; stroke: #4564b2; stroke-width: 1.2; }
+      .orbit-red { fill: none; stroke: #ff4c4c; stroke-width: 1.2; }
+      .orbit-black { fill: none; stroke: #444; stroke-width: 1.2; }
+      .body-blue { fill: #455eae; }
+      .body-red { fill: #f45151; }
+      .barycenter { stroke: #111; stroke-width: 1.1; }
+    </style>
+    <g id="plus" class="barycenter">
+      <path d="M -3.1,0 H 3.1 M 0,-3.1 V 3.1"/>
+    </g>
+  </defs>
+
+  <!-- Panel 1: dos masas similares -->
+  <rect class="panel" x="14.5" y="1" width="208" height="208"/>
+  <ellipse class="orbit-blue" cx="89" cy="105" rx="42" ry="32"/>
+  <ellipse class="orbit-red" cx="139" cy="105" rx="42" ry="32"/>
+  <use xlink:href="#plus" x="118" y="105"/>
+  <circle class="body-blue" cx="105" cy="74" r="5.3"/>
+  <circle class="body-red" cx="132" cy="136" r="5.3"/>
+
+  <!-- Panel 2: masas iguales, órbita circular -->
+  <rect class="panel" x="244.5" y="1" width="208" height="208"/>
+  <circle class="orbit-black" cx="348.5" cy="105" r="69.5"/>
+  <use xlink:href="#plus" x="348.5" y="105"/>
+  <circle class="body-red" cx="323" cy="40" r="5.3"/>
+  <circle class="body-blue" cx="375" cy="169" r="5.3"/>
+
+  <!-- Panel 3: masas diferentes -->
+  <rect class="panel" x="474.5" y="1" width="208" height="208"/>
+  <circle class="orbit-red" cx="578.5" cy="105" r="69.5"/>
+  <circle class="orbit-blue" cx="578.5" cy="105" r="28.5"/>
+  <use xlink:href="#plus" x="578.5" y="105"/>
+  <circle class="body-blue" cx="602" cy="88" r="10.5"/>
+  <circle class="body-red" cx="523" cy="143" r="5.3"/>
+</svg>

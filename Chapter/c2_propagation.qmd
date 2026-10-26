@@ -292,9 +292,9 @@ $$ {#eq-ac_tbp}
 - En nuestro caso, las fuerzas totales que actúan sobre las partículas $m_1$ y $m_2$ son
 
     $$
-        \ls{i}\vec{f}_{12}=m_1\ls{i}\ddot{\vec{r}}_1,
+        \ls{i}\vec{f}_{21}=m_1\ls{i}\ddot{\vec{r}}_1,
         \qquad
-        \ls{i}\vec{f}_{21}=m_2\ls{i}\ddot{\vec{r}}_2
+        \ls{i}\vec{f}_{12}=m_2\ls{i}\ddot{\vec{r}}_2
     $$
 
 
@@ -606,7 +606,7 @@ $$
     $$
     \begin{aligned}
         \ls{i}\ddot{\vec{r}}_{12}&=\ls{i}\ddot{\vec{r}}_2-\ls{i}\ddot{\vec{r}}_1\\
-        &=G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
+        &=-G\frac{m_1+m_2}{\|\vec{r}_{12}\|^3}\ls{i}\vec{r}_{12}
     \end{aligned}
     $$
 
@@ -656,7 +656,7 @@ $$
             &=
             \ls{i}\vec{r}_{12}\times\ls{i}\vec{f}_{12}\\
             &=
-            G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
+            -G\frac{m_1m_2}{\|\vec{r}_{12}\|^3}
             \ls{i}\vec{r}_{12}\times\ls{i}\vec{r}_{12}\\
             &=
             0.
@@ -8193,8 +8193,6 @@ Efemérides del caso 4.
 
 ![](/Figures/c2/h_inertial_orbit.mp4){width=100% fig-align="center" data-autoplay=true}
 
-
-<!-- 
 ---
 
 ::: {.center-vertical}
@@ -8209,91 +8207,136 @@ Propagación
 
 ::: {.chapter-subtitle}
 
-Elementos orbitales
+Conclusión
 
-<div class="menu-title" style="display:none;"> ▸ Elementos orbitales</div>
+<div class="menu-title" style="display:none;"> ▸ Conclusión </div>
 :::
 
 :::
-
-##
-
-<div class="vspace-3"></div>
-<div class="vspace-3"></div>
-<div class="vspace-3"></div>
-
-- Los **elementos orbitales** (o parámetros keplerianos) son seis variables que permiten describir de manera única la posición de un cuerpo sobre su trayectoria dentro de un marco de referencia base.
-
-- En particular, los elementos orbitales permiten definir:
-
-  - La **<span style="color:red">forma y tamaño</span>** de la trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:red">$a,e$</span>
-
-    :::
-
-  - La **<span style="color:teal">orientación</span>** de la trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:teal">$i,\Omega,\omega$</span>
-
-    :::
-
-  - La **<span style="color:blue">posición instantánea</span>** del cuerpo en su trayectoria.
-
-    ::: {.text-center .xlarge}
-
-    <span style="color:blue">$\nu(t)$</span>
-
-    :::
 
 
 ---
 
-##
+- Antes de continuar, recordemos que el problema de los dos cuerpos buscaba determinar la trayectoria de dos cuerpos que interactúan entre ellos bajo la influencia de la gravedad, es decir, buscabamos calcular $\vec{r}_1(t)$ y $\vec{r}_2(t)$ a lo largo del tiempo. 
 
-::: {.columns}
+:::{.incremental}
 
-::: {.column width="60%"}
+- Algunas ecuaciones importantes a recordar son:
 
-La **forma** y el **tamaño** de una órbita se determinan a partir de:
+
+    $$
+        \begin{aligned}
+            \ls{i}\vec{r}_{12} &= \ls{i}\vec{r}_2-\ls{i}\vec{r}_1\\
+            \ls{i}\ddot{\vec{r}}_{12} &= -G(m_1+m_2)\frac{\ls{i}\vec{r}_{12}}{|\ls{i}\vec{r}_{12}|^3}\\
+            \ls{i}\vec{r}_c &= \frac{m_1}{m_1+m_2}\ls{i}\vec{v}_1+\frac{m_2}{m_1+m_2}\ls{i}\vec{v}_2\\
+            &=\ls{i}\vec{v}_c(t_0)(t-t_0)+\ls{i}\vec{r}_c(t_0)\\
+            \ls{i}\vec{r}_1&=\ls{i}\vec{r}_c-\frac{m_2}{m_1+m_2}\ls{i}\vec{r}_{12}\\
+            \ls{i}\vec{r}_2&=\ls{i}\vec{r}_c+\frac{m_1}{m_1+m_2}\ls{i}\vec{r}_{12}\\
+        \end{aligned}
+    $$
+
+- La propagación nos permite la posición relativa $\ls{i}\vec{r}_{12}$ y la velocidad relativa $\ls{i}\vec{v}_{12}$ de la masa $2$ respecto a la masa central $1$, considerando $\mu=G(m_1+m_2)$, mediante las condiciones iniciales $\ls{i}\vec{r}_{12}(t_0)$ y $\ls{i}\vec{v}_{12}(t_0)$.
+
+- Lo único que falta definir es **la posición y la velocidad del baricentro** en la época $t_0$, es decir, $\ls{i}\vec{r}_c(t_0)$ y $\ls{i}\vec{v}_c(t_0)$. Sin embargo, estas condiciones están definidas explicitamente por la caracterización del marco de referencia inercial, lo cual no hemos hecho hasta el momento. 
+
+- Si bien hemos visto que el movimiento relativo en el problema de los dos cuerpos está caracterizado por secciones cónicas, es intersante observar el **movimiento del sistema completo desde el marco de referencia inercial**. 
+
+:::
+
+---
+
+- A su vez, también sabemos que este movimiento relativo es independiente de las masas de las dos cuerpos. Sin embargo, desde el marco de referencia inercial, la proporción entre **las masas de las partículas son importantes**, dado a que la posición de cada uno de ellas depende explicitamente de la posición del baricentro y de una porción de la posición relativa poderada por las masas. 
 
 
 ::: {.fragment}
 
-- La <span style="color:red">**excentricidad** $e$</span> mide el grado de deformación de una sección cónica con respecto a una circunferencia. Según el valor de $e$:
+- Por ejemplo, considere las siguientes condiciones iniciales:
 
-  - $e=0$: órbita circular.
-  - $0<e<1$: órbita elíptica.
-  - $e=1$: parábola.
-  - $e>1$: hipérbola.
+:::{.small}
+$$
+{}^{i}\vec{r}_{12}^{(1)}(t_0)=
+\begin{bmatrix}
+2.9274\\
+-0.73497\\
+7.4231
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(1)}(t_0)=
+\begin{bmatrix}
+-2.4184\\
+-6.6182\\
+0.29848
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_{12}^{(2)}(t_0)=
+\begin{bmatrix}
+-5.9451\\
+4.8378\\
+-3.6328
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(2)}(t_0)=
+\begin{bmatrix}
+3.9823\\
+5.7110\\
+3.4966
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_{12}^{(3)}(t_0)=
+\begin{bmatrix}
+16.422\\
+4.1770\\
+6.2682
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(3)}(t_0)=
+\begin{bmatrix}
+-2.8982\\
+-3.2700\\
+-5.0029
+\end{bmatrix}\times10^3\ \mathrm{m/seg},
+$$
+
+$$
+{}^{i}\vec{r}_{12}^{(4)}(t_0)=
+\begin{bmatrix}
+-8.6341\\
+8.6738\\
+-8.1291
+\end{bmatrix}\times10^6\ \mathrm{m},
+\qquad
+{}^{i}\vec{v}_{12}^{(4)}(t_0)=
+\begin{bmatrix}
+8.8911\\
+-1.3871\\
+1.8619
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
 
 :::
 
+Las masas de las partículas son $m_1=5.97\times10^{24}\ \mathrm{kg}$ y $m_2=4.197\times10^{5}\ \mathrm{kg}$, emulando a la Tierra y a la Estación Espacial Internacional (ISS, por sus siglas en inglés), respectivamente. Adicionalmente, considere las siguientes condiciones iniciales del baricentro.
 
-::: {.fragment}
-
-- En el caso de órbitas elípticas, el <span style="color:red">**semieje mayor** $a$</span> determina su tamaño.
-
-    $$
-        e=\frac{c}{a},
-        \qquad
-        c=\sqrt{a^2-b^2}
-    $$
-
-    donde $c$ es la distancia del centro al foco y $b$ es el semieje menor.
-
-- Sin embargo, para trayectorias en general, podemos utilizar el semi parametro $p$ para describir el tamaño de la trayectoria.
-:::
-
-:::
-
-::: {.column width="40%"}
-
-![](/Figures/c2/ellipse.svg){width=100%}
+:::{.small}
+$$
+{}^{i}\vec{r}_c(t_0)=
+\begin{bmatrix}
+0.0000\\
+0.0000\\
+0.0000
+\end{bmatrix}\mathrm{m},
+\qquad    
+{}^{i}\vec{v}_c(t_0)=
+\begin{bmatrix}
+1.0000\\
+2.0000\\
+1.5000
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+$$
 
 :::
 
@@ -8301,74 +8344,125 @@ La **forma** y el **tamaño** de una órbita se determinan a partir de:
 
 ---
 
-##
+![](/Figures/c2/tbp_e1_1.mp4){width=55% fig-align="center" data-autoplay=true}
 
-::: {.columns}
+---
 
-::: {.column width="48%"}
+![](/Figures/c2/tbp_e1_2.mp4){width=55% fig-align="center" data-autoplay=true}
 
-![](/Figures/c2/orientation_parameters.svg){width=120%}
+---
+
+![](/Figures/c2/tbp_e1_3.mp4){width=55% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c2/tbp_e1_4.mp4){width=55% fig-align="center" data-autoplay=true}
+
+---
+
+**1. Sistema Tierra-Luna**
+
+:::{.small}
+
+$$
+\begin{gathered}
+m_1=5.9722\times10^{24}\ \mathrm{kg},\qquad
+m_2=7.342\times10^{22}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+384.4\\0\\0
+\end{bmatrix}\times10^6\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\1.0245\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+$$
 
 :::
 
-::: {.column width="52%"}
+**2. Sistema Plutón-Caronte**
 
-La **orientación de la órbita** se determina con tres ángulos:
-
-:::{.incremental}
-
-- <span style="color:teal">**Longitud del nodo ascendente** $\Omega\in[0,2\pi)$</span>: ángulo en el plano de referencia entre la dirección de referencia y la línea de nodos.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Inclinación** $i\in[0,\pi]$</span>: ángulo entre el *plano orbital* y el *plano de referencia*.
-  <div class="vspace-3"></div>
-
-- <span style="color:teal">**Argumento del periapsis** $\omega\in[0,2\pi)$</span>: ángulo en el plano orbital entre el nodo ascendente y el periapsis.
+:::{.small}
+$$
+\begin{gathered}
+m_1=1.303\times10^{22}\ \mathrm{kg},\qquad
+m_2=1.586\times10^{21}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+19.596\\0\\0
+\end{bmatrix}\times10^6\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\0.2231174\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+$$
 
 :::
 
+**3. Sistema binario circular**
+
+:::{.small}
+
+$$
+\begin{gathered}
+m_1=m_2=10^{30}\ \mathrm{kg},\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}\times10^{11}\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\3.6536\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+$$
+
 :::
+
+**4. Sistema binario elíptico**
+
+:::{.small}
+$$
+\begin{gathered}
+m_1=m_2=10^{30}\ \mathrm{kg},\qquad e=0.4,\\[4pt]
+{}^{i}\vec{r}_{12}(t_0)=
+\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}\times10^{11}\ \mathrm{m},\qquad
+{}^{i}\vec{v}_{12}(t_0)=
+\begin{bmatrix}
+0\\4.3230\\0
+\end{bmatrix}\times10^3\ \mathrm{m/seg}.
+\end{gathered}
+$$
 
 :::
 
 ---
 
-##
+![](/Figures/c2/tbp_e2.mp4){width=55% fig-align="center" data-autoplay=true}
 
-::: {.columns}
+---
 
-::: {.column width="48%"}
+![](/Figures/c2/tbp_e3.mp4){width=55% fig-align="center" data-autoplay=true}
 
-![](/Figures/c2/true_anomaly.svg){width=120%}
+---
 
-:::
+![](/Figures/c2/tbp_e4.mp4){width=55% fig-align="center" data-autoplay=true}
 
-::: {.column width="52%"}
+---
 
-La **posición instantánea** del cuerpo en su órbita se describe con la <span style="color:blue">**anomalía verdadera** $\nu(t)$</span>.
+![](/Figures/c2/tbp_e5.mp4){width=55% fig-align="center" data-autoplay=true}
 
+---
 
-:::{.incremental}
-- La anomalía verdadera $\nu(t)$ es el ángulo entre el periapsis y la posición actual del satélite, medido en el plano orbital desde el foco donde se encuentra el cuerpo central.
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
 
-- Se dice que es *verdadera* porque está presente en todos las posibles secciones cónicas que describen una trayectoria. 
-
-- En lugar de $\nu(t)$, también pueden emplearse otras variables para describir la posición:
-
-  - **Anomalía excéntrica, parabólica o hiperbólica** $\psi(t)$.
-  - **Anomalía media** $M(t)$.
-
-- Es importante notar que de los seis elementos orbitales, bajo los suposiciones que hemos hecho hasta el momento, sólo las anomalías varían con el tiempo . 
-
-:::
-
-
-:::
-
-
-::: -->
-
-
+![](/Figures/c2/diagramas_orbitales.svg){width=90% fig-align="center"}
 
 
 

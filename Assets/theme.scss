@@ -558,3 +558,33 @@ $background-color: #ffffff;
 .reveal .progress span {
     height: 100%;
 }
+
+/* Ajuste local de la tabla TLE */
+.tle-table table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.92em;
+}
+
+.tle-table th:nth-child(1),
+.tle-table td:nth-child(1) {
+  width: 8%;
+  text-align: center;
+}
+
+.tle-table th:nth-child(2),
+.tle-table td:nth-child(2) {
+  width: 12%;
+  text-align: center;
+}
+
+.tle-table th:nth-child(3),
+.tle-table td:nth-child(3) {
+  width: 80%;
+}
+
+.tle-table th,
+.tle-table td {
+  padding: 0.15em 0.35em;
+  overflow-wrap: break-word;
+}
