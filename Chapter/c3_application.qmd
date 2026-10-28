@@ -597,7 +597,7 @@ nos permite obtener la siguiente información:
 
 - El formato TLE fue desarrollado por la Fuerza Aérea de los Estados Unidos en la década de 1960 para su uso en tarjetas perforadas. Posteriormente, fue adaptado para su uso en sistemas informáticos mediante dos líneas de texto codificados en ASCII, con lineas de 69 caracteres por limitación de la época.
 
-- Si bien es un formato bastante utilizado actualmente, la limitación de 69 caracteres por línea se mantiene hasta la fecha, lo que hace que el formato TLE no preserve la precisión de los elementos orbitales que tenemos ahora. 
+- Si bien es un formato bastante utilizado actualmente, la limitación de 69 caracteres por línea se mantiene hasta la fecha, lo que hace que el formato TLE no preserve la precisión de los elementos orbitales ccque tenemos ahora. 
 
 - Además, el formato TLE presenta limitaciones en cuanto a ciertos campos. Por ejemplo, el campo de la época sólo permite representar años entre 1957 y 2056, por lo que será necesario hacer una consideración especial en un futuro. 
 
@@ -688,6 +688,480 @@ Por ejemplo, el OMM correspondiente al último TLE de la estación espacial MIR 
   - [Space Track](https://www.space-track.org/): sitio web oficial de la Fuerza Espacial de los Estados Unidos para el seguimiento de objetos espaciales. Proporciona acceso a TLE, OMM y otros datos relacionados con satélites y desechos espaciales.
   - [Celestrak](https://celestrak.org/): sitio web de la comunidad que proporciona TLE y otros datos relacionados con satélites y desechos espaciales. Es una fuente popular para obtener TLE de satélites activos y desechos espaciales.
   - [CCSDS OMM](https://ccsds.org/Pubs/502x0b3e1.pdf): documento oficial del CCSDS que describe el formato OMM.
+
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Unidades astronómicas 
+
+<div class="menu-title" style="display:none;"> ▸ Unidades astronómicas</div>
+:::
+
+:::
+
+
+## Unión Astronómica Internacional (IAU)
+
+
+La **Unión Astronómica Internacional** (*International Astronomical Union, IAU*) es una organización científica internacional fundada en 1919, dedicada a promover y coordinar el desarrollo de la astronomía a escala mundial.
+
+La IAU contribuye a establecer las convenciones que permiten describir posiciones, movimientos y fenómenos astronómicos de manera consistente. Estas convenciones son fundamentales para el desarrollo de modelos matemáticos y la coordinación de observaciones y cálculos entre distintas instituciones.
+
+**Principales funciones**
+
+- **Nomenclatura astronómica:** establece convenciones para nombrar y designar cuerpos celestes y sus características.
+- **Estándares y convenciones:** promueve definiciones, constantes y sistemas de referencia comunes para describir fenómenos astronómicos.
+
+
+::: {.columns}
+
+::: {.column}
+
+
+- Todas las resoluciones de la IAU pueden ser consultadas en el [sitio web oficial de la IAU](https://iau-a3.gitlab.io/NSFA/NSFA_cbe.html).
+- En particular, la resolución de interés para este curso es la **IAU 2015 Resolution B3**, que establece las definiciones y valores de las constantes astronómicas recomendadas por la IAU.
+- Las constantes astronómicas pueden ser consultadas en el siguiente [enlace](https://iau-a3.gitlab.io/NSFA/NSFA_cbe.html).
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/IAU_logo.svg){width=70% fig-align="center"}
+
+:::
+
+:::
+
+
+
+
+
+## Constante gravitacional y parámetro gravitacional
+
+
+Las observaciones del movimiento de los cuerpos en el espacio permiten determinar con gran precisión el producto de la constante gravitacional por la masa del cuerpo central:
+
+$$
+\mu=Gm= \frac{4\pi^2a^3}{T^2}.
+$$
+
+Para un sistema de dos cuerpos, el parámetro gravitacional del movimiento relativo es
+
+$$
+\boxed{\mu=G(m_1+m_2)}.
+$$
+
+Sin embargo, la constante de gravitación universal $G$ es difícil de determinar con precisión debido a la debilidad de la interacción gravitacional entre masas pequeñas y el desconocimiento de la masa de los cuerpos involucrados. 
+
+
+::: {.fragment}
+
+::: {.columns}
+
+::: {.column}
+
+En 1798, Henry Cavendish realizó un experimento con una balanza de torsión (diseñada por Coulomb para medir la fuerza de atracción de cargas) que permitió estimar la intensidad de la interacción gravitacional entre cuerpos de laboratorio.
+
+La constante de gravitación universal (IAU) es
+
+$$
+G \approx 6.67428 \times10^{-11} \pm 6.7 \times10^{-15}\ \frac{\mathrm{m^3}}{\mathrm{kg\,s^2}}.
+$$
+
+::: {.callout-note }
+### Nota:
+
+Cavendish logró obtener una estimación de $G$ igual a $6.74\times10^{-11}\ \mathrm{m^3/(kg\,s^2)}$.
+
+:::
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/Cavendish_Experiment.png){width=70% fig-align="center"}
+
+:::
+
+:::
+
+:::
+
+## Tierra 
+
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/earth.png){width=80% fig-align="center"}
+
+:::
+
+::: {.column}
+
+Dado a que la Tierra es el cuerpo central de referencia para la mayoría de los satélites artificiales, es importante conocer algunos de sus parámetros. Las cuatro constantes astronómicas más importantes de la Tierra son:
+
+- **Parámetro gravitacional** $\mu_\oplus$:
+- **Radio ecuatorial** $R_\oplus$:
+- **Velocidad de rotación** $\omega_\oplus$:
+- **Excentricidad o achatamiento** $e_\oplus$, $f_\oplus$.
+
+De acuerdo a la IAU, los valores de estas constantes son:
+
+$$
+\begin{aligned}
+\mu_\oplus &= 3.986 004 415 \times 10^{14} \pm 8 \times 10^{5} \frac{\mathrm{m^3}}{\mathrm{seg^2}}\\
+R_\oplus &= 6.378 1366 \times 10^6  \pm 1 \times 10^{-1}\mathrm{m}\\
+\omega_\oplus &= 7.292 115 \times 10^{-5} \frac{\mathrm{rad}}{\mathrm{seg}}\\
+\end{aligned}
+$$
+
+Utilizando los valores nominales de $G$ y $\mu_\oplus$, podemos estimar la masa de la Tierra:
+
+$$
+m_\oplus = \frac{\mu_\oplus}{G} \approx 5.972186 \times 10^{24}\ \mathrm{kg}.
+$$  
+
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+![](/Figures/c3/flattening.png){width=100% fig-align="center"}
+
+:::
+
+::: {.column}
+
+- La forma de la Tierra no es perfectamente esférica, sino que presenta un achatamiento en los polos y un ensanchamiento en el ecuador. Esto se debe a la rotación de la Tierra y a la distribución desigual de su masa. 
+- Para aproximar la forma de la Tierra, en lugar de utilizar una esfera, se emplea una **elipsoide** (a,b,c).
+- En general, una elipsoide es una superficie cerrada cuyas tres secciones ortogonales son elipses. En particular, un elipsoide de revolución es una superficie generada por la rotación de una elipse alrededor de uno de sus ejes principales. A este elipsoide se le conoce como **esferoide**, y puede ser de dos tipos:
+
+  - **Esferoide oblato:** generado por la rotación de una elipse alrededor de su eje menor (a,b,a). 
+  - **Esferoide prolato:** generado por la rotación de una elipse alrededor de su eje mayor (a,b,b).
+
+- En el caso de la Tierra, se utiliza un esferoide oblato para aproximar su forma, dado a que el radio polar de la Tierra de acuerdo a la IAU es
+
+  $$
+  R_{\oplus,p}= 6.3568 \times 10^6 \mathrm{m}.
+  $$
+
+
+:::
+
+:::
+
+---
+
+
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+![](/Figures/c3/flattening.png){width=100% fig-align="center"}
+
+:::
+
+::: {.column}
+
+- En dicho caso, la elipse asociada al esferoide oblato tiene un semieje mayor $a=R_{\oplus}$ y un semieje menor $b=R_{\oplus,p}$.
+
+- Tomando los valores nominales podemos calcular la excentricidad de la Tierra:
+
+$$
+  e_\oplus = \sqrt{1-\frac{b^2}{a^2}} \approx 0.0817273 .
+$$
+
+- Otro parámetro que se utiliza para describir la forma de la Tierra es el achatamiento $f_\oplus$, el cual se define como
+
+$$
+f_\oplus = \frac{a-b}{a} \approx 0.003345271 = \frac{1}{298.929379}.
+$$  
+:::
+
+::: {.callout-note .fragment}
+### Nota:
+
+El achatamiento $f$ es un parámetro que se define en general para cualquier elipse. Esto implica que en lugar de utilizar ña excentricidad $e$ para describir la forma de una trayectoria elíptica, también podemos utilizar el achatamiento $f$. Sin embargo, es poco común. 
+:::
+
+
+:::
+
+
+
+## Sol
+
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/sun.png){width=93% fig-align="center"}
+
+:::
+
+::: {.column}
+
+Otro astro de interés es el **Sol**, dado a que es el cuerpo central de referencia para la mayoría de los planetas y asteroides del sistema solar. Las constantes astronómicas más importantes del Sol son:
+
+- **Parámetro gravitacional** $\mu_\odot$.
+- **Radio** $R_\odot$.
+- **Irradancia solar** $E_\odot$.
+- **Temperatura solar** $T_\odot$ 
+- **Luminosidad solar** $L_\odot$.
+
+De acuerdo a la IAU, los valores de estas constantes son:
+
+$$ 
+\begin{aligned}
+\mu_\odot & = 1.32712442099 \times 10^{20} \pm 1.0 \times 10^{10} \mathrm{m}^3 \mathrm{seg}^{-2}, \\
+R_\odot & = 6.957 \times 10^8 \mathrm{m}, \\
+E_\odot & = 1361  \mathrm{W/m^2}, \\
+T_\odot & = 5772 \mathrm{K}, \\
+L_\odot & = 3.828 \times 10^{26} \mathrm{W}.
+\end{aligned}
+$$
+
+Utilizando los valores nominales de $G$ y $\mu_\odot$, podemos estimar la masa del Sol:
+
+$$
+m_\odot = \frac{\mu_\odot}{G} \approx 1.988415861 \times 10^{30}\ \mathrm{kg}.
+$$
+
+
+
+:::
+
+:::
+
+
+## Luna 
+
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/moon.png){width=78% fig-align="center"}
+
+:::
+
+::: {.column}
+
+La **Luna** es el satélite natural de la Tierra y es el cuerpo celeste más cercano a nuestro planeta.  La IAU sólo reporta la relación entre la masa de la Luna y la masa de la Tierra:
+
+$$
+  \frac{m_{☾}}{m_{\oplus}} \approx 1.230 003 71 \times 10^{-2}.
+$$
+
+Utilizando $m_\oplus$, podemos estimar la masa de la Luna:
+
+$$
+m_{☾}= 1.230 003 71 \times 10^{-2} m_{\oplus} \approx 7.346010 \times 10^{22}\ \mathrm{kg}.
+$$
+
+- Al igual que la Tierra, la Luna no es perfectamente esférica, pero por cuestiones prácticas se puede considerar como tal (véase [JPL](https://ssd.jpl.nasa.gov/doc/lunar_cmd_2005_jpl_d32296.pdf)). Es decir, $f_☾ \approx 0$. 
+
+
+- Tomando al [JPL](https://ssd.jpl.nasa.gov/doc/lunar_cmd_2005_jpl_d32296.pdf) como referencia, la Luna tiene los siguientes parámetros:  
+
+$$
+\begin{aligned}
+R_{☾} & = 1.738 \times 10^6 \mathrm{m}, \\
+\omega_{☾} & = 2.6617 \times 10^{-6} \mathrm{rad/seg}, \\
+\end{aligned}
+$$
+
+
+:::
+
+:::
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+## Constante gravitacional gaussiana
+
+En 1809, **Carl Friedrich Gauss** determinó una constante gravitacional para describir el movimiento orbital en el sistema solar. La IAU adoptó su valor para el Sol en 1939 para poder calcular posteriormente los parámetros gravitacionales de otros cuerpos .
+
+La constante se define como
+
+$$
+\boxed{k_{\odot}=\sqrt{Gm_{\odot}} \approx 0.017\,202\,098\,95}
+$$
+
+
+::: {.fragment}
+
+Dado a los avances tecnológicos de la época( los cuales ayudaron a estimar directamente $\mu_\odot$), la IAU, en su resolución del 2012 decidió retirar esta constante de las constantes astronómicas definitorias. En su lugar, incluyeron la definición de la **unidad astronómica**.
+
+
+$$
+\boxed{1 \mathrm{AU} = 149597870700 \mathrm{m},}
+$$
+
+la cual corresponde a la distancia media entre la Tierra y el Sol. 
+
+:::
+
+
+::: {.callout-note .fragment}
+### Nota:
+
+Existen más constantes astronómicas que vamos a utilizar, pero se irán introduciendo conforme a los temas. 
+
+
+:::
+
+
+
+## Parámetros de localización
+
+::: {.columns}
+
+:::: {.column width="35%"}
+
+Los parámetros de localización permiten describir la posición de un punto sobre la superficie terrestre.
+
+Se definen dos parámetros terrestres:
+
+- **Latitud geográfica**, $\phi$.
+- **Longitud geográfica**, $\lambda$.
+
+Ambos son coordenadas angulares que se utilizan para localizar puntos sobre la superficie terrestre.
+
+- Un **meridiano** es la intersección de un plano que contiene el eje de rotación terrestre con la superficie de la Tierra.
+
+- El **eje de rotación terrestre** define los polos norte y sur.
+
+- El **ecuador** es el conjunto de puntos de la superficie terrestre situados en el plano perpendicular al eje de rotación que pasa por el centro de masa de la Tierra,
+
+- El **plano ecuatorial** contiene el ecuador y sirve como referencia para la localización.  
+
+:::
+::: {.column width="65%"}
+
+![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+
+::::
+:::
+
+
+## Parámetros de localización
+
+::: {.columns}
+
+:::: {.column width="35%"}
+
+- La **longitud geográfica**, $\lambda$, es el desplazamiento angular este-oeste medido desde un meridiano de referencia (tambien llamado meridiano primario).
+- 
+- El **meridiano de Greenwich** es el meridiano de referencia y define:
+
+  $$
+  \lambda=0^\circ
+  $$
+
+  Dicho nombre se deriva de que el meridiano pasa pasa por el Observatorio Real de Greenwich, en Londres.
+
+- Por convención, la longitud positiva se mide hacia el este. Esta convención fue acordada en la Conferencia Internacional del Meridiano, celebrada en Washington D. C. en 1884.
+
+- La longitud puede expresarse en dos intervalos:
+
+$$
+0^\circ \leq \lambda < 360^\circ
+$$
+
+o
+
+$$
+-180^\circ \leq \lambda \leq 180^\circ
+$$
+
+:::
+
+::: {.column width="65%"}
+
+![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+
+::::
+:::
+
+
+## Parámetros de localización
+
+::: {.columns}
+
+:::: {.column width="35%"}
+
+La **latitud geográfica**, $\phi$, es la coordenada angular norte-sur medida desde plano de referencia. 
+
+- El **plano ecuatorial** es el plano de referencia para medir la latitud, y define 
+
+$$
+\phi=0^\circ
+$$
+
+- La latitud tiene como intervalo:
+
+$$
+-90^\circ \leq \phi \leq 90^\circ
+$$
+
+donde: 
+
+  - Hemisferio norte: $\phi>0^\circ$.
+  - Hemisferio sur: $\phi<0^\circ$.
+  - Polo norte: $\phi=90^\circ$.
+  - Polo sur: $\phi=-90^\circ$.
+
+:::
+
+::: {.column width="65%"}
+
+![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+
+::::
+:::
+
+---
+
+![](/Figures/c3/gdgc.png){width=60% fig-align="center"}
+
+
+
+
+
+
+
+
+
+
 
 
 
