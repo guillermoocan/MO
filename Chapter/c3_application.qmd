@@ -339,7 +339,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 1: Número de línea.** 
 
@@ -359,7 +359,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 4: Año de lanzamiento.**
 
@@ -377,7 +377,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 7: Año de la época.**
 
@@ -392,7 +392,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 9: Primera derivada del movimiento medio.**
 
@@ -418,7 +418,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 11: Parámetro de arrastre $B^*$.**
 
@@ -442,7 +442,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Primera línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 12: Tipo de efemérides.**
 
@@ -468,7 +468,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Segunda línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 1: Número de línea.**
 
@@ -490,7 +490,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Segunda línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 5: Excentricidad ($e$).**
 
@@ -506,7 +506,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Segunda línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 7: Anomalía media ($M$).**
 
@@ -532,7 +532,7 @@ Podemos seccionarla de la siguiente manera:
 
 ## Segunda línea
 
-<img src="/Figures/c3/adfa.png" style="width: 65%; height: auto; display: block; margin: auto;">
+![](/Figures/c3/adfa.svg){width=70% fig-align="center"}
 
 - **Campo 9: Número de revoluciones en la época.**
 
@@ -1039,35 +1039,57 @@ Existen más constantes astronómicas que vamos a utilizar, pero se irán introd
 
 :::
 
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Parámetros de localización
+
+<div class="menu-title" style="display:none;"> ▸ Parámetros de localización</div>
+:::
+
+:::
 
 
 ## Parámetros de localización
 
+Los parámetros de localización permiten describir la posición de un punto sobre la superficie terrestre.
+
+
+
 ::: {.columns}
 
-:::: {.column width="35%"}
-
-Los parámetros de localización permiten describir la posición de un punto sobre la superficie terrestre.
+:::: {.column width="45%"}
 
 Se definen dos parámetros terrestres:
 
 - **Latitud geográfica**, $\phi$.
 - **Longitud geográfica**, $\lambda$.
 
-Ambos son coordenadas angulares que se utilizan para localizar puntos sobre la superficie terrestre.
+  Ambos son coordenadas angulares que se utilizan para localizar puntos sobre la superficie terrestre.
 
 - Un **meridiano** es la intersección de un plano que contiene el eje de rotación terrestre con la superficie de la Tierra.
 
-- El **eje de rotación terrestre** define los polos norte y sur.
+- La intersección del **eje de rotación terrestre** y la superficie de la Tierra define los **polos norte y sur**, donde el norte corresponde a la regla de la mano derecha.
 
 - El **ecuador** es el conjunto de puntos de la superficie terrestre situados en el plano perpendicular al eje de rotación que pasa por el centro de masa de la Tierra,
 
 - El **plano ecuatorial** contiene el ecuador y sirve como referencia para la localización.  
 
 :::
-::: {.column width="65%"}
+::: {.column width="55%"}
 
-![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+![](/Figures/c3/latlog.svg){width=100% fig-align="center"}
 
 ::::
 :::
@@ -1075,19 +1097,21 @@ Ambos son coordenadas angulares que se utilizan para localizar puntos sobre la s
 
 ## Parámetros de localización
 
+- La **longitud geográfica**, $\lambda$, es el desplazamiento angular este-oeste medido desde un meridiano de referencia (tambien llamado meridiano primario).
+
 ::: {.columns}
 
-:::: {.column width="35%"}
+:::: {.column width="45%"}
 
-- La **longitud geográfica**, $\lambda$, es el desplazamiento angular este-oeste medido desde un meridiano de referencia (tambien llamado meridiano primario).
+
 - 
 - El **meridiano de Greenwich** es el meridiano de referencia y define:
 
   $$
-  \lambda=0^\circ
+  \lambda=0^\circ.
   $$
 
-  Dicho nombre se deriva de que el meridiano pasa pasa por el Observatorio Real de Greenwich, en Londres.
+  Dicho nombre se deriva de que el meridiano pasa por el Real Observatorio de Greenwich, en Londres.
 
 - Por convención, la longitud positiva se mide hacia el este. Esta convención fue acordada en la Conferencia Internacional del Meridiano, celebrada en Washington D. C. en 1884.
 
@@ -1105,9 +1129,9 @@ $$
 
 :::
 
-::: {.column width="65%"}
+::: {.column width="55%"}
 
-![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+![](/Figures/c3/latlog.svg){width=120% fig-align="center"}
 
 ::::
 :::
@@ -1115,11 +1139,13 @@ $$
 
 ## Parámetros de localización
 
+- La **latitud geográfica**, $\phi$, es la coordenada angular norte-sur medida desde plano de referencia. 
+
 ::: {.columns}
 
-:::: {.column width="35%"}
+:::: {.column width="45%"}
 
-La **latitud geográfica**, $\phi$, es la coordenada angular norte-sur medida desde plano de referencia. 
+
 
 - El **plano ecuatorial** es el plano de referencia para medir la latitud, y define 
 
@@ -1142,16 +1168,80 @@ donde:
 
 :::
 
-::: {.column width="65%"}
+::: {.column width="55%"}
 
-![](/Figures/c3/latlog.png){width=120% fig-align="center"}
+![](/Figures/c3/latlog.svg){width=120% fig-align="center"}
 
 ::::
 :::
 
+## Latitud geocéntrica y geodésica
+
+
+
+
+
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+
+- La **elipsoide de referencia** es una aproximación geométrica de la superficie terrestre. No obstante, la superficie real de la Tierra no asemeja al relieve de la elipsoide.
+
+- La superficie real de la Tierra a nivel medio del mar, excluyendo pequeños efectos atmosféricos y de marea, se denomina **geoide**.
+
+- Se define como una **superficie equipotencial del campo gravitatorio terrestre**: el potencial gravitatorio es constante en todos sus puntos.
+
+Por esta propiedad, la dirección de la gravedad es perpendicular al geoide en cada punto. Esto nos permite clasificar la latitud en dos categorías:
+
+- La **latitud geocéntrica**, $\phi_{gc}$, es el ángulo medido desde el centro de la Tierra entre: 
+
+  - El plano ecuatorial. 
+  - El vector que une el centro terrestre con el punto de interés. 
+
+- La **latitud geodésica**, $\phi_{gd}$, es el ángulo entre:
+
+  - El plano ecuatorial.
+  - La normal (también llamada horizontal local) al elipsoide de referencia en el punto de interés, a nivel del mar.
+
+  Esta latitud se utiliza habitualmente para mapas, sistemas de navegación y receptores GPS.
+
+:::
+:::
+
 ---
 
-![](/Figures/c3/gdgc.png){width=60% fig-align="center"}
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+
+- Dado al achatamiento del elipsoide de referencia, la latitud geocéntrica y geodésica suelen ser cercanas. Sin embargo, la diferencia puede ser significativa cuando necesitamos caracterizar un punto en la superficie terrestre.
+
+- Para encontrar una relación entre ellas, considere que el vector de posición $\vec{r}$ puede expresarse en coordenadas esféricas como:
+
+:::
+:::
+
+
+
 
 
 
