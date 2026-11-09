@@ -1178,10 +1178,6 @@ donde:
 ## Latitud geocéntrica y geodésica
 
 
-
-
-
-
 ::: {.columns}
 
 :::: {.column width="45%"}
@@ -1235,20 +1231,806 @@ Por esta propiedad, la dirección de la gravedad es perpendicular al geoide en c
 
 - Dado al achatamiento del elipsoide de referencia, la latitud geocéntrica y geodésica suelen ser cercanas. Sin embargo, la diferencia puede ser significativa cuando necesitamos caracterizar un punto en la superficie terrestre.
 
-- Para encontrar una relación entre ellas, considere que el vector de posición $\vec{r}$ puede expresarse en coordenadas esféricas como:
+- Para encontrar una relación entre ellas, considere que el vector de posición $\vec{r}$ puede expresarse en coordenadas geocentricas (esféricas) como:
+
+
+  $$
+  \vec{r} = r
+  \begin{bmatrix}
+  \cos(\phi_{gc})\cos(\lambda) \\
+  \cos(\phi_{gc})\sin(\lambda) \\
+  \sin(\phi_{gc})
+  \end{bmatrix}
+  $$
+
+- Dado que únicamente nos interesa la relación entre $\phi_{gc}$ y $\phi_{gd}$, vamos a definir las componentes horizontales (contenidas en el plano ecuatorial) y verticales (normal al plano ecuatorial).
+
+  Las componentes son
+
+  $$
+  r_\delta = \sqrt{r_x^2 + r_y^2} = r\cos(\phi_{gc})
+  $$
+
+  $$
+  r_z = r\sin(\phi_{gc})
+  $$
+
+:::
+:::
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Ahora, similar a lo que hicimos para encontrar la anomalía excéntrica, podemos relacionar $\phi_{gc}$ y $\phi_{gd}$, que es el ángulo entre el plano ecuatorial y la proyección de la posición en una esfera de radio $R_\oplus$.
+
+  $$
+  r_\delta = R_\oplus \cos(\phi_{gd}) = r\cos(\phi_{gc})
+  $$
+
+  $$
+  r_z = r\sin(\phi_{gc}) = R_\oplus\sqrt{1-e_\oplus^2}\sin(\phi_{gd})
+  $$
+
+- Con ello, la magnitud del vector de posición es
+
+  $$
+  \begin{aligned}
+  r &= \sqrt{r_\delta^2+r_z^2} \\
+  &= R_\oplus\sqrt{\cos^2(\phi_{gd})+(1-e_\oplus^2)\sin^2(\phi_{gd})} \\
+  &= R_\oplus\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}
+  \end{aligned}
+  $$
+
+- La latitud geodésica depende explícitamente de la tangente de la posición $\vec{r}$. Podemos aproximarla utilizando las derivadas de $r_\delta$ y $r_z$ respecto a $\phi_{gd}$.
+
+  $$
+  dr_\delta = -R_\oplus\sin(\phi_{gd})\,d\phi_{gd}
+  $$
+
+  $$
+  dr_z = R_\oplus\sqrt{1-e_\oplus^2}\cos(\phi_{gd})\,d\phi_{gd}
+  $$
+
+
+
+:::
+:::
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Estas componentes forman un triángulo rectángulo, cuya hipotenusa es
+
+  $$
+  \begin{aligned}
+  dr &= \sqrt{dr_\delta^2+dr_z^2} \\
+  &= R_\oplus\sqrt{\sin^2(\phi_{gd})+(1-e_\oplus^2)\cos^2(\phi_{gd})}\,d\phi_{gd} \\
+  &= R_\oplus\sqrt{1-e_\oplus^2\cos^2(\phi_{gd})}\,d\phi_{gd}
+  \end{aligned}
+  $$
+
+- Con ello, podemos relacionar $\phi_{gd}$ y $\phi_{rd}$ mediante funciones trigonométricas.
+
+  $$
+  \sin(\phi_{gd}) = -\frac{dr_\delta}{dr_s} = \frac{\sin(\phi_{rd})}{\sqrt{1-e_\oplus^2\cos^2(\phi_{rd})}}
+  $$
+
+  $$
+  \cos(\phi_{gd}) = \frac{dr_z}{dr_s} = \frac{\sqrt{1-e_\oplus^2}\cos(\phi_{rd})}{\sqrt{1-e_\oplus^2\cos^2(\phi_{rd})}}
+  $$
+
+
 
 :::
 :::
 
 
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Para simplificar, considere
+
+  $$
+  (1-e_\oplus^2)\sin^2(\phi_{gd}) = \frac{(1-e_\oplus^2)\sin^2(\phi_{rd})}{1-e_\oplus^2\cos^2(\phi_{rd})}
+  $$
+
+  $$
+  \cos^2(\phi_{gd}) = \frac{(1-e_\oplus^2)\cos^2(\phi_{rd})}{1-e_\oplus^2\cos^2(\phi_{rd})}
+  $$
+
+  Sumando ambas expresiones tenemos
+
+  $$
+  (1-e_\oplus^2)\sin^2(\phi_{gd})+\cos^2(\phi_{gd}) = 1-e_\oplus^2\sin^2(\phi_{gd})
+  $$
+
+  $$
+  = \frac{1-e_\oplus^2}{1-e_\oplus^2\cos^2(\phi_{rd})}
+  $$
+
+  Por lo tanto,
+
+  $$
+  1-e_\oplus^2\cos^2(\phi_{rd}) = \frac{1-e_\oplus^2}{1-e_\oplus^2\sin^2(\phi_{gd})}
+  $$
+
+:::
+:::
+
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Mediante lo anterior, podemos obtener
+
+  $$
+  \sin(\phi_{rd}) = \frac{\sqrt{1-e_\oplus^2}}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}\sin(\phi_{gd})
+  $$
+
+  $$
+  \cos(\phi_{rd}) = \frac{1}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}\cos(\phi_{gd})
+  $$
+
+- Finalmente, sustituyendo en las componentes $r_\delta$ y $r_z$ tenemos
+
+  $$
+  r_\delta = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}\cos(\phi_{gd})
+  $$
+
+  $$
+  r_z = \frac{R_\oplus(1-e_\oplus^2)}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}\sin(\phi_{gd})
+  $$
+
+- **Estas fórmulas son exactas para una superficie perfectamente elipsoidal. No obstante, la superficie de la Tierra genera variaciones respecto a la elipsoide de referencia**. 
+
+:::
+:::
+
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Para proyectar la latitud geodésica a la altura real del objeto:
+
+  $$
+  C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}
+  $$
+
+  $$
+  S_\oplus = \frac{R_\oplus(1-e_\oplus^2)}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}
+  $$
+
+  y
+
+  $$
+  r_\delta = (C_\oplus + h_{ellip})\cos(\phi_{gd})
+  $$
+
+  $$
+  r_z = (S_\oplus + h_{ellip})\sin(\phi_{gd})
+  $$
+
+  $$
+  r = \sqrt{r_\delta^2+r_z^2}
+  $$
+
+  donde $h_{ellip}$ es la altura sobre el elipsoide de referencia. 
+  
+- **Mediante esta formulación, podemos proyectar la latitud geodésica a cualquier altura sobre el elipsoide de referencia.**
+
+
+:::
+:::
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Entonces
+
+  $$
+  r_\delta = r\cos(\phi_{gc}) = (C_\oplus+h_{ellip})\cos(\phi_{gd})
+  $$
+
+  $$
+  r_z = r\sin(\phi_{gc}) = (S_\oplus+h_{ellip})\sin(\phi_{gd})
+  $$
+
+- Con ello
+
+  $$
+  \boxed{
+  \vec{r} = r
+  \begin{bmatrix}
+  \cos(\phi_{gc})\cos(\lambda) \\
+  \cos(\phi_{gc})\sin(\lambda) \\
+  \sin(\phi_{gc})
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\cos(\lambda) \\
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\sin(\lambda) \\
+  (S_\oplus+h_{ellip})\sin(\phi_{gd})
+  \end{bmatrix}
+  }
+  $$
+
+- Ahora, para pasar de coordenadas cartesianas a coordenadas geodésicas
+
+  $$
+  \vec{r} =
+  \begin{bmatrix}
+  r_x \\
+  r_y \\
+  r_z
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\cos(\lambda) \\
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\sin(\lambda) \\
+  (S_\oplus+h_{ellip})\sin(\phi_{gd})
+  \end{bmatrix}
+  $$
+
+- Para la longitud $\lambda$,
+
+  $$
+  \tan(\lambda)=\frac{r_y}{r_x}
+  $$
+
+  $$
+  \boxed{
+  \lambda = \operatorname{atan2}(r_y,r_x)
+  }
+  $$
+
+
+:::
+:::
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+
+
+- Para $\phi_{gd}$,
+
+$$
+r_\delta = (C_\oplus+h_{ellip})\cos(\phi_{gd})
+$$
+
+$$
+r_z = (S_\oplus+h_{ellip})\sin(\phi_{gd})
+$$
+
+Por lo tanto,
+
+$$
+\cos(\phi_{gd}) = \frac{r_\delta}{C_\oplus+h_{ellip}}
+$$
+
+$$
+\sin(\phi_{gd}) = \frac{r_z}{S_\oplus+h_{ellip}}
+$$
+
+de donde podemos despejar $h_{ellip}$,
+
+$$
+\boxed{
+\begin{aligned}
+h_{ellip} &= \frac{r_\delta}{\cos(\phi_{gd})}-C_\oplus\\
+h_{ellip} &= \frac{r_z}{\sin(\phi_{gd})}-S_\oplus\\
+\end{aligned}
+}
+$$
+
+:::
+:::
+
+---
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/gdgc.svg){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+- Entonces,
+
+  $$
+  \begin{split}
+  \tan(\phi_{gd}) &= \frac{\sin(\phi_{gd})}{\cos(\phi_{gd})},\\
+  &= \frac{r_z\left(C_\oplus+\dfrac{r_z}{\sin(\phi_{gd})}-S_\oplus\right)}{r_\delta\left(S_\oplus+\dfrac{r_z}{\sin(\phi_{gd})}-S_\oplus\right)},\\
+  &= \frac{1}{r_\delta}\left((C_\oplus-S_\oplus)\sin(\phi_{gd})+r_z\right)
+  \end{split}
+  $$
+
+- Si
+
+  $$
+  C_\oplus = \frac{S_\oplus}{1-e_\oplus^2}
+  $$
+
+  Por lo tanto,
+
+  $$
+  \boxed{
+  \tan(\phi_{gd}) = \frac{1}{r_\delta}\left(e_\oplus^2 C_\oplus\sin(\phi_{gd})+r_z\right)
+  }
+  $$
+
+- **Si bien esta ecuación es implícita, podemos resolverla mediante un método iterativo**. 
+
+:::
+:::
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 3.1: Conversión $\vec{r}$ a coordenadas geodésicas</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $\vec{r}=[r_x,r_y,r_z]^T$, $R_\oplus$, $e_\oplus$, $\varepsilon$.
+
+<strong>Salida:</strong> $\lambda,\phi_{gd},h_{ellip}$.
+</div>
+
+:::{.small}
+
+1. Calcular la componente horizontal: $r_\delta = \sqrt{r_x^2+r_y^2}$
+
+2. Calcular la longitud $\lambda = \operatorname{atan2}(r_y,r_x)$
+
+3. Calcular la estimación inicial de la latitud geodésica: $\bar{\phi}_0 = \operatorname{atan2}(r_z,r_\delta)$
+
+4. Iterar hasta alcanzar la convergencia:
+
+$$
+C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\bar{\phi}_{n-1})}}
+$$
+
+$$
+\bar{\phi}_n = \operatorname{atan2}\left(r_z+e_\oplus^2 C_\oplus\sin(\bar{\phi}_{n-1}),r_\delta\right)
+$$
+
+
+  hasta que $|\bar{\phi}_n-\bar{\phi}_{n-1}| < \varepsilon$
+
+5. Asignar la latitud geodésica: $\phi_{gd} = \bar{\phi}_n$
+
+6. Calcular la altura elipsoidal:
+
+$$
+h_{ellip} = \begin{cases}
+\frac{r_\delta}{\cos(\phi_{gd})}-C_\oplus, & \text{si } |\phi_{gd}| < 90^\circ\\[0.5em]
+\frac{r_z}{\sin(\phi_{gd})}-S_\oplus, & \text{si } |\phi_{gd}| \geq 90^\circ
+\end{cases}
+$$
+
+:::
+
+:::
+
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">Algoritmo 3.2: Conversión ECEF a coordenadas geodésicas</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $\lambda,\phi_{gd},h_{ellip}$, $R_\oplus$, $e_\oplus$.
+
+<strong>Salida:</strong> $\{\vec{r}\}$.
+</div>
+
+:::{.small}
+
+1. Calcular 
+
+$$
+C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}, \qquad S_\oplus = \frac{R_\oplus(1-e_\oplus^2)}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}
+$$
+
+2. Calcular el vector de posición:
+
+$$
+\vec{r} = 
+  \begin{bmatrix}
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\cos(\lambda) \\
+  (C_\oplus+h_{ellip})\cos(\phi_{gd})\sin(\lambda) \\
+  (S_\oplus+h_{ellip})\sin(\phi_{gd})
+  \end{bmatrix}
+$$
+
+:::
+
+:::
+
+
+- Si bien estos algoritmos nos permiten convertir entre coordenadas geodésicas y coordenadas cartesianas, es importante mencionar que la superficie de la Tierra no es perfectamente elipsoidal. Por lo tanto, para aplicaciones de alta precisión, se deben considerar modelos más complejos del geoide y las variaciones locales del campo gravitatorio. Esto se aborda mediante el concepto de **ondulación geoidal**, que representa las desviaciones del geoide respecto a la elipsoide de referencia,  y **superficies equipotenciales**.  
+
+- Un detalle importante es que hemos hablado de un vector de posición $\vec{r}$, pero no hemos definido un marco de referencia sobre el cual están definidas sus componentes.
 
 
 
 
 
 
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Sistemas de referencia terrestre
+
+<div class="menu-title" style="display:none;"> ▸ 
+Sistemas de referencia terrestre </div>
+:::
+
+:::
+
+## Sistemas de referencia
+
+Un sistema de referencia establece las convenciones necesarias para describir la posición y evolución temporal de los fenómenos físicos.
+
+Su definición requiere especificar:
+
+- **Origen:** punto respecto al cual se describen las posiciones.
+- **Orientación (base ortonormal):** direcciones que definen los ejes coordenados.
+- **Referencia temporal:** escala de tiempo utilizada para asignar coordenadas temporales a los eventos.
+
+Un evento puede representarse mediante cuatro coordenadas:
+
+$$
+\mathcal{P} = (t,x,y,z)
+$$
+
+::: {.columns}
+
+::: {.column width="33%"}
+
+**Geocéntrico (Heliocéntrico)**
+
+Origen en el centro de masa de la Tierra (Sol).
+
+$$
+\vec{r}_{O} = \vec{0}
+$$
+
+Se utiliza para describir el movimiento de satélites terrestres (en el sistema solar).
+
+:::
+
+::: {.column width="33%"}
+**Topocéntrico**
+
+Origen en un punto sobre la superficie terrestre.
+
+$$
+\vec{r}_{O} = \vec{0}
+$$
+
+Se utiliza en observaciones desde estaciones terrestres.
+:::
+
+::: {.column width="33%"}
+**Baricéntrico**
+
+Origen en el centro de masa de un sistema de cuerpos.
+
+$$
+\sum_i m_i\vec{r}_i = \vec{0}
+$$
+
+Se utiliza en el estudio de sistemas de varios cuerpos.
+:::
+:::
+::: {.callout-note}
+Un sistema **sínodico** es un sistema de coordenadas rotatorio asociado al baricentro, particularmente útil en el problema de más de dos cuerpos.
+:::
+
+## Sistemas y marcos de referencia
+
+Un sistema de referencia establece las convenciones matemáticas y físicas necesarias para describir la posición y el movimiento de los cuerpos.
+
+Un marco de referencia es la realización física de ese sistema mediante objetos, estaciones o puntos de referencia cuyas posiciones se conocen.
+
+\vspace{0.3cm}
+
+**Sistema de referencia**
+
+- Define el origen del sistema de coordenadas.
+- Establece la orientación de los ejes.
+- Define las convenciones y modelos necesarios para describir su evolución.
+- Es una definición conceptual y matemática.
+
+\vspace{0.3cm}
+
+**Marco de referencia**
+
+- Materializa el sistema mediante puntos u objetos de referencia.
+- Asigna coordenadas a dichos puntos.
+- Se obtiene mediante observaciones y procedimientos de estimación.
+- Permite expresar posiciones y realizar mediciones concretas.
+
+\vspace{0.3cm}
+
+::: {.callout-note}
+**Ejemplo:**
+
+El ITRS (*International Terrestrial Reference System*) define el sistema de referencia terrestre convencional.
+
+El ITRF (*International Terrestrial Reference Frame*) es su realización mediante las coordenadas de estaciones terrestres obtenidas a partir de observaciones geodésicas.
+:::
+
+## Esfera celeste
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/celes_sphere.png){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
 
 
+La esfera celeste es una representación geométrica imaginaria en la que se proyectan las posiciones aparentes de los cuerpos celestes. Se considera una esfera de radio arbitrario, cuyo centro puede situarse en el observador o en el origen de un sistema de referencia.
+
+- **Polos celestes:** intersecciones del eje de rotación terrestre con la esfera celeste.
+- **Ecuador celeste:** proyección del plano ecuatorial terrestre sobre la esfera celeste. También llamado plano fundamental.
+- **Círculos horarios:** circunferencias máximas que pasan por ambos polos celestes.
+- **Meridiano celeste:** círculo horario que contiene al cenit del observador.
+- **Eclíptica:** trayectoria aparente anual del Sol sobre la esfera celeste.
+- **Punto de referencia:** punto sobre la esfera celeste que representa el origen del sistema de coordenadas.
+
+- **Ascensión recta ($\alpha$):** ángulo medido desde el punto de referenia hasta la proyección del objeto sobre el ecuador celeste, siguiendo la dirección de rotación de la Tierra.
+- **Declinación ($\delta$):** angulo medido desde el plano fundamentel hasta la proyección del objeto sobre la esfera celeste.
+
+
+
+:::
+:::
+
+
+## Esfera celeste
+
+::: {.columns}
+
+:::: {.column width="45%"}
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/ecliptic.png){width=120% fig-align="center"}
+
+:::
+
+::: {.column width="55%"}
+
+
+La eclíptica representa el plano de la órbita media de la Tierra alrededor del Sol. Su inclinación respecto al plano ecuatorial terrestre es aproximadamente $\epsilon=23.4^\circ$. La intersección entre la ecliptica y el plano ecuatorial celeste define una línea de nodos, cuyos extremos corresponden a los equinoccios.
+
+- **Equinoccio de primavera:** el Sol cruza el ecuador celeste de sur a norte (hemisferio norte).
+- **Equinoccio de otoño:** el Sol cruza el ecuador celeste de norte a sur (hemisferio norte).
+
+\vspace{0.3cm}
+
+**Punto vernal (equinoccio vernal)** ($\Upupsilon$)
+
+Es la dirección del equinoccio de primavera. Se utiliza como dirección de referencia para medir la ascensión recta en el sistema de coordenadas celeste.
+
+\vspace{0.3cm}
+
+::: {.callout-note}
+
+Históricamente, el punto vernal se denominó punto de Aries porque hace aproximadamente dos mil años coincidía con la constelación de Aries (época cristiana). Debido a la precesión terrestre, actualmente se encuentra en la dirección de Piscis.
+
+Se utiliza como origen de la ascensión recta ($\alpha = 0$).
+
+:::
+
+:::
+:::
+
+
+## Sistemas de referencia geocéntricos
+
+Los sistemas geocéntricos utilizan el centro de masa de la Tierra como origen. Según la orientación y el movimiento de sus ejes, se distinguen dos categorías:
+
+**ECI — Earth-Centered Inertial**
+
+- Origen en el centro de masa de la Tierra.
+- Ejes con orientación aproximadamente fija respecto al espacio inercial.
+- No gira con la Tierra.
+- Se utiliza para describir el movimiento orbital de satélites.
+
+**ECEF — Earth-Centered, Earth-Fixed**
+
+- Origen en el centro de masa de la Tierra.
+- Ejes fijos a la rotación terrestre.
+- Gira junto con la Tierra.
+- Se utiliza para describir posiciones sobre la superficie terrestre.
+
+
+## Sistema de referencia terrestre internacional (ITRS)
+
+El **ITRS** (*International Terrestrial Reference System*) define un sistema ECEF, cuya orientación está vinculada a la Tierra. <span style="color:red"> Es el marco sobre el cual obtenemos coordenadas geodésicas y se utiliza para describir posiciones sobre la superficie terrestre. </span>
+
+
+::: {.columns}
+
+::: {.column}
+
+**Definición del sistema:**
+
+- **Origen:** centro de masa del sistema Tierra.
+- **Eje $z$:** orientado hacia el polo norte terrestre.
+- **Eje $x$:** contenido en el plano ecuatorial y orientado según el meridiano de Greenwich.
+- **Eje $y$:** completa la regla de la mano derecha.
+
+
+:::
+
+::: {.column}
+
+
+:::
+
+:::
+
+**Realización del sistema:**
+
+El **ITRF** (*International Terrestrial Reference Frame*) materializa el ITRS mediante coordenadas y velocidades de estaciones geodésicas distribuidas alrededor del planeta.
+
+- Sus coordenadas se determinan mediante técnicas de geodesia.
+- Incorpora la evolución temporal de las posiciones de las estaciones.
+
+## Sistema de referencia celeste geocéntrico (GCRS)
+
+El **GCRS** (*Geocentric Celestial Reference System*) es un sistema de referencia relativista definido por la IAU, cuyo origen se encuentra en el centro de masa de la Tierra. Es el marco de referencia ECI más utilizado.
+
+**Características del sistema:**
+
+- **Origen:** centro de masa de la Tierra.
+- **Orientación:** ejes cinemáticamente no rotantes respecto al sistema celeste baricéntrico (BCRS).
+- **Naturaleza:** sistema geocéntrico cuasi-inercial.
+- **Aplicación:** descripción de posiciones y movimientos de satélites y otros cuerpos cercanos a la Tierra.
+
+**Realización del sistema:**
+
+El **GCRF** (*Geocentric Celestial Reference Frame*) es la realización práctica del GCRS. Su orientación se establece mediante una relación con el sistema celeste internacional (ICRS).
+
+::: {.callout-note .fragment}
+### Nota:
+
+La tranformación entre el GCRF y el ITRF se realiza mediante una serie de rotaciones que consideran la precesión, nutación, rotación de la Tierra y polar motion. La descripción detallada de estas transformaciones se apoya de modelos numéricos, lo cual no es algo que no se abordará en esta etapa del curso. Sin embargo, es importante conocer que estas transformaciones existen y son necesarias para convertir coordenadas entre sistemas de referencia geocéntricos.
+
+:::
+
+
+## Marco inercial geocéntrico $\ls{i}{\mathcal{F}}$
+
+Debido a la complejidad de la transformación entre el GCRF y el ITRF, vamos a definir el marco inercial geocéntrico $\ls{i}{\mathcal{F}}
+
+::: {.columns}
+
+::: {.column}
+
+**Centro:** $\ls{i}{O}$ (centro de la Tierra).
+
+**Ejes:**
+
+- $\ls{i}{\vec{x}}$: apunta al equinoccio vernal.
+- $\ls{i}{\vec{y}}$: completa la regla de la mano derecha.
+- $\ls{i}{\vec{z}}$: apunta al eje de rotación terrestre.
+
+- El adjetivo **inercial** indica que es un marco de referencia **no acelerado** (velocidad constante). 
+- Este marco no está establecido por algún sistema de referencia, sino que es un marco de referencia **ideal**, el cual nos va a permitir desarrollar las bases los conceptos de la clase.
+:::
+
+::: {.column}
+
+![](/Figures/c2/frame_i.svg){width=100% fig-align="center"}
+
+:::
+
+:::
 
 
 
