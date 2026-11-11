@@ -10801,7 +10801,7 @@ C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}, \qquad S_\oplu
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Un sistema <strong>sínodico</strong> es un sistema de coordenadas rotatorio asociado al baricentro, particularmente útil en el problema de más de dos cuerpos.</p>
+<p>Un sistema <strong>sinódico</strong> es un sistema de coordenadas rotatorio asociado al baricentro, particularmente útil en el problema de más de dos cuerpos. Esto se estudiará cuando hablemos de perturbaciones.</p>
 </div>
 </div>
 </div>
@@ -10849,20 +10849,34 @@ C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}, \qquad S_\oplu
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src=".\Figures/c3/celes_sphere.png" class="quarto-figure quarto-figure-center" style="width:120.0%"></p>
+<p><img data-src=".\Figures/c3/celes_sphere.png" class="quarto-figure quarto-figure-center" style="width:110.0%"></p>
 </figure>
+</div>
+<div title="Cenit y nadir">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Cenit y nadir</strong></p>
+</div>
+<div class="callout-content">
+<p>El <strong>cenit</strong> es la dirección vertical que apunta desde un observador hacia el punto de la esfera celeste situado directamente sobre él. El <strong>nadir</strong> es la dirección opuesta, que apunta directamente debajo del observador. Ambas direcciones se encuentran sobre la <strong>vertical local</strong>.</p>
+</div>
+</div>
+</div>
 </div>
 </div><div class="column" style="width:55%;">
 <p>La esfera celeste es una representación geométrica imaginaria en la que se proyectan las posiciones aparentes de los cuerpos celestes. Se considera una esfera de radio arbitrario, cuyo centro puede situarse en el observador o en el origen de un sistema de referencia.</p>
 <ul>
-<li><p><strong>Polos celestes:</strong> intersecciones del eje de rotación terrestre con la esfera celeste.</p></li>
-<li><p><strong>Ecuador celeste:</strong> proyección del plano ecuatorial terrestre sobre la esfera celeste. También llamado plano fundamental.</p></li>
-<li><p><strong>Círculos horarios:</strong> circunferencias máximas que pasan por ambos polos celestes.</p></li>
-<li><p><strong>Meridiano celeste:</strong> círculo horario que contiene al cenit del observador.</p></li>
-<li><p><strong>Eclíptica:</strong> trayectoria aparente anual del Sol sobre la esfera celeste.</p></li>
-<li><p><strong>Punto de referencia:</strong> punto sobre la esfera celeste que representa el origen del sistema de coordenadas.</p></li>
-<li><p><strong>Ascensión recta (<span class="math inline">\(\alpha\)</span>):</strong> ángulo medido desde el punto de referenia hasta la proyección del objeto sobre el ecuador celeste, siguiendo la dirección de rotación de la Tierra.</p></li>
-<li><p><strong>Declinación (<span class="math inline">\(\delta\)</span>):</strong> angulo medido desde el plano fundamentel hasta la proyección del objeto sobre la esfera celeste.</p></li>
+<li><strong>Polos celestes:</strong> intersecciones del eje de rotación terrestre con la esfera celeste.</li>
+<li><strong>Ecuador celeste:</strong> proyección del plano ecuatorial terrestre sobre la esfera celeste. También llamado plano fundamental.</li>
+<li><strong>Círculos horarios:</strong> circunferencias máximas que pasan por ambos polos celestes.</li>
+<li><strong>Meridiano celeste:</strong> círculo horario que contiene al cenit del observador.</li>
+<li><strong>Punto de referencia:</strong> punto sobre la esfera celeste que representa el origen del sistema de coordenadas.</li>
+<li><strong>Ascensión recta (<span class="math inline">\(\alpha\)</span>):</strong> ángulo medido desde el punto de referenia hasta la proyección del objeto sobre el ecuador celeste, siguiendo la dirección de rotación de la Tierra.</li>
+<li><strong>Declinación (<span class="math inline">\(\delta\)</span>):</strong> angulo medido desde el plano fundamentel hasta la proyección del objeto sobre la esfera celeste.</li>
 </ul>
 </div></div>
 </section>
@@ -10884,7 +10898,7 @@ C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}, \qquad S_\oplu
 <li><strong>Equinoccio de primavera:</strong> el Sol cruza el ecuador celeste de sur a norte (hemisferio norte).</li>
 <li><strong>Equinoccio de otoño:</strong> el Sol cruza el ecuador celeste de norte a sur (hemisferio norte).</li>
 </ul>
-<p><strong>Punto vernal (equinoccio vernal)</strong> (<span class="math inline">\(\Upupsilon\)</span>)</p>
+<p><strong>Punto vernal (equinoccio vernal)</strong> (♈︎)</p>
 <p>Es la dirección del equinoccio de primavera. Se utiliza como dirección de referencia para medir la ascensión recta en el sistema de coordenadas celeste.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -10991,6 +11005,783 @@ C_\oplus = \frac{R_\oplus}{\sqrt{1-e_\oplus^2\sin^2(\phi_{gd})}}, \qquad S_\oplu
 </figure>
 </div>
 </div></div>
+</section>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Aplicación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Tiempo</p>
+<div class="menu-title" style="display:none;">
+▸ Tiempo
+</div>
+</div>
+</div>
+</section>
+<section id="tiempo" class="slide level2">
+<h2>Tiempo</h2>
+<div class="vspace-3">
+
+</div>
+<div class="definition-block">
+<p><strong>Definición:</strong></p>
+<p>Magnitud física que permite ordenar la secuencia de los sucesos, estableciendo un pasado, un presente y un futuro, y cuya unidad en el sistema internacional es el segundo.</p>
+</div>
+<div class="vspace-3">
+
+</div>
+<p><em>El propósito fundamental del tiempo es definir con precisión el momento en que ocurre un fenómeno</em>.</p>
+<p>Para describir los acontecimientos necesitamos distinguir tres conceptos:</p>
+<ul>
+<li><strong>Época:</strong> instante particular en el que ocurre un acontecimiento.</li>
+<li><strong>Fecha:</strong> representación de una época mediante un sistema de calendario.</li>
+<li><strong>Escala:</strong> conjunto de convenciones que permiten asignar coordenadas temporales a los acontecimientos.</li>
+<li><strong>Intervalo:</strong> duración transcurrida entre dos épocas.</li>
+</ul>
+<p>Una vez establecida una época de referencia, podemos determinar otras épocas contabilizando los intervalos transcurridos desde ella.</p>
+<p><span class="math display">\[
+\Delta t = t_2-t_1
+\]</span></p>
+<p>En astrodinámica, el tiempo es especialmente importante porque permite describir la evolución de los sistemas orbitales y establecer una referencia temporal precisa y reproducible.</p>
+</section>
+<section id="sistemas-de-tiempo" class="slide level2">
+<h2>Sistemas de tiempo</h2>
+<div class="vspace-3">
+
+</div>
+<p>Para describir fenómenos astronómicos necesitamos sistemas de tiempo basados en fenómenos físicos que puedan medirse de manera precisa y reproducible.</p>
+<p>Entre los sistemas de tiempo más utilizados encontramos:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sistema</th>
+<th style="text-align: left;">Referencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tiempo sidéreo</td>
+<td style="text-align: left;">Rotación terrestre respecto a una estrella de referencia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tiempo solar</td>
+<td style="text-align: left;">Movimiento aparente del Sol</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tiempo dinámico</td>
+<td style="text-align: left;">Evolución de los sistemas dinámicos celestes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tiempo atómico</td>
+<td style="text-align: left;">Transiciones de los átomos</td>
+</tr>
+</tbody>
+</table>
+<div class="vspace-3">
+
+</div>
+<p>Podemos establecer dos grandes grupos:</p>
+<ul>
+<li><strong>Sistemas basados en la rotación terrestre:</strong> tiempo sidéreo y tiempo solar.</li>
+<li><strong>Sistemas independientes de la rotación terrestre:</strong> tiempo dinámico y tiempo atómico.</li>
+</ul>
+<p>Los sistemas de tiempo solar y sidéreo están relacionados medianterelaciones matemáticas que describen el movimiento de la Tierra.</p>
+</section>
+<section id="el-día-como-intervalo-de-tiempo" class="slide level2">
+<h2>El día como intervalo de tiempo</h2>
+<ul>
+<li><p>Históricamente, el día ha sido utilizado como intervalo fundamental para medir el tiempo. Su definición se basa en la observación de los movimientos aparentes del Sol y las estrellas, consecuencia de la rotación terrestre.</p></li>
+<li><p>La división convencional del día establece que <span class="math inline">\(1\ \text{día}=24\ \text{horas}\)</span>.</p>
+<p>De manera equivalente, la rotación terrestre puede describirse mediante una revolución angular completa de <span class="math inline">\(360^\circ\)</span></p>
+<p>Por lo tanto, la división del día en 24 horas establece una correspondencia entre unidades temporales y angulares.</p></li>
+<li><p>La Conferencia Internacional del Meridiano de 1884 contribuyó a formalizar el uso del meridiano de Greenwich como referencia geográfica y la adopción del día universal. Considerando que una revolución terrestre corresponde a <span class="math inline">\(360^\circ\)</span> y que el día se divide en 24 horas:</p></li>
+</ul>
+<p><span class="math display">\[
+  \frac{360^\circ}{24\ \text{h}}=15^\circ/\text{h}
+  \]</span></p>
+<p>Estos sectores se conocen como <strong>husos horarios</strong>. Por lo tanto, las unidades temporales y angulares presentan las siguientes equivalencias:</p>
+<div class="columns">
+<div class="column">
+<p><strong>Divisiones temporales</strong></p>
+<p><span class="math display">\[
+1^{\mathrm h}=60^{\mathrm m}=3600^{\mathrm s}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+1^{\mathrm h} &amp;= 15^\circ\\
+1^{\mathrm m} &amp;= 15'\\
+1^{\mathrm s} &amp;= 15''
+\end{aligned}
+\]</span></p>
+</div><div class="column">
+<p><strong>Divisiones angulares</strong></p>
+<p><span class="math display">\[
+1^\circ=60'=3600''
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+1^\circ &amp;= 4^{\mathrm m}\\
+1' &amp;= 4^{\mathrm s}\\
+1'' &amp;= \frac{1}{15}^{\mathrm s}
+\end{aligned}
+\]</span></p>
+</div></div>
+</section>
+<section id="ángulo-horario" class="slide level2">
+<h2>Ángulo horario</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>El <strong>ángulo horario</strong> describe la posición de un objeto celeste respecto al meridiano de un observador, midiéndose sobre el ecuador celeste.</p>
+<p>Se define como el ángulo entre el meridiano del observador y el círculo horario del objeto.</p>
+<p>Podemos distinguir:</p>
+<ul>
+<li><strong>LHA:</strong> ángulo horario local.</li>
+<li><strong>GHA:</strong> ángulo horario de Greenwich.</li>
+</ul>
+<p>Ambos se miden hacia el <strong>oeste</strong>, en el intervalo de <span class="math inline">\(0\)</span> a <span class="math inline">\(24\)</span> horas.</p>
+<p><span class="math display">\[
+\boxed{LHA=GHA+\lambda}
+\]</span></p>
+<p>Donde <span class="math inline">\(\lambda\)</span> es la longitud geográfica, positiva hacia el oeste.</p>
+</div><div class="column" style="width:52%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/c3/hour_angle.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="tiempo-solar-y-sidéreo" class="slide level2">
+<h2>Tiempo solar y sidéreo</h2>
+<p>El tiempo solar se determina a partir del movimiento aparente del Sol sobre la esfera celeste.</p>
+<p>Se define el <strong>día solar</strong> como el intervalo entre dos tránsitos consecutivos del Sol por el mismo meridiano local.</p>
+<p>Debido al movimiento orbital de la Tierra, después de completar una rotación de <span class="math inline">\(360^\circ\)</span> respecto a las estrellas, el Sol todavía no regresa a la misma posición aparente en el cielo (<span class="math inline">\(\approx 1 ^\circ\)</span>).</p>
+<p>Por tanto, la Tierra debe girar un poco más para completar un día solar.</p>
+<p><span class="math display">\[
+\boxed{T_{\mathrm{solar}} \approx 24\ \mathrm{h}}
+\]</span></p>
+<p>El día solar medio se utiliza como referencia para la medición convencional del tiempo civil.</p>
+<p>La diferencia entre el día solar y el día sidéreo se debe al movimiento orbital de la Tierra alrededor del Sol.</p>
+<ul>
+<li><strong>Día sidéreo:</strong> intervalo entre dos tránsitos consecutivos de una estrella de referencia por el mismo meridiano.</li>
+<li><strong>Día solar:</strong> intervalo entre dos tránsitos consecutivos del Sol por el mismo meridiano.</li>
+</ul>
+<p>Como la Tierra avanza en su órbita mientras rota, necesita girar un ángulo adicional para completar un día solar.</p>
+<p><span class="math display">\[
+\boxed{T_{\mathrm{sid}} \approx 23^{\mathrm h}56^{\mathrm m}04^{\mathrm s}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{T_{\mathrm{solar}}-T_{\mathrm{sid}}
+\approx 3^{\mathrm m}56^{\mathrm s}}
+\]</span></p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>A partir de aquí, cuando se mencione <strong>día</strong> sin especificar, nos referiremos al <strong>día solar medio</strong> (1 día = 24 horas).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Figures/c3/sun_sidereal.png" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"></section>
+<section id="tiempo-atómico" class="slide level2">
+<h2>Tiempo atómico</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>El tiempo atómico se basa en fenómenos físicos asociados con las transiciones entre niveles de energía de los átomos.</p></li>
+<li><p>Su principal ventaja es que proporciona una referencia temporal altamente precisa, estable y reproducible.</p></li>
+<li><p>El segundo del Sistema Internacional se define mediante la frecuencia de transición hiperfina del estado fundamental del átomo de cesio-133.</p></li>
+</ul>
+<p><span class="math display">\[
+\boxed{
+\Delta_{\mathrm{Cs}} =
+9\,192\,631\,770\ \mathrm{Hz}
+}
+\]</span></p>
+<ul>
+<li><p>Es decir, un segundo corresponde a la duración de <span class="math inline">\(9\,192\,631\,770\)</span> períodos de la radiación asociada con esta transición.</p></li>
+<li><p>A partir de relojes atómicos se establece el Tiempo Atómico Internacional (TAI), que constituye la referencia para otras escalas de tiempo.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/c3/atomic.png" class="quarto-figure quarto-figure-center" style="width:95.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="tiempo-universal-universal-time" class="slide level2">
+<h2>Tiempo universal (Universal Time)</h2>
+<p>El <strong>Tiempo Universal (UT)</strong> es una familia de escalas de tiempo basadas en la rotación de la Tierra respecto a los objetos celestes.</p>
+<p>Se distinguen las siguientes realizaciones:</p>
+<ul>
+<li><strong>UT0:</strong> tiempo obtenido directamente de observaciones astronómicas de la rotación terrestre. Está afectado por el movimiento polar del observador.</li>
+<li><strong>UT1:</strong> tiempo universal corregido por el movimiento polar. Representa la rotación efectiva de la Tierra y se utiliza para determinar su orientación.</li>
+<li><strong>UTC:</strong> tiempo universal coordinado, basado en relojes atómicos. Se mantiene próximo a TAI mediante la introducción de segundos intercalares.</li>
+</ul>
+<p>La relación entre estas escalas puede resumirse como:</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+UT0 &amp;\xrightarrow{\text{Corrección por movimiento polar}} UT1\\
+UTC &amp;\xleftrightarrow{\text{Segundos intercalares}} TAI
+\end{aligned}
+}
+\]</span></p>
+<p>La diferencia entre UTC y UT1 se expresa mediante:</p>
+<p><span class="math display">\[
+DUT1=UT1-UTC \qquad\qquad |DUT1|&lt;0.9\ \mathrm{s}
+\]</span></p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>En este curso, vamos a considerar que UT1= UTC, ya que la diferencia es muy pequeña y no afecta significativamente los cálculos de posición y movimiento de satélites. Sin embargo, en aplicaciones de alta precisión, como la navegación por satélite, es importante tener en cuenta esta diferencia y utilizar UT1 para obtener resultados más precisos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="determinación-de-ut0-y-ut1" class="slide level2">
+<h2>Determinación de UT0 y UT1</h2>
+<p>El tiempo universal se determina mediante observaciones astronómicas de fuentes extragalácticas, como galaxias de radio, cuyas posiciones se consideran prácticamente fijas.</p>
+<p><strong>Tiempo universal inicial (UT0)</strong></p>
+<p>A partir del ángulo horario de Greenwich del Sol:</p>
+<p><span class="math display">\[
+\boxed{UT0=12^{\mathrm h}+GHA_{\odot}}
+\]</span></p>
+<p>Para un observador ubicado en una longitud geográfica <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[
+\boxed{UT0=12^{\mathrm h}+LHA_{\odot}-\lambda}
+\]</span></p>
+<p><strong>Corrección por movimiento polar (UT1)</strong></p>
+<p>Para eliminar la dependencia de la ubicación de la estación de observación, se aplica una corrección por movimiento polar:</p>
+<p><span class="math display">\[
+\boxed{
+UT1=UT0-
+(x_p\sin\lambda+y_p\cos\lambda)
+\tan\phi_{gc}
+}
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(x_p,y_p\)</span>: coordenadas del polo instantáneo respecto al polo de referencia (definidos por el GCRS).</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Si <span class="math inline">\(GHA_\odot=0{s}\)</span>, entonces <span class="math inline">\(UT0=12^{\mathrm h}\)</span>, lo que significa que el Sol se encuentra en el meridiano de Greenwich (mediodía).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Figures/c3/time_zones.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"></section>
+<section id="órbita-terrestre-alrededor-del-sol" class="slide level2">
+<h2>Órbita terrestre alrededor del Sol</h2>
+<p>La Tierra describe una órbita elíptica alrededor del Sol, de acuerdo con las leyes de Kepler. Sus principales parámetros orbitales medios según el JPL son:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: right;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Semieje mayor</td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.00000011\ \mathrm{AU}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Excentricidad</td>
+<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.01671022\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>La distancia entre la Tierra y el Sol varía a lo largo de la órbita.</p>
+<ul>
+<li>El periodo orbital es</li>
+</ul>
+<p><span class="math display">\[
+T_{\oplus} = 2\pi\sqrt{\frac{a^3}{\mu_\odot}} =2\pi\sqrt{\frac{1.00000011*149597870700}{1.32712442099 \times 10^{20}}}=365.2569558 \ \mathrm{días}
+\]</span></p>
+<p>Este período corresponde al <strong>año sidéreo</strong>.</p>
+<ul>
+<li><p>También se define el año tropical, cuya duración aproximada es:</p>
+<p><span class="math display">\[
+\boxed{T_{\mathrm{tropical}}\approx365.24219\ \text{días}}
+\]</span></p>
+<p>La diferencia se debe principalmente a la precesión del eje terrestre. El año tropical se utiliza como referencia para la determinación de las estaciones del año y el calendario civil.</p></li>
+</ul>
+</section>
+<section id="calendario-juliano-y-gregoriano" class="slide level2">
+<h2>Calendario juliano y gregoriano</h2>
+<p>Los calendarios son sistemas convencionales para organizar el tiempo en años, meses y días.</p>
+<div class="columns">
+<div class="column">
+<p><strong>Calendario juliano</strong></p>
+<p>Introducido por Julio César en el año 46 a.C.</p>
+<ul>
+<li>Año común: 365 días.</li>
+<li>Año bisiesto: cada cuatro años.</li>
+<li>Duración media:</li>
+</ul>
+<p><span class="math display">\[
+T_J=365+\frac{1}{4}=365.25\ \text{días}
+\]</span></p>
+</div><div class="column">
+<p><strong>Calendario gregoriano</strong></p>
+<p>Introducido en 1582 por el papa Gregorio XIII para corregir el desfase acumulado del calendario juliano.</p>
+<p>Un año es bisiesto cuando:</p>
+<ul>
+<li>Es divisible entre 4.</li>
+<li>Si es divisible entre 100, no es bisiesto.</li>
+<li>Si también es divisible entre 400, vuelve a ser bisiesto.</li>
+</ul>
+<p>Su duración media es:</p>
+<p><span class="math display">\[
+T_G=365+\frac{97}{400}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{T_G=365.2425\ \text{días} \approx T_{\mathrm{tropical}}}
+\]</span></p>
+</div></div>
+<p><strong>Actualmente utilizamos el calendario gregoriano como calendario civil internacional.</strong></p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>A fecha de hoy, el calendario gregoriano se encuentra desfasado respecto al calendario juliano en 13 días. Por ejemplo, el 1 de enero de 2024 en el calendario gregoriano corresponde al 19 de diciembre de 2023 en el calendario juliano.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="fecha-juliana-jd" class="slide level2">
+<h2>Fecha juliana (JD)</h2>
+<p>La <strong>Fecha juliana (JD)</strong> representa el número de días transcurridos desde una época de referencia establecida en el calendario juliano:</p>
+<p><span class="math display">\[
+\text{1 de enero de 4713 a.C., 12:00 UTC}
+\]</span></p>
+<ul>
+<li>Cada unidad de día equivale a exactamente <span class="math inline">\(86400\)</span> segundos SI.</li>
+<li>El cambio de fecha ocurre al mediodía, no a la medianoche.</li>
+<li>La fecha se expresa mediante un número que aumenta continuamente con el tiempo.</li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>La Fecha juliana no tiene relación directa con el calendario juliano.</strong></p>
+<p>Aunque comparten el nombre y la referencia histórica, la Fecha juliana es un sistema numérico de conteo de días. Puede utilizarse para representar fechas tanto del calendario juliano como del gregoriano.</p>
+</div>
+</div>
+</div>
+<p>Por definición,</p>
+<p><span class="math display">\[
+\text{1 de enero de 4713 a.C., 12:00 UTC} \rightarrow  JD=0,
+\]</span></p>
+<p>y en consecuencia,</p>
+<p><span class="math display">\[
+\text{3 de enero de 4713 a.C., 00:00 UTC} \rightarrow  JD= 1.5.
+\]</span></p>
+</section>
+<section id="características-de-la-fecha-juliana" class="slide level2">
+<h2>Características de la Fecha juliana</h2>
+<p>La Fecha juliana permite representar una fecha y hora mediante una sola cantidad numérica.</p>
+<ul>
+<li>La parte entera representa el número de días transcurridos desde la época de origen.</li>
+<li>La parte fraccionaria representa la fracción del día transcurrida desde el mediodía.</li>
+<li>El día juliano está definido como <span class="math inline">\(86400\)</span> segundos SI.</li>
+</ul>
+<p>Por ejemplo:</p>
+<p><span class="math display">\[
+\begin{aligned}
+JD &amp;= 2451545.0 &amp;&amp; \text{1 enero 2000, 12:00 UTC}\\
+JD &amp;= 2451545.5 &amp;&amp; \text{2 enero 2000, 00:00 UTC}\\
+JD &amp;= 2451546.0 &amp;&amp; \text{2 enero 2000, 12:00 UTC}
+\end{aligned}
+\]</span></p>
+<p>En astrodinámica se utilizan épocas de referencia para expresar instantes y construir intervalos de tiempo.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Época</th>
+<th style="text-align: left;">Fecha de referencia</th>
+<th style="text-align: right;">JD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">GPS Epoch</td>
+<td style="text-align: left;">06/01/1980 00:00 UTC</td>
+<td style="text-align: right;">2444244.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">J1900.0</td>
+<td style="text-align: left;">01/01/1900 12:00 UTC</td>
+<td style="text-align: right;">2415021.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">J2000.0</td>
+<td style="text-align: left;">01/01/2000 12:00 UTC</td>
+<td style="text-align: right;">2451545.0</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>En realidad, la fecha de referencia del J2000 se define en otra escala de tiempo, el <strong>Tiempo Dinámico Terrestre (TT)</strong>. Sin embargo, para simplificar los cálculos y la comprensión de los conceptos, en este curso consideraremos que el J2000 se define en UTC.</p>
+<p>Por otro lado, la época del GPS se define así debido a que el sistema GPS comenzó a operar en esa fecha.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cálculo-de-la-fecha-juliana" class="slide level2">
+<h2>Cálculo de la Fecha juliana</h2>
+<p>Para convertir una fecha del calendario gregoriano a Fecha juliana, podemos utilizar el siguiente algoritmo, válido para fechas entre 1900 y 2100.</p>
+<p>Sean:</p>
+<ul>
+<li><span class="math inline">\(yr\)</span>: año (cuatro dígitos).</li>
+<li><span class="math inline">\(mo\)</span>: mes.</li>
+<li><span class="math inline">\(d\)</span>: día.</li>
+<li><span class="math inline">\(h\)</span>: hora.</li>
+<li><span class="math inline">\(min\)</span>: minutos.</li>
+<li><span class="math inline">\(s\)</span>: segundos.</li>
+</ul>
+<p>La Fecha juliana se calcula mediante:</p>
+<p><span class="math display">\[
+\begin{aligned}
+JD={}&amp;367yr-
+\operatorname{INT}\left[
+\frac{7\left(yr+\operatorname{INT}\left(\frac{mo+9}{12}\right)\right)}{4}
+\right]+\operatorname{INT}\left(\frac{275mo}{9}\right)
++d+1721013.5 +\frac{h}{24}+\frac{min}{1440}+\frac{s}{86400},
+\end{aligned}
+\]</span></p>
+<p>donde <span class="math inline">\(\operatorname{INT}(\cdot)\)</span> representa la parte entera por truncamiento.</p>
+<p>La conversión debe realizarse considerando la escala de tiempo utilizada para expresar la fecha de entrada.</p>
+</section>
+<section id="siglo-juliano" class="slide level2">
+<h2>Siglo juliano</h2>
+<p>Para expresar intervalos temporales se utiliza el siglo juliano, definido como 36 525 días:</p>
+<p><span class="math display">\[
+\boxed{1\ \text{siglo juliano}=36525\ \text{días}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{1\ \text{siglo juliano}=3.15576\times10^9\ \text{seg}}
+\]</span></p>
+<p>La variable temporal referida a J2000.0 se define como:</p>
+<p><span class="math display">\[
+\boxed{
+T=\frac{JD-JD_{J2000.0}}{36525}
+}
+\]</span></p>
+<div class="definition-block">
+<p><strong>Ejemplo:</strong></p>
+<p>Para el 11 de noviembre de 2026 a las 17:30 UTC, la fecha juliana es:</p>
+<p><span class="math display">\[
+  JD = 2461356.22916667
+\]</span></p>
+<p>y el siglo juliano referido a J2000.0 es:</p>
+<p><span class="math display">\[
+  T_{UTC} = \frac{2461356.22916667-2451545.0}{36525} = 0.26861681
+\]</span></p>
+</div>
+<p>El siglo juliano es importante debido a que muchas expresiones matemáticas que describen fenómenos astronómicos se desarrollan en series de potencias de <span class="math inline">\(T\)</span>. Además, si la fecha juliana corresponde a una fecha anterior a J2000.0, el valor de <span class="math inline">\(T\)</span> será negativo.</p>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.3:</strong> Conversión de UTC a Fecha juliana</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(yr\)</span>, <span class="math inline">\(mo\)</span>, <span class="math inline">\(d\)</span>, <span class="math inline">\(h\)</span>, <span class="math inline">\(min\)</span>, <span class="math inline">\(s\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(JD_{UTC}\)</span></p>
+</div>
+<ol type="1">
+<li><p>Calcular la fecha juliana:</p>
+<p><span class="math display">\[
+\begin{aligned}
+JD_{UTC}={}&amp;367yr
+-\operatorname{INT}\left[\frac{7}{4}\left(yr+\operatorname{INT}\left(\frac{mo+9}{12}\right)\right)\right]\\
+&amp;+\operatorname{INT}\left(\frac{275mo}{9}\right)
++d+1721013.5\\
+&amp;+\frac{h}{24}+\frac{min}{1440}+\frac{s}{86400}
+\end{aligned}
+\]</span></p></li>
+<li><p>Calcular los siglos julianos transcurridos desde J2000.0:</p>
+<p><span class="math display">\[
+\boxed{T=\frac{JD-2451545.0}{36525}}
+\]</span></p></li>
+</ol>
+</div>
+</section>
+<section id="tiempo-sidéreo" class="slide level2">
+<h2>Tiempo sidéreo</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>El <strong>tiempo sidéreo</strong> es el angulo ligado a la rotación de la Tierra respecto al equinoccio vernal. Se mide positivamente en sentido antihorario, visto desde el polo norte.</p>
+<p>Se distinguen dos cantidades:</p>
+<ul>
+<li><strong>Greenwich Mean Sidereal Time (GMST):</strong> tiempo sidéreo medio referido al meridiano de Greenwich.</li>
+<li><strong>Local Sidereal Time (LST):</strong> tiempo sidéreo medio referido al meridiano local del observador.</li>
+</ul></li>
+<li><p>La relación entre ambos tiempos sidéreos depende de la longitud geográfica del observador:</p>
+<p><span class="math display">\[
+\boxed{\theta_{LST}=\theta_{GMST}+\lambda},
+\]</span></p>
+<p>donde <span class="math inline">\(\lambda\)</span> es la longitud geográfica.</p>
+<p>La longitud y los tiempos sidéreos deben expresarse en unidades angulares compatibles.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Figures/c3/sideral.png" class="quarto-figure quarto-figure-center" style="width:95.0%"></p>
+</figure>
+</div>
+</div></div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>El término <em>medio</em> indica que se considera el equinoccio medio, incorporando el efecto de la precesión, pero no las variaciones periódicas asociadas a la nutación.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cálculo-del-gmst" class="slide level2">
+<h2>Cálculo del GMST</h2>
+<p>El tiempo sidéreo medio de Greenwich puede calcularse directamente a partir del siglo juliano <span class="math inline">\(T\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\theta_{GMST}[^s]={}&amp;67310.54841 +\left(876600\cdot3600+8640184.812866\right)T_{UTC}+0.093104T_{UTC}^{2}-6.2\times10^{-6}T_{UTC}^{3}
+\end{aligned}
+\]</span></p>
+<p>El resultado de esta expresión está en <strong>segundos de tiempo sidéreo</strong>.</p>
+<p>Para obtener un ángulo dentro de una revolución completa, se normaliza:</p>
+<p><span class="math display">\[
+\theta_{GMST}[^s]\leftarrow\operatorname{mod}(\theta_{GMST}[^s],86400)
+\]</span></p>
+<p>Posteriormente, puede convertirse a grados mediante:</p>
+<p><span class="math display">\[
+\boxed{\theta_{GMST}[^\circ]=\frac{\theta_{GMST}[^s]}{240}}
+\]</span></p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>El modelo de <span class="math inline">\(\theta_{GMST}\)</span> corresponde a la ecuación</p>
+<p><span class="math display">\[
+\theta_{GMST}=\theta_{GMST,0}+(\omega_{\oplus}+\Delta\omega)T_{UTC}
+\]</span></p>
+<p>donde <span class="math inline">\(\theta_{GMST,0}\)</span> es el tiempo sidéreo de Greenwich en J2000.0 (Astronomical Almanac, 1984). Se contemplan los efectos de la precesión y la nutación.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Para obtener el LST, primero se debe convertir la longitud geográfica a segundos de tiempo:</p>
+<p><span class="math display">\[
+\lambda[^s]=240\lambda[^\circ]
+\]</span></p>
+<p>Con ello, el tiempo sidéreo local se calcula como:</p>
+<p><span class="math display">\[
+\boxed{
+\theta_{LST}=
+\operatorname{mod}(\theta_{GMST}[^s]+\lambda [^s],86400)
+}
+\]</span></p>
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.4:</strong> Cálculo del tiempo sidéreo local</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(T_{UTC}\)</span>, <span class="math inline">\(\lambda\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\theta_{LST}\)</span>, <span class="math inline">\(\theta_{GMST}\)</span></p>
+</div>
+<div class="small">
+<ol type="1">
+<li><p>Calcular el tiempo sidéreo medio de Greenwich:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\theta_{GMST}[^s]={}&amp;67310.54841+\left(876600\cdot3600+8640184.812866\right)T_{UTC}+0.093104T_{UTC}^{2}-6.2\times10^{-6}T_{UTC}^{3}
+\end{aligned}
+\]</span></p></li>
+<li><p>Normalizar el GMST al intervalo de una revolución:</p>
+<p><span class="math display">\[
+\theta_{GMST}[^s]=\operatorname{mod}(\theta_{GMST}[^s],86400)
+\]</span></p></li>
+<li><p>Calcular el tiempo sidéreo local:</p>
+<p><span class="math display">\[
+\theta_{LST}[^s]=\operatorname{mod}(\theta_{GMST}[^s]+\lambda[^s],86400)
+\]</span></p></li>
+<li><p>Convertir el tiempo sidéreo local a grados de ser necesario.</p></li>
+</ol>
+<p><span class="math display">\[
+\theta_{GMST}[^\circ]=\frac{\theta_{GMST}[^s]}{240}, \theta_{LST}[^\circ]=\frac{\theta_{LST}[^s]}{240}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="ejemplo-cálculo-del-tiempo-sidéreo-local" class="slide level2">
+<h2>Ejemplo: Cálculo del tiempo sidéreo local</h2>
+<p>Determinar el GMST y el LST para un observador ubicado en:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\phi &amp;= 19.331598^\circ\\
+\lambda &amp;= -99.184691^\circ
+\end{aligned}
+\]</span></p>
+<p>Para la fecha y hora:</p>
+<p><span class="math display">\[
+\text{11 de noviembre de 2026, 17:30:00 UTC}
+\]</span></p>
+<h3 id="desarrollo">Desarrollo</h3>
+<p>Utilizando el algoritmo 3.3: <span class="math display">\[
+\boxed{JD_{UTC}=2461356.22916667}
+\]</span> <span class="math display">\[
+\boxed{T_{UTC}=0.26861681}
+\]</span></p>
+<p>Obtenemos <span class="math inline">\(\theta_{GMST}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\theta_{GMST}={}&amp;67310.54841+(876600\cdot3600+8640184.812866)T_{UTC}+0.093104T_{UTC}^{2}-6.2\times10^{-6}T_{UTC}^{3}
+\end{aligned}
+\]</span></p>
+<p>Normalizando el resultado al intervalo de una revolución:</p>
+<p><span class="math display">\[
+\theta_{GMST}=\operatorname{mod}(\theta_{GMST},86400)
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Se obtiene:</p>
+<p><span class="math display">\[
+\boxed{\theta_{GMST}=80219\ \text{s}}
+\]</span></p>
+<p>Convirtiendo a grados:</p>
+<p><span class="math display">\[
+\theta_{GMST}=\frac{80219}{240}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\theta_{GMST}=334.245833^\circ}
+\]</span></p>
+<p>La longitud debe expresarse en segundos de tiempo:</p>
+<p><span class="math display">\[
+\lambda_{[s]}=240\lambda_{[^\circ]}
+\]</span></p>
+<p>Sustituyendo:</p>
+<p><span class="math display">\[
+\lambda_{[s]}=240(-99.184691)
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\lambda_{[s]}=-23804.326\ \text{s}}
+\]</span></p>
+<p>Finalmente, incorporamos la longitud geográfica:</p>
+<p><span class="math display">\[
+\theta_{LST}=\operatorname{mod}(\theta_{GMST}+\lambda_{[s]},86400)
+\]</span></p>
+<p>Sustituyendo:</p>
+<p><span class="math display">\[
+\theta_{LST}=\operatorname{mod}(80219-23804.326,86400)
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Se obtiene:</p>
+<p><span class="math display">\[
+\boxed{\theta_{LST}\approx56415\ \text{s}}
+\]</span></p>
+<p>Convirtiendo a grados:</p>
+<p><span class="math display">\[
+\boxed{\theta_{LST}\approx235.0625^\circ}
+\]</span></p>
+<p>Para el observador y el instante considerados:</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+JD_{UTC}&amp;=2461356.22916667\\
+T_{UTC}&amp;=0.26861681\\
+\theta_{GMST}&amp;=334.245833^\circ\\
+\theta_{LST}&amp;=235.0625^\circ
+\end{aligned}
+}
+\]</span></p>
 
 </section>
 
