@@ -1,6 +1,9 @@
 
 ![](/Figures/c0/map.png){.fragment width=70% fig-align="center"}
 
+![](/Figures/c0/map.png){width=100% fig-align="center"}
+
+
 ![](/Figures/c0/adcs_animation.mp4){width=86% fig-align="center" data-autoplay=true}
 
 :::{.incremental}
@@ -24,6 +27,7 @@
 :::
 
 :::{.small}
+
 :::
 
 

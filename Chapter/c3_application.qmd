@@ -1699,12 +1699,12 @@ $$
 
 ::: {.algorithm}
 
-<div class="algorithm-title">Algoritmo 3.2: Conversión ECEF a coordenadas geodésicas</div>
+<div class="algorithm-title">Algoritmo 3.2: Conversión coordenadas geodésicas a $\vec{r}$</div>
 
 <div class="algorithm-io">
 <strong>Entrada:</strong> $\lambda,\phi_{gd},h_{ellip}$, $R_\oplus$, $e_\oplus$.
 
-<strong>Salida:</strong> $\{\vec{r}\}$.
+<strong>Salida:</strong> $\vec{r}$.
 </div>
 
 :::{.small}
@@ -1734,10 +1734,6 @@ $$
 - Si bien estos algoritmos nos permiten convertir entre coordenadas geodésicas y coordenadas cartesianas, es importante mencionar que la superficie de la Tierra no es perfectamente elipsoidal. Por lo tanto, para aplicaciones de alta precisión, se deben considerar modelos más complejos del geoide y las variaciones locales del campo gravitatorio. Esto se aborda mediante el concepto de **ondulación geoidal**, que representa las desviaciones del geoide respecto a la elipsoide de referencia,  y **superficies equipotenciales**.  
 
 - Un detalle importante es que hemos hablado de un vector de posición $\vec{r}$, pero no hemos definido un marco de referencia sobre el cual están definidas sus componentes.
-
-
-
-
 
 
 ---
@@ -1888,8 +1884,6 @@ La esfera celeste es una representación geométrica imaginaria en la que se pro
 - **Punto de referencia:** punto sobre la esfera celeste que representa el origen del sistema de coordenadas.
 - **Ascensión recta ($\alpha$):** ángulo medido desde el punto de referenia hasta la proyección del objeto sobre el ecuador celeste, siguiendo la dirección de rotación de la Tierra.
 - **Declinación ($\delta$):** angulo medido desde el plano fundamentel hasta la proyección del objeto sobre la esfera celeste.
-
-
 
 
 :::
@@ -2637,7 +2631,7 @@ El siglo juliano es importante debido a que muchas expresiones matemáticas que 
 ::: {.algorithm}
 
 <div class="algorithm-title">
-<strong>Algoritmo 3.3:</strong> Conversión de UTC a Fecha juliana
+<strong>Algoritmo 3.3:</strong> Conversión de $t^{\text{UTC}}$ a JD
 </div>
 
 <div class="algorithm-io">
@@ -2896,13 +2890,14 @@ $$
 \theta_{LST}=\operatorname{mod}(\theta_{GMST}+\lambda_{[s]},86400)
 $$
 
+---
+
 Sustituyendo:
 
 $$
 \theta_{LST}=\operatorname{mod}(80219-23804.326,86400)
 $$
 
----
 
 Se obtiene:
 
@@ -2929,15 +2924,627 @@ T_{UTC}&=0.26861681\\
 }
 $$
 
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Trayectorias terrestres
+
+<div class="menu-title" style="display:none;"> ▸ Trayectorias terrrestres </div>
+:::
+
+:::
+
+
+---
 
 
 
 
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Las **trayectorias terrestres** es el lugar geométrico (conjunto de puntos) obtenido al proyectar la posición de un satélite sobre la superficie terrestre. 
+
+<div class="vspace-3"></div>
+
+
+- A diferencia de la trayectoria orbital, que se describe en un sistema de referencia geocéntrico inercial, la trayectoria terrestre permite visualizar el movimiento del satélite respecto a la superficie terrestre.
+
+<div class="vspace-3"></div>
+
+- Su representación se obtiene mediante la transformación de las coordenadas del satélite desde un marco de referencia inercial (ECI) hacia un marco fijo a la Tierra (ECEF).
+
+<div class="vspace-3"></div>
+
+- Esta herramiento nos permite analizar la cobertura de un satélite sobre la superficie terrestre y planificar misiones espaciales.
+
+:::
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack.png){width=100% fig-align="center"}
+
+
+:::
+
+:::
 
 
 
+## Transformación ITRF $\rightarrow$ ECI
+
+- Para transformar las coordenadas de un satélite desde el marco ITRF hacia el marco ECI, podemos considerar únicamente la rotación de la Tierra alrededor de su eje $Z$.
+
+- **Esta aproximación desprecia los efectos de precesión, nutación y movimiento polar**.
+
+- La transformación se realiza utilizando el ángulo sidéreo medio de Greenwich (GMST), $\theta_{GMST}$.
+
+- La posición en el marco ECI se obtiene mediante:
+
+$$
+\begin{split}
+  \:^{ECI}\vec{r} &=
+  \begin{bmatrix}
+  \cos\theta_{GMST} & -\sin\theta_{GMST} & 0\\
+  \sin\theta_{GMST} & \cos\theta_{GMST} & 0\\
+  0 & 0 & 1
+  \end{bmatrix}
+  \:^{ITRF}\vec{r}\\
+  &=R_z(-\theta_{GMST})\:^{ITRF}\vec{r},
+\end{split}
+$$
 
 
+donde $\theta_{GMST}$ representa el ángulo de rotación entre el meridiano de Greenwich y el eje de referencia del marco inercial (para nuestro caso, el equinoccio vernal), medido en el plano ecuatorial.
 
+::: {.callout-important}
+**Es una trasformación aproximada**
+
+Esta transformación constituye una aproximación. Para aplicaciones de alta precisión deben considerarse los modelos completos de transformación entre sistemas terrestres e inerciales, como la **transformación ITRF $\rightarrow$ GCRF**.
+:::
+
+
+## Transformación entre ITRF $\rightarrow$ GCRF
+
+La transformación entre un sistema de referencia terrestre (ITRF) y uno celeste (GCRF) requiere considerar la orientación y el movimiento de la Tierra mediante un modelo de orientación terrestre (*Earth Orientation Model*).
+
+La transformación se realiza mediante una secuencia de cuatro matrices de rotación:
+
+$$
+\begin{split}
+  \:^{GCRF}\vec{r} &= P(t)N(t)R(t)W(t)\:^{ITRF}\vec{r},
+\end{split}
+$$
+
+Donde:
+
+- **$W(t)$ — Movimiento polar:** representa las variaciones en la orientación del eje de rotación terrestre respecto a un eje de rotación estandarizado.
+- **$R(t)$ — Rotación terrestre:** describe la rotación de la Tierra mediante el ángulo sidéreo, relacionado con el tiempo sidéreo de Greenwich (la misma matriz que en la transformación ITRF $\rightarrow$ ECI).
+- **$N(t)$ — Nutación:** representa pequeñas oscilaciones periódicas superpuestas al movimiento de precesión, que producen variaciones de corto y largo periodo en la orientación del eje de rotación terrestre.
+- **$P(t)$ — Precesión:** representa el cambio gradual de la orientación del eje de rotación terrestre, que describe un movimiento cónico alrededor de la normal a la eclíptica, con un periodo aproximado de 26 000 años.
+
+Las cuatro transformaciones se conocen colectivamente como **fórmulas de reducción** o modelo de orientación terrestre.
+
+::: {.callout-note .fragment}
+### Nota:
+
+Estos modelos no los abordaremos en este curso, pero es importante conocer que existen y que son necesarios para obtener resultados precisos en aplicaciones navegación por satélite. Por el momento, nos limitaremos a la transformación ITRF $\rightarrow$ ECI, la cual es suficientemente precisa en una ventana de tiempo considerable.
+
+Lo siento (╥﹏╥), me quitaron un montón de clases
+
+:::
+
+---
+
+![](/Figures/c3/preccesion_nutation.mp4){width=99% fig-align="center" data-autoplay=true}
+
+
+## Obtención de la trayectoria terrestre
+
+::: {.columns}
+
+::: {.column}
+
+El procedimiento para obtener la trayectoria terrestre de un satélite se puede resumir en cuatro pasos:
+
+1. **Propagación orbital:** obtener la posición del satélite en el sistema inercial ECI (o GCRF si se cuenta con el modelo) para cada instante de tiempo.
+
+2. **Transformación de coordenadas:** convertir las posiciones del ECI (o GCRF) al ITRF mediante el modelo de orientación terrestre.
+  
+3. **Conversión geográfica:** transformar las coordenadas cartesianas terrestres $^{ITRF}\vec{r}$ a coordenadas geodésicas $(\phi_{gd},\lambda,h_{ellip})$.
+
+4. **Representación cartográfica:** graficar la latitud $\phi_gd$ y longitud $\lambda$ en un mapa de la superficie terrestre. Comúnmente, se utiliza una proyección cilíndrica equidistante de la Tierra, donde los meridianos y paralelos se representan como líneas rectas. A esta proyección se le conoce como **proyección de Mercator**. 
+
+De forma complementaria, se puede representar la altitud $h_{ellip}$ del satélite mediante un mapa de colores, donde cada color representa un rango de altitudes. También es común agregar elementos adicionales, como las regiones iluminadas por el Sol y la posición del Sol y la Luna.
+
+:::
+
+::: {.column}
+
+
+![](/Figures/c3/groundtrack.png){width=100% fig-align="center"}
+
+
+:::
+
+:::
+
+---
+
+![](/Figures/c3/gt_algorithm.svg){width=100% fig-align="center"}
+ 
+## Ejemplo 
+
+
+Considere los siguientes TLE:
+
+::: {.columns}
+
+::: {.column width="32%"}
+
+
+![](/Figures/c3/AZTECHSAT1.png){width=100% fig-align="center"}
+
+
+```text
+1 45261U 98067RE  21343.89041861  .09093063  12441-4  68050-3 0  9996
+2 45261  51.6085 132.4222 0007122 296.3794  63.6501 16.39662023103073
+```
+:::
+
+::: {.column width="32%"}
+
+![](/Figures/c3/UNAMSATB.png){width=88% fig-align="center"}
+
+
+```text
+1 24305U 96052B   26321.36328608  .00000057  00000-0  44168-4 0  9995
+2 24305  82.9359 326.8144 0030039 182.6402 177.4600 13.74096455513657
+```
+:::
+
+::: {.column width="32%"}
+
+![](/Figures/c3/MORELOSIII.png){width=49.5% fig-align="center"}
+
+```text
+1 40946U 15056A   26321.20031846 -.00000028  00000-0  00000-0 0  9999
+2 40946   3.3352  18.7447 0002593 185.7578 170.8024  1.00272307 40819
+```
+:::
+
+::: 
+
+---
+
+![](/Figures/c3/groundtrack_results_AzTechSat-1.svg){width=100% fig-align="center"}
+
+--- 
+
+<div class="vspace-3"></div>
+![](/Figures/c3/groundtrack_animation_AzTechSat_1.mp4){width=100% fig-align="center" data-autoplay=true}
+
+
+---
+
+![](/Figures/c3/groundtrack_results_UNAMSAT-B.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+![](/Figures/c3/groundtrack_animation_UNAMSAT-B.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_Morelos III.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+![](/Figures/c3/groundtrack_animation_Morelos III.mp4){width=100% fig-align="center" data-autoplay=true}
+
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Clasificación de órbitas
+
+<div class="menu-title" style="display:none;"> ▸ Clasificación de órbitas </div>
+:::
+
+:::
+
+
+## Clasificación de las órbitas
+
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- En el capítulo anterior se describieron las propiedades geométricas de una órbita, así como los elementos que permiten caracterizarla. Entre estos elementos se encuentra la excentricidad, que determina la forma de la trayectoria. Sin embargo, para cuestiones de planificación y análisis de misiones espaciales, es útil clasificar las órbitas según criterios más específicos.
+
+- Las órbitas pueden clasificarse de acuerdo con diferentes propiedades geométricas y temporales, así como por su posición respecto a la Tierra. Estas clasificaciones permiten describir la orientación, la región espacial y el comportamiento de una trayectoria orbital.
+
+- Si bien depende de la literatura que se utilice, vamos a considerarán tres criterios principales:
+
+  - **Por inclinación:** describe la orientación del plano orbital respecto al plano ecuatorial.
+  - **Por altitud:** identifica la región del espacio en la que se encuentra la órbita.
+  - **Por periodo orbital:** establece relaciones entre el tiempo de revolución del satélite y determinados ciclos astronómicos, como la rotación terrestre o la revolución aparente del Sol.
+
+- Una misma órbita puede pertenecer simultáneamente a distintas categorías, ya que cada criterio describe una propiedad diferente de su movimiento.
+
+
+## Ejemplo 
+
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/ISS(ZARYA).png){height=8cm fig-align="center"}
+
+```text
+1 25544U 98067A   26322.30200954  .00012483  00000-0  23055-3 0  9994
+2 25544  51.6316 257.4339 0007388  38.9132 321.2387 15.49454822595648
+```
+
+:::
+
+::: {.column}
+
+
+![](/Figures/c3/YAOGAN-50.png){height=8cm fig-align="center"}
+
+```text
+1 67433U 26006A   26321.75989581  .00000344  00000-0  14061-3 0  9999
+2 67433 142.0430 237.9465 0000681 260.7679  99.2963 13.83248063 42706
+```
+
+:::
+
+:::
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/TEMPSAT-1.png){height=8cm fig-align="center"}
+
+```text
+1 01512U 65065E   26322.18449696  .00000041  00000-0  63514-4 0  9991
+2 01512  90.0123 212.6868 0069702 174.7169 307.9000 13.33602910980574
+```
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/O3B FM20.png){height=8cm fig-align="center"}
+
+```text
+1 44112U 19020A   26322.12766801 -.00000013  00000-0  00000+0 0  9994
+2 44112   0.0514 353.1700 0002351 249.9066 116.9061  5.00115741139269
+```
+
+:::
+
+:::
+
+
+---
+
+![](/Figures/c3/groundtrack_results_ISS(ZARYA).svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_ISS(ZARYA).mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_YAOGAN-50.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_YAOGAN-50.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_TEMPSAT 1.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_TEMPSAT 1.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_O3B FM20.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_O3B FM20.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+## Clasificación por inclinación orbital
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+La inclinación ($i$) determina el ángulo entre el plano orbital y el plano ecuatorial de la Tierra. De acuerdo con este parámetro, las órbitas se clasifican en:
+
+
+- **Órbita prograda:** $0^\circ \leq i < 90^\circ$. El satélite se desplaza en el mismo sentido que la rotación de la Tierra.
+- **Órbita retrógrada:** $90^\circ < i \leq 180^\circ$. El satélite se desplaza en sentido contrario a la rotación de la Tierra.
+- **Órbita ecuatorial:** $i=0^\circ$ o $i=180^\circ$. El plano orbital coincide con el plano ecuatorial.
+- **Órbita polar:** $i=90^\circ$. El plano orbital contiene el eje de rotación de la Tierra.
+
+La inclinación se mide respecto al plano ecuatorial y su valor se encuentra en el intervalo $0^\circ \leq i \leq 180^\circ$.
+
+## Ejemplo
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/GOCE.png){height=8cm fig-align="center"}
+
+```text
+1 34602U 09013A   13314.96046236  .14220718  20669-5  50412-4 0  9995
+2 34602 096.5717 344.5256 0009826 296.2811 064.0942 16.58673376272979
+```
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/HUBBLE.png){height=8cm fig-align="center"}
+
+```text
+1 20580U 90037B   26322.51267294  .00007164  00000-0  21531-3 0  9998
+2 20580  28.4713 104.5576 0002512  70.3310 289.7558 15.32348769812254
+```
+
+:::
+
+:::
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/GPS IIF-1.png){height=8cm fig-align="center"}
+
+```text
+1 36585U 10022A   26322.27891877  .00000035  00000-0  00000+0 0  9993
+2 36585  54.2479 202.3595 0117505  56.4294 134.5255  2.00553198120680
+```
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/MOLNIYA 1-32.png){height=8cm fig-align="center"}
+
+```text
+1 08601U 76006A   26320.30353562 -.00000652  00000-0  00000-0 0  9998
+2 08601  63.7079 119.6027 6785691 275.1954  16.8167  2.00070285 84926
+```
+
+:::
+
+:::
+
+
+---
+
+![](/Figures/c3/groundtrack_results_GOCE.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_GOCE.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_HUBBLE.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_HUBBLE.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_GPS IIF-1.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_GPS IIF-1.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_MOLNIYA 1-32.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_MOLNIYA 1-32.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+## Clasificación por altitud orbital
+
+De acuerdo con la altitud respecto a la superficie terrestre $h_{ellip}$, las órbitas se clasifican en diferentes regiones:
+
+- **VLEO (Very Low Earth Orbit):** órbitas terrestres de muy baja altitud, generalmente por debajo de los 450 km.
+- **LEO (Low Earth Orbit):** órbitas terrestres bajas, aproximadamente entre 160 y 2,000 km.
+- **MEO (Medium Earth Orbit):** órbitas terrestres medias, aproximadamente entre 2,000 y 35,786 km.
+- **HEO (Highly Elliptical Orbit):** órbitas terrestres altas, por encima de la región MEO con $e>0.25$.
+
+
+::: {.callout-important .fragment}
+
+## High Earth Orbit (HEO)
+
+Propiamente, la región HEO no se define solo por altitud, sino también por excentricidad. Dependiendo la literatura, las siglas HEO también pueden refererirse a High Earth Orbit, que incluye órbitas con excentricidad baja y alta.
+
+
+:::
+
+::: {.callout-note .fragment}
+### Nota:
+Un ejemplo importante es la órbita **Molniya**, utilizada por satélites de comunicaciones para proporcionar cobertura sobre regiones de altas latitudes.
+
+Sus características principales son:
+
+- Excentricidad elevada: aproximadamente $e=0.7$.
+- Inclinación: aproximadamente $i=63.4^\circ$.
+- Periodo orbital: aproximadamente 12 horas.
+- Apogeo elevado sobre el hemisferio norte.
+- Perigeo relativamente cercano a la Tierra.
+
+Este tipo de órbita permite que el satélite permanezca durante largos periodos sobre regiones de altas latitudes. A los trayectorias con estas características similares se les conoce también como órbitas Molniya.
+:::
+
+## Ejemplo
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/SENTINEL-2A.png){height=8cm fig-align="center"}
+
+```text
+1 40697U 15028A   26322.48030395  .00000200  00000-0  92773-4 0  9993
+2 40697  98.5662  35.0660 0001178  93.3123 266.8195 14.30817965595798
+```
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/TDRS-3.png){height=8cm fig-align="center"}
+
+```text
+1 19548U 88091B   26322.50971778 -.00000286  00000-0  00000+0 0  9998
+2 19548  12.4877 339.9760 0041892 351.8114 220.4747  1.00268806126930
+```
+
+:::
+
+:::
+
+::: {.columns}
+
+::: {.column}
+
+![](/Figures/c3/GOES-19.png){height=8cm fig-align="center"}
+
+```text
+1 60133U 24119A   26322.37517278 -.00000230  00000-0  00000+0 0  9990
+2 60133   0.0026 162.4583 0000844 129.2239 185.6561  1.00271678  8514
+```
+
+:::
+
+:::
+
+---
+
+![](/Figures/c3/groundtrack_results_SENTINEL-2A.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_SENTINEL-2A.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_TDRS-3.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_TDRS-3.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+![](/Figures/c3/groundtrack_results_GOES-19.svg){width=100% fig-align="center"}
+
+---
+
+<div class="vspace-3"></div>
+
+![](/Figures/c3/groundtrack_animation_GOES-19.mp4){width=100% fig-align="center" data-autoplay=true}
+
+---
+
+
+## Clasificación por periodo orbital
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+De acuerdo con la relación entre el periodo orbital del satélite y los movimientos aparentes del Sol o de rotación de la Tierra, podemos distinguir:
+
+- **Órbita heliosíncrona (SSO):** órbita en la que el satélite cruza una determinada región de la superficie terrestre aproximadamente a la misma hora solar local en cada paso. Esto permite mantener condiciones de iluminación similares durante las observaciones.
+
+- **Órbita geosincrónica (GSO):** su periodo orbital coincide con el periodo de rotación sideral de la Tierra, aproximadamente $23$ h $56$ min $4$ s.
+
+- **Órbita geoestacionaria (GEO):** es un caso particular de órbita geosincrónica. Es circular, ecuatorial y prograda, por lo que el satélite permanece aparentemente fijo respecto a un observador sobre la superficie terrestre.
+
+::: {.callout-note .fragment}
+### Nota:
+
+Toda órbita geoestacionaria es geosincrónica, pero no toda órbita geosincrónica es geoestacionaria.
+
+:::
 
 
