@@ -29,16 +29,16 @@
 :::{.small}
 
 :::
+::: {.callout-note .fragment}
+### Nota:
 
+:::
 
 ::: {.fragment style="display:flex;justify-content:center;"}
 
 :::
 
-::: {.callout-note .fragment}
-### Nota:
 
-:::
 
 
 ::: {.callout-tip}

@@ -12435,8 +12435,858 @@ T_{UTC}&amp;=0.26861681\\
 </div>
 </div>
 </section>
-<section id="ejemplo-5" class="slide level2">
-<h2>Ejemplo</h2>
+<section class="slide level2">
+
+<div class="center-vertical">
+<div class="chapter-title">
+<p>Aplicación</p>
+</div>
+<div class="chapter-line">
+
+</div>
+<div class="chapter-subtitle">
+<p>Maniobras orbitales</p>
+<div class="menu-title" style="display:none;">
+▸ Maniobras orbitales
+</div>
+</div>
+</div>
+</section>
+<section id="maniobras-orbitales" class="slide level2">
+<h2>Maniobras orbitales</h2>
+<div class="columns">
+<div class="column">
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<ul>
+<li><p>Una maniobra orbital consiste en modificar el estado de movimiento de un satélite para alcanzar una órbita o trayectoria diferente.</p></li>
+<li><p>Estas modificaciones se realizan mediante la aplicación de fuerzas, generalmente a través de sistemas de propulsión, que producen cambios en el vector velocidad del satélite.</p></li>
+<li><p>El objetivo de una maniobra orbital es modificar la trayectoria del satélite de acuerdo con los requerimientos de una misión.</p></li>
+<li><p>Los efectos de una maniobra orbital se ve reflejado en un cambio en los elementos orbitales que describen la trayectoria del satélite. Por ejemplo, una maniobra puede cambiar la altitud de un satélite, su inclinación o su excentricidad.</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/maneuvers.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="vspace-2">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src=".\Figures/c0/mo_c0_2.mp4" class="quarto-figure quarto-figure-center" style="width:80.0%" data-autoplay="true" controls=""><a href=".\Figures/c0/mo_c0_2.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section id="maniobras-impulsivas" class="slide level2">
+<h2>Maniobras impulsivas</h2>
+<ul>
+<li><p>En la práctica, las maniobras orbitales se realizan mediante la aplicación de fuerzas propulsivas durante un intervalo de tiempo finito. Sin embargo, cuando la duración de la maniobra es pequeña en comparación con la escala temporal del movimiento orbital, su efecto puede aproximarse como un impulso instantáneo, despreciando el desplazamiento del satélite durante su ejecución.</p></li>
+<li><p>Una maniobra impulsiva se modela como un cambio instantáneo en la velocidad del satélite, mientras que su posición permanece constante.</p></li>
+</ul>
+<p><span class="math display">\[
+\vec{r}^{+}=\vec{r}^{-}
+\]</span></p>
+<p><span class="math display">\[
+\vec{v}^{+}=\vec{v}^{-}+\Delta\vec{v}
+\]</span></p>
+<p>donde <span class="math inline">\(\vec{v}^{-}\)</span> y <span class="math inline">\(\vec{v}^{+}\)</span> representan la velocidad del satélite antes y después de la maniobra, respectivamente, y <span class="math inline">\(\Delta\vec{v}\)</span> es el cambio de velocidad aplicado.</p>
+<ul>
+<li>El impulso requerido para realizar la maniobra se determina mediante</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\Delta\vec{v}=\vec{v}^{+}-\vec{v}^{-}}
+\]</span></p>
+<ul>
+<li>El costo de la maniobra se expresa como</li>
+</ul>
+<p><span class="math display">\[
+\boxed{\Delta v=\|\Delta\vec{v}\|}
+\]</span></p>
+</section>
+<section id="maniobras-coplanares-y-no-coplanares" class="slide level2">
+<h2>Maniobras coplanares y no coplanares</h2>
+<p>Las maniobras orbitales pueden clasificarse de acuerdo con su efecto sobre el plano orbital.</p>
+<div class="vspace-3">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="maniobras-coplanares">Maniobras coplanares</h3>
+<p>Se realizan mediante cambios de velocidad contenidos en el plano orbital, permitiendo modificar:</p>
+<ul>
+<li>Semieje mayor, <span class="math inline">\(a\)</span>.</li>
+<li>Excentricidad, <span class="math inline">\(e\)</span>.</li>
+<li>Argumento del periapsis, <span class="math inline">\(\omega\)</span>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="maniobras-no-coplanares">Maniobras no coplanares</h3>
+<p>Se realizan mediante cambios de velocidad fuera del plano orbital, permitiendo modificar <strong>adicionalmente</strong>:</p>
+<ul>
+<li>Inclinación, <span class="math inline">\(i\)</span>.</li>
+<li>Ascensión recta del nodo ascendente, <span class="math inline">\(\Omega\)</span>.</li>
+</ul>
+</div></div>
+<div class="vspace-3">
+
+</div>
+<p>El cambio de velocidad aplicado puede descomponerse en dos componentes, de acuerdo con su dirección respecto al plano orbital.</p>
+<p><span class="math display">\[
+\Delta\vec{v}=\Delta\vec{v}_{\parallel}+\Delta\vec{v}_{\perp}
+\]</span></p>
+<ul>
+<li><p><strong>Componente planar:</strong> se encuentra contenida en el plano orbital y permite modificar el semieje mayor <span class="math inline">\(a\)</span>, la excentricidad <span class="math inline">\(e\)</span> y el argumento del periapsis <span class="math inline">\(\omega\)</span>. Visto desde el marco de referencia perifocal, esta componente se encuentra en el plano <span class="math inline">\(xy\)</span>.</p></li>
+<li><p><strong>Componente normal:</strong> es perpendicular al plano orbital y permite modificar la inclinación <span class="math inline">\(i\)</span> y la ascensión recta del nodo ascendente <span class="math inline">\(\Omega\)</span>. Visto desde el marco de referencia perifocal, esta componente se encuentra en la dirección del eje <span class="math inline">\(z\)</span>.</p></li>
+</ul>
+</section>
+<section id="cambio-en-la-energía-orbital" class="slide level2">
+<h2>Cambio en la energía orbital</h2>
+<ul>
+<li>La energía mecánica específica de una trayectoria está dada por</li>
+</ul>
+<p><span class="math display">\[
+E=\frac{1}{2}v^2-\frac{\mu}{r}
+\]</span></p>
+<ul>
+<li>Si se aplica un impulso instantáneo, la posición permanece constante y la velocidad cambia de acuerdo con</li>
+</ul>
+<p><span class="math display">\[
+\vec{v}^{+}=\vec{v}^{-}+\Delta\vec{v}
+\]</span></p>
+<ul>
+<li>Por tanto, el cambio en la energía mecánica específica es</li>
+</ul>
+<p><span class="math display">\[
+\Delta E=E(\vec{v}^{+})-E(\vec{v}^{-})
+\]</span></p>
+<ul>
+<li>Como el impulso no modifica instantáneamente la posición,</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta E
+&amp;=\frac{1}{2}\|\vec{v}^{+}\|^2-\frac{1}{2}\|\vec{v}^{-}\|^2
+\end{aligned}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Desarrollando el producto escalar,</li>
+</ul>
+<p><span class="math display">\[
+\boxed{
+\Delta E=
+\vec{v}^{-}\cdot\Delta\vec{v}
++\frac{1}{2}\|\Delta\vec{v}\|^2
+}
+\]</span></p>
+<ul>
+<li>Sea <span class="math inline">\(\gamma\)</span> el ángulo entre los vectores <span class="math inline">\(\vec{v}^{-}\)</span> y <span class="math inline">\(\Delta\vec{v}\)</span>. Entonces,</li>
+</ul>
+<p><span class="math display">\[
+\Delta E=
+v^{-}\Delta v\cos\gamma+\frac{1}{2}(\Delta v)^2
+\]</span></p>
+<ul>
+<li>Para una magnitud de impulso <span class="math inline">\(\Delta v\)</span> determinada, el cambio de energía depende de su dirección.</li>
+</ul>
+<p><span class="math display">\[
+\boxed{
+-\!v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+\leq
+\Delta E
+\leq
+v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+}
+\]</span></p>
+<ul>
+<li><strong>Máximo incremento de energía:</strong> <span class="math inline">\(\gamma=0\)</span>, cuando el impulso es paralelo y va en el mismo sentido que la velocidad.</li>
+<li><strong>Mínimo incremento de energía:</strong> <span class="math inline">\(\gamma=\pi\)</span>, cuando el impulso es paralelo y va en sentido contrario a la velocidad.</li>
+</ul>
+<p>Por tanto, <span style="color:red"> <strong>los impulsos tangenciales permiten maximizar o minimizar el cambio de energía</strong> </span> para una magnitud de <span class="math inline">\(\Delta v\)</span> determinada.</p>
+</section>
+<section id="efecto-oberth" class="slide level2">
+<h2>Efecto Oberth</h2>
+<ul>
+<li>El cambio de energía producido por un impulso depende de la velocidad en el punto de la trayectoria donde se aplica.</li>
+</ul>
+<p><span class="math display">\[
+\Delta E=
+v^{-}\Delta v\cos\gamma+\frac{1}{2}(\Delta v)^2
+\]</span></p>
+<ul>
+<li>Para un impulso tangencial en el sentido del movimiento,</li>
+</ul>
+<p><span class="math display">\[
+\Delta E=
+v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+\]</span></p>
+<ul>
+<li><p>De modo que, para una misma magnitud de impulso, <span style="color:red"> <strong>el cambio de energía es mayor cuando la velocidad inicial es mayor</strong>.</span></p></li>
+<li><p>En una órbita elíptica, la velocidad alcanza su máximo en el periapsis, donde</p></li>
+</ul>
+<p><span class="math display">\[
+v_p&gt;v_a
+\]</span></p>
+<ul>
+<li>Por tanto, un impulso tangencial aplicado cerca del periapsis produce un mayor cambio de energía que el mismo impulso aplicado cerca del apoapsis.</li>
+</ul>
+<p>Este fenómeno se conoce como <strong>efecto Oberth</strong>.</p>
+</section>
+<section id="maniobras-coplanares-1" class="slide level2">
+<h2>Maniobras coplanares</h2>
+<div class="columns">
+<div class="column">
+<p>Las maniobras coplanares se clasifican de acuerdo con la dirección del impulso aplicado.</p>
+<ul>
+<li><strong>Tangenciales:</strong> el impulso es colineal al vector velocidad inicial, modificando su magnitud sin cambiar instantáneamente su dirección.</li>
+<li><strong>No tangenciales:</strong> el impulso tiene una componente transversal a la velocidad inicial, modificando tanto su magnitud como su dirección.</li>
+</ul>
+<p>Las maniobras tangenciales se subdividen en:</p>
+<ul>
+<li>Transferencias de Hohmann.</li>
+<li>Transferencias bi-elípticas.</li>
+<li>Transferencias de un impulso.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota:</strong></p>
+</div>
+<div class="callout-content">
+<p>Por otra parte, no existe una clasificación formal para las maniobras no tangenciales (también conocidas como trasferencias generales). Estas se diseñan para casos muy específicios y se abordan numéricamente a partir del problema de Lambert.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/maneuvers.svg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="transferencia-de-hohmann" class="slide level2">
+<h2>Transferencia de Hohmann</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Walter Hohmann (1880–1945) propuso una solución que establece que el cambio de velocidad mínimo entre dos órbitas, bajo ciertas condiciones, puede lograrse mediante dos impulsos tangenciales.</p>
+<p>La transferencia de Hohmann permite realizar un cambio entre dos órbitas coplanares mediante dos impulsos tangenciales y una órbita elíptica de transferencia.</p>
+<ul>
+<li>El primer impulso modifica la órbita inicial, insertando la nave en la órbita elíptica de transferencia. Atendiendo al efecto Oberth, este impulso se aplica en el periapsis de la órbita inicial, donde la velocidad es máxima.</li>
+<li>El segundo impulso, aplicado en el extremo opuesto de la trayectoria (es decir, el apoapsis), permite alcanzar la órbita final.</li>
+</ul>
+<p>La órbita de transferencia es tangente a las órbitas inicial y final en los puntos de aplicación de los impulsos.</p>
+<p><span class="math display">\[
+\boxed{a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+}
+\]</span></p>
+<p>El caso clásico de Hohmann corresponde a una transferencia entre dos órbitas circulares. En este caso, la transferencia puede realizarse en cualquier punto de la trayectoria.</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/hohmann.svg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="transferencia-de-hohmann-1" class="slide level2">
+<h2>Transferencia de Hohmann</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Walter Hohmann (1880–1945) propuso una solución que establece que el cambio de velocidad mínimo entre dos órbitas, bajo ciertas condiciones, puede lograrse mediante dos impulsos tangenciales.</p>
+<p>La transferencia de Hohmann permite realizar un cambio entre dos órbitas coplanares mediante dos impulsos tangenciales y una órbita elíptica de transferencia.</p>
+<ul>
+<li>El primer impulso modifica la órbita inicial, insertando la nave en la órbita elíptica de transferencia. Atendiendo al efecto Oberth, este impulso se aplica en el periapsis de la órbita inicial, donde la velocidad es máxima.</li>
+<li>El segundo impulso, aplicado en el extremo opuesto de la trayectoria (es decir, el apoapsis), permite alcanzar la órbita final.</li>
+</ul>
+<p>La órbita de transferencia es tangente a las órbitas inicial y final en los puntos de aplicación de los impulsos.</p>
+<p><span class="math display">\[
+\boxed{a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+}
+\]</span></p>
+<p>El caso clásico de Hohmann corresponde a una transferencia entre dos órbitas circulares. En este caso, la transferencia puede realizarse en cualquier punto de la trayectoria.</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/hohmann_elip.svg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Considere una orbita inicial <span class="math inline">\(a_i,e_i\)</span> y una órbita final <span class="math inline">\(a_f,e_f\)</span>. La órbita de transferencia es elíptica, con semieje mayor <span class="math display">\[
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+\]</span></p>
+<p>Para el caso de la figura:</p>
+<p><span class="math display">\[
+r_i=a_i(1-e_i), \quad r_f=a_f(1+e_f)
+\]</span></p>
+<p>El primer impulso se aplica en el periapsis de la órbita inicial. Este impulso se calcula como <span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\Delta v_a=v_{\mathrm{trans},i}-v_i \Rightarrow \Delta \vec{v}_a=\Delta v_a\hat{v}_i }
+\]</span></p>
+<p>donde <span class="math inline">\(\hat{v}_i\)</span> es el vector unitario en la dirección de la velocidad inicial (en el periapsis de la órbita inicial).</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/hohmann_elip.svg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>El segundo impulso se aplica en el apoapsis de la órbita de transferencia, donde coincide con el apoapsis de la órbita final. La velocidad en la órbita de transferencia es</p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}
+\]</span></p>
+<p>mientras que la velocidad en la órbita final es</p>
+<p><span class="math display">\[
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+\]</span></p>
+<p>Por tanto, el segundo impulso requerido es</p>
+<p><span class="math display">\[
+\boxed{\Delta v_b=v_f-v_{\mathrm{trans},f} \Rightarrow \Delta \vec{v}_b=\Delta v_b\hat{v}_f }
+\]</span></p>
+<p>donde <span class="math inline">\(\hat{v}_f\)</span> es el vector unitario en la dirección de la velocidad final (en el apoapsis de la órbita final).</p>
+<ul>
+<li>También se posiblre calcular <span class="math inline">\(\tau_{\mathrm{trans}}\)</span> utilizando la tercer ley de Kepler:</li>
+</ul>
+<p><span class="math display">\[
+\tau_{\mathrm{trans}}=\frac{T_{\mathrm{trans}}}{2}=\pi\sqrt{\frac{a_{\mathrm{trans}}^3}{\mu}}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/hohmann_elip.svg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.X:</strong> Transferencia de Hohmann (1/2)</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(a_i\)</span>, <span class="math inline">\(a_f\)</span>, <span class="math inline">\(r_i\)</span>, <span class="math inline">\(r_f\)</span> <span class="math inline">\(\mu\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\Delta \vec{v}_a\)</span>, <span class="math inline">\(\Delta \vec{v}_b\)</span>, <span class="math inline">\(\Delta v_{\mathrm{total}}, \tau_{\mathrm{trans}}\)</span></p>
+</div>
+<div class="small">
+<ol type="1">
+<li>Calcular el semieje mayor de la órbita de transferencia:</li>
+</ol>
+<p><span class="math display">\[
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+\]</span></p>
+<ol start="2" type="1">
+<li>Calcular las velocidades en el periapsis de la órbita inicial:</li>
+</ol>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}, \quad  v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}
+\]</span></p>
+<ol start="3" type="1">
+<li>Calcular el primer impulso:</li>
+</ol>
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i, \quad \Delta \vec{v}_a=\Delta v_a\hat{v}_i
+\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.5:</strong> Transferencia de Hohmann (2/2)</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(a_i\)</span>, <span class="math inline">\(a_f\)</span>, <span class="math inline">\(r_i\)</span>, <span class="math inline">\(r_f\)</span>, <span class="math inline">\(\mu\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\Delta \vec{v}_a\)</span>, <span class="math inline">\(\Delta \vec{v}_b\)</span>, <span class="math inline">\(\Delta v_{\mathrm{total}}, \tau_{\mathrm{trans}}\)</span></p>
+</div>
+<div class="small">
+<ol start="4" type="1">
+<li>Calcular las velocidades en el apoapsis de la órbita de transferencia:</li>
+</ol>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}, \quad  v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+\]</span></p>
+<ol start="5" type="1">
+<li>Calcular el segundo impulso:</li>
+</ol>
+<p><span class="math display">\[
+\Delta v_b=v_f-v_{\mathrm{trans},f}, \quad \Delta \vec{v}_b=\Delta v_b\hat{v}_f
+\]</span></p>
+<ol start="6" type="1">
+<li>Calcular el <span class="math inline">\(\Delta v\)</span> total de la transferencia:</li>
+</ol>
+<p><span class="math display">\[
+\Delta v_{\mathrm{total}}=|\Delta v_a|+|\Delta v_b|
+\]</span></p>
+<ol start="7" type="1">
+<li>Calcular el tiempo de transferencia:</li>
+</ol>
+<p><span class="math display">\[
+\tau_{\mathrm{trans}}=\pi\sqrt{\frac{a_{\mathrm{trans}}^3}{\mu}}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="transferencia-bi-elíptica" class="slide level2">
+<h2>Transferencia bi-elíptica</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>La transferencia bi-elíptica conecta dos órbitas mediante tres impulsos tangenciales y dos órbitas elípticas de transferencia.</p>
+<ul>
+<li>El primer impulso modifica la órbita inicial, elevando su apoapsis hasta una distancia <span class="math inline">\(r_b\)</span>.</li>
+<li>El segundo impulso se aplica en el apoapsis intermedio, modificando el periapsis de la órbita de transferencia.</li>
+<li>El tercer impulso se aplica en el periapsis de la segunda órbita de transferencia, permitiendo alcanzar la órbita final.</li>
+</ul>
+<p>La distancia del apoapsis intermedio <span class="math inline">\(r_b\)</span> es un parámetro de diseño que influye en el <span class="math inline">\(\Delta v\)</span> total de la maniobra.</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src=".\Figures/c3/bieliptical.svg" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (1/3)</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(a_i\)</span>, <span class="math inline">\(a_f\)</span>, <span class="math inline">\(r_i\)</span>, <span class="math inline">\(r_f\)</span> <span class="math inline">\(\mu\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\Delta \vec{v}_a\)</span>, <span class="math inline">\(\Delta \vec{v}_b\)</span>, <span class="math inline">\(\Delta \vec{v}_c\)</span>, <span class="math inline">\(\Delta v_{\mathrm{total}}\)</span>, <span class="math inline">\(\tau_{\mathrm{trans}}\)</span></p>
+</div>
+<div class="small">
+<ol type="1">
+<li><p>Definir el radio del apoapsis intermedio <span class="math inline">\(r_b\)</span>, tal que <span class="math inline">\(r_b&gt;\max(r_i,r_f)\)</span>.</p></li>
+<li><p>Calcular los semiejes mayores de las órbitas de transferencia:</p>
+<p><span class="math display">\[
+a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}, \quad a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}
+\]</span></p></li>
+<li><p>Calcular las velocidades en el punto de aplicación del primer impulso:</p>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (2/3)</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(a_i\)</span>, <span class="math inline">\(a_f\)</span>, <span class="math inline">\(r_i\)</span>, <span class="math inline">\(r_f\)</span> <span class="math inline">\(\mu\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\Delta \vec{v}_a\)</span>, <span class="math inline">\(\Delta \vec{v}_b\)</span>, <span class="math inline">\(\Delta \vec{v}_c\)</span>, <span class="math inline">\(\Delta v_{\mathrm{total}}\)</span>, <span class="math inline">\(\tau_{\mathrm{trans}}\)</span></p>
+</div>
+<div class="small">
+<ol start="4" type="1">
+<li><p>Calcular el primer impulso:</p>
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i, \quad \Delta \vec{v}_a=\Delta v_a\hat{v}_i
+\]</span></p></li>
+<li><p>Calcular las velocidades en el apoapsis intermedio <span class="math inline">\(r_b\)</span> de las órbitas de transferencia:</p>
+<p><span class="math display">\[
+v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}, \qquad
+v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}
+\]</span></p></li>
+<li><p>Calcular el segundo impulso:</p>
+<p><span class="math display">\[
+\Delta v_b=v_{b,2}-v_{b,1}, \quad \Delta \vec{v}_b=\Delta v_b\hat{v}_b
+\]</span></p></li>
+<li><p>Calcular las velocidades en el punto de aplicación del tercer impulso:</p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}, \qquad
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="algorithm">
+<div class="algorithm-title">
+<p><strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (3/3)</p>
+</div>
+<div class="algorithm-io">
+<p><strong>Entrada:</strong> <span class="math inline">\(a_i\)</span>, <span class="math inline">\(a_f\)</span>, <span class="math inline">\(r_i\)</span>, <span class="math inline">\(r_f\)</span> <span class="math inline">\(\mu\)</span> <br> <strong>Salida:</strong> <span class="math inline">\(\Delta \vec{v}_a\)</span>, <span class="math inline">\(\Delta \vec{v}_b\)</span>, <span class="math inline">\(\Delta \vec{v}_c\)</span>, <span class="math inline">\(\Delta v_{\mathrm{total}}\)</span>, <span class="math inline">\(\tau_{\mathrm{trans}}\)</span></p>
+</div>
+<div class="small">
+<ol start="8" type="1">
+<li><p>Calcular el tercer impulso:</p>
+<p><span class="math display">\[
+\Delta v_c=v_f-v_{\mathrm{trans},f}, \quad \Delta \vec{v}_c=\Delta v_c\hat{v}_f
+\]</span></p></li>
+<li><p>Calcular el <span class="math inline">\(\Delta v\)</span> total de la transferencia:</p></li>
+</ol>
+<p><span class="math display">\[
+   \Delta v_{\mathrm{total}}=|\Delta v_a|+|\Delta v_b|+|\Delta v_c|
+   \]</span></p>
+<ol start="10" type="1">
+<li>Calcular el tiempo total de transferencia:</li>
+</ol>
+<p><span class="math display">\[
+   \tau_{\mathrm{trans}}=\pi\sqrt{\frac{a_{\mathrm{trans},1}^{3}}{\mu}}+\pi\sqrt{\frac{a_{\mathrm{trans},2}^{3}}{\mu}}
+   \]</span></p>
+</div>
+</div>
+</section>
+<section id="ejemplo-comparación-de-transferencias-orbitales" class="slide level2">
+<h2>Ejemplo: Comparación de transferencias orbitales</h2>
+<p>Se desea analizar el costo energético y el tiempo de vuelo de las transferencias de Hohmann y bi-elíptica para dos escenarios orbitales.</p>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="caso-1-transferencia-leogeo">Caso 1: Transferencia LEO–GEO</h3>
+<p>Un satélite se encuentra inicialmente en una órbita circular con una altitud de <span class="math inline">\(191.344\ \mathrm{km}\)</span> y se desea transferirlo a una órbita circular de altitud <span class="math inline">\(35\,781.348\ \mathrm{km}\)</span>.</p>
+<p>Para la transferencia bi-elíptica, se considera un apoapsis intermedio de <span class="math inline">\(80R_E=5.1025 \times 10^5\ \mathrm{km}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+r_i &amp;= R_E+h_i\\
+&amp;=6378.137+191.344\\
+&amp;=\boxed{6569.481\ \mathrm{km}
+}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+r_f &amp;= R_E+h_f\\
+&amp;=6378.137+35781.348\\
+&amp;=\boxed{42159.485\ \mathrm{km}
+}
+\end{aligned}
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="caso-2-transferencia-lunar-tli">Caso 2: Transferencia lunar (TLI)</h3>
+<p>Un satélite se encuentra inicialmente en una órbita circular con una altitud de <span class="math inline">\(191.344\ \mathrm{km}\)</span>. Se desea transferirlo a una órbita circular de altitud <span class="math inline">\(376.310\ \mathrm{km}\)</span>.</p>
+<p>Para la transferencia bi-elíptica, se considera un apoapsis intermedio de <span class="math inline">\(80R_E=5.1025 \times 10^5\ \mathrm{km}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+r_i &amp;= R_E+h_i\\
+&amp;=6378.137+191.344\\
+&amp;=\boxed{6569.481\ \mathrm{km}
+}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+r_f &amp;= R_E+h_f\\
+&amp;=6378.137+376310\\
+&amp;=\boxed{382688.137\ \mathrm{km}
+}
+\end{aligned}
+\]</span></p>
+</div></div>
+</section>
+<section id="caso-1-transferencia-de-hohmann" class="slide level2">
+<h2>Caso 1: Transferencia de Hohmann</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}=24364.483\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}} =7789.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=3074.8\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}=10246.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}=1596.6\ \mathrm{m/s}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i=2457.0\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_b=v_f-v_{\mathrm{trans},f}=1478.2\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\Delta v_{\mathrm{total}}=3935.2\ \mathrm{m/s}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\tau_{\mathrm{trans}}=5.2567\ \mathrm{h}}
+\]</span></p>
+</div></div>
+</section>
+<section id="caso-1-transferencia-bi-elíptica" class="slide level2">
+<h2>Caso 1: Transferencia bi-elíptica</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[
+a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}=258410.221\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}=276205.223\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=3074.8\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}=10946.0\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}=140.9\ \mathrm{m/s}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<p><span class="math display">\[
+v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}=345.3\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}=4179.2\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3156.2\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_b=v_{b,2}-v_{b,1}=204.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_c=v_f-v_{\mathrm{trans},f}=-1104.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\Delta v_{\mathrm{total}}=4465.0\ \mathrm{m/s}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\tau_{\mathrm{trans}}=382.2136\ \mathrm{h}}
+\]</span></p>
+</div></div>
+</section>
+<section id="caso-2-transferencia-de-hohmann" class="slide level2">
+<h2>Caso 2: Transferencia de Hohmann</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}=194628.809\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=1020.6\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}=10922.5\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}=187.5\ \mathrm{m/s}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3133.1\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_b=v_f-v_{\mathrm{trans},f}=833.1\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\Delta v_{\mathrm{total}}=3966.2\ \mathrm{m/s}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\tau_{\mathrm{trans}}=118.6832\ \mathrm{h}}
+\]</span></p>
+</div></div>
+</section>
+<section id="caso-2-transferencia-bi-elíptica" class="slide level2">
+<h2>Caso 2: Transferencia bi-elíptica</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[
+a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}=258410.221\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}=446469.549\ \mathrm{km}
+\]</span></p>
+<p><span class="math display">\[
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=1020.6\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}=10946.0\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}=140.9248\ \mathrm{m/s}
+\]</span></p>
+</div><div class="column" style="width:45%;">
+<p><span class="math display">\[
+v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}=818.2828\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}=1091.0\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3156.2\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_b=v_{b,2}-v_{b,1}=677.4\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\Delta v_c=v_f-v_{\mathrm{trans},f}=-70.5\ \mathrm{m/s}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\Delta v_{\mathrm{total}}=3904.1\ \mathrm{m/s}}
+\]</span></p>
+<p><span class="math display">\[
+\boxed{\tau_{\mathrm{trans}}=593.9200\ \mathrm{h}}
+\]</span></p>
+</div></div>
+</section>
+<section id="resumen-de-resultados" class="slide level2">
+<h2>Resumen de resultados</h2>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Maniobra</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_a\)</span> [m/s]</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_b\)</span> [m/s]</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_c\)</span> [m/s]</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_{\mathrm{total}}\)</span> [m/s]</th>
+<th style="text-align: right;"><span class="math inline">\(\tau_{\mathrm{trans}}\)</span> [h]</th>
+<th style="text-align: right;"><span class="math inline">\(\tau_{\mathrm{trans}}\)</span> [días]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hohmann LEO–GEO</td>
+<td style="text-align: right;">2457.0376</td>
+<td style="text-align: right;">1478.1866</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">3935.2242</td>
+<td style="text-align: right;">5.2567</td>
+<td style="text-align: right;">0.2190</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bi-elíptica LEO–GEO</td>
+<td style="text-align: right;">3156.2332</td>
+<td style="text-align: right;">204.3847</td>
+<td style="text-align: right;">−1104.4081</td>
+<td style="text-align: right;">4465.0261</td>
+<td style="text-align: right;">382.2136</td>
+<td style="text-align: right;">15.9256</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hohmann TLI</td>
+<td style="text-align: right;">3133.1177</td>
+<td style="text-align: right;">833.0754</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">3966.1931</td>
+<td style="text-align: right;">118.6832</td>
+<td style="text-align: right;">4.9451</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bi-elíptica TLI</td>
+<td style="text-align: right;">3156.2332</td>
+<td style="text-align: right;">677.3580</td>
+<td style="text-align: right;">−70.4659</td>
+<td style="text-align: right;">3904.0572</td>
+<td style="text-align: right;">593.9200</td>
+<td style="text-align: right;">24.7470</td>
+</tr>
+</tbody>
+</table>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Escenario</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_{\mathrm{total}}\)</span> Hohmann [m/s]</th>
+<th style="text-align: right;"><span class="math inline">\(\Delta v_{\mathrm{total}}\)</span> Bi-elíptica [m/s]</th>
+<th style="text-align: right;">Ahorro bi-elíptica [m/s]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LEO–GEO</td>
+<td style="text-align: right;">3935.2242</td>
+<td style="text-align: right;">4465.0261</td>
+<td style="text-align: right;">−529.8019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TLI</td>
+<td style="text-align: right;">3966.1931</td>
+<td style="text-align: right;">3904.0572</td>
+<td style="text-align: right;"><span style="color:green"> +62.1359 </span></td>
+</tr>
+</tbody>
+</table>
+<div class="vspace-3">
+
+</div>
+<div class="vspace-3">
+
+</div>
+<div class="fragment" style="display:flex;justify-content:center;">
+<div class="large">
+<p><span style="color:red"> ¿En qué escenario es más eficiente la transferencia bi-elíptica? </span></p>
+</div>
+</div>
 
 </section>
 

@@ -3548,3 +3548,1008 @@ Toda órbita geoestacionaria es geosincrónica, pero no toda órbita geosincrón
 :::
 
 
+
+---
+
+::: {.center-vertical}
+
+::: {.chapter-title}
+
+Aplicación 
+
+:::
+
+<div class="chapter-line"></div>
+
+::: {.chapter-subtitle}
+
+Maniobras orbitales
+
+<div class="menu-title" style="display:none;"> ▸ Maniobras orbitales </div>
+:::
+
+:::
+
+## Maniobras orbitales
+
+
+::: {.columns}
+
+::: {.column}
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+- Una maniobra orbital consiste en modificar el estado de movimiento de un satélite para alcanzar una órbita o trayectoria diferente.
+
+- Estas modificaciones se realizan mediante la aplicación de fuerzas, generalmente a través de sistemas de propulsión, que producen cambios en el vector velocidad del satélite.
+
+- El objetivo de una maniobra orbital es modificar la trayectoria del satélite de acuerdo con los requerimientos de una misión.
+
+- Los efectos de una maniobra orbital se ve reflejado en un cambio en los elementos orbitales que describen la trayectoria del satélite. Por ejemplo, una maniobra puede cambiar la altitud de un satélite, su inclinación o su excentricidad. 
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/maneuvers.svg){width=80% fig-align="center"}
+
+:::
+
+:::
+
+---
+
+<div class="vspace-2"></div>
+
+![](/Figures/c0/mo_c0_2.mp4){width=80% fig-align="center" data-autoplay=true}
+
+
+
+
+## Maniobras impulsivas
+
+- En la práctica, las maniobras orbitales se realizan mediante la aplicación de fuerzas propulsivas durante un intervalo de tiempo finito. Sin embargo, cuando la duración de la maniobra es pequeña en comparación con la escala temporal del movimiento orbital, su efecto puede aproximarse como un impulso instantáneo, despreciando el desplazamiento del satélite durante su ejecución.
+
+
+- Una maniobra impulsiva se modela como un cambio instantáneo en la velocidad del satélite, mientras que su posición permanece constante.
+
+$$
+\vec{r}^{+}=\vec{r}^{-}
+$$
+
+$$
+\vec{v}^{+}=\vec{v}^{-}+\Delta\vec{v}
+$$
+
+donde $\vec{v}^{-}$ y $\vec{v}^{+}$ representan la velocidad del satélite antes y después de la maniobra, respectivamente, y $\Delta\vec{v}$ es el cambio de velocidad aplicado.
+
+- El impulso requerido para realizar la maniobra se determina mediante
+
+$$
+\boxed{\Delta\vec{v}=\vec{v}^{+}-\vec{v}^{-}}
+$$
+
+- El costo de la maniobra se expresa como
+
+$$
+\boxed{\Delta v=\|\Delta\vec{v}\|}
+$$
+
+
+## Maniobras coplanares y no coplanares
+
+Las maniobras orbitales pueden clasificarse de acuerdo con su efecto sobre el plano orbital.
+
+<div class="vspace-3"></div>
+
+::: {.columns}
+::: {.column width="50%"}
+### Maniobras coplanares
+
+Se realizan mediante cambios de velocidad contenidos en el plano orbital, permitiendo modificar:
+
+- Semieje mayor, $a$.
+- Excentricidad, $e$.
+- Argumento del periapsis, $\omega$.
+:::
+
+::: {.column width="50%"}
+### Maniobras no coplanares
+
+Se realizan mediante cambios de velocidad fuera del plano orbital, permitiendo modificar **adicionalmente**:
+
+- Inclinación, $i$.
+- Ascensión recta del nodo ascendente, $\Omega$.
+
+:::
+:::
+
+<div class="vspace-3"></div>
+
+El cambio de velocidad aplicado puede descomponerse en dos componentes, de acuerdo con su dirección respecto al plano orbital.
+
+$$
+\Delta\vec{v}=\Delta\vec{v}_{\parallel}+\Delta\vec{v}_{\perp}
+$$
+
+- **Componente planar:** se encuentra contenida en el plano orbital y permite modificar el semieje mayor $a$, la excentricidad $e$ y el argumento del periapsis $\omega$. Visto desde el marco de referencia perifocal, esta componente se encuentra en el plano $xy$.
+
+- **Componente normal:** es perpendicular al plano orbital y permite modificar la inclinación $i$ y la ascensión recta del nodo ascendente $\Omega$. Visto desde el marco de referencia perifocal, esta componente se encuentra en la dirección del eje $z$.
+
+## Cambio en la energía orbital
+
+- La energía mecánica específica de una trayectoria está dada por
+
+$$
+E=\frac{1}{2}v^2-\frac{\mu}{r}
+$$
+
+- Si se aplica un impulso instantáneo, la posición permanece constante y la velocidad cambia de acuerdo con
+
+$$
+\vec{v}^{+}=\vec{v}^{-}+\Delta\vec{v}
+$$
+
+- Por tanto, el cambio en la energía mecánica específica es
+
+$$
+\Delta E=E(\vec{v}^{+})-E(\vec{v}^{-})
+$$
+
+- Como el impulso no modifica instantáneamente la posición,
+
+$$
+\begin{aligned}
+\Delta E
+&=\frac{1}{2}\|\vec{v}^{+}\|^2-\frac{1}{2}\|\vec{v}^{-}\|^2
+\end{aligned}
+$$
+
+
+
+
+---
+
+- Desarrollando el producto escalar,
+
+$$
+\boxed{
+\Delta E=
+\vec{v}^{-}\cdot\Delta\vec{v}
++\frac{1}{2}\|\Delta\vec{v}\|^2
+}
+$$
+
+- Sea $\gamma$ el ángulo entre los vectores $\vec{v}^{-}$ y $\Delta\vec{v}$. Entonces,
+
+$$
+\Delta E=
+v^{-}\Delta v\cos\gamma+\frac{1}{2}(\Delta v)^2
+$$
+
+- Para una magnitud de impulso $\Delta v$ determinada, el cambio de energía depende de su dirección.
+
+$$
+\boxed{
+-\!v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+\leq
+\Delta E
+\leq
+v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+}
+$$
+
+  - **Máximo incremento de energía:** $\gamma=0$, cuando el impulso es paralelo y va en el mismo sentido que la velocidad.
+  - **Mínimo incremento de energía:** $\gamma=\pi$, cuando el impulso es paralelo y va en sentido contrario a la velocidad.
+
+
+Por tanto, <span style="color:red"> **los impulsos tangenciales permiten maximizar o minimizar el cambio de energía** </span> para una magnitud de $\Delta v$ determinada.
+
+
+## Efecto Oberth
+
+- El cambio de energía producido por un impulso depende de la velocidad en el punto de la trayectoria donde se aplica.
+
+$$
+\Delta E=
+v^{-}\Delta v\cos\gamma+\frac{1}{2}(\Delta v)^2
+$$
+
+- Para un impulso tangencial en el sentido del movimiento,
+
+$$
+\Delta E=
+v^{-}\Delta v+\frac{1}{2}(\Delta v)^2
+$$
+
+- De modo que, para una misma magnitud de impulso, <span style="color:red"> **el cambio de energía es mayor cuando la velocidad inicial es mayor**.</span>
+
+- En una órbita elíptica, la velocidad alcanza su máximo en el periapsis, donde
+
+$$
+v_p>v_a
+$$
+
+- Por tanto, un impulso tangencial aplicado cerca del periapsis produce un mayor cambio de energía que el mismo impulso aplicado cerca del apoapsis.
+
+ Este fenómeno se conoce como **efecto Oberth**.
+
+
+## Maniobras coplanares
+
+
+::: {.columns}
+
+::: {.column}
+
+Las maniobras coplanares se clasifican de acuerdo con la dirección del impulso aplicado.
+
+- **Tangenciales:** el impulso es colineal al vector velocidad inicial, modificando su magnitud sin cambiar instantáneamente su dirección.
+- **No tangenciales:** el impulso tiene una componente transversal a la velocidad inicial, modificando tanto su magnitud como su dirección.
+
+Las maniobras tangenciales se subdividen en:
+
+- Transferencias de Hohmann.
+- Transferencias bi-elípticas.
+- Transferencias de un impulso.
+
+::: {.callout-note .fragment}
+### Nota:
+
+Por otra parte, no existe una clasificación formal para las maniobras no tangenciales (también conocidas como trasferencias generales). Estas se diseñan para casos muy específicios y se abordan numéricamente a partir del problema de Lambert.
+
+:::
+
+
+:::
+
+::: {.column}
+
+![](/Figures/c3/maneuvers.svg){width=80% fig-align="center"}
+
+:::
+
+:::
+
+## Transferencia de Hohmann
+
+
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+Walter Hohmann (1880–1945) propuso una solución que establece que el cambio de velocidad mínimo entre dos órbitas, bajo ciertas condiciones, puede lograrse mediante dos impulsos tangenciales.
+
+La transferencia de Hohmann permite realizar un cambio entre dos órbitas coplanares mediante dos impulsos tangenciales y una órbita elíptica de transferencia.
+
+
+- El primer impulso modifica la órbita inicial, insertando la nave en la órbita elíptica de transferencia. Atendiendo al efecto Oberth, este impulso se aplica en el periapsis de la órbita inicial, donde la velocidad es máxima.
+- El segundo impulso, aplicado en el extremo opuesto de la trayectoria (es decir, el apoapsis), permite alcanzar la órbita final.
+
+La órbita de transferencia es tangente a las órbitas inicial y final en los puntos de aplicación de los impulsos.
+
+$$
+\boxed{a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+}
+$$
+
+El caso clásico de Hohmann corresponde a una transferencia entre dos órbitas circulares. En este caso, la transferencia puede realizarse en cualquier punto de la trayectoria. 
+:::
+
+::: {.column width="45%"}
+![](/Figures/c3/hohmann.svg){fig-align="center" width="100%"}
+:::
+
+:::
+
+
+## Transferencia de Hohmann
+
+
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+Walter Hohmann (1880–1945) propuso una solución que establece que el cambio de velocidad mínimo entre dos órbitas, bajo ciertas condiciones, puede lograrse mediante dos impulsos tangenciales.
+
+La transferencia de Hohmann permite realizar un cambio entre dos órbitas coplanares mediante dos impulsos tangenciales y una órbita elíptica de transferencia.
+
+
+- El primer impulso modifica la órbita inicial, insertando la nave en la órbita elíptica de transferencia. Atendiendo al efecto Oberth, este impulso se aplica en el periapsis de la órbita inicial, donde la velocidad es máxima.
+- El segundo impulso, aplicado en el extremo opuesto de la trayectoria (es decir, el apoapsis), permite alcanzar la órbita final.
+
+La órbita de transferencia es tangente a las órbitas inicial y final en los puntos de aplicación de los impulsos.
+
+$$
+\boxed{a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+}
+$$
+
+El caso clásico de Hohmann corresponde a una transferencia entre dos órbitas circulares. En este caso, la transferencia puede realizarse en cualquier punto de la trayectoria. 
+
+:::
+
+::: {.column width="45%"}
+![](/Figures/c3/hohmann_elip.svg){fig-align="center" width="90%"}
+:::
+
+:::
+
+---
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+Considere una orbita inicial $a_i,e_i$ y una órbita final $a_f,e_f$. La órbita de transferencia es elíptica, con semieje mayor
+$$
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+$$
+
+Para el caso de la figura: 
+
+$$
+r_i=a_i(1-e_i), \quad r_f=a_f(1+e_f)
+$$
+
+El primer impulso se aplica en el periapsis de la órbita inicial. Este impulso se calcula como
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}
+$$
+
+$$
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}
+$$
+
+Por tanto,
+
+$$
+\boxed{\Delta v_a=v_{\mathrm{trans},i}-v_i \Rightarrow \Delta \vec{v}_a=\Delta v_a\hat{v}_i } 
+$$
+
+donde $\hat{v}_i$ es el vector unitario en la dirección de la velocidad inicial (en el periapsis de la órbita inicial).
+
+:::
+
+::: {.column width="45%"}
+![](/Figures/c3/hohmann_elip.svg){fig-align="center" width="90%"}
+:::
+
+:::
+
+
+---
+
+
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+El segundo impulso se aplica en el apoapsis de la órbita de transferencia, donde coincide con el apoapsis de la órbita final. La velocidad en la órbita de transferencia es
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}
+$$
+
+mientras que la velocidad en la órbita final es
+
+$$
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+$$
+
+Por tanto, el segundo impulso requerido es
+
+$$
+\boxed{\Delta v_b=v_f-v_{\mathrm{trans},f} \Rightarrow \Delta \vec{v}_b=\Delta v_b\hat{v}_f }
+$$
+
+donde $\hat{v}_f$ es el vector unitario en la dirección de la velocidad final (en el apoapsis de la órbita final).
+
+- También se posiblre calcular $\tau_{\mathrm{trans}}$ utilizando la tercer ley de Kepler:
+
+$$
+\tau_{\mathrm{trans}}=\frac{T_{\mathrm{trans}}}{2}=\pi\sqrt{\frac{a_{\mathrm{trans}}^3}{\mu}}
+$$
+
+:::
+
+::: {.column width="45%"}
+![](/Figures/c3/hohmann_elip.svg){fig-align="center" width="90%"}
+:::
+
+:::
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">
+<strong>Algoritmo 3.X:</strong> Transferencia de Hohmann (1/2)
+</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $a_i$, $a_f$, $r_i$, $r_f$ $\mu$ <br>
+<strong>Salida:</strong> $\Delta \vec{v}_a$, $\Delta \vec{v}_b$, $\Delta v_{\mathrm{total}}, \tau_{\mathrm{trans}}$
+</div>
+
+:::{.small}
+
+1. Calcular el semieje mayor de la órbita de transferencia:
+
+$$
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}
+$$
+
+2. Calcular las velocidades en el periapsis de la órbita inicial:
+
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}, \quad  v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}
+$$
+
+3. Calcular el primer impulso:
+
+$$
+\Delta v_a=v_{\mathrm{trans},i}-v_i, \quad \Delta \vec{v}_a=\Delta v_a\hat{v}_i
+$$
+
+:::
+
+:::
+
+
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">
+<strong>Algoritmo 3.5:</strong> Transferencia de Hohmann (2/2)
+</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $a_i$, $a_f$, $r_i$, $r_f$, $\mu$ <br>
+<strong>Salida:</strong> $\Delta \vec{v}_a$, $\Delta \vec{v}_b$, $\Delta v_{\mathrm{total}}, \tau_{\mathrm{trans}}$
+</div>
+
+:::{.small}
+
+
+4. Calcular las velocidades en el apoapsis de la órbita de transferencia:
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}, \quad  v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+$$
+
+5. Calcular el segundo impulso:
+
+$$
+\Delta v_b=v_f-v_{\mathrm{trans},f}, \quad \Delta \vec{v}_b=\Delta v_b\hat{v}_f
+$$
+
+6. Calcular el $\Delta v$ total de la transferencia:
+
+$$
+\Delta v_{\mathrm{total}}=|\Delta v_a|+|\Delta v_b|
+$$
+
+7. Calcular el tiempo de transferencia:
+
+$$
+\tau_{\mathrm{trans}}=\pi\sqrt{\frac{a_{\mathrm{trans}}^3}{\mu}}
+$$
+
+:::
+
+:::
+
+
+---
+
+## Transferencia bi-elíptica
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+La transferencia bi-elíptica conecta dos órbitas mediante tres impulsos tangenciales y dos órbitas elípticas de transferencia.
+
+- El primer impulso modifica la órbita inicial, elevando su apoapsis hasta una distancia $r_b$.
+- El segundo impulso se aplica en el apoapsis intermedio, modificando el periapsis de la órbita de transferencia.
+- El tercer impulso se aplica en el periapsis de la segunda órbita de transferencia, permitiendo alcanzar la órbita final.
+
+La distancia del apoapsis intermedio $r_b$ es un parámetro de diseño que influye en el $\Delta v$ total de la maniobra.
+
+:::
+
+::: {.column width="45%"}
+
+![](/Figures/c3/bieliptical.svg){fig-align="center" width="90%"}
+
+:::
+
+:::
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">
+<strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (1/3)
+</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $a_i$, $a_f$, $r_i$, $r_f$ $\mu$ <br>
+<strong>Salida:</strong> $\Delta \vec{v}_a$, $\Delta \vec{v}_b$, $\Delta \vec{v}_c$, $\Delta v_{\mathrm{total}}$, $\tau_{\mathrm{trans}}$
+</div>
+
+:::{.small}
+
+
+
+1. Definir el radio del apoapsis intermedio $r_b$, tal que $r_b>\max(r_i,r_f)$.
+
+2. Calcular los semiejes mayores de las órbitas de transferencia:
+
+   $$
+   a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}, \quad a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}
+   $$
+
+3. Calcular las velocidades en el punto de aplicación del primer impulso:
+
+   $$
+   v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}
+   $$
+
+   $$
+   v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}
+   $$
+
+:::
+
+:::
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">
+<strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (2/3)
+</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $a_i$, $a_f$, $r_i$, $r_f$ $\mu$ <br>
+<strong>Salida:</strong> $\Delta \vec{v}_a$, $\Delta \vec{v}_b$, $\Delta \vec{v}_c$, $\Delta v_{\mathrm{total}}$, $\tau_{\mathrm{trans}}$
+</div>
+
+:::{.small}
+
+
+
+4. Calcular el primer impulso:
+
+   $$
+   \Delta v_a=v_{\mathrm{trans},i}-v_i, \quad \Delta \vec{v}_a=\Delta v_a\hat{v}_i
+   $$
+
+
+5. Calcular las velocidades en el apoapsis intermedio $r_b$ de las órbitas de transferencia:
+
+   $$
+   v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}, \qquad 
+   v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}
+   $$
+
+6. Calcular el segundo impulso:
+
+   $$
+   \Delta v_b=v_{b,2}-v_{b,1}, \quad \Delta \vec{v}_b=\Delta v_b\hat{v}_b
+   $$
+
+7. Calcular las velocidades en el punto de aplicación del tercer impulso:
+
+   $$
+   v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}, \qquad
+   v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}
+   $$
+
+:::
+
+:::
+
+
+---
+
+::: {.algorithm}
+
+<div class="algorithm-title">
+<strong>Algoritmo 3.6:</strong> Transferencia bi-elíptica (3/3)
+</div>
+
+<div class="algorithm-io">
+<strong>Entrada:</strong> $a_i$, $a_f$, $r_i$, $r_f$ $\mu$ <br>
+<strong>Salida:</strong> $\Delta \vec{v}_a$, $\Delta \vec{v}_b$, $\Delta \vec{v}_c$, $\Delta v_{\mathrm{total}}$, $\tau_{\mathrm{trans}}$
+</div>
+
+:::{.small}
+
+
+
+8. Calcular el tercer impulso:
+
+   $$
+   \Delta v_c=v_f-v_{\mathrm{trans},f}, \quad \Delta \vec{v}_c=\Delta v_c\hat{v}_f
+   $$
+
+9.   Calcular el $\Delta v$ total de la transferencia:
+
+   $$
+   \Delta v_{\mathrm{total}}=|\Delta v_a|+|\Delta v_b|+|\Delta v_c|
+   $$
+
+10.    Calcular el tiempo total de transferencia:
+
+   $$
+   \tau_{\mathrm{trans}}=\pi\sqrt{\frac{a_{\mathrm{trans},1}^{3}}{\mu}}+\pi\sqrt{\frac{a_{\mathrm{trans},2}^{3}}{\mu}}
+   $$
+
+:::
+
+:::
+
+
+---
+
+## Ejemplo: Comparación de transferencias orbitales
+
+Se desea analizar el costo energético y el tiempo de vuelo de las transferencias de Hohmann y bi-elíptica para dos escenarios orbitales.
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+
+### Caso 1: Transferencia LEO–GEO
+
+Un satélite se encuentra inicialmente en una órbita circular con una altitud de $191.344\ \mathrm{km}$ y se desea transferirlo a una órbita circular de altitud $35\,781.348\ \mathrm{km}$.
+
+Para la transferencia bi-elíptica, se considera un apoapsis intermedio de $80R_E=5.1025 \times 10^5\ \mathrm{km}$.
+
+
+$$
+\begin{aligned}
+r_i &= R_E+h_i\\
+&=6378.137+191.344\\
+&=\boxed{6569.481\ \mathrm{km}
+}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+r_f &= R_E+h_f\\
+&=6378.137+35781.348\\
+&=\boxed{42159.485\ \mathrm{km}
+}
+\end{aligned}
+$$
+
+:::
+
+::: {.column width="50%"}
+
+### Caso 2: Transferencia lunar (TLI)
+
+Un satélite se encuentra inicialmente en una órbita circular con una altitud de $191.344\ \mathrm{km}$. Se desea transferirlo a una órbita circular de altitud $376.310\ \mathrm{km}$.
+
+Para la transferencia bi-elíptica, se considera un apoapsis intermedio de $80R_E=5.1025 \times 10^5\ \mathrm{km}$.
+
+$$
+\begin{aligned}
+r_i &= R_E+h_i\\
+&=6378.137+191.344\\
+&=\boxed{6569.481\ \mathrm{km}
+}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+r_f &= R_E+h_f\\
+&=6378.137+376310\\
+&=\boxed{382688.137\ \mathrm{km}
+}
+\end{aligned}
+$$
+
+:::
+
+:::
+
+
+## Caso 1: Transferencia de Hohmann
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+$$
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}=24364.483\ \mathrm{km}
+$$
+
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}} =7789.4\ \mathrm{m/s}
+$$
+
+$$
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=3074.8\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}=10246.4\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}=1596.6\ \mathrm{m/s}
+$$
+
+:::
+
+::: {.column width="45%"}
+
+$$
+\Delta v_a=v_{\mathrm{trans},i}-v_i=2457.0\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_b=v_f-v_{\mathrm{trans},f}=1478.2\ \mathrm{m/s}
+$$
+
+$$
+\boxed{\Delta v_{\mathrm{total}}=3935.2\ \mathrm{m/s}}
+$$
+
+$$
+\boxed{\tau_{\mathrm{trans}}=5.2567\ \mathrm{h}}
+$$
+
+:::
+
+:::
+
+
+## Caso 1: Transferencia bi-elíptica
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+$$
+a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}=258410.221\ \mathrm{km}
+$$
+
+$$
+a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}=276205.223\ \mathrm{km}
+$$
+
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+$$
+
+$$
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=3074.8\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}=10946.0\ \mathrm{m/s}
+$$
+
+$$
+v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}=140.9\ \mathrm{m/s}
+$$
+
+:::
+
+::: {.column width="45%"}
+
+$$
+v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}=345.3\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}=4179.2\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3156.2\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_b=v_{b,2}-v_{b,1}=204.4\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_c=v_f-v_{\mathrm{trans},f}=-1104.4\ \mathrm{m/s}
+$$
+
+$$
+\boxed{\Delta v_{\mathrm{total}}=4465.0\ \mathrm{m/s}}
+$$
+
+$$
+\boxed{\tau_{\mathrm{trans}}=382.2136\ \mathrm{h}}
+$$
+
+:::
+
+:::
+
+
+## Caso 2: Transferencia de Hohmann
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+$$
+a_{\mathrm{trans}}=\frac{r_i+r_f}{2}=194628.809\ \mathrm{km}
+$$
+
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+$$
+
+$$
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=1020.6\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans}}}\right)}=10922.5\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans}}}\right)}=187.5\ \mathrm{m/s}
+$$
+
+:::
+
+::: {.column width="45%"}
+
+$$
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3133.1\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_b=v_f-v_{\mathrm{trans},f}=833.1\ \mathrm{m/s}
+$$
+
+$$
+\boxed{\Delta v_{\mathrm{total}}=3966.2\ \mathrm{m/s}}
+$$
+
+$$
+\boxed{\tau_{\mathrm{trans}}=118.6832\ \mathrm{h}}
+$$
+
+:::
+
+:::
+
+
+## Caso 2: Transferencia bi-elíptica
+
+::: {.columns}
+
+::: {.column width="55%"}
+
+$$
+a_{\mathrm{trans},1}=\frac{r_i+r_b}{2}=258410.221\ \mathrm{km}
+$$
+
+$$
+a_{\mathrm{trans},2}=\frac{r_b+r_f}{2}=446469.549\ \mathrm{km}
+$$
+
+$$
+v_i=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_i}\right)}=\sqrt{\frac{\mu}{r_i}}=7789.4\ \mathrm{m/s}
+$$
+
+$$
+v_f=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_f}\right)}=\sqrt{\frac{\mu}{r_f}}=1020.6\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},i}=\sqrt{\mu\left(\frac{2}{r_i}-\frac{1}{a_{\mathrm{trans},1}}\right)}=10946.0\ \mathrm{m/s}
+$$
+
+$$
+v_{b,1}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},1}}\right)}=140.9248\ \mathrm{m/s}
+$$
+
+
+:::
+
+::: {.column width="45%"}
+
+$$
+v_{b,2}=\sqrt{\mu\left(\frac{2}{r_b}-\frac{1}{a_{\mathrm{trans},2}}\right)}=818.2828\ \mathrm{m/s}
+$$
+
+$$
+v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}\right)}=1091.0\ \mathrm{m/s}
+$$
+
+
+$$
+\Delta v_a=v_{\mathrm{trans},i}-v_i=3156.2\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_b=v_{b,2}-v_{b,1}=677.4\ \mathrm{m/s}
+$$
+
+$$
+\Delta v_c=v_f-v_{\mathrm{trans},f}=-70.5\ \mathrm{m/s}
+$$
+
+$$
+\boxed{\Delta v_{\mathrm{total}}=3904.1\ \mathrm{m/s}}
+$$
+
+$$
+\boxed{\tau_{\mathrm{trans}}=593.9200\ \mathrm{h}}
+$$
+
+:::
+
+:::
+
+
+
+## Resumen de resultados
+
+
+| Maniobra | $\Delta v_a$ [m/s] | $\Delta v_b$ [m/s] | $\Delta v_c$ [m/s] | $\Delta v_{\mathrm{total}}$ [m/s] | $\tau_{\mathrm{trans}}$ [h] | $\tau_{\mathrm{trans}}$ [días] |
+|:---|---:|---:|---:|---:|---:|---:|
+| Hohmann LEO–GEO | 2457.0376 | 1478.1866 | — | 3935.2242 | 5.2567 | 0.2190 |
+| Bi-elíptica LEO–GEO | 3156.2332 | 204.3847 | −1104.4081 | 4465.0261 | 382.2136 | 15.9256 |
+| Hohmann TLI | 3133.1177 | 833.0754 | — | 3966.1931 | 118.6832 | 4.9451 |
+| Bi-elíptica TLI | 3156.2332 | 677.3580 | −70.4659 | 3904.0572 | 593.9200 | 24.7470 |
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+| Escenario |  $\Delta v_{\mathrm{total}}$ Hohmann [m/s] | $\Delta v_{\mathrm{total}}$ Bi-elíptica [m/s] | Ahorro bi-elíptica [m/s] |
+|:---|---:|---:|---:|
+| LEO–GEO | 3935.2242 | 4465.0261 | −529.8019 |
+| TLI | 3966.1931 | 3904.0572 |  <span style="color:green"> +62.1359 </span> |
+
+<div class="vspace-3"></div>
+<div class="vspace-3"></div>
+
+
+::: {.fragment style="display:flex;justify-content:center;"}
+
+:::{.large}
+
+<span style="color:red"> ¿En qué escenario es más eficiente la transferencia bi-elíptica?  </span>
+
+:::
+
+:::
+
+
+
+
+
+
+
+
+
+
