@@ -4546,10 +4546,106 @@ $$
 
 
 
+## Límites críticos
+
+- La respuesta a la pregunta anterior se puede obtener mediante el análisis de los límites críticos de las transferencias de Hohmann y bi-elíptica (Methods of Astrodynamics. P. R. Escobal, 1968). Este analisis se realiza considerando como órbitas circulares a las órbitas inicial y final, y definiendo la relación entre los radios orbitales como  
 
 
+$$
+R=\frac{r_f}{r_i}, \qquad R^*=\frac{r_b}{r_i}
+$$
 
 
+- Se puede derivar una relación entre el costo total de la transferencia de Hohmann y la velocidad inicial del satélite:
 
+$$
+v_i=\sqrt{\frac{\mu}{r_i}}
+$$
+
+Dicha relación es
+
+$$
+\frac{\Delta v_{\mathrm{Hohmann}}}{v_{\mathrm{i}}}
+=\left(1-\frac{1}{R}\right)\sqrt{\frac{2R}{1+R}}+\frac{1}{\sqrt{R}}-1
+$$
+
+- Por otro lado, también se puede derivar una relación entre el costo total de la transferencia bi-elíptica y la velocidad inicial del satélite:
+
+$$
+\begin{aligned}
+\frac{\Delta v_{\mathrm{bi\text{-}elliptic}}}{v_{\mathrm{i}}}
+={}&\left|\sqrt{\frac{2R^*}{1+R^*}}-1\right|+\sqrt{\frac{2}{R^*}}\left|\sqrt{\frac{1}{1+\frac{R^*}{R}}}-\sqrt{\frac{1}{1+R^*}}\right|+\left|\sqrt{\frac{1}{R}}\left(\sqrt{\frac{2R^*}{R+R^*}}-1\right)\right|
+\end{aligned}
+$$
+
+---
+
+Considerando una velocidad inicial 
+$$
+v_{\mathrm{i}}=\sqrt{\frac{\mu}{R_\oplus}}=7.905\ \mathrm{km/s}
+$$
+
+![](/Figures/c3/Hohmann_BiElliptic.svg){width=100% fig-align="center"}
+
+## ¿Cuándo conviene cada transferencia?
+
+- La elección de la maniobra depende de la relación entre el radio de la órbita final y el inicial.
+
+  - **$0<R<11.94$ — Transferencia de Hohmann:** 
+
+    Requiere un menor $\Delta v$ que cualquier transferencia bi-elíptica.
+
+  - **$11.94<R<15.58$ — Región intermedia:** 
+
+    La eficiencia depende de la selección del radio de la órbita intermedia $r_b$. Una transferencia bi-elíptica puede resultar más eficiente, pero no necesariamente.
+
+  - **$R>15.58$ — Transferencia bi-elíptica:** 
+    Existe una familia de trasferencias bi-elipticas que requieren un menor $\Delta v$ que la transferencia de Hohmann. 
+
+- La ventaja de la transferencia bi-elíptica debe evaluarse considerando que la reducción en $\Delta v$ puede implicar **un incremento considerable en el tiempo de transferencia**.
+
+
+::: {.fragment}
+
+- Por ejemplo, para la transferencia LEO–GEO que se analizó previamente
+
+$$
+R=\frac{r_f}{r_i}=\frac{42159.485}{6569.481}=6.417 < 11.94 \Rightarrow \therefore \text{Transferencia de Hohmann}
+$$
+
+  y para la transferencia TLI
+
+$$
+R=\frac{r_f}{r_i}=\frac{382688.137}{6569.481}=58.252 > 15.58 \Rightarrow \therefore \text{Transferencia bi-elíptica}
+$$
+
+:::
+
+
+---
+
+
+::: {.fragment style="display:flex;justify-content:center;"}
+
+:::{.large}
+
+Aquí se termina el curso
+
+:::
+
+:::
+
+
+![](Figures/c5/yop.png){width=60% fig-align="center"}
+
+::: {.fragment style="display:flex;justify-content:center;"}
+
+:::{.large}
+
+<span style="color:#990033"> ¡Gracias por todo su esfuerzo!</span>
+
+:::
+
+:::
 
 

@@ -16,7 +16,7 @@
 :::
 <div class="vspace-3"></div>
 
-<span style="color:blue"> </span>
+
 
 :::{.xlarge}
 

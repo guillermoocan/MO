@@ -13287,6 +13287,82 @@ v_{\mathrm{trans},f}=\sqrt{\mu\left(\frac{2}{r_f}-\frac{1}{a_{\mathrm{trans},2}}
 <p><span style="color:red"> ¿En qué escenario es más eficiente la transferencia bi-elíptica? </span></p>
 </div>
 </div>
+</section>
+<section id="límites-críticos" class="slide level2">
+<h2>Límites críticos</h2>
+<ul>
+<li>La respuesta a la pregunta anterior se puede obtener mediante el análisis de los límites críticos de las transferencias de Hohmann y bi-elíptica (Methods of Astrodynamics. P. R. Escobal, 1968). Este analisis se realiza considerando como órbitas circulares a las órbitas inicial y final, y definiendo la relación entre los radios orbitales como</li>
+</ul>
+<p><span class="math display">\[
+R=\frac{r_f}{r_i}, \qquad R^*=\frac{r_b}{r_i}
+\]</span></p>
+<ul>
+<li>Se puede derivar una relación entre el costo total de la transferencia de Hohmann y la velocidad inicial del satélite:</li>
+</ul>
+<p><span class="math display">\[
+v_i=\sqrt{\frac{\mu}{r_i}}
+\]</span></p>
+<p>Dicha relación es</p>
+<p><span class="math display">\[
+\frac{\Delta v_{\mathrm{Hohmann}}}{v_{\mathrm{i}}}
+=\left(1-\frac{1}{R}\right)\sqrt{\frac{2R}{1+R}}+\frac{1}{\sqrt{R}}-1
+\]</span></p>
+<ul>
+<li>Por otro lado, también se puede derivar una relación entre el costo total de la transferencia bi-elíptica y la velocidad inicial del satélite:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\Delta v_{\mathrm{bi\text{-}elliptic}}}{v_{\mathrm{i}}}
+={}&amp;\left|\sqrt{\frac{2R^*}{1+R^*}}-1\right|+\sqrt{\frac{2}{R^*}}\left|\sqrt{\frac{1}{1+\frac{R^*}{R}}}-\sqrt{\frac{1}{1+R^*}}\right|+\left|\sqrt{\frac{1}{R}}\left(\sqrt{\frac{2R^*}{R+R^*}}-1\right)\right|
+\end{aligned}
+\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Considerando una velocidad inicial <span class="math display">\[
+v_{\mathrm{i}}=\sqrt{\frac{\mu}{R_\oplus}}=7.905\ \mathrm{km/s}
+\]</span></p>
+
+<img data-src=".\Figures/c3/Hohmann_BiElliptic.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="cuándo-conviene-cada-transferencia" class="slide level2">
+<h2>¿Cuándo conviene cada transferencia?</h2>
+<ul>
+<li><p>La elección de la maniobra depende de la relación entre el radio de la órbita final y el inicial.</p>
+<ul>
+<li><p><strong><span class="math inline">\(0&lt;R&lt;11.94\)</span> — Transferencia de Hohmann:</strong></p>
+<p>Requiere un menor <span class="math inline">\(\Delta v\)</span> que cualquier transferencia bi-elíptica.</p></li>
+<li><p><strong><span class="math inline">\(11.94&lt;R&lt;15.58\)</span> — Región intermedia:</strong></p>
+<p>La eficiencia depende de la selección del radio de la órbita intermedia <span class="math inline">\(r_b\)</span>. Una transferencia bi-elíptica puede resultar más eficiente, pero no necesariamente.</p></li>
+<li><p><strong><span class="math inline">\(R&gt;15.58\)</span> — Transferencia bi-elíptica:</strong> Existe una familia de trasferencias bi-elipticas que requieren un menor <span class="math inline">\(\Delta v\)</span> que la transferencia de Hohmann.</p></li>
+</ul></li>
+<li><p>La ventaja de la transferencia bi-elíptica debe evaluarse considerando que la reducción en <span class="math inline">\(\Delta v\)</span> puede implicar <strong>un incremento considerable en el tiempo de transferencia</strong>.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Por ejemplo, para la transferencia LEO–GEO que se analizó previamente</li>
+</ul>
+<p><span class="math display">\[
+R=\frac{r_f}{r_i}=\frac{42159.485}{6569.481}=6.417 &lt; 11.94 \Rightarrow \therefore \text{Transferencia de Hohmann}
+\]</span></p>
+<p>y para la transferencia TLI</p>
+<p><span class="math display">\[
+R=\frac{r_f}{r_i}=\frac{382688.137}{6569.481}=58.252 &gt; 15.58 \Rightarrow \therefore \text{Transferencia bi-elíptica}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment" style="display:flex;justify-content:center;">
+<div class="large">
+<p>Aquí se termina el curso</p>
+</div>
+</div>
+
+<img data-src="Figures/c5/yop.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><div class="fragment" style="display:flex;justify-content:center;">
+<div class="large">
+<p><span style="color:#990033"> ¡Gracias por todo su esfuerzo!</span></p>
+</div>
+</div>
 
 </section>
 
